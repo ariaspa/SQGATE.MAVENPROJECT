@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	verticalScrollPolicy="off"
+	horizontalScrollPolicy="off"
+	width="100%" >
+	 
+	<mx:Script>
+		<![CDATA[
+			[Bindable]
+			public var textLabel:String = "";
+			
+			private const COLOR_UP:int 		= 0x000000;
+			private const COLOR_DOWN:int 	= 0xFFFFFF;
+			private const PAD:int 			= 2;
+			private function drawUp(g:Graphics,unscaledWidth:Number,unscaledHeight:Number):void
+			{
+				g.lineStyle(1,COLOR_UP,0.8);
+				
+				var xx:Number	= 0;
+				var ww:Number	= unscaledWidth;
+				var yy:Number	= 0;
+				var hh:Number	= unscaledHeight;
+				
+        		g.moveTo(xx,hh);
+        		g.lineTo(xx,yy);
+        		g.lineTo(ww,yy);
+        		g.endFill();
+			}
+			private function drawDown(g:Graphics,unscaledWidth:Number,unscaledHeight:Number):void
+			{
+				g.lineStyle(1,COLOR_DOWN,0.5);
+				
+				var xx:Number	= 0;
+				var ww:Number	= unscaledWidth;
+				var yy:Number	= 0;
+				var hh:Number	= unscaledHeight;
+				
+        		g.moveTo(ww,yy);
+        		g.lineTo(ww,hh);
+        		g.lineTo(xx,hh);
+        		g.endFill();
+			}
+			override protected function updateDisplayList(unscaledWidth:Number,unscaledHeight:Number):void
+    		{
+        		var g:Graphics = this.graphics;
+        		g.clear();
+        		drawUp(g,unscaledWidth,unscaledHeight);
+        		drawDown(g,unscaledWidth,unscaledHeight);
+        		lab.width = this.width-(PAD/2);
+        		var h:Number = lab.measureText(lab.text).height;
+        		lab.height = h;
+        		lab.y = (this.height - lab.height) / 2;
+      		}
+		]]>
+	</mx:Script>
+	<mx:Label x="{PAD/2}" y="{PAD/2}" id="lab" toolTip="{this.toolTip}"
+		text="{textLabel}" fontSize="12" 
+		textAlign="left" 
+		color="0" />
+</mx:Canvas>

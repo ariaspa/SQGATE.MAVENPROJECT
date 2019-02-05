@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" 
+	xmlns:accordion="it.lisit.siss.flex.component.accordion.*" 
+	xmlns:nodeView="com.li.dc.sebc.turboFSE.view.nodeView.*" 
+	xmlns:component="com.li.dc.sebc.turboFSE.view.component.*" 
+	xmlns:effects="it.lispa.siss.sebc.flex.graphic.effects.*" xmlns:menustandard="it.lispa.siss.library.ui.menustandard.*">
+	<mx:Script>
+		<![CDATA[
+			import mx.core.Application;
+			import mx.managers.PopUpManager;
+			import mx.core.UIComponent;
+			import mx.containers.Accordion;
+			//////////////////////////////////////
+			public static const ACTIVE:String 	= "active";
+			public static const WAIT:String 	= "wait";
+		 
+			//////////////////////////////////////
+			[Bindable]public var bckValuePopUp:uint	= 0x000000;
+			[Bindable]private var _visLayer:Boolean = false;
+			private var intpopup:UIComponent;
+		 
+			 
+			private var viewStack:Accordion;
+			private var _changeState:Boolean = false;
+			private var origFilters:Array;
+			private function onAddedStage(event:Event):void
+			{
+				viewStack = event.target as Accordion;
+				if(_changeState)
+				{
+					changeState();
+				}
+			}
+			private function changeState():void
+			{
+				//AreaWait
+				if(this.currentState == ACTIVE)
+				{
+					closePopUp();
+				}else if(this.currentState == WAIT)
+				{
+					var w:AreaWait = new AreaWait();
+					w.width		= 500;
+					w.height	= 400;
+					_visLayer = true; 
+					openPopUp( w );
+					centrePopUp();
+				}
+			//	viewStack.selectedIndex = (this.currentState == ACTIVE) ?  0 : 1;
+				if(intpopup!=null && this.currentState == ACTIVE)
+				{
+					_visLayer = true; 
+				}
+			}
+			 
+			private function onChangeState(event:Event):void
+			{
+				if(viewStack!=null)
+				{
+					changeState();
+				}else
+				{
+					_changeState = true;
+				}
+			}
+			public function popUpBusy():Boolean
+			{
+				return !(intpopup==null);
+			} 
+			public function openPopUp(popUp:UIComponent,flagEffect:Boolean=false):Boolean
+			{
+				if(!up.contains(popUp) && intpopup==null)
+				{
+					acol.toValue	= bckValuePopUp; 
+					origFilters 	= areaTab.filters;
+					areaTab.filters = [new BlurFilter(5,5)];
+					intpopup 		= popUp;
+					
+					up.addChild( intpopup );
+					
+					if(this.currentState  == ACTIVE)
+					{
+						_visLayer = true;
+					}
+					return true;
+				}
+				return false;
+			}
+			public function closePopUp():Boolean
+			{
+				if(intpopup!=null && up.contains(intpopup))
+				{
+					areaTab.filters = origFilters;
+					up.removeChild( intpopup );
+					intpopup 		= null;
+					_visLayer 		= false;
+					return true;
+				}
+				return false;
+			}
+			
+			public function centrePopUp():void
+			{
+				if(intpopup!=null && up.contains(intpopup))
+				{
+					intpopup.x = Math.abs( up.x + (intpopup.width  - up.width)/2 ); 
+					intpopup.y = Math.abs( up.y + (intpopup.height - up.height)/2 ); 
+				}
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:states>
+		<mx:State name="{ACTIVE}" enterState="onChangeState(event);"/>
+		<mx:State name="{WAIT}"  enterState="onChangeState(event);"/>
+	</mx:states>
+	
+	
+	  
+	<mx:Accordion width="100%" height="100%"
+		headerHeight="0"
+		historyManagementEnabled="false"
+		verticalGap="0"  
+		creationPolicy="all" 
+		addedToStage="onAddedStage(event);">
+		<!-- AREA TAB -->
+		<nodeView:AreaTab id="areaTab"/>
+		<!-- AREA WAIT -->	
+		<nodeView:AreaWait id="areaWait" horizontalAlign="center" verticalAlign="middle" />
+	</mx:Accordion>
+	
+	<effects:AnimateColor 
+		isStyle="true"
+		property="backgroundColor" id="acol" 
+		fromValue="#FFFFFF" toValue="{bckValuePopUp}" 
+		target="down" duration="10000" />
+	
+	<!-- fa da sfondo opaco quando si apre il popup -->
+	<mx:Canvas width="100%" height="100%" id="down" 
+		showEffect="acol"
+		alpha="0.4"
+		visible="{_visLayer}" 
+		backgroundColor="#FFFFFF"/>
+		
+	<!-- layer trasparente dove attacco la finestrella di popup -->	
+	<mx:Canvas width="100%" height="100%" id="up"
+		visible="{_visLayer}" /> 
+	  
+</mx:Canvas>

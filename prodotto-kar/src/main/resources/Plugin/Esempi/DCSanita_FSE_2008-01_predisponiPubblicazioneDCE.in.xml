@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+<TestInfo>
+	<Autore>Mauro Martello</Autore>
+	<DataPreparazione>24/06/2008</DataPreparazione>
+	<CodiceTest></CodiceTest>
+	<CodiceContesto></CodiceContesto>
+	<TipoTest>F</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>Test di predisponi pubblicazione DCE</DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>OK</DescrizioneRisultatoAtteso>
+	<confrontoBody>
+		<ignora>//idSetDocumenti</ignora>
+	</confrontoBody>
+</TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xsi:schemaLocation="file:///c:/Documents%20and%20Settings/Mauro%20Martello/Desktop/XML%20Schema/PredisponiPubblicazioneDCE/Schema/FSE.predisponiPubblicazioneDCE.xsd">
+	<soap-env:Header>
+		<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+			<Transport>
+				<Mode>Sync</Mode>
+				<Dest>DCSanita</Dest>
+			</Transport>
+			<Security>
+				<FunContext>
+					<credential>
+						<validity>
+							<emittedDate>15/11/2005+10:59:18,531</emittedDate>
+							<sessionMaxTime>15/11/2005+10:59:18,531</sessionMaxTime>
+						</validity>
+						<vrs>
+							<mjr>1</mjr>
+							<min>0</min>
+						</vrs>
+						<ctf>
+							<reg>
+								<cod/>
+								<des/>
+							</reg>
+							<app>
+								<cod/>
+								<des/>
+							</app>
+							<pro>
+								<cod/>
+								<des/>
+							</pro>
+							<ter>
+								<cod/>
+								<des/>
+							</ter>
+							<str>
+								<cod>030960</cod>
+								<des/>
+							</str>
+							<pre>
+								<cod>03090300</cod>
+								<des/>
+							</pre>
+							<rep>
+								<cod>0800</cod>
+								<des/>
+							</rep>
+						</ctf>
+						<role>
+							<code>3</code>
+							<description>Operatore Amministrativo</description>
+						</role>
+						<userId>CCCBLL79A01Z368C</userId>
+						<iupSeed>12345</iupSeed>
+					</credential>
+				</FunContext>
+				<CitCardPresent>true</CitCardPresent>
+				<CitAuth>false</CitAuth>
+				<CitCF>GBBGCB70A01Z368C</CitCF>
+				<CitSmartCardSN></CitSmartCardSN>
+			</Security>
+			<Sla>
+				<Log>
+					<Global>
+						<TrackID>1132048757203</TrackID>
+						<Timestamp>15/11/2005+10:59:18,562</Timestamp>
+					</Global>
+				</Log>
+			</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+		<m:FSE.predisponiPubblicazioneDCE xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/predisponiPubblicazioneDCE/" dataSetVersion="1.0">
+			<documentoClinicoElettronico>
+				<strutturaCreazione>
+					<idEnte>030960</idEnte>
+					<idPresidio>03090300</idPresidio>
+					<idUnitaOperativaClinica>0800</idUnitaOperativaClinica>
+				</strutturaCreazione>
+				<idTipoDocumento>09</idTipoDocumento>
+				<listaDocumenti>
+					<documento>
+						<formato>TXT</formato>
+						<firmato>S</firmato>
+						<testoDocumento>SW8gc290dG9zY3JpdHRvIEJFTExJIENJQ0NJTyBDQ0NCTEw3OUEwMVozNjhDYXV0b3JpenpvIGlsIHNpZyAgIEdCQkdDQjcwQTAxWjM2OEMgYWxsYSB2aXN1YWxpenphemlvbmUgZGVsIHByb3ByaW8gUEFUSUVOVCBTVU1NQVJZLHJlZGF0dG8gaW4gZGF0YSAwOC8wMi8yMDA4IC0gMTY6MzUgcHJlc3NvIHN0cnV0dHVyYTogMDMwOTYwLCAgc3Vic3RydXR0dXJhOiAwMzA5ISEhIS5JbCBkb2N1bWVudG8gcmlzdWx0YTotIE9zY3VyYXRvIHJlbGF0aXZhbWVudGUgYWxsYSBub3JtYSBjaGUgcHJvdGVnZ2UgaSBjaXR0YWRpbmkgdG9zc2ljb2RpcGVuZGVudGktIE5vbiBPc2N1cmF0byByZWxhdGl2YW1lbnRlIGFsbGEgbm9ybWEgY2hlIHByb3RlZ2dlIGkgY2l0dGFkaW5pIHNpZXJvcG9zaXRpdmktIE9zY3VyYXRvIHJlbGF0aXZhbWVudGUgYWxsYSBub3JtYSBjaGUgcHJvdGVnZ2UgaSBjaXR0YWRpbmkgY2hlIGhhbm5vIHN1Yml0byB2aW9sZW56ZS0gTm9uIE9zY3VyYXRvIHJlbGF0aXZhbWVudGUgYWxsYSBub3JtYSBjaGUgcHJvdGVnZ2UgaSBjaXR0YWRpbmkgY2hlIGhhbm5vIHN1Yml0byBpbnRlcnJ1emlvbmUgdm9sb250YXJpYSBkaSBncmF2aWRhbnphUmlzdWx0YSBwZXJ2ZW51dGEgcmljaGllc3RhIGRpIG9zY3VyYW1lbnRvIHZvbG9udGFyaW8gZGEgcGFydGUgZGVsIGNpdHRhZGlubw0K</testoDocumento>
+					</documento>
+				</listaDocumenti>
+				<dataOraCreazione>200806241412</dataOraCreazione>
+				<idDocumentoRiferimento>10</idDocumentoRiferimento>
+				<cittadino>
+					<idCittadino tipo="CF">GBBGCB70A01Z368C</idCittadino>
+					<cognomeCittadino>GIACOBBE</cognomeCittadino>
+					<nomeCittadino>GIOBBE</nomeCittadino>
+					<sessoCittadino>M</sessoCittadino>
+					<dataNascitaCittadino>19930614</dataNascitaCittadino>
+				</cittadino>
+				<autoreDocumento>
+					<codiceFiscale>CCCBLL79A01Z368C</codiceFiscale>
+					<cognome>BELLI</cognome>
+					<nome>CICCIO</nome>
+				</autoreDocumento>
+				<generaDAO>S</generaDAO>
+				<oscuramento>
+					<tipoOscuramento>
+						<idCausaleOscuramento>10</idCausaleOscuramento>
+						<valoreOscuramento>SI</valoreOscuramento>
+					</tipoOscuramento>
+					<tipoOscuramento>
+						<idCausaleOscuramento>20</idCausaleOscuramento>
+						<valoreOscuramento>NO</valoreOscuramento>
+					</tipoOscuramento>
+					<tipoOscuramento>
+						<idCausaleOscuramento>30</idCausaleOscuramento>
+						<valoreOscuramento>SI</valoreOscuramento>
+					</tipoOscuramento>
+					<tipoOscuramento>
+						<idCausaleOscuramento>40</idCausaleOscuramento>
+						<valoreOscuramento>NO</valoreOscuramento>
+					</tipoOscuramento>
+					<tipoOscuramento>
+						<idCausaleOscuramento>50</idCausaleOscuramento>
+						<valoreOscuramento>SI</valoreOscuramento>
+					</tipoOscuramento>
+				</oscuramento>
+				<statoAutorizzazioneDocumento>SI</statoAutorizzazioneDocumento>
+			</documentoClinicoElettronico>
+		</m:FSE.predisponiPubblicazioneDCE>
+	</soap-env:Body>
+</soap-env:Envelope>

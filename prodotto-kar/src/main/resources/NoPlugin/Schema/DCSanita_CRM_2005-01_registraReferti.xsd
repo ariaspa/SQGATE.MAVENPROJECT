@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XML Spy v4.1 U (http://www.xmlspy.com) by Valerio Lorenzon (Elletre) -->
+<xs:schema targetNamespace="http://www.crs.lombardia.it/schemas/DCSanita/CRM/2005-01/registraReferti/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/CRM/2005-01/registraReferti/" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" schemaLocation="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/"/>
+	<xs:element name="CRM.registraReferti">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="refertoSpecialistico" type="m:refertoSpecialisticoType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="refertoRicovero" type="m:refertoRicoveroType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="refertoProntoSoccorso" type="m:refertoProntoSoccorsoType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="refertoSpecialisticoAutorizzato" type="m:refertoSpecialisticoAutorizzatoType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="refertoRicoveroAutorizzato" type="m:refertoRicoveroAutorizzatoType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="refertoProntoSoccorsoAutorizzato" type="m:refertoProntoSoccorsoAutorizzatoType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="dataSetVersion" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="refertoSpecialisticoType">
+		<xs:all>
+			<xs:element name="numeroProgressivo" type="xs:string"/>
+			<xs:element name="idServizioRefertazione" type="xs:string"/>
+			<xs:element name="idReferto" type="xs:string"/>
+			<xs:element name="idStruttura" type="xs:string"/>
+			<xs:element name="idSubStruttura" type="xs:string"/>
+			<xs:element name="idUnitaOperativaClinica" type="xs:string" minOccurs="0"/>
+			<xs:element name="idTipoReferto" type="xs:string"/>
+			<xs:element name="data" type="xs:string"/>
+			<xs:element name="linkImmagine" type="xs:string" minOccurs="0"/>
+			<xs:element name="tipoImmagine" type="xs:string" minOccurs="0"/>
+			<xs:element name="linkDocumentoCDA2" type="xs:string" minOccurs="0"/>
+			<xs:element name="reteDiPatologia" type="xs:string" minOccurs="0"/>
+			<xs:element name="livelloOscuramento" type="xs:string"/>
+			<xs:element name="cittadino" type="m:cittadinoType"/>
+			<xs:element name="medicoRefertante" type="m:medicoRefertanteType"/>
+			<xs:element name="prestazioniAssociate" type="m:prestazioniAssociateType"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="refertoRicoveroType">
+		<xs:all>
+			<xs:element name="numeroProgressivo" type="xs:string"/>
+			<xs:element name="idServizioRefertazione" type="xs:string"/>
+			<xs:element name="idReferto" type="xs:string"/>
+			<xs:element name="idStruttura" type="xs:string"/>
+			<xs:element name="idSubStruttura" type="xs:string"/>
+			<xs:element name="idUnitaOperativaClinica" type="xs:string" minOccurs="0"/>
+			<xs:element name="idTipoReferto" type="xs:string"/>
+			<xs:element name="data" type="xs:string"/>
+			<xs:element name="linkImmagine" type="xs:string" minOccurs="0"/>
+			<xs:element name="tipoImmagine" type="xs:string" minOccurs="0"/>
+			<xs:element name="linkDocumentoCDA2" type="xs:string" minOccurs="0"/>
+			<xs:element name="reteDiPatologia" type="xs:string" minOccurs="0"/>
+			<xs:element name="dataErogazione" type="xs:string"/>
+			<xs:element name="numeroNosologico" type="xs:string"/>
+			<xs:element name="livelloOscuramento" type="xs:string"/>
+			<xs:element name="cittadino" type="m:cittadinoType"/>
+			<xs:element name="medicoRefertante" type="m:medicoRefertanteType"/>
+			<xs:element name="datiDimissione" type="m:datiDimissioneType"/>
+			<xs:element name="datiAccettazione" type="m:datiAccettazioneType"/>
+			<xs:element name="prestazioniAssociate" type="m:prestazioniRicoveroType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="refertoProntoSoccorsoType">
+		<xs:all>
+			<xs:element name="numeroProgressivo" type="xs:string"/>
+			<xs:element name="idServizioRefertazione" type="xs:string"/>
+			<xs:element name="idReferto" type="xs:string"/>
+			<xs:element name="idStruttura" type="xs:string"/>
+			<xs:element name="idSubStruttura" type="xs:string"/>
+			<xs:element name="idUnitaOperativaClinica" type="xs:string" minOccurs="0"/>
+			<xs:element name="idTipoReferto" type="xs:string"/>
+			<xs:element name="data" type="xs:string"/>
+			<xs:element name="linkImmagine" type="xs:string" minOccurs="0"/>
+			<xs:element name="tipoImmagine" type="xs:string" minOccurs="0"/>
+			<xs:element name="linkDocumentoCDA2" type="xs:string" minOccurs="0"/>
+			<xs:element name="reteDiPatologia" type="xs:string" minOccurs="0"/>
+			<xs:element name="dataErogazione" type="xs:string"/>
+			<xs:element name="numeroPratica" type="xs:string"/>
+			<xs:element name="codiceModalitaChiusura" type="xs:string"/>
+			<xs:element name="noteAggiuntiveChiusura" type="xs:string"/>
+			<xs:element name="livelloOscuramento" type="xs:string"/>
+			<xs:element name="cittadino" type="m:cittadinoType"/>
+			<xs:element name="medicoRefertante" type="m:medicoRefertanteType"/>
+			<xs:element name="datiDimissione" type="m:datiDimissionePSType"/>
+			<xs:element name="datiAccettazione" type="m:datiAccettazionePSType"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="refertoSpecialisticoAutorizzatoType">
+		<xs:all>
+			<xs:element name="CRSlegalContent" type="ll:CRSlegalContentType" form="qualified"/>
+			<xs:element name="numeroProgressivo" type="xs:string"/>
+			<xs:element name="idServizioRefertazione" type="xs:string"/>
+			<xs:element name="idReferto" type="xs:string"/>
+			<xs:element name="idStruttura" type="xs:string"/>
+			<xs:element name="idSubStruttura" type="xs:string"/>
+			<xs:element name="idUnitaOperativaClinica" type="xs:string" minOccurs="0"/>
+			<xs:element name="idTipoReferto" type="xs:string"/>
+			<xs:element name="hashReferto" type="xs:string"/>
+			<xs:element name="versioneXSLT" type="xs:string"/>
+			<xs:element name="data" type="xs:string"/>
+			<xs:element name="ora" type="xs:string"/>
+			<xs:element name="linkImmagine" type="xs:string" minOccurs="0"/>
+			<xs:element name="tipoImmagine" type="xs:string" minOccurs="0"/>
+			<xs:element name="linkDocumentoCDA2" type="xs:string" minOccurs="0"/>
+			<xs:element name="reteDiPatologia" type="xs:string" minOccurs="0"/>
+			<xs:element name="noteReperibilita" type="xs:string"/>
+			<xs:element name="livelloOscuramento" type="xs:string"/>
+			<xs:element name="cittadino" type="m:cittadinoType"/>
+			<xs:element name="medicoRefertante" type="m:medicoRefertanteType"/>
+			<xs:element name="medicoAutorizzante" type="m:medicoAutorizzanteType"/>
+			<xs:element name="prestazioniAssociate" type="m:prestazioniAssociateType"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="refertoRicoveroAutorizzatoType">
+		<xs:all>
+			<xs:element name="CRSlegalContent" type="ll:CRSlegalContentType" form="qualified"/>
+			<xs:element name="numeroProgressivo" type="xs:string"/>
+			<xs:element name="idServizioRefertazione" type="xs:string"/>
+			<xs:element name="idReferto" type="xs:string"/>
+			<xs:element name="idStruttura" type="xs:string"/>
+			<xs:element name="idSubStruttura" type="xs:string"/>
+			<xs:element name="idUnitaOperativaClinica" type="xs:string" minOccurs="0"/>
+			<xs:element name="idTipoReferto" type="xs:string"/>
+			<xs:element name="hashReferto" type="xs:string"/>
+			<xs:element name="versioneXSLT" type="xs:string"/>
+			<xs:element name="data" type="xs:string"/>
+			<xs:element name="ora" type="xs:string"/>
+			<xs:element name="linkImmagine" type="xs:string" minOccurs="0"/>
+			<xs:element name="tipoImmagine" type="xs:string" minOccurs="0"/>
+			<xs:element name="linkDocumentoCDA2" type="xs:string" minOccurs="0"/>
+			<xs:element name="reteDiPatologia" type="xs:string" minOccurs="0"/>
+			<xs:element name="noteReperibilita" type="xs:string"/>
+			<xs:element name="dataErogazione" type="xs:string"/>
+			<xs:element name="numeroNosologico" type="xs:string"/>
+			<xs:element name="livelloOscuramento" type="xs:string"/>
+			<xs:element name="cittadino" type="m:cittadinoType"/>
+			<xs:element name="medicoRefertante" type="m:medicoRefertanteType"/>
+			<xs:element name="medicoAutorizzante" type="m:medicoAutorizzanteType"/>
+			<xs:element name="datiDimissione" type="m:datiDimissioneType"/>
+			<xs:element name="datiAccettazione" type="m:datiAccettazioneType"/>
+			<xs:element name="prestazioniAssociate" type="m:prestazioniRicoveroType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="refertoProntoSoccorsoAutorizzatoType">
+		<xs:all>
+			<xs:element name="CRSlegalContent" type="ll:CRSlegalContentType" form="qualified"/>
+			<xs:element name="numeroProgressivo" type="xs:string"/>
+			<xs:element name="idServizioRefertazione" type="xs:string"/>
+			<xs:element name="idReferto" type="xs:string"/>
+			<xs:element name="idStruttura" type="xs:string"/>
+			<xs:element name="idSubStruttura" type="xs:string"/>
+			<xs:element name="idUnitaOperativaClinica" type="xs:string" minOccurs="0"/>
+			<xs:element name="idTipoReferto" type="xs:string"/>
+			<xs:element name="hashReferto" type="xs:string"/>
+			<xs:element name="versioneXSLT" type="xs:string"/>
+			<xs:element name="data" type="xs:string"/>
+			<xs:element name="ora" type="xs:string"/>
+			<xs:element name="linkImmagine" type="xs:string" minOccurs="0"/>
+			<xs:element name="tipoImmagine" type="xs:string" minOccurs="0"/>
+			<xs:element name="linkDocumentoCDA2" type="xs:string" minOccurs="0"/>
+			<xs:element name="reteDiPatologia" type="xs:string" minOccurs="0"/>
+			<xs:element name="noteReperibilita" type="xs:string"/>
+			<xs:element name="dataErogazione" type="xs:string"/>
+			<xs:element name="numeroPratica" type="xs:string"/>
+			<xs:element name="codiceModalitaChiusura" type="xs:string"/>
+			<xs:element name="noteAggiuntiveChiusura" type="xs:string"/>
+			<xs:element name="livelloOscuramento" type="xs:string"/>
+			<xs:element name="cittadino" type="m:cittadinoType"/>
+			<xs:element name="medicoRefertante" type="m:medicoRefertanteType"/>
+			<xs:element name="medicoAutorizzante" type="m:medicoAutorizzanteType"/>
+			<xs:element name="datiDimissione" type="m:datiDimissionePSType"/>
+			<xs:element name="datiAccettazione" type="m:datiAccettazionePSType"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="cittadinoType">
+		<xs:all>
+			<xs:element name="idAssistito" type="xs:string"/>
+			<xs:element name="codiceFiscaleCittadino" type="xs:string"/>
+			<xs:element name="idCittadinoNonSISS" type="xs:string"/>
+			<xs:element name="cognomeCittadino" type="xs:string"/>
+			<xs:element name="nomeCittadino" type="xs:string"/>
+			<xs:element name="sessoCittadino" type="xs:string"/>
+			<xs:element name="dataNascitaCittadino" type="xs:string"/>
+			<xs:element name="comuneNascitaCittadino" type="xs:string"/>
+			<xs:element name="idNazioneNascita" type="xs:string" minOccurs="0"/>
+			<xs:element name="indirizzoResidenza" type="xs:string"/>
+			<xs:element name="localitaResidenza" type="xs:string"/>
+			<xs:element name="indirizzoDomicilio" type="xs:string"/>
+			<xs:element name="localitaDomicilio" type="xs:string"/>
+			<xs:element name="numeroTelefono" type="xs:string"/>
+			<xs:element name="asl" type="xs:string"/>
+			<xs:element name="regione" type="xs:string"/>
+			<xs:element name="cittadinanza" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="medicoRefertanteType">
+		<xs:all>
+			<xs:element name="codiceFiscale" type="xs:string"/>
+			<xs:element name="cognome" type="xs:string"/>
+			<xs:element name="nome" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="medicoAutorizzanteType">
+		<xs:all>
+			<xs:element name="codiceFiscaleAutorizzante" type="xs:string"/>
+			<xs:element name="cognomeAutorizzante" type="xs:string"/>
+			<xs:element name="nomeAutorizzante" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="prestazioniAssociateType">
+		<xs:sequence>
+			<xs:element name="prestazione" type="m:prestazioneType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="prestazioneType">
+		<xs:all>
+			<xs:element name="idPrescrizione" type="xs:string"/>
+			<xs:element name="idPrestazione" type="xs:string"/>
+			<xs:element name="codiceRur" type="xs:string"/>
+			<xs:element name="idDisciplina" type="xs:string"/>
+			<xs:element name="quantitaErogata" type="xs:string"/>
+			<xs:element name="dataErogazione" type="xs:string"/>
+			<xs:element name="prestazionePrescritta" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="prestazioniRicoveroType">
+		<xs:all>
+			<xs:element name="prestazione" type="m:prestazioneRicoveroType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="prestazioneRicoveroType">
+		<xs:all>
+			<xs:element name="idPrescrizione" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceRur" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="datiDimissioneType">
+		<xs:all>
+			<xs:element name="codiceReparto" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="datiAccettazioneType">
+		<xs:all>
+			<xs:element name="codiceReparto" type="xs:string"/>
+			<xs:element name="data" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="datiDimissionePSType">
+		<xs:all>
+			<xs:element name="ora" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="datiAccettazionePSType">
+		<xs:all>
+			<xs:element name="data" type="xs:string"/>
+			<xs:element name="ora" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="CRM.registraRefertiResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="param" type="m:rispostaType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="rispostaType">
+		<xs:choice>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element name="esitoArchiviazioneReferto" type="m:esitoArchiviazioneRefertoType" minOccurs="0"/>
+					<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+					<xs:element name="esitoArchiviazioneReferto" type="m:esitoArchiviazioneRefertoType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:sequence>
+				<xs:element name="esitoNegativo" type="m:esitoNegativoType"/>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="esitoArchiviazioneRefertoType">
+		<xs:all>
+			<xs:element name="numeroProgressivo" type="xs:string"/>
+			<xs:element name="esito" type="xs:string"/>
+			<xs:element name="uriReferto" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="esitoNegativoType">
+		<xs:all>
+			<xs:element name="codiceErrore" type="xs:string"/>
+			<xs:element name="descErrore" type="xs:string"/>
+			<xs:element name="listaEccezioni" type="m:listaEccezioniType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaEccezioniType">
+		<xs:sequence>
+			<xs:element name="eccezione" type="m:eccezioneType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="eccezioneType">
+		<xs:all>
+			<xs:element name="codiceEccezione" type="xs:string"/>
+			<xs:element name="descEccezione" type="xs:string"/>
+			<xs:element name="nomeCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="valoreCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="descEccezioneCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceEccezioneCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="ROI" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaWarningType">
+		<xs:sequence>
+			<xs:element name="warning" type="m:warningType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="warningType">
+		<xs:all>
+			<xs:element name="codiceWarning" type="xs:string"/>
+			<xs:element name="descWarning" type="xs:string"/>
+			<xs:element name="nomeCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="valoreCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="descWarningCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceWarningCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="ROI" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema targetNamespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2011-01/documentoAutorizzazioneOscuramento/" 
+	       xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	       xmlns:v="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2011-01/documentoAutorizzazioneOscuramento/" 
+	      
+	       
+		   elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	
+
+	<xs:element name="documentoAutorizzazioneOscuramento" type="v:DCEDXType" />
+	
+	<xs:complexType name="DCEDXType">
+		<xs:all>
+			<xs:element name="strutturaCreazione" type="v:strutturaType"/>
+			<xs:element name="idTipoDocumento" type="xs:string"/>
+			<xs:element name="dataOraCreazione" type="xs:string"/>
+			<xs:element name="listaDocumenti" type="v:listaDocumentiType"/>
+			<xs:element name="cittadino" type="v:cittadinoType"/>
+			<xs:element name="autoreDocumento" type="v:autoreDocumentoType"/>
+			<xs:element name="statoAutorizzazioneDocumento" type="xs:string"/>
+			<xs:element name="oscuramento" type="v:oscuramentoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="attributiSpecifici" type="v:attributiSpecificiType" minOccurs="0" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	
+	<xs:complexType name="strutturaType">
+		<xs:all>
+			<xs:element name="idEnte" type="xs:string"/>
+			<xs:element name="idPresidio" type="xs:string" minOccurs="0"/>
+			<xs:element name="idUnitaOperativaClinica" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaDocumentiType">
+		<xs:sequence>
+			<xs:element name="documento" type="v:documentoType" maxOccurs="2"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="documentoType">
+		<xs:all>
+			<xs:element name="formato" type="xs:string"/>
+			<xs:element name="firmato" type="xs:string"/>
+			<xs:element name="hashDocumento" type="xs:string"/>
+			<xs:element name="algoritmoHash" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="cittadinoType">
+		<xs:all>
+			<xs:element name="idCittadino">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="tipo" type="v:tipoType"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="cognomeCittadino" type="xs:string"/>
+			<xs:element name="nomeCittadino" type="xs:string"/>
+			<xs:element name="sessoCittadino" type="xs:string"/>
+			<xs:element name="dataNascitaCittadino" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="autoreDocumentoType">
+		<xs:all>
+			<xs:element name="codiceFiscale" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="oscuramentoType">
+		<xs:sequence>
+			<xs:element name="tipoOscuramento" type="v:tipoOscuramentoType" minOccurs="5" maxOccurs="5"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoOscuramentoType">
+		<xs:all>
+			<xs:element name="idCausaleOscuramento" type="xs:string"/>
+			<xs:element name="valoreOscuramento" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:simpleType name="tipoType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CF"/>
+			<xs:enumeration value="ALTRO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="attributiSpecificiType">
+		<xs:choice> 
+			<xs:element name="attributi_referto" type="v:attributiRefertoType" minOccurs="1" maxOccurs="1"/> 
+			<xs:element name="attributi_psoccorso" type="v:attributiPSType" minOccurs="1" maxOccurs="1"/> 
+			<xs:element name="attributi_enote"  type="v:attributiEvaluationNoteType" minOccurs="1" maxOccurs="1"/> 
+			<xs:element name="attributi_ldimissione" type="v:attributiLdimissioneType" minOccurs="1" maxOccurs="1"/>
+		</xs:choice> 
+	</xs:complexType>
+	
+    <xs:complexType name="prestazioneType" >
+        <xs:all>
+            <xs:element name="IUP" type="xs:string" minOccurs="1"/>
+            <xs:element name="idPrestazioneSISS" type="xs:string" minOccurs="1"/>
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="prestazioniAssociateType">
+        <xs:sequence>
+            <xs:element name="prestazione" type="v:prestazioneType" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="attributiRefertoType">
+        <xs:all>
+            <xs:element name="idPresidio" type="xs:string" minOccurs="0"/>
+            <xs:element name="numeroNosologico" type="xs:string" minOccurs="0"/>
+            <xs:element name="numeroPraticaPS" type="xs:string" minOccurs="0"/>
+            <xs:element name="prestazioniAssociate" type="v:prestazioniAssociateType" minOccurs="1" />
+        </xs:all>
+    </xs:complexType>
+
+ 	<xs:complexType name="attributiPSType">
+        <xs:all>
+            <xs:element name="idPresidio" type="xs:string" minOccurs="1"/>
+            <xs:element name="numeroPraticaPS" type="xs:string" minOccurs="1"/>
+        </xs:all>
+    </xs:complexType>
+	
+	<xs:complexType name="attributiEvaluationNoteType">
+        <xs:all>
+            <xs:element name="idPresidio" type="xs:string" minOccurs="1"/>
+			<xs:element name="numeroNosologico" type="xs:string" minOccurs="0"/>
+        </xs:all>
+    </xs:complexType>
+    
+    <xs:complexType name="attributiLdimissioneType">
+        <xs:all>
+            <xs:element name="idPresidio" type="xs:string" minOccurs="1"/>
+            <xs:element name="numeroNosologico" type="xs:string" minOccurs="1"/>
+        </xs:all>
+    </xs:complexType>
+</xs:schema>

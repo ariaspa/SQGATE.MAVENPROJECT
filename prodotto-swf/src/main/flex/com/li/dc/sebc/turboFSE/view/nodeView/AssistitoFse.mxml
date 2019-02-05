@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CanvasFSE xmlns="com.li.dc.sebc.turboFSE.view.component.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="100%" height="100%"   
+	horizontalScrollPolicy="off" verticalScrollPolicy="off"
+	xmlns:nodeView="com.li.dc.sebc.turboFSE.view.nodeView.*">
+	<mx:Script>
+		<![CDATA[
+			public static const IDENTIFICA:String = "identifica";
+			public static const VISUALIZZA:String = "visualizza";
+			
+			[Bindable] private var vIdentifica:Boolean = true;
+			[Bindable] private var vVisualizza:Boolean = false;
+			
+			private function onEnterState(e:Event):void
+			{
+				var isIdentifica:Boolean = (this.currentState == IDENTIFICA);
+				vIdentifica = isIdentifica ? true : false;
+				vVisualizza =!vIdentifica;
+			}
+		]]>
+	</mx:Script>
+	
+	<states>
+		<mx:State name="{IDENTIFICA}" enterState="onEnterState(event)"/>
+		<mx:State name="{VISUALIZZA}" enterState="onEnterState(event)"/>
+	</states>  
+	
+	<nodeView:IdentificaCittadino id="identificaCittadino" visible="{vIdentifica}"/>
+	<nodeView:VisualizzaCittadino id="visualizzaCittadino"  visible="{vVisualizza}"/>
+	
+</CanvasFSE>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="100%" height="100%" maxHeight="25"   
+	xmlns:component="it.lisit.siss.flex.component.*">
+	<mx:Script>
+		<![CDATA[
+			import it.lisit.siss.flex.core.IDisplayerMessage;
+			[Bindable]
+			public var displayerMessage:IDisplayerMessage;
+			[Bindable] 
+			public var automaticClickStatusBar:Boolean;
+			
+			[Bindable] 
+			public var activeBlinkStatusBar:Boolean; 
+			
+			[Bindable] 
+			public var changeIconAfterClick:Boolean; 
+			
+			[Bindable] 
+			public var soundActiveStatusBar:Boolean; 
+			//
+			[Bindable] 
+			public var iconWarningStatusBar:Class; 
+			
+			[Bindable] 
+			public var iconErrorStatusBar:Class; 
+			
+			[Bindable] 
+			public var iconInfoStatusBar:Class; 
+			
+			[Bindable] 
+			public var iconCheckStatusBar:Class;
+			// 
+			[Bindable] 
+			public var toolTipWarningStatusBar:String;
+			
+			[Bindable] 
+			public var toolTipErrorStatusBar:String;
+			
+			[Bindable] 
+			public var toolTipInfoStatusBar:String;
+			//
+			[Bindable] 
+			public var maxBlinkStatusBar:uint;
+			//
+			private var iconStatusBar:IconStatusBar;
+			public function clearStatusBar():void
+			{
+				this.iconStatusBar.clear();
+			}
+			private function onAddeStatusBar(e:Event):void
+			{
+				this.iconStatusBar = e.target as IconStatusBar;
+			}
+			public function closeDisplayer():void
+			{
+				this.iconStatusBar.closeDisplayer();
+				 
+			}
+			//////////////////////////////////////////////////////////  
+		]]>
+	</mx:Script>
+	<mx:HBox verticalAlign="middle">
+		<mx:Spacer width="2" />
+		<component:IconStatusBar 
+			displayerMessage="{displayerMessage}"
+			automaticClick="{automaticClickStatusBar}" 
+			activeBlink="{activeBlinkStatusBar}" 
+			changeStateAfterClick="{changeIconAfterClick}" 
+			soundActive="{soundActiveStatusBar}"
+			iconWarning="{iconWarningStatusBar}"
+			iconError="{iconErrorStatusBar}"
+			iconInfo="{iconInfoStatusBar}"
+			iconGood="{iconCheckStatusBar}"
+			toolTipError="{toolTipErrorStatusBar}"
+			toolTipInfo="{toolTipInfoStatusBar}"
+			toolTipWarning="{toolTipWarningStatusBar}"
+			maxBlink="{maxBlinkStatusBar}" 
+			addedToStage="onAddeStatusBar(event);"/>
+	</mx:HBox>
+</mx:Canvas>

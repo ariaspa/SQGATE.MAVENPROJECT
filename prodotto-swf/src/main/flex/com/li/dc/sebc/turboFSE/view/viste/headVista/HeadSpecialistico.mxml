@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HeadVista xmlns="com.li.dc.sebc.turboFSE.view.viste.headVista.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" 
+	verticalGap="4" horizontalAlign="left" verticalAlign="top"
+	xmlns:component="com.li.dc.sebc.turboFSE.view.component.*">
+	<mx:Script>
+		<![CDATA[
+			import it.lispa.siss.sebc.middleground.entity.Prescrizione;
+			import it.lispa.siss.sebc.middleground.entity.Prestazione;
+			import com.li.dc.sebc.turboFSE.model.vo.DataSpecialistico;
+			///////////////////////////////////////////////////////////////
+			[Bindable]private var labDataOraIngresso:String = "";
+			[Bindable]private var labDataPrescrizione:String = "";
+			[Bindable]private var labDataPrenotazione:String = "";
+			[Bindable]private var labQuesitoDiagnostico:String = "";
+			[Bindable]private var labDiagnosi:String = "";
+			[Bindable]private var labEsenzione:String = "";
+			[Bindable]private var labPriorita:String = "";
+			[Bindable]private var labProvenienza:String = "";
+			[Bindable]private var labErogazione:String = "";
+			[Bindable]private var dataProviderPrestazioni:Object;
+			[Bindable]private var rowCountPrestazioni:uint = 3;
+			///////////////////////////////////////////////////////////////
+			override protected function updateData():void
+			{
+				if(this.dataVista is DataSpecialistico)
+				{
+					var dt:DataSpecialistico 	= this.dataVista as DataSpecialistico;
+					labDataOraIngresso 			= dt.labDataOraIngresso;
+					if(dt.dataProviderPrestazioni!=null)
+					{
+						dataProviderPrestazioni 	= dt.dataProviderPrestazioni;
+						rowCountPrestazioni 		= dt.rowCountPrestazioni;
+					}else
+					{
+						boxElencoPrestazioni.visible 	= false;
+						boxElencoPrestazioni.height		= 0;		
+					}
+					labDataPrenotazione 		= dt.labDataPrenotazione;
+					labDataPrescrizione 		= dt.labDataPrescrizione;
+					labDiagnosi 				= dt.labDiagnosi;
+					labErogazione 				= dt.labErogazione;
+					labEsenzione 				= dt.labEsenzione;
+					labPriorita 				= dt.labPriorita;
+					labProvenienza 				= dt.labProvenienza;
+					labQuesitoDiagnostico 		= dt.labQuesitoDiagnostico;
+					
+				}
+			} 
+		]]>
+	</mx:Script>
+	  
+		
+		<component:LabelValue width="50%" labelText="Data e ora Ingresso :" labelValue="{labDataOraIngresso}"/>
+		
+		<mx:HBox width="100%"   horizontalAlign="left">
+			<component:LabelValue labelText="Data Prescrizione :" labelValue="{labDataPrescrizione}" width="50%" />	
+			<component:LabelValue labelText="Data Prenotazione :" labelValue="{labDataPrenotazione}" width="50%"/>
+		</mx:HBox>
+		
+		<component:LabelValue width="50%" labelText="Quesito Diagnostico :" labelValue="{labQuesitoDiagnostico}"/>
+		
+		<mx:VBox borderStyle="none" verticalGap="0" width="100%" verticalScrollPolicy="off" horizontalScrollPolicy="off">
+			<mx:Box width="100%" styleName="testataOperatoreBox">
+				<mx:Label text="Diagnosi :" width="100%" color="0" fontSize="12" textAlign="center" selectable="false"/>
+				<mx:TextArea fontSize="12" borderStyle="none" wordWrap="true" selectable="true" editable="false" text="{labDiagnosi}" width="100%"/>
+			</mx:Box>
+		</mx:VBox>
+		
+		<mx:Spacer height="15" />
+		
+		<!--BOXELENCOPRESTAZIONI -->
+		<mx:VBox id="boxElencoPrestazioni" borderStyle="none" verticalGap="0" width="100%" verticalScrollPolicy="off" horizontalScrollPolicy="off">
+			<mx:Label text="ELENCO PRESTAZIONI" width="100%" color="0x336600" fontSize="12" fontWeight="bold" textAlign="left"/>	
+			<mx:DataGrid width="100%" editable="false" selectable="false" resizableColumns="true" variableRowHeight="true" verticalAlign="middle" textAlign="center"
+					dataProvider="{dataProviderPrestazioni}"
+					rowCount="{rowCountPrestazioni}">
+					<mx:columns>
+						<mx:DataGridColumn headerText="Descrizione Prestazione"  dataField="descrizione"/>
+						<mx:DataGridColumn width="120" headerText="Quantità Erogata" dataField="quantita"/> 
+						<mx:DataGridColumn headerText="Prestazione Aggiuntiva" dataField="flagAggiuntiva"/> 
+					</mx:columns>
+				</mx:DataGrid>
+		</mx:VBox>
+		<!-- ====================================== -->	 
+	 
+	
+	<mx:Spacer height="5" />
+	
+	<mx:HBox width="100%"  horizontalAlign="left">
+			<component:LabelValue labelText="Esenzione :" labelValue="{labEsenzione}" width="50%"/>	
+			<component:LabelValue labelText="Priorità :" labelValue="{labPriorita}" width="50%"/>
+	</mx:HBox>
+	
+	<mx:HBox width="100%"   horizontalAlign="left">
+			<component:LabelValue labelText="Provenienza :" labelValue="{labProvenienza}" width="50%"/>	
+			<component:LabelValue labelText="Regime Erogazione :" labelValue="{labErogazione}" width="50%"/>
+	</mx:HBox>
+	<mx:Spacer height="100%"/>
+</HeadVista>

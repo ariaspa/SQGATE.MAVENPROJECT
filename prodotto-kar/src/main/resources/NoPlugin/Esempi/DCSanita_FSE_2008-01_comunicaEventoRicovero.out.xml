@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<env:Envelope xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+              xmlns:xsd="http://www.w3.org/1999/XMLSchema">
+	<env:Header>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Reply servProd="FSE">
+				<Subject>SAVersion 1.3.1_05</Subject>
+			</Reply>
+		</a:AppContext>
+	</env:Header>
+	<env:Body>
+		<m:FSE.comunicaEventoRicoveroResponse xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/comunicaEventoRicovero/">
+			<param>
+				<esitoComunicaEventoRicovero>
+					<tipoOperazione>1</tipoOperazione>
+					<numeroProgressivo>21</numeroProgressivo>
+					<esito>OK</esito>
+				</esitoComunicaEventoRicovero>
+			</param>
+		</m:FSE.comunicaEventoRicoveroResponse>
+	</env:Body>
+</env:Envelope>

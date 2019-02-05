@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Box xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" 
+	initialize="init();" 
+	removedFromStage="onRemoveStage(event);">
+
+	<mx:Script>
+		<![CDATA[
+			import it.lispa.siss.sebc.middleground.entity.Cittadino;
+			
+			import com.li.dc.sebc.turboFSE.util.UtilDate;
+			import mx.formatters.DateFormatter;
+			//import it.lisit.siss.flex.utility.UtilDate;
+			import mx.events.PropertyChangeEvent;
+			/////////////////////
+			private const SIGN_NULL:String					= "-";
+			
+			[Bindable]
+			public var cittadino:Cittadino;
+			//
+			public var formatter:DateFormatter;
+			//
+			[Bindable]
+			private var dataUltima:String					= "";
+			
+			private var _dataUltimaMod:String				= SIGN_NULL;
+			public function set dataUltimaModifica(value:String):void
+			{
+				var isnan:Boolean	= isNaN( Number( value ) );
+				 
+				// è probabile che sta venendo passato già formattato
+				if(isnan)
+				{
+					_dataUltimaMod = value;
+				}else
+				{
+					_dataUltimaMod = formatData(value);
+				}
+				dataUltima = _dataUltimaMod;
+			}
+			public function get dataUltimaModifica():String
+			{
+				return _dataUltimaMod
+			}
+			/////////////////////////////////////////
+			[Bindable]
+			private var codiceFiscale:String 				= SIGN_NULL;
+			[Bindable]
+			private var codiceSanitario:String 				= SIGN_NULL;
+			[Bindable]
+			private var cognomeCittadino:String 			= SIGN_NULL;
+			[Bindable]
+			private var nomeCittadino:String 				= SIGN_NULL;
+			[Bindable]
+			private var sessoCittadino:String 				= SIGN_NULL;
+			[Bindable]
+			private var dataDiNascitaCittadino:String 		= SIGN_NULL;
+			[Bindable]
+			private var comuneNascitaCittadino:String 		= SIGN_NULL;
+			[Bindable]
+			private var provinciaNascitaCittadino:String 	= SIGN_NULL;
+			[Bindable]
+			private var indirizzoResidenzaCittadino:String 	= SIGN_NULL;
+			[Bindable]
+			private var civicoResidenzaCittadino:String 	= SIGN_NULL;
+			[Bindable]
+			private var comuneResidenzaCittadino:String 	= SIGN_NULL;
+			[Bindable]
+			private var provinciaResidenzaCittadino:String 	= SIGN_NULL;
+			[Bindable]
+			private var indirizzoDomicilioCittadino:String 	= SIGN_NULL;
+			[Bindable]
+			private var civicoDomicilioCittadino:String 	= SIGN_NULL;
+			[Bindable]
+			private var comuneDomicilioCittadino:String 	= SIGN_NULL;
+			[Bindable]
+			private var provinciaDomicilioCittadino:String 	= SIGN_NULL;
+			[Bindable]
+			private var capDomicilioCittadino:String 		= SIGN_NULL;
+			[Bindable]
+			private var codiceAslAppartenenza:String 		= SIGN_NULL;
+			[Bindable]
+			private var descrizioneAslAppartenenza:String 	= SIGN_NULL;
+			[Bindable]
+			private var codiceAslAssistenza:String 			= SIGN_NULL;
+			[Bindable]
+			private var descrizioneAslAssistenza:String 	= SIGN_NULL;
+			[Bindable]
+			private var dataScadenzaIscrizione:String 		= SIGN_NULL;
+			[Bindable]
+			private var dataDecorrenzaIscrizione:String 	= SIGN_NULL;
+			[Bindable]
+			private var statoAssisitito:String 				= SIGN_NULL;
+			/////////////////////////////////////////
+			private function valutaMaxChar(maxChar:uint,str:String=null):String
+			{
+				var mxch:String		= valutaNull(str);
+				return (mxch!=SIGN_NULL) ? mxch.substring(0,maxChar) : mxch;
+			}
+			private function valutaNull(str:String=null):String
+			{
+				if(str==null)return SIGN_NULL;
+				if(str.length==0)return SIGN_NULL;
+				return str;
+			}
+			private function formatData(dt:String=null):String
+			{
+				var nwdt:String		= valutaNull(dt);
+				if(nwdt!=SIGN_NULL)
+				{
+					var data:Date = UtilDate.fromStringToDate( nwdt );
+         			nwdt = formatter.format( data );
+				}
+				return nwdt;
+			}
+			private function createBox():void
+			{
+				this.codiceFiscale 					= valutaNull(cittadino.codiceFiscale);
+				this.codiceSanitario 				= valutaNull((cittadino.assistenza!=null) ? cittadino.assistenza.idAssistito : null);
+				this.cognomeCittadino 				= valutaMaxChar(50,cittadino.cognome);
+				this.nomeCittadino 					= valutaMaxChar(50,cittadino.nome);
+				this.sessoCittadino 				= valutaNull(cittadino.codiceSesso);
+				this.dataDiNascitaCittadino 		= formatData(cittadino.dataNascita);
+				this.comuneNascitaCittadino 		= valutaNull((cittadino.localitaNascita!=null) ? cittadino.localitaNascita.descrizione : null);
+				this.provinciaNascitaCittadino 		= valutaNull((cittadino.localitaNascita!=null) ? cittadino.localitaNascita.provincia : null);
+				this.indirizzoResidenzaCittadino 	= valutaNull((cittadino.residenza!=null) ? cittadino.residenza.indirizzo : null);
+				this.civicoResidenzaCittadino 		= valutaNull((cittadino.residenza!=null) ? cittadino.residenza.civico : null);
+				this.comuneResidenzaCittadino 		= valutaNull((cittadino.residenza!=null && cittadino.residenza.comune!=null) ? cittadino.residenza.comune.descrizione : null);
+				this.provinciaResidenzaCittadino 	= valutaNull((cittadino.residenza!=null && cittadino.residenza.comune!=null) ? cittadino.residenza.comune.provincia : null);
+				this.indirizzoDomicilioCittadino 	= valutaNull((cittadino.domicilio!=null) ? cittadino.domicilio.indirizzo : null);
+				this.civicoDomicilioCittadino 		= valutaNull((cittadino.domicilio!=null) ? cittadino.domicilio.civico : null);
+				this.comuneDomicilioCittadino 		= valutaNull((cittadino.domicilio!=null && cittadino.domicilio.comune!=null) ? cittadino.domicilio.comune.descrizione : null);
+				this.provinciaDomicilioCittadino 	= valutaNull((cittadino.domicilio!=null && cittadino.domicilio.comune!=null) ? cittadino.domicilio.comune.provincia : null);
+				this.capDomicilioCittadino 			= valutaNull((cittadino.domicilio!=null) ? cittadino.domicilio.cap : null);
+				this.codiceAslAppartenenza 			= valutaNull((cittadino.assistenza!=null) ? cittadino.assistenza.siglaAslAppartenenza : null);
+				this.descrizioneAslAppartenenza 	= valutaNull((cittadino.assistenza!=null) ? cittadino.assistenza.descrizioneAslAppartenenza : null);
+				this.codiceAslAssistenza 			= valutaNull((cittadino.assistenza!=null) ? cittadino.assistenza.siglaAslAssistenza: null);
+				this.descrizioneAslAssistenza 		= valutaNull((cittadino.assistenza!=null) ? cittadino.assistenza.descrizioneAslAssistenza : null);
+				this.statoAssisitito 				= valutaNull((cittadino.assistenza!=null) ? cittadino.assistenza.statoAssistito : null);
+				this.dataDecorrenzaIscrizione 		= formatData((cittadino.assistenza!=null) ? cittadino.assistenza.dataDecorrenzaIscrizione : null);
+				this.dataScadenzaIscrizione 		= formatData((cittadino.assistenza!=null) ? cittadino.assistenza.dataScadenzaIscrizione : null); 
+			}
+			private function init():void
+			{
+				formatter = new DateFormatter();
+         		formatter.formatString	= "DD/MM/YYYY";
+				this.addEventListener(PropertyChangeEvent.PROPERTY_CHANGE,onChanceProperty);
+			}
+			private function onRemoveStage(e:Event):void
+			{
+				this.removeEventListener(PropertyChangeEvent.PROPERTY_CHANGE,onChanceProperty);
+			}
+			private function onChanceProperty(e:PropertyChangeEvent):void
+			{
+				if(e.property=="cittadino")
+				{
+					if(e.newValue!=null)
+					{
+						createBox();
+					}else
+					{
+						//reset();
+						clear();
+					}
+				}
+			}
+			//////////////////////////
+			private function clear():void
+			{
+				this.codiceFiscale 					= SIGN_NULL;
+				this.codiceSanitario 				= SIGN_NULL;
+				this.cognomeCittadino 				= SIGN_NULL;
+				this.nomeCittadino 					= SIGN_NULL;
+				this.sessoCittadino 				= SIGN_NULL;
+				this.dataDiNascitaCittadino 		= SIGN_NULL;
+				this.comuneNascitaCittadino 		= SIGN_NULL;
+				this.provinciaNascitaCittadino 		= SIGN_NULL;
+				this.indirizzoResidenzaCittadino 	= SIGN_NULL;
+				this.civicoResidenzaCittadino 		= SIGN_NULL;
+				this.comuneResidenzaCittadino 		= SIGN_NULL;
+				this.provinciaResidenzaCittadino 	= SIGN_NULL;
+				this.indirizzoDomicilioCittadino 	= SIGN_NULL;
+				this.civicoDomicilioCittadino 		= SIGN_NULL;
+				this.comuneDomicilioCittadino 		= SIGN_NULL;
+				this.provinciaDomicilioCittadino 	= SIGN_NULL;
+				this.capDomicilioCittadino 			= SIGN_NULL;
+				this.codiceAslAppartenenza 			= SIGN_NULL;
+				this.descrizioneAslAppartenenza 	= SIGN_NULL;
+				this.codiceAslAssistenza 			= SIGN_NULL;
+				this.descrizioneAslAssistenza 		= SIGN_NULL;
+				this.statoAssisitito 				= SIGN_NULL;
+				this.dataDecorrenzaIscrizione 		= SIGN_NULL;
+				this.dataScadenzaIscrizione 		= SIGN_NULL; 
+			}
+			public function reset():void
+			{
+				this.cittadino	= null;
+			}
+		]]>
+	</mx:Script>
+		
+	<mx:VBox width="100%" verticalAlign="middle" horizontalAlign="center" verticalGap="5" >
+		<!-- TITOLO: DATI ANAGRAFICI -->
+		<mx:HBox width="100%" horizontalAlign="center" verticalAlign="middle">
+			<!-- Data ultima modifica -->
+			<mx:HBox width="43%">
+				<mx:Label text="Data Ultima Modifica:" />
+				<mx:Text text="{this.dataUltima}" />
+			</mx:HBox>
+			<mx:Label text="DATI ANAGRAFICI" fontWeight="bold"/> 
+		</mx:HBox>	
+		<mx:HBox width="100%" horizontalGap="2">
+			
+			<!-- Codice Fiscale -->
+			<mx:VBox verticalGap="0">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Codice Fiscale" width="100%" />
+				</mx:Box>
+				<mx:HBox  width="250" styleName="datiOperatoreBox" horizontalAlign="center">
+					<mx:Text text="{this.codiceFiscale}" />
+				</mx:HBox>
+			</mx:VBox>
+			
+		 
+			<!-- Codice Sanitario -->
+			<mx:VBox verticalGap="0" width="40%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Codice Sanitario" width="100%" />
+				</mx:Box>
+				<mx:HBox width="100%" styleName="datiOperatoreBox" horizontalAlign="center">
+					<mx:Text text="{this.codiceSanitario}" />
+				</mx:HBox>
+			</mx:VBox>
+			<!-- Cognome -->
+			<mx:VBox verticalGap="0" width="40%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Cognome" width="100%" />
+				</mx:Box>
+				<mx:HBox width="100%" styleName="datiOperatoreBox" horizontalAlign="center">
+					<mx:Text text="{this.cognomeCittadino}" />
+				</mx:HBox>
+			</mx:VBox>
+			
+			<!-- Nome -->
+			<mx:VBox verticalGap="0" width="40%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Nome" width="100%" />
+				</mx:Box>
+				<mx:HBox width="100%" styleName="datiOperatoreBox" horizontalAlign="center">
+					<mx:Text  text="{this.nomeCittadino}" />
+				</mx:HBox>
+			</mx:VBox>
+		</mx:HBox>
+		<mx:HBox  width="100%" horizontalGap="2">
+			<!-- Sesso -->
+			<mx:VBox verticalGap="0">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Sesso" width="100%" />
+				</mx:Box>
+				<mx:HBox width="50" styleName="datiOperatoreBox" horizontalAlign="center">
+					<mx:Text text="{this.sessoCittadino}" />
+				</mx:HBox>
+			</mx:VBox>				
+			
+			<!-- Data di nascita -->
+			<mx:VBox verticalGap="0">
+				<mx:Box styleName="testataOperatoreBox" width="100">
+					<mx:Label text="Data di Nascita" width="100%" />
+				</mx:Box>
+				<mx:HBox width="100%" styleName="datiOperatoreBox" horizontalAlign="center">
+					<mx:Text text="{this.dataDiNascitaCittadino}" />
+				</mx:HBox>
+			</mx:VBox>	
+
+			<!-- Comune di nascita -->
+			<mx:VBox verticalGap="0" width="80%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Comune" width="100%" />
+				</mx:Box>
+				<mx:HBox styleName="datiOperatoreBox" horizontalAlign="center" width="100%">
+					<mx:Text text="{this.comuneNascitaCittadino}"  />
+				</mx:HBox>
+			</mx:VBox>					
+
+			<!-- Provincia di nascita -->
+			<mx:VBox verticalGap="0" width="10%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Provincia" width="100%" />
+				</mx:Box>
+				<mx:HBox styleName="datiOperatoreBox" horizontalAlign="center" width="100%">
+					<mx:Text text="{this.provinciaNascitaCittadino}" />
+				</mx:HBox>
+			</mx:VBox>
+		</mx:HBox>
+		
+		
+		<!-- TITOLO: DATI RESIDENZA -->
+		<mx:HBox width="100%" horizontalAlign="center" verticalAlign="middle">
+			<mx:Label text="DATI RESIDENZA" fontWeight="bold"/> 
+		</mx:HBox>	
+		<mx:HBox width="100%" horizontalGap="2">
+			
+			<!-- Indirizzo -->
+			<mx:VBox verticalGap="0" width="40%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Indirizzo" width="100%" />
+				</mx:Box>
+				<mx:HBox styleName="datiOperatoreBox" horizontalAlign="center" width="100%">
+					<mx:Text text="{this.indirizzoResidenzaCittadino}" />
+				</mx:HBox>
+			</mx:VBox>
+			
+			<!-- Civico -->
+			<mx:VBox verticalGap="0" width="10%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Civico" width="100%" />
+				</mx:Box>
+				<mx:HBox styleName="datiOperatoreBox" horizontalAlign="center" width="100%">
+					<mx:Text text="{this.civicoResidenzaCittadino}" />
+				</mx:HBox>
+			</mx:VBox>
+			
+			<!-- Comune di residenza -->
+			<mx:VBox verticalGap="0" width="40%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Comune" width="100%" />
+				</mx:Box>
+				<mx:HBox styleName="datiOperatoreBox" horizontalAlign="center" width="100%">
+					<mx:Text text="{this.comuneResidenzaCittadino}"  />
+				</mx:HBox>
+			</mx:VBox>	
+			
+			<!-- Provincia di residenza -->
+			<mx:VBox verticalGap="0" width="10%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Provincia" width="100%" />
+				</mx:Box>
+				<mx:HBox styleName="datiOperatoreBox" horizontalAlign="center" width="100%">
+					<mx:Text text="{this.provinciaResidenzaCittadino}" />
+				</mx:HBox>
+			</mx:VBox>
+			
+		</mx:HBox>
+		
+		<!-- TITOLO: DATI DOMICILIO -->
+		<mx:HBox width="100%" horizontalAlign="center" verticalAlign="middle">
+			<mx:Label text="DATI DOMICILIO" fontWeight="bold"/> 
+		</mx:HBox>	
+		<mx:HBox width="100%" horizontalGap="2">
+			
+			<!-- Indirizzo -->
+			<mx:VBox verticalGap="0" width="40%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Indirizzo" width="100%" />
+				</mx:Box>
+				<mx:HBox styleName="datiOperatoreBox" horizontalAlign="center" width="100%">
+					<mx:Text text="{this.indirizzoDomicilioCittadino}" />
+				</mx:HBox>
+			</mx:VBox>
+			
+			<!-- Civico -->
+			<mx:VBox verticalGap="0" width="10%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Civico" width="100%" />
+				</mx:Box>
+				<mx:HBox styleName="datiOperatoreBox" horizontalAlign="center" width="100%">
+					<mx:Text text="{this.civicoDomicilioCittadino}" />
+				</mx:HBox>
+			</mx:VBox>
+			
+			<!-- Comune di Domicilio -->
+			<mx:VBox verticalGap="0" width="40%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Comune" width="100%" />
+				</mx:Box>
+				<mx:HBox styleName="datiOperatoreBox" horizontalAlign="center" width="100%">
+					<mx:Text text="{this.comuneDomicilioCittadino}" />
+				</mx:HBox>
+			</mx:VBox>
+			
+			<!-- Provincia di Domicilio -->
+			<mx:VBox verticalGap="0" width="10%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Provincia" width="100%" />
+				</mx:Box>
+				<mx:HBox styleName="datiOperatoreBox" horizontalAlign="center" width="100%">
+					<mx:Text text="{this.provinciaDomicilioCittadino}" />
+				</mx:HBox>
+			</mx:VBox>
+			
+			<!-- CAP di Domicilio -->
+			<mx:VBox verticalGap="0" width="10%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="CAP" width="100%" />
+				</mx:Box>
+				<mx:HBox styleName="datiOperatoreBox" horizontalAlign="center" width="100%">
+					<mx:Text text="{this.capDomicilioCittadino}" />
+				</mx:HBox>
+			</mx:VBox>
+		</mx:HBox>
+		
+		<!-- TITOLO: DATI ASL -->
+		<mx:HBox width="100%" horizontalAlign="center" verticalAlign="middle">
+			<mx:Label text="DATI ASL" fontWeight="bold"/> 
+		</mx:HBox>	
+		<mx:HBox width="100%" horizontalGap="2">
+			
+			<!-- ASL Appartenenza: codice / descirzione -->
+			<mx:VBox verticalGap="0" width="50%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="ASL Appartenenza" width="100%" />
+				</mx:Box>
+				<mx:HBox styleName="datiOperatoreBox" horizontalAlign="center" width="100%">
+					<mx:Text text="{this.codiceAslAppartenenza}" width="20%"/>
+					<mx:Text text="{this.descrizioneAslAppartenenza}" width="80%"/>
+				</mx:HBox>
+			</mx:VBox>
+			
+			<!-- ASL Assistenza: codice / descirzione -->
+			<mx:VBox verticalGap="0" width="50%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="ASL Assistenza" width="100%" />
+				</mx:Box>
+				<mx:HBox styleName="datiOperatoreBox" horizontalAlign="center" width="100%">
+					<mx:Text text="{this.codiceAslAssistenza}" width="20%"/>
+					<mx:Text text="{this.descrizioneAslAssistenza}" width="80%"/>
+				</mx:HBox>
+			</mx:VBox>
+		</mx:HBox>
+		
+		<!-- TITOLO: DATI ISCRIZIONE -->
+		<mx:HBox width="100%" horizontalAlign="center" verticalAlign="middle">
+			<mx:Label text="DATI ISCRIZIONE" fontWeight="bold"/> 
+		</mx:HBox>	
+		<mx:HBox width="100%" horizontalGap="2">
+			
+			<!-- Data decorrenza -->
+			<mx:VBox verticalGap="0" width="33%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Data decorrenza" width="100%" />
+				</mx:Box>
+				<mx:HBox styleName="datiOperatoreBox" horizontalAlign="center" width="100%">
+					<mx:Text text="{this.dataDecorrenzaIscrizione}" />
+				</mx:HBox>
+			</mx:VBox>
+			
+			<!-- Data Scadenza -->
+			<mx:VBox verticalGap="0" width="33%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Data Scadenza" width="100%" />
+				</mx:Box>
+				<mx:HBox styleName="datiOperatoreBox" horizontalAlign="center" width="100%">
+					<mx:Text text="{this.dataScadenzaIscrizione}" />
+				</mx:HBox>
+			</mx:VBox>
+			
+			<!-- Stato Assistito -->
+			<mx:VBox verticalGap="0" width="33%">
+				<mx:Box styleName="testataOperatoreBox" width="100%">
+					<mx:Label text="Stato Assisitito" width="100%" />
+				</mx:Box>
+				<mx:HBox styleName="datiOperatoreBox" horizontalAlign="center" width="100%">
+					<mx:Text text="{this.statoAssisitito}" />
+				</mx:HBox>
+			</mx:VBox>
+		</mx:HBox>
+	</mx:VBox>
+	
+</mx:Box>

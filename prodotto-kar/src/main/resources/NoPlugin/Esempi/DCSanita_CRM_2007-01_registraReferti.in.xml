@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<TestInfo>
+	<Autore></Autore>
+	<DataPreparazione>31/01/2006</DataPreparazione>
+	<CodiceTest>IN.8570185001</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>F</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>Referto con 2 prestazioni: "0091221" non associata ad una prescrizione, "389394" associata alla prescrizione con IUP="TXX2CRM807". Le causali di oscuramento sono tutte settate a "NO".</DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>Referto registrato con URI='refertoSpecialistico.Dichiarativo.00001' in chiaro.</DescrizioneRisultatoAtteso>
+</TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap-env:Header>
+		<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+			<Transport>
+				<Mode>Sync</Mode>
+				<Dest>DCSanita</Dest>
+			</Transport>
+			<Security>
+				<FunContext>
+					<credential>
+						<validity>
+							<emittedDate>15/11/2005+10:59:18,531</emittedDate>
+							<sessionMaxTime>15/11/2005+10:59:18,531</sessionMaxTime>
+						</validity>
+						<vrs>
+							<mjr>1</mjr>
+							<min>0</min>
+						</vrs>
+						<ctf>
+							<reg>
+								<cod>1</cod>
+								<des/>
+							</reg>
+							<app>
+								<cod>1</cod>
+								<des/>
+							</app>
+							<pro>
+								<cod>1</cod>
+								<des/>
+							</pro>
+							<ter>
+								<cod>1</cod>
+								<des/>
+							</ter>
+							<str>
+								<cod>030960</cod>
+								<des/>
+							</str>
+							<pre>
+								<cod/>
+								<des/>
+							</pre>
+							<rep>
+								<cod/>
+								<des/>
+							</rep>
+						</ctf>
+						<role>
+							<code>13</code>
+							<description>Specialista Ospedaliero</description>
+						</role>
+						<userId>RMPMRA63A20M952K</userId>
+						<FirstName>MAURO</FirstName>
+						<LastName>RAMPI</LastName>
+						<iupSeed>12345</iupSeed>
+					</credential>
+				</FunContext>
+				<CitCardPresent>false</CitCardPresent>
+				<CitAuth>false</CitAuth>
+				<CitCF>TCRMXX10X00X000X</CitCF>
+				<CitSmartCardSN>TESTCRM1</CitSmartCardSN>
+			</Security>
+			<Sla>
+				<Log>
+					<Global>
+						<TrackID>1132048757203</TrackID>
+						<Timestamp>15/11/2005+10:59:18,562</Timestamp>
+					</Global>
+				</Log>
+			</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="9.1"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+		<m:CRM.registraReferti xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/CRM/2007-01/registraReferti/" dataSetVersion="2007-01">
+			<refertoSpecialisticoAutorizzato>
+				<ll:CRSlegalContent xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" type="Text" opLegSign="true" opWeakSign="false" feSign="false" verify="OK" tStamp="true">
+					<Value>TUlNVBH=</Value>
+					<VerifyInfo>
+						<Value>DQpJbyBzb3R0b3Njcml0dG8gTUFVUk8gLSBSQU1QSSAtIFJNUE1SQTYzQTIwTTk1MksNCmRpY2hpYXJvIGNoZSBpbCByZWZlcnRvIGFzc29jaWF0byBhbGxhL2UgcHJlc3RhemlvbmUvaSAwMDkxMjIxLCAzODkzOTQsIHJlbGF0aXZhIGFsbGEgcHJlc2NyaXppb25lIFRYWDJDUk04MDcsIHJlZGF0dG8gaW4gZGF0YSAyNC8wNi8yMDAyIC0gMTA6MTA6MTAgDQpwcmVzc28gMDMwOTYwIC0gMDMwOTAzMDAsIHJpc3VsdGE6DQoNCi0gTm9uIE9zY3VyYXRvIHJlbGF0aXZhbWVudGUgYWxsYSBub3JtYSBjaGUgcHJvdGVnZ2UgaSBjaXR0YWRpbmkgc2llcm9wb3NpdGl2aQ0KLSBOb24gT3NjdXJhdG8gcmVsYXRpdmFtZW50ZSBhbGxhIG5vcm1hIGNoZSBwcm90ZWdnZSBpIGNpdHRhZGluaSB0b3NzaWNvZGlwZW5kZW50aQ0KLSBOb24gT3NjdXJhdG8gcmVsYXRpdmFtZW50ZSBhbGxhIG5vcm1hIGNoZSBwcm90ZWdnZSBpIGNpdHRhZGluaSBjaGUgaGFubm8gc3ViaXRvIA0KaW50ZXJydXppb25lIHZvbG9udGFyaWEgZGkgZ3JhdmlkYW56YQ0KLSBOb24gT3NjdXJhdG8gcmVsYXRpdmFtZW50ZSBhbGxhIG5vcm1hIGNoZSBwcm90ZWdnZSBpIGNpdHRhZGluaSBjaGUgaGFubm8gc3ViaXRvIHZpb2xlbnplDQoNCk5vbiByaXN1bHRhIHBlcnZlbnV0YSByaWNoaWVzdGEgZGkgb3NjdXJhbWVudG8gdm9sb250YXJpbyBkYSBwYXJ0ZSBkZWwgY2l0dGFkaW5vDQoNCg0KSkpKSkpK</Value>
+						<Sign actor="OpLeg" result="OK">
+							<DN>DistinguishedName</DN>
+							<Expiry>ExpiryDateTime</Expiry>
+							<Serial>SerialNumber</Serial>
+							<Role>Ruolo</Role>
+							<CN>CommonName</CN>
+							<SigningTime>12-01-2003 12:12:12</SigningTime>
+						</Sign>
+						<TimeStampInfo>
+							<Stamp>DateTime</Stamp>
+							<Payload>base64.blob</Payload>
+							<SN>SerialNumber</SN>
+							<CADN>DistinguishedName</CADN>
+							<CAPolicy>TS</CAPolicy>
+							<Hash>blob</Hash>
+						</TimeStampInfo>
+					</VerifyInfo>
+				</ll:CRSlegalContent>
+				<at:CRSattachment xmlns:at="http://www.crs.lombardia.it/schemas/mw/2004-01/attachment/"/>
+				<st:CRSstream xmlns:st="http://www.crs.lombardia.it/schemas/mw/2004-01/stream/"/>
+				<numeroProgressivo>01</numeroProgressivo>
+				<idServizioRefertazione>refertoSpecialisticoDichiarativo</idServizioRefertazione>
+				<idReferto>00001</idReferto>
+				<idStruttura>030960</idStruttura>
+				<idSubStruttura>03090300</idSubStruttura>
+				<idTipoReferto>01</idTipoReferto>
+				<data>20020624</data>
+				<linkImmagine/>
+				<tipoImmagine/>
+				<linkDocumentoCDA2/>
+				<reteDiPatologia/>
+				<noteReperibilita>note reperibilita</noteReperibilita>
+				<idUnitaOperativaClinica>AAAAAAAAAA</idUnitaOperativaClinica>
+				<hashReferto>JJJJJJ</hashReferto>
+				<ora>10:10:10</ora>
+				<versioneXSLT>002</versioneXSLT>
+				<cittadino>
+					<idCittadinoNonSISS/>
+					<idAssistito/>
+					<codiceFiscaleCittadino>TCRMXX10X00X000X</codiceFiscaleCittadino>
+					<cognomeCittadino>COGNOME</cognomeCittadino>
+					<nomeCittadino>NOME</nomeCittadino>
+					<idNazioneNascita/>
+					<sessoCittadino/>
+					<dataNascitaCittadino/>
+					<comuneNascitaCittadino/>
+					<indirizzoResidenza/>
+					<localitaResidenza/>
+					<indirizzoDomicilio/>
+					<localitaDomicilio/>
+					<numeroTelefono/>
+					<asl/>
+					<regione/>
+					<cittadinanza/>
+				</cittadino>
+				<medicoRefertante>
+					<codiceFiscale>RMPMRA63A20M952K</codiceFiscale>
+					<cognome>RAMPI</cognome>
+					<nome>MAURO</nome>
+				</medicoRefertante>
+				<medicoAutorizzante>
+					<codiceFiscaleAutorizzante>RMPMRA63A20M952K</codiceFiscaleAutorizzante>
+					<cognomeAutorizzante>RAMPI</cognomeAutorizzante>
+					<nomeAutorizzante>MAURO</nomeAutorizzante>
+				</medicoAutorizzante>
+				<prestazioniAssociate>
+					<prestazione>
+						<idPrescrizione/>
+						<idPrestazione>0091221</idPrestazione>
+						<codiceRur/>
+						<idDisciplina>01</idDisciplina>
+						<quantitaErogata>1</quantitaErogata>
+						<dataErogazione>20020624</dataErogazione>
+						<prestazionePrescritta/>
+					</prestazione>
+					<prestazione>
+						<idPrescrizione>TXX2CRM807</idPrescrizione>
+						<idPrestazione>389394</idPrestazione>
+						<codiceRur/>
+						<idDisciplina>01</idDisciplina>
+						<quantitaErogata>1</quantitaErogata>
+						<dataErogazione>20020624</dataErogazione>
+						<prestazionePrescritta/>
+					</prestazione>
+				</prestazioniAssociate>
+				<oscuramento>
+					<tipoOscuramento>
+						<codiceCausaleOscuramento>10</codiceCausaleOscuramento>
+						<valoreOscuramento>NO</valoreOscuramento>
+					</tipoOscuramento>
+					<tipoOscuramento>
+						<codiceCausaleOscuramento>20</codiceCausaleOscuramento>
+						<valoreOscuramento>NO</valoreOscuramento>
+					</tipoOscuramento>
+					<tipoOscuramento>
+						<codiceCausaleOscuramento>30</codiceCausaleOscuramento>
+						<valoreOscuramento>NO</valoreOscuramento>
+					</tipoOscuramento>
+					<tipoOscuramento>
+						<codiceCausaleOscuramento>40</codiceCausaleOscuramento>
+						<valoreOscuramento>NO</valoreOscuramento>
+					</tipoOscuramento>
+					<tipoOscuramento>
+						<codiceCausaleOscuramento>50</codiceCausaleOscuramento>
+						<valoreOscuramento>NO</valoreOscuramento>
+					</tipoOscuramento>
+				</oscuramento>
+				<autorizzazioneConsultazione>NO</autorizzazioneConsultazione>
+			</refertoSpecialisticoAutorizzato>
+		</m:CRM.registraReferti>
+	</soap-env:Body>
+</soap-env:Envelope>

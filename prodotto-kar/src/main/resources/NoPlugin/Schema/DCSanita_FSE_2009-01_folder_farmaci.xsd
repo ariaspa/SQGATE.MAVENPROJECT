@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_farmaci/" targetNamespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_farmaci/" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:complexType name="strutturaErogazioneType">
+		<xs:all>
+			<xs:element name="idFarmacia" type="xs:string"/>
+			<xs:element name="descrizioneFarmacia" type="xs:string"/>
+			<xs:element name="idASLAppartenenza" type="xs:string"/>
+			<xs:element name="descrizioneASLAppartenenza" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="farmacoType">
+		<xs:all>
+			<xs:element name="idFarmaco" type="xs:string"/>
+			<xs:element name="denominazioneCommercialeFarmaco" type="xs:string"/>
+			<xs:element name="idPrincipioAttivoFarmaco" type="xs:string"/>
+			<xs:element name="descrizionePrincipioAttivoFarmaco" type="xs:string"/>
+			<xs:element name="idClasseTerapeuticaFarmaco" type="xs:string"/>
+			<xs:element name="descrizioneClasseTerapeuticaFarmaco" type="xs:string"/>
+			<xs:element name="quantitaConfezioni" type="xs:string"/>
+			<xs:element name="unitaMisura" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="elencoFarmaciErogatiType">
+		<xs:sequence>
+			<xs:element name="farmaco" type="m:farmacoType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="eventoFarmaceuticoType">
+		<xs:all>
+			<xs:element name="strutturaErogazione" type="m:strutturaErogazioneType"/>
+			<xs:element name="idTipoErogazione" type="xs:string"/>
+			<xs:element name="IUP" type="xs:string"/>
+			<xs:element name="dataErogazione" type="xs:string"/>
+			<xs:element name="elencoFarmaciErogati" type="m:elencoFarmaciErogatiType"/>
+		</xs:all>
+	</xs:complexType>
+</xs:schema>

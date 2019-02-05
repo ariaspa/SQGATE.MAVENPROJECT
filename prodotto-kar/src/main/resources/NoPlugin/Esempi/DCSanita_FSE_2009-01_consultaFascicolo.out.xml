@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<SOAP-ENV:Header>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/" a:AppContext="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Reply servProd="FSE">
+				<Subject>SAVersion 1.3.1_05</Subject>
+			</Reply>
+		</a:AppContext>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+		<m:FSE.consultaFascicoloResponse xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/consultaFascicolo/">
+			<param>
+				<nPagine>1</nPagine>
+				<consultaFascicolo>
+					<cittadino>
+						<idCittadino>CTRLBR84S15G388T</idCittadino>
+					</cittadino>
+					<fascicolo>
+						<listaFolder>
+							<folder>
+								<descrizioneFolder>PRERICOVERI</descrizioneFolder>
+								<etichettaFolder>PRERICOVERI</etichettaFolder>
+								<idTipoFolder>80</idTipoFolder>
+								<idFolder/>
+								<attributiSpecificiFolder/>
+								<listaDCE/>
+								<nLivelloFolder>1</nLivelloFolder>
+								<idStatoFolder/>
+								<idTipoFolderPadre/>
+							</folder>
+							<folder>
+								<descrizioneFolder>PRERICOVERO</descrizioneFolder>
+								<etichettaFolder>numeroPrericovero</etichettaFolder>
+								<idTipoFolder>81</idTipoFolder>
+								<idFolder>184472781</idFolder>
+								<attributiSpecificiFolder>
+									<c:attributi_prericovero xmlns:c="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/attributi_prericovero/">
+										<strutturaErogazione>
+											<idPresidio>03090300</idPresidio>
+											<descrizioneEnte>A.O. OSPEDALE DI LECCO - LECCO</descrizioneEnte>
+											<idEnte>030960</idEnte>
+											<descrizionePresidio>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizionePresidio>
+										</strutturaErogazione>
+									</c:attributi_prericovero>
+								</attributiSpecificiFolder>
+								<listaDCE>
+									<setDocumentale>
+										<idTipoDocumento>01</idTipoDocumento>
+										<strutturaArchiviazione>
+											<idEnte>030960</idEnte>
+											<descrizioneEnte>A.O. OSPEDALE DI LECCO - LECCO</descrizioneEnte>
+										</strutturaArchiviazione>
+										<idTipoDocumentoLOINC/>
+										<idSetDocumenti>3440504</idSetDocumenti>
+										<strutturaCreazione>
+											<descrizioneUnitaOperativaClinica>CARDIOLOGIA</descrizioneUnitaOperativaClinica>
+											<idUnitaOperativaClinica>0801</idUnitaOperativaClinica>
+											<descrizionePresidio>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizionePresidio>
+											<idEnte>030960</idEnte>
+											<descrizioneEnte>A.O. OSPEDALE DI LECCO - LECCO</descrizioneEnte>
+											<idPresidio>03090300</idPresidio>
+										</strutturaCreazione>
+										<noteReperibilita>qdnifnqwj ijqf jwipq fj ioqwe jfi weqp jfiwej fipwej pfoq</noteReperibilita>
+										<statoAutorizzazioneDocumento>SI</statoAutorizzazioneDocumento>
+										<autoreDocumento>
+											<cognome>MEDICOBUONO</cognome>
+											<ruolo/>
+											<nome>PEPPINO</nome>
+											<codiceFiscale>MDCPPN55M28F205H</codiceFiscale>
+										</autoreDocumento>
+										<idDocumentoRiferimento>0</idDocumentoRiferimento>
+										<dataOraCreazione>20100304110345</dataOraCreazione>
+										<naturaAggiornamento>STD</naturaAggiornamento>
+										<descrizioneReteDiPatologia>RETE UDITO</descrizioneReteDiPatologia>
+										<nVersioneDocumentoRiferimento/>
+										<listaDocumenti>
+											<documento>
+												<URI>030960.REPTEST.04b</URI>
+												<firmato>S</firmato>
+												<validazioneSchema/>
+												<algoritmoHash>01</algoritmoHash>
+												<hashDocumento>lfijlisfhahfih84357348907tjh89uifgo489o34h89</hashDocumento>
+												<linguaggioDocumento>ITALIANO</linguaggioDocumento>
+												<sizeDocumento>35</sizeDocumento>
+												<formato>TXT</formato>
+											</documento>
+										</listaDocumenti>
+										<idAggregazioneDocumento>3440504</idAggregazioneDocumento>
+										<oscuramento>
+											<tipoOscuramento>
+												<valoreOscuramento>N</valoreOscuramento>
+												<idCausaleOscuramento>10</idCausaleOscuramento>
+											</tipoOscuramento>
+											<tipoOscuramento>
+												<valoreOscuramento>N</valoreOscuramento>
+												<idCausaleOscuramento>20</idCausaleOscuramento>
+											</tipoOscuramento>
+											<tipoOscuramento>
+												<valoreOscuramento>N</valoreOscuramento>
+												<idCausaleOscuramento>30</idCausaleOscuramento>
+											</tipoOscuramento>
+											<tipoOscuramento>
+												<valoreOscuramento>N</valoreOscuramento>
+												<idCausaleOscuramento>40</idCausaleOscuramento>
+											</tipoOscuramento>
+											<tipoOscuramento>
+												<valoreOscuramento>N</valoreOscuramento>
+												<idCausaleOscuramento>50</idCausaleOscuramento>
+											</tipoOscuramento>
+										</oscuramento>
+										<idDisciplinaErogazione>08</idDisciplinaErogazione>
+										<nVersione/>
+										<reteDiPatologia>UDT</reteDiPatologia>
+										<flagCopiato>N</flagCopiato>
+										<listaAllegati>
+											<allegato>
+												<etichettaAllegato>doc</etichettaAllegato>
+												<linkAllegato>documenti</linkAllegato>
+												<formatoAllegato>Immagine DICOM consultabile via WEBSISS</formatoAllegato>
+											</allegato>
+											<allegato>
+												<etichettaAllegato>doc</etichettaAllegato>
+												<linkAllegato>http://www.house.md.san/tacl1s1.jpg</linkAllegato>
+												<formatoAllegato>Immagine DICOM consultabile via WEBSISS</formatoAllegato>
+											</allegato>
+										</listaAllegati>
+										<descrizioneTipoDocumento>REFERTO SPECIALISTICO</descrizioneTipoDocumento>
+										<attributiSpecificiDCE>
+											<attributi_referto>
+												<idPresidio>03090300</idPresidio>
+												<numeroPrericovero>2009001001</numeroPrericovero>
+												<descrizionePresidio>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizionePresidio>
+												<prestazioniAssociate>
+													<prestazione>
+														<idPrestazioneSISS>0090033</idPrestazioneSISS>
+														<IUP/>
+														<descrizionePrestazioneSISS>ACIDO SIALICO</descrizionePrestazioneSISS>
+														<quantitaErogata/>
+														<flagAggiuntiva/>
+													</prestazione>
+												</prestazioniAssociate>
+											</attributi_referto>
+										</attributiSpecificiDCE>
+										<caratterizzazioniCliniche>
+											<caratterizzazione>
+												<dizionario>2.16.840.1.113883.6.103</dizionario>
+												<codice>20224</codice>
+											</caratterizzazione>
+											<caratterizzazione>
+												<dizionario>2.16.840.1.113883.6.3</dizionario>
+												<codice>20230</codice>
+											</caratterizzazione>
+										</caratterizzazioniCliniche>
+										<descrizioneDisciplinaErogazione>CARDIOLOGIA</descrizioneDisciplinaErogazione>
+									</setDocumentale>
+									<setDocumentale>
+										<idTipoDocumento>02</idTipoDocumento>
+										<strutturaArchiviazione>
+											<idEnte>030960</idEnte>
+											<descrizioneEnte>A.O. OSPEDALE DI LECCO - LECCO</descrizioneEnte>
+										</strutturaArchiviazione>
+										<idTipoDocumentoLOINC/>
+										<idSetDocumenti>3440505</idSetDocumenti>
+										<strutturaCreazione>
+											<descrizioneUnitaOperativaClinica>CARDIOLOGIA</descrizioneUnitaOperativaClinica>
+											<idUnitaOperativaClinica>0801</idUnitaOperativaClinica>
+											<descrizionePresidio>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizionePresidio>
+											<idEnte>030960</idEnte>
+											<descrizioneEnte>A.O. OSPEDALE DI LECCO - LECCO</descrizioneEnte>
+											<idPresidio>03090300</idPresidio>
+										</strutturaCreazione>
+										<noteReperibilita>qdnifnqwj ijqf jwipq fj ioqwe jfi weqp jfiwej fipwej pfoq</noteReperibilita>
+										<statoAutorizzazioneDocumento>SI</statoAutorizzazioneDocumento>
+										<autoreDocumento>
+											<cognome>MEDICOBUONO</cognome>
+											<ruolo/>
+											<nome>PEPPINO</nome>
+											<codiceFiscale>MDCPPN55M28F205H</codiceFiscale>
+										</autoreDocumento>
+										<idDocumentoRiferimento>0</idDocumentoRiferimento>
+										<dataOraCreazione>20100304110346</dataOraCreazione>
+										<naturaAggiornamento>STD</naturaAggiornamento>
+										<descrizioneReteDiPatologia>RETE UDITO</descrizioneReteDiPatologia>
+										<nVersioneDocumentoRiferimento/>
+										<listaDocumenti>
+											<documento>
+												<URI>030960.REPTEST.uauauauauauauau</URI>
+												<firmato>S</firmato>
+												<validazioneSchema/>
+												<algoritmoHash>01</algoritmoHash>
+												<hashDocumento>lfijlisfhahfih84357348907tjh89uifgo489o34h89</hashDocumento>
+												<linguaggioDocumento>ITALIANO</linguaggioDocumento>
+												<sizeDocumento>35</sizeDocumento>
+												<formato>TXT</formato>
+											</documento>
+										</listaDocumenti>
+										<idAggregazioneDocumento>3440505</idAggregazioneDocumento>
+										<oscuramento/>
+										<idDisciplinaErogazione>08</idDisciplinaErogazione>
+										<nVersione/>
+										<reteDiPatologia>UDT</reteDiPatologia>
+										<flagCopiato>N</flagCopiato>
+										<listaAllegati>
+											<allegato>
+												<etichettaAllegato>doc</etichettaAllegato>
+												<linkAllegato>documenti</linkAllegato>
+												<formatoAllegato>Immagine DICOM consultabile via WEBSISS</formatoAllegato>
+											</allegato>
+											<allegato>
+												<etichettaAllegato>doc</etichettaAllegato>
+												<linkAllegato>http://www.house.md.san/tacl1s1.jpg</linkAllegato>
+												<formatoAllegato>Immagine DICOM consultabile via WEBSISS</formatoAllegato>
+											</allegato>
+										</listaAllegati>
+										<descrizioneTipoDocumento>REFERTO SPECIALISTICO LABORATORIO</descrizioneTipoDocumento>
+										<attributiSpecificiDCE>
+											<attributi_referto>
+												<idPresidio>03090300</idPresidio>
+												<numeroPrericovero>2009001001</numeroPrericovero>
+												<descrizionePresidio>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizionePresidio>
+												<prestazioniAssociate>
+													<prestazione>
+														<idPrestazioneSISS>0090033</idPrestazioneSISS>
+														<IUP/>
+														<descrizionePrestazioneSISS>ACIDO SIALICO</descrizionePrestazioneSISS>
+														<quantitaErogata/>
+														<flagAggiuntiva/>
+													</prestazione>
+												</prestazioniAssociate>
+											</attributi_referto>
+										</attributiSpecificiDCE>
+										<caratterizzazioniCliniche>
+											<caratterizzazione>
+												<dizionario>2.16.840.1.113883.6.103</dizionario>
+												<codice>20224</codice>
+											</caratterizzazione>
+											<caratterizzazione>
+												<dizionario>2.16.840.1.113883.6.3</dizionario>
+												<codice>20230</codice>
+											</caratterizzazione>
+										</caratterizzazioniCliniche>
+										<descrizioneDisciplinaErogazione>CARDIOLOGIA</descrizioneDisciplinaErogazione>
+									</setDocumentale>
+									<setDocumentale>
+										<idTipoDocumento>01</idTipoDocumento>
+										<strutturaArchiviazione>
+											<idEnte>030960</idEnte>
+											<descrizioneEnte>A.O. OSPEDALE DI LECCO - LECCO</descrizioneEnte>
+										</strutturaArchiviazione>
+										<idTipoDocumentoLOINC/>
+										<idSetDocumenti>3440504</idSetDocumenti>
+										<strutturaCreazione>
+											<descrizioneUnitaOperativaClinica>CARDIOLOGIA</descrizioneUnitaOperativaClinica>
+											<idUnitaOperativaClinica>0801</idUnitaOperativaClinica>
+											<descrizionePresidio>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizionePresidio>
+											<idEnte>030960</idEnte>
+											<descrizioneEnte>A.O. OSPEDALE DI LECCO - LECCO</descrizioneEnte>
+											<idPresidio>03090300</idPresidio>
+										</strutturaCreazione>
+										<noteReperibilita>qdnifnqwj ijqf jwipq fj ioqwe jfi weqp jfiwej fipwej pfoq</noteReperibilita>
+										<statoAutorizzazioneDocumento>SI</statoAutorizzazioneDocumento>
+										<autoreDocumento>
+											<cognome>MEDICOBUONO</cognome>
+											<ruolo/>
+											<nome>PEPPINO</nome>
+											<codiceFiscale>MDCPPN55M28F205H</codiceFiscale>
+										</autoreDocumento>
+										<idDocumentoRiferimento>0</idDocumentoRiferimento>
+										<dataOraCreazione>20100304110345</dataOraCreazione>
+										<naturaAggiornamento>STD</naturaAggiornamento>
+										<descrizioneReteDiPatologia>RETE UDITO</descrizioneReteDiPatologia>
+										<nVersioneDocumentoRiferimento/>
+										<listaDocumenti>
+											<documento>
+												<URI>030960.REPTEST.04b</URI>
+												<firmato>S</firmato>
+												<validazioneSchema/>
+												<algoritmoHash>01</algoritmoHash>
+												<hashDocumento>lfijlisfhahfih84357348907tjh89uifgo489o34h89</hashDocumento>
+												<linguaggioDocumento>ITALIANO</linguaggioDocumento>
+												<sizeDocumento>35</sizeDocumento>
+												<formato>TXT</formato>
+											</documento>
+										</listaDocumenti>
+										<idAggregazioneDocumento>3440504</idAggregazioneDocumento>
+										<oscuramento>
+											<tipoOscuramento>
+												<valoreOscuramento>N</valoreOscuramento>
+												<idCausaleOscuramento>10</idCausaleOscuramento>
+											</tipoOscuramento>
+											<tipoOscuramento>
+												<valoreOscuramento>N</valoreOscuramento>
+												<idCausaleOscuramento>20</idCausaleOscuramento>
+											</tipoOscuramento>
+											<tipoOscuramento>
+												<valoreOscuramento>N</valoreOscuramento>
+												<idCausaleOscuramento>30</idCausaleOscuramento>
+											</tipoOscuramento>
+											<tipoOscuramento>
+												<valoreOscuramento>N</valoreOscuramento>
+												<idCausaleOscuramento>40</idCausaleOscuramento>
+											</tipoOscuramento>
+											<tipoOscuramento>
+												<valoreOscuramento>N</valoreOscuramento>
+												<idCausaleOscuramento>50</idCausaleOscuramento>
+											</tipoOscuramento>
+										</oscuramento>
+										<idDisciplinaErogazione>08</idDisciplinaErogazione>
+										<nVersione/>
+										<reteDiPatologia>UDT</reteDiPatologia>
+										<flagCopiato>N</flagCopiato>
+										<listaAllegati>
+											<allegato>
+												<etichettaAllegato>doc</etichettaAllegato>
+												<linkAllegato>documenti</linkAllegato>
+												<formatoAllegato>Immagine DICOM consultabile via WEBSISS</formatoAllegato>
+											</allegato>
+											<allegato>
+												<etichettaAllegato>doc</etichettaAllegato>
+												<linkAllegato>http://www.house.md.san/tacl1s1.jpg</linkAllegato>
+												<formatoAllegato>Immagine DICOM consultabile via WEBSISS</formatoAllegato>
+											</allegato>
+										</listaAllegati>
+										<descrizioneTipoDocumento>REFERTO SPECIALISTICO</descrizioneTipoDocumento>
+										<attributiSpecificiDCE>
+											<attributi_referto>
+												<idPresidio>03090300</idPresidio>
+												<numeroPrericovero>2009001001</numeroPrericovero>
+												<descrizionePresidio>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizionePresidio>
+												<prestazioniAssociate>
+													<prestazione>
+														<idPrestazioneSISS>0090033</idPrestazioneSISS>
+														<IUP/>
+														<descrizionePrestazioneSISS>ACIDO SIALICO</descrizionePrestazioneSISS>
+														<quantitaErogata/>
+														<flagAggiuntiva/>
+													</prestazione>
+												</prestazioniAssociate>
+											</attributi_referto>
+										</attributiSpecificiDCE>
+										<caratterizzazioniCliniche>
+											<caratterizzazione>
+												<dizionario>2.16.840.1.113883.6.103</dizionario>
+												<codice>20224</codice>
+											</caratterizzazione>
+											<caratterizzazione>
+												<dizionario>2.16.840.1.113883.6.3</dizionario>
+												<codice>20230</codice>
+											</caratterizzazione>
+										</caratterizzazioniCliniche>
+										<descrizioneDisciplinaErogazione>CARDIOLOGIA</descrizioneDisciplinaErogazione>
+									</setDocumentale>
+								</listaDCE>
+								<nLivelloFolder>2</nLivelloFolder>
+								<idStatoFolder>OK</idStatoFolder>
+								<idTipoFolderPadre>80</idTipoFolderPadre>
+							</folder>
+							<folder>
+								<descrizioneFolder>RETI DI PATOLOGIA</descrizioneFolder>
+								<etichettaFolder>RETI DI PATOLOGIA</etichettaFolder>
+								<idTipoFolder>02</idTipoFolder>
+								<idFolder/>
+								<attributiSpecificiFolder/>
+								<listaDCE/>
+								<nLivelloFolder>1</nLivelloFolder>
+								<idStatoFolder/>
+								<idTipoFolderPadre/>
+							</folder>
+							<folder>
+								<descrizioneFolder>UDT</descrizioneFolder>
+								<etichettaFolder>UDT</etichettaFolder>
+								<idTipoFolder>10</idTipoFolder>
+								<idFolder>184472610</idFolder>
+								<attributiSpecificiFolder/>
+								<listaDCE>
+									<setDocumentale>
+										<idTipoDocumento>01</idTipoDocumento>
+										<strutturaArchiviazione>
+											<idEnte>030960</idEnte>
+											<descrizioneEnte>A.O. OSPEDALE DI LECCO - LECCO</descrizioneEnte>
+										</strutturaArchiviazione>
+										<idTipoDocumentoLOINC/>
+										<idSetDocumenti>3440504</idSetDocumenti>
+										<strutturaCreazione>
+											<descrizioneUnitaOperativaClinica>CARDIOLOGIA</descrizioneUnitaOperativaClinica>
+											<idUnitaOperativaClinica>0801</idUnitaOperativaClinica>
+											<descrizionePresidio>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizionePresidio>
+											<idEnte>030960</idEnte>
+											<descrizioneEnte>A.O. OSPEDALE DI LECCO - LECCO</descrizioneEnte>
+											<idPresidio>03090300</idPresidio>
+										</strutturaCreazione>
+										<noteReperibilita>qdnifnqwj ijqf jwipq fj ioqwe jfi weqp jfiwej fipwej pfoq</noteReperibilita>
+										<statoAutorizzazioneDocumento>SI</statoAutorizzazioneDocumento>
+										<autoreDocumento>
+											<cognome>MEDICOBUONO</cognome>
+											<ruolo/>
+											<nome>PEPPINO</nome>
+											<codiceFiscale>MDCPPN55M28F205H</codiceFiscale>
+										</autoreDocumento>
+										<idDocumentoRiferimento>0</idDocumentoRiferimento>
+										<dataOraCreazione>20100304110345</dataOraCreazione>
+										<naturaAggiornamento>STD</naturaAggiornamento>
+										<descrizioneReteDiPatologia>RETE UDITO</descrizioneReteDiPatologia>
+										<nVersioneDocumentoRiferimento/>
+										<listaDocumenti>
+											<documento>
+												<URI>030960.REPTEST.04b</URI>
+												<firmato>S</firmato>
+												<validazioneSchema/>
+												<algoritmoHash>01</algoritmoHash>
+												<hashDocumento>lfijlisfhahfih84357348907tjh89uifgo489o34h89</hashDocumento>
+												<linguaggioDocumento>ITALIANO</linguaggioDocumento>
+												<sizeDocumento>35</sizeDocumento>
+												<formato>TXT</formato>
+											</documento>
+										</listaDocumenti>
+										<idAggregazioneDocumento>3440504</idAggregazioneDocumento>
+										<oscuramento/>
+										<idDisciplinaErogazione>08</idDisciplinaErogazione>
+										<nVersione/>
+										<reteDiPatologia>UDT</reteDiPatologia>
+										<flagCopiato>N</flagCopiato>
+										<listaAllegati>
+											<allegato>
+												<etichettaAllegato>doc</etichettaAllegato>
+												<linkAllegato>documenti</linkAllegato>
+												<formatoAllegato>Immagine DICOM consultabile via WEBSISS</formatoAllegato>
+											</allegato>
+											<allegato>
+												<etichettaAllegato>doc</etichettaAllegato>
+												<linkAllegato>http://www.house.md.san/tacl1s1.jpg</linkAllegato>
+												<formatoAllegato>Immagine DICOM consultabile via WEBSISS</formatoAllegato>
+											</allegato>
+										</listaAllegati>
+										<descrizioneTipoDocumento>REFERTO SPECIALISTICO</descrizioneTipoDocumento>
+										<attributiSpecificiDCE>
+											<attributi_referto>
+												<idPresidio>03090300</idPresidio>
+												<numeroPrericovero>2009001001</numeroPrericovero>
+												<descrizionePresidio>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizionePresidio>
+												<prestazioniAssociate>
+													<prestazione>
+														<idPrestazioneSISS>0090033</idPrestazioneSISS>
+														<IUP/>
+														<descrizionePrestazioneSISS>ACIDO SIALICO</descrizionePrestazioneSISS>
+														<quantitaErogata/>
+														<flagAggiuntiva/>
+													</prestazione>
+												</prestazioniAssociate>
+											</attributi_referto>
+										</attributiSpecificiDCE>
+										<caratterizzazioniCliniche>
+											<caratterizzazione>
+												<dizionario>2.16.840.1.113883.6.103</dizionario>
+												<codice>20224</codice>
+											</caratterizzazione>
+											<caratterizzazione>
+												<dizionario>2.16.840.1.113883.6.3</dizionario>
+												<codice>20230</codice>
+											</caratterizzazione>
+										</caratterizzazioniCliniche>
+										<descrizioneDisciplinaErogazione>CARDIOLOGIA</descrizioneDisciplinaErogazione>
+									</setDocumentale>
+									<setDocumentale>
+										<idTipoDocumento>02</idTipoDocumento>
+										<strutturaArchiviazione>
+											<idEnte>030960</idEnte>
+											<descrizioneEnte>A.O. OSPEDALE DI LECCO - LECCO</descrizioneEnte>
+										</strutturaArchiviazione>
+										<idTipoDocumentoLOINC/>
+										<idSetDocumenti>3440505</idSetDocumenti>
+										<strutturaCreazione>
+											<descrizioneUnitaOperativaClinica>CARDIOLOGIA</descrizioneUnitaOperativaClinica>
+											<idUnitaOperativaClinica>0801</idUnitaOperativaClinica>
+											<descrizionePresidio>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizionePresidio>
+											<idEnte>030960</idEnte>
+											<descrizioneEnte>A.O. OSPEDALE DI LECCO - LECCO</descrizioneEnte>
+											<idPresidio>03090300</idPresidio>
+										</strutturaCreazione>
+										<noteReperibilita>qdnifnqwj ijqf jwipq fj ioqwe jfi weqp jfiwej fipwej pfoq</noteReperibilita>
+										<statoAutorizzazioneDocumento>SI</statoAutorizzazioneDocumento>
+										<autoreDocumento>
+											<cognome>MEDICOBUONO</cognome>
+											<ruolo/>
+											<nome>PEPPINO</nome>
+											<codiceFiscale>MDCPPN55M28F205H</codiceFiscale>
+										</autoreDocumento>
+										<idDocumentoRiferimento>0</idDocumentoRiferimento>
+										<dataOraCreazione>20100304110346</dataOraCreazione>
+										<naturaAggiornamento>STD</naturaAggiornamento>
+										<descrizioneReteDiPatologia>RETE UDITO</descrizioneReteDiPatologia>
+										<nVersioneDocumentoRiferimento/>
+										<listaDocumenti>
+											<documento>
+												<URI>030960.REPTEST.uauauauauauauau</URI>
+												<firmato>S</firmato>
+												<validazioneSchema/>
+												<algoritmoHash>01</algoritmoHash>
+												<hashDocumento>lfijlisfhahfih84357348907tjh89uifgo489o34h89</hashDocumento>
+												<linguaggioDocumento>ITALIANO</linguaggioDocumento>
+												<sizeDocumento>35</sizeDocumento>
+												<formato>TXT</formato>
+											</documento>
+										</listaDocumenti>
+										<idAggregazioneDocumento>3440505</idAggregazioneDocumento>
+										<oscuramento/>
+										<idDisciplinaErogazione>08</idDisciplinaErogazione>
+										<nVersione/>
+										<reteDiPatologia>UDT</reteDiPatologia>
+										<flagCopiato>N</flagCopiato>
+										<listaAllegati>
+											<allegato>
+												<etichettaAllegato>doc</etichettaAllegato>
+												<linkAllegato>documenti</linkAllegato>
+												<formatoAllegato>Immagine DICOM consultabile via WEBSISS</formatoAllegato>
+											</allegato>
+											<allegato>
+												<etichettaAllegato>doc</etichettaAllegato>
+												<linkAllegato>http://www.house.md.san/tacl1s1.jpg</linkAllegato>
+												<formatoAllegato>Immagine DICOM consultabile via WEBSISS</formatoAllegato>
+											</allegato>
+										</listaAllegati>
+										<descrizioneTipoDocumento>REFERTO SPECIALISTICO LABORATORIO</descrizioneTipoDocumento>
+										<attributiSpecificiDCE>
+											<attributi_referto>
+												<idPresidio>03090300</idPresidio>
+												<numeroPrericovero>2009001001</numeroPrericovero>
+												<descrizionePresidio>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizionePresidio>
+												<prestazioniAssociate>
+													<prestazione>
+														<idPrestazioneSISS>0090033</idPrestazioneSISS>
+														<IUP/>
+														<descrizionePrestazioneSISS>ACIDO SIALICO</descrizionePrestazioneSISS>
+														<quantitaErogata/>
+														<flagAggiuntiva/>
+													</prestazione>
+												</prestazioniAssociate>
+											</attributi_referto>
+										</attributiSpecificiDCE>
+										<caratterizzazioniCliniche>
+											<caratterizzazione>
+												<dizionario>2.16.840.1.113883.6.103</dizionario>
+												<codice>20224</codice>
+											</caratterizzazione>
+											<caratterizzazione>
+												<dizionario>2.16.840.1.113883.6.3</dizionario>
+												<codice>20230</codice>
+											</caratterizzazione>
+										</caratterizzazioniCliniche>
+										<descrizioneDisciplinaErogazione>CARDIOLOGIA</descrizioneDisciplinaErogazione>
+									</setDocumentale>
+								</listaDCE>
+								<nLivelloFolder>2</nLivelloFolder>
+								<idStatoFolder>OK</idStatoFolder>
+								<idTipoFolderPadre>02</idTipoFolderPadre>
+							</folder>
+						</listaFolder>
+					</fascicolo>
+				</consultaFascicolo>
+				<esitoConsultaFascicolo>
+					<esito>OK</esito>
+				</esitoConsultaFascicolo>
+			</param>
+		</m:FSE.consultaFascicoloResponse>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

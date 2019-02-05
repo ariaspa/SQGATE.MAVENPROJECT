@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%">
+	<mx:Metadata>
+	   	[ Event( name="clickPulsanteInfo", type="flash.events.Event") ]
+	   	[ Event( name="clickPulsanteIdentificaCittadino", type="flash.events.Event") ]
+	</mx:Metadata>
+	<mx:Script>
+			<![CDATA[
+				import it.lisit.siss.flex.graphic.ImageDefinition;
+				[Bindable]
+				public var displayDatiOperatore:Boolean = false;
+				[Bindable]
+				public var displayCodiceOperatore:Boolean = false;
+				[Bindable]
+				public var displayDatiCittadino:Boolean = false;
+				[Bindable]
+				public var displayPulsanteInfo:Boolean = false;
+				[Bindable]
+				public var displayPulsanteIdentifica:Boolean = false;
+				[Bindable]
+				public var enabledPulsanteIdentifica:Boolean = false;
+		        private const DOT:String = " ";
+				
+				/**
+				 * Solleva un evento "clickPulsanteInfo" alla pressione del pulsante "info"
+				 */ 
+				private function onClickPulsanteInfo():void
+		        {
+		        	var myEventObj:Event = new Event( "clickPulsanteInfo" );
+		        	dispatchEvent( myEventObj );
+		        }
+		        
+		        /**
+				 * Solleva un evento "clickPulsanteIdentificaCittadino" alla pressione del pulsante "ricerca"
+				 */ 
+				private function onClickPulsanteIdentificaCittadino():void
+		        {
+		        	var myEventObj:Event = new Event( "clickPulsanteIdentificaCittadino" );
+		        	dispatchEvent( myEventObj );
+		        }
+			]]>
+		</mx:Script>
+	
+	   <mx:VBox x="44" y="10" height="38" verticalGap="0" visible="{displayDatiOperatore}">
+			<mx:Box styleName="testataOperatoreBox" width="100%">
+				<mx:Label x="44" y="10" text="Operatore" width="100%" />
+			</mx:Box>
+			<mx:HBox x="44" y="26" width="358" styleName="datiOperatoreBox">
+				<mx:Text id="cognomeOperatore" text="{DOT}" width="50%"/>
+				<mx:Text id="nomeOperatore" text="{DOT}" width="50%"/>
+			</mx:HBox>
+		</mx:VBox>
+		 
+		
+		<mx:VBox x="409" y="10" height="38" verticalGap="0" width="215" visible="{displayDatiOperatore}">
+			<mx:Box styleName="testataOperatoreBox" width="100%">
+				<mx:Label x="44" y="10" text="Ruolo" width="100%" />
+			</mx:Box>
+			<mx:HBox x="44" y="26" width="100%" styleName="datiOperatoreBox">
+				<mx:Text width="100%" text="{DOT}" id="ruoloOperatore"/>
+			</mx:HBox>
+		</mx:VBox>	
+		
+		
+		
+		
+		<mx:VBox x="732" y="1" height="50" verticalGap="0" width="35" visible="{displayPulsanteInfo}">
+			<mx:Box width="100%">
+				<mx:Label text="Info" width="100%" />
+			</mx:Box>
+			<mx:Button styleName="button" buttonMode="true" width="25" height="25" icon="{ImageDefinition.ICONA_BOTTONE_INFORMAZIONE_16X16}" toolTip="Info" click="onClickPulsanteInfo()"/>
+		</mx:VBox>
+		<mx:VBox x="783" y="10" height="38" verticalGap="0" width="148" visible="{displayDatiOperatore||displayDatiCittadino||displayCodiceOperatore}">
+			<mx:Box styleName="testataOperatoreBox" width="100%">
+				<mx:Label x="44" y="10" text="Codice operatore" width="100%" />
+			</mx:Box>
+			<mx:HBox x="44" y="26" width="100%" styleName="datiOperatoreBox">
+				<mx:Text width="100%" text="{DOT}" id="codiceOperatore"/>
+			</mx:HBox>
+		</mx:VBox>
+		
+		
+		 <mx:VBox x="44" y="10" height="38" width="150" verticalGap="0" visible="{displayDatiCittadino}">
+			<mx:Box styleName="testataOperatoreBox" width="100%">
+				<mx:Label text="Cognome" width="100%" />
+			</mx:Box>
+			<mx:HBox width="100%" styleName="datiOperatoreBox">
+				<mx:Text id="cognomeCittadino" text="{DOT}" width="100%"/>				
+			</mx:HBox>
+		</mx:VBox>
+		<mx:VBox x="200" y="10" height="38" width="150" verticalGap="0" visible="{displayDatiCittadino}">
+			<mx:Box styleName="testataOperatoreBox" width="100%">
+				<mx:Label text="Nome" width="100%" />
+			</mx:Box>
+			<mx:HBox width="100%" styleName="datiOperatoreBox">
+				<mx:Text id="nomeCittadino" text="{DOT}" width="100%"/>				
+			</mx:HBox>
+		</mx:VBox>
+		<mx:VBox x="360" y="10" height="38" width="100" verticalGap="0" visible="{displayDatiCittadino}">
+			<mx:Box styleName="testataOperatoreBox" width="100%">
+				<mx:Label text="Data nascita" width="100%" />
+			</mx:Box>
+			<mx:HBox width="100%" styleName="datiOperatoreBox">
+				<mx:Text id="dataNascitaCittadino" text="{DOT}" width="100%"/>				
+			</mx:HBox>
+		</mx:VBox>
+		<mx:VBox x="470" y="10" height="38" width="50" verticalGap="0" visible="{displayDatiCittadino}">
+			<mx:Box styleName="testataOperatoreBox" width="100%">
+				<mx:Label  text="Sesso" width="100%" />
+			</mx:Box>
+			<mx:HBox width="100%" styleName="datiOperatoreBox">
+				<mx:Text id="sessoCittadino" text="{DOT}" width="100%"/>				
+			</mx:HBox>
+		</mx:VBox>
+		<mx:VBox x="530" y="10" height="38" verticalGap="0" width="150" visible="{displayDatiCittadino}">
+			<mx:Box styleName="testataOperatoreBox" width="100%">
+				<mx:Label text="Identificativo" width="100%" />
+			</mx:Box>
+			<mx:HBox width="100%" styleName="datiOperatoreBox">
+				<mx:Text width="100%" text="{DOT}" id="identificativoCittadino"/>
+			</mx:HBox>
+		</mx:VBox>		
+		<mx:VBox x="700" y="1" horizontalAlign="center" height="50" verticalGap="0" width="55" visible="{displayPulsanteIdentifica}">
+			<mx:Box width="100%" textAlign="center">
+				<mx:Label text="Identifica" width="100%" />
+			</mx:Box>			
+			<mx:Button width="25" height="25"
+				enabled="{enabledPulsanteIdentifica}" 
+				styleName="button" 
+				buttonMode="true" 
+				icon="{ImageDefinition.ICONA_BOTTONE_RICERCA_16X16}" 
+				toolTip="Identifica Cittadino" 
+				click="onClickPulsanteIdentificaCittadino()"/>
+		</mx:VBox>	
+</mx:Canvas>

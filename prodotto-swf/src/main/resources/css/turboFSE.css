@@ -1,0 +1,191 @@
+/* CSS file */
+Application
+{
+	/* dal bianco al verde scuro */
+	background-gradient-colors:#FFFFFF,#096B09;	
+	background-gradient-alphas:1,1;
+	/* grigio chiaro per tutti gli sfondi */
+	backgroundColor: #F0F0F0;
+	corner-radius:12;
+	/* FONT */
+	/* colore dei font nero */	
+	color: #000000;
+	font-weight: bold;
+	font-size: 12px;
+	font-family: 'Trebuchet MS';
+}
+Alert
+{
+	dropShadowEnabled: true;
+	shadowDistance: 4;
+	shadowDirection: center;
+     
+	color: #000000;
+	/* Verde pisello chiaro */
+	background-color:#adf0a6;	
+	border-thickness:0;
+	/* border-color:#FFFFFF; */
+	/* barColor: #F40505; */
+	borderStyle: none;
+	/* themeColor: #170101; */
+}
+/* ADVANCEDDATAGRID da controllare con i dati */
+AdvancedDataGrid
+{
+	header-colors:#adf0a6,#adf0a6;
+	background-color:#E8FFE8;
+	alternatingItemColors: #E3FEE2, #F7FEE2;
+    selectionColor: #F7FE5B;
+    color: #000000;
+    textRollOverColor: #000000;
+    rollOverColor: #F7FE5B;
+    textSelectedColor: #000000;
+}
+/* Sulla testata il box contenente le labels */
+HBox.testataOperatoreBox{
+	text-align:center;
+	font-weight: normal;
+	font-size: 11px;
+	/* Verde pisello chiaro */
+	background-color:#adf0a6;	
+} 
+HBox.datiOperatoreBox{
+	text-align:center;
+	font-size: 11px;
+	background-color:#E6FAED; 
+}
+/* Il canvas che contiene la stus bar */
+Canvas.statusBar{
+	borderThickness: 1;
+	border-sides:right;
+    borderColor: #adf0a6;
+    borderStyle: solid;
+    dropShadowColor: #adf0a6;
+    dropShadowEnabled: true;
+}
+/* le skin dei stati del bottone dei boxFiltri */
+.CheckButton
+{
+	up-skin:Embed(source="skin.swf", symbol="c_overSkinCheck");
+	down-skin:Embed(source="skin.swf", symbol="c_downSkinCheck");
+	over-skin:Embed(source="skin.swf", symbol="c_upSkinCheckBox");
+	selected-over-skin:Embed(source="skin.swf", symbol="c_upSelectSkinCheck");
+	selected-down-skin:Embed(source="skin.swf", symbol="c_downSelectSkinCheck");
+	selected-up-skin:Embed(source="skin.swf", symbol="c_overSelectSkinCheck"); 
+} 
+ComboBox{
+	fillAlphas:1,1;
+	fill-colors:#FFFFFF,#FFFFFF;
+	rollOverColor: #F7FE5B;
+	selectionColor: #F7FE5B;
+	alternatingItemColors:#E3FEE2, #F7FEE2;
+}
+/* le skin dei stati del bottone dei boxFiltri */
+.EnlargeButton
+{
+	up-skin:Embed(source="skin.swf", symbol="overSkinCheck");
+	down-skin:Embed(source="skin.swf", symbol="downSkinCheck");
+	over-skin:Embed(source="skin.swf", symbol="upSkinCheckBox");
+	
+	selected-over-skin:Embed(source="skin.swf", symbol="upSelectSkinCheck");
+	selected-down-skin:Embed(source="skin.swf", symbol="downSelectSkinCheck");
+	selected-up-skin:Embed(source="skin.swf", symbol="overSelectSkinCheck"); 
+	
+} 
+HAccordion
+{
+	background-color:#adf0a6;
+	color: #354A35;
+	fontFamily: accordionHeader;	 
+	fillAlphas:1.0,1.0;
+	fillColors:#FFFFFF, #adf0a6;
+	
+	/* fillShadowColors: #B5D7B5,#000000;
+	fillShadowAlphas:0.7,0.7;
+	fillDisabledColor:#CCCCCC;
+	fillDisabledAlpha:1.0;
+    color: #354A35;	 */
+}
+/* .accordionHeader{
+    fill-alphas:1,1;
+    fill-colors:#adf0a6,#adf0a6;
+} */
+/* Il colore della barretta verticale quando si allargano le finestre */
+HDividedBox {
+	dividerColor: #ADF0A6;
+}
+Panel{
+	
+	headerHeight: 30; 
+	border-alpha:1; 
+	backgroundDisabledColor: #E8FFE8;
+	backgroundAlpha: 1;
+	backgroundColor:#009632;
+	cornerRadius: 8;
+	paddingTop: 4;
+	paddingBottom: 4;
+	paddingLeft: 4;
+	paddingRight: 4;
+	
+	roundedBottomCorners: true;
+	dropShadowEnabled: true;
+	shadowDistance: 4;
+	shadowDirection: center;
+    dropShadowColor: #000000;
+	 
+	
+	title-background-skin:ClassReference("com.li.dc.sebc.turboFSE.view.skin.BorderSkinPopUpTitle");
+	/* modalTransparencyColor: #8AC68A; */
+	/* background-color:#E8FFE8; */
+	 /* highlight-alphas:0.7,0; */
+	/* header-colors:#FFFFFF,#096B09; */
+/* 	border-style: solid;
+	border-color: #8AC68A; */
+	/* background-color: #E8FFE8; */
+	/* title-background-skin:ClassReference("com.li.dc.sebc.turboFSE.view.skin.TitleBackground"); */
+	/* modalTransparencyBlur: 8; */
+	/* borderThickness: 0.5; */
+	/* border-skin:ClassReference("com.li.dc.sebc.turboFSE.view.skin.BorderSkinPopUp"); */
+}
+ 
+/* WindowFse */
+Panel.windowFilter
+{
+	close-button-over-skin:Embed(source="skin.swf", symbol="btnOver");
+	close-button-down-skin:Embed(source="skin.swf", symbol="btnDown");
+	close-button-up-skin:Embed(source="skin.swf", symbol="btnOut");
+}
+.titleBarView
+{
+	padding-right:10;
+	padding-left:10;
+	background-color:#adf0a6;
+	text-align:left;
+	font-weight:bold;
+	letter-spacing:2; 
+	
+	check-up-skin:Embed(source="skin.swf", symbol="overSkinCheck");
+	check-down-skin:Embed(source="skin.swf", symbol="downSkinCheck");
+	check-over-skin:Embed(source="skin.swf", symbol="upSkinCheckBox");
+	check-select-down-skin:Embed(source="skin.swf", symbol="downSelectSkinCheck");
+	check-select-over-skin:Embed(source="skin.swf", symbol="upSelectSkinCheck");
+	check-select-up-skin:Embed(source="skin.swf", symbol="overSelectSkinCheck");	
+}  
+TitleWindow
+{
+	/* background-color : #009600; */
+	/* letto dalla skin della barra dei titoli */
+	titleColor : #adf0a6;
+} 
+/* 
+NON ho acncora trovato dove veniva usato
+Accordion
+{
+	border-alpha:1;
+	header-style-name: "accordionHeader";
+	background-color:#E8FFE8;
+}
+.accordionHeader{
+    fill-alphas:1,1;
+    fill-colors:#adf0a6,#adf0a6;
+} */

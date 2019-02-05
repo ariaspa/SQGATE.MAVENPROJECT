@@ -1,0 +1,463 @@
+/* CSS file */
+Application
+{
+	background-gradient-colors:#FFFFFF,#adf0a6;	
+	background-gradient-alphas:1,1;	
+	font-family: tahoma;
+	font-size: 11px;
+}
+ 
+Tree
+{
+	font-size: 12px;
+}
+ 
+.EnlargeButton
+{
+	up-skin:Embed(source="skin.swf", symbol="overSkinCheck");
+	down-skin:Embed(source="skin.swf", symbol="downSkinCheck");
+	over-skin:Embed(source="skin.swf", symbol="upSkinCheckBox");
+	
+	selected-over-skin:Embed(source="skin.swf", symbol="upSelectSkinCheck");
+	selected-down-skin:Embed(source="skin.swf", symbol="downSelectSkinCheck");
+	selected-up-skin:Embed(source="skin.swf", symbol="overSelectSkinCheck"); 
+	
+}
+ 
+.CheckButton
+{
+	up-skin:Embed(source="skin.swf", symbol="c_overSkinCheck");
+	
+	down-skin:Embed(source="skin.swf", symbol="c_downSkinCheck");
+	over-skin:Embed(source="skin.swf", symbol="c_upSkinCheckBox");
+	
+	selected-over-skin:Embed(source="skin.swf", symbol="c_upSelectSkinCheck");
+	selected-down-skin:Embed(source="skin.swf", symbol="c_downSelectSkinCheck");
+	selected-up-skin:Embed(source="skin.swf", symbol="c_overSelectSkinCheck"); 
+
+}
+DataGrid
+{
+	use-roll-over:false;
+	font-size: 12px;
+	borderStyle: inset;
+	textAlign: left;
+	backgroundAlpha: 0;
+	header-colors: #adf0a6,#adf0a6;
+	alternating-item-colors: #000000,#FFFFFF;
+}
+
+Canvas.bannerTitle
+{
+	font-family: tahoma;
+	font-size: 15px;
+	font-weight: bold;
+}
+Canvas.borderStyle
+{
+	border-style: solid;
+	border-thickness: 2;
+	border-color: #72B972;
+	border-sides: bottom,right;
+	background-color: #E8FFE8;
+}
+.vaccBox
+{
+	
+}
+Canvas.footerTitle
+{
+	font-family: tahoma;
+	font-size: 11px;
+	font-weight: bold;
+}
+TabNavigator {
+   tabHeight: 24;
+   backgroundColor: #E8FFE8;
+   tabStyleName: "myTabsnormal";
+   selectedTabTextStyleName: "myTabsnormal";   	
+}
+.myTabsnormal {	
+	fontSize: 12;
+	textAlign: center;
+	font-weight:normal;
+	borderColor: #008A00;	
+	backgroundColor: #E8FFE8;  
+	backgroundOffColor: #95c895;
+	cornerRadius: 6;
+	backgroundOnColor: #CCFFCC;
+	backgroundBorderColor: #008A00;
+	shadowColor: #2C412C;
+	shadowOnColor: #3B663B;
+	
+	disabledSkin: ClassReference("it.lisit.siss.flex.skin.TabSkin");
+	selectedDisabledSkin: ClassReference("it.lisit.siss.flex.skin.TabSkin");
+	downSkin: ClassReference("it.lisit.siss.flex.skin.TabSkin");
+	overSkin: ClassReference("it.lisit.siss.flex.skin.TabSkin");
+	selectedDownSkin: ClassReference("it.lisit.siss.flex.skin.TabSkin");
+	selectedOverSkin: ClassReference("it.lisit.siss.flex.skin.TabSkin");
+	selectedUpSkin: ClassReference("it.lisit.siss.flex.skin.TabSkin");
+	upSkin: ClassReference("it.lisit.siss.flex.skin.TabSkin");
+}
+HBox.datiOperatoreBox{
+	text-align:center;
+	background-color:#F3FFF7;
+	 
+}
+Box.testataOperatoreBox{
+	font-weight: normal;
+	font-size: 11px;
+	background-color:#adf0a6;
+	text-align:center;
+}
+Canvas.menu
+{
+	border-style: solid;
+	border-thickness: 1;
+	border-color: #FFFFFF;
+	border-sides: top,left;	
+}
+Tree.menutree
+{
+	background-color:#E8FFE8;
+	rollOverColor: #F2F661;
+    selectionColor: #D2FFD2;
+    color: #000000;
+    textRollOverColor: #000000;
+    textSelectedColor: #000000;
+	open-duration: 0;
+	defaultLeafIcon : Embed(source="../images/bottonegenerico_15x15.png");
+	folderClosedIcon: Embed(source="../images/folder.png");
+	folderOpenIcon: Embed(source="../images/folder_open.png");
+	text-indent:10;
+	indentation:50;
+	font-size:16;
+	font-weight:bold;
+	border-style: solid;
+	border-thickness: 2;
+	border-color: #72B972;
+	border-sides: bottom,right;
+}
+Accordion
+{
+	border-alpha:1;
+	header-style-name: "accordionHeader";
+	background-color:#E8FFE8;
+}
+.accordionHeader{
+    fontWeight: bold;
+    fill-alphas:1,1;
+    fill-colors:#adf0a6,#adf0a6;
+}
+/*style di canvasView e canvasTree */
+Tree.canvasViewAndTree
+{
+	rollOverColor:#adf0a6;
+    selectionColor:#F2F661 ;
+     
+	border-alpha:0;
+	border-style:none;
+}
+DataGrid
+{
+	
+	borderThickness: 2;
+	headerColors: #eff1f2, #eff1f2;
+	alternatingItemColors: #cccccc, #eff1f2;
+	useRollOver: false;
+    selectionColor: #F7FE5B;
+    color: #000000;
+	backgroundAlpha: 0.5;
+	shadowDirection: center;
+	shadowDistance: 4;
+	borderStyle: solid;
+}
+AdvancedDataGrid
+{
+	header-colors:#adf0a6,#adf0a6;
+	background-color:#E8FFE8;
+	alternatingItemColors: #E3FEE2, #F7FEE2;
+    selectionColor: #F7FE5B;
+    color: #000000;
+    textRollOverColor: #000000;
+    rollOverColor: #F7FE5B;
+    textSelectedColor: #000000;
+}
+.textBold
+{
+	font-weight:bold;	
+}
+Panel{
+	headerHeight: 24; 
+	border-alpha:1; 
+	highlight-alphas:0.7,0;
+	header-colors:#FFFFFF,#5FA25D;
+	border-style: solid;
+	border-color: #8AC68A;
+	background-color: #E8FFE8;
+	title-background-skin:ClassReference("it.lisit.siss.flex.skin.TitleBackground");
+	backgroundDisabledColor: #E8FFE8;
+	modalTransparencyColor: #8AC68A;
+	paddingTop: 4;
+	roundedBottomCorners: true;
+	shadowDirection: right;
+	paddingBottom: 4;
+	paddingLeft: 4;
+	paddingRight: 4;
+	shadowDistance: 4;
+	modalTransparencyBlur: 8;
+	backgroundAlpha: 1;
+	borderThickness: 0.5;
+}
+Panel
+{
+	
+}
+TitleWindow.codiceErrore{
+	font-size:14;
+	font-weight:bold;
+}
+TitleWindow.descrizioneErrore{
+	font-size:12;
+	font-weight:bold;
+}
+TitleWindow.panelloDocumento
+{
+	textAlign: center;
+	fontSize: 12;
+}
+LinkButton{
+	roll-over-color:#D2FFD2;
+	selection-color:#D2FFD2;
+}
+ComboBox{
+	fillAlphas:1,1;
+	fill-colors:#FFFFFF,#FFFFFF;
+	rollOverColor: #F7FE5B;
+	selectionColor: #F7FE5B;
+	alternatingItemColors:#E3FEE2, #F7FEE2;
+}
+VScrollBar,HScrollBar{
+	fill-alphas:1,1;
+	fill-colors:#C9FFCF,#C9FFCF;
+	track-colors:#A1F5AC,#A1F5AC;
+	border-color:#4F824F;
+	theme-color:#00C11A;
+}
+
+DataGrid.validazione
+{
+	border-thickness:0;
+	background-color:#E8FFE8;
+	alternatingItemColors: #D2FFD2, #D2FFD2;
+    color: #000000;
+    textRollOverColor: #000000;
+    rollOverColor: #F7FE5B;
+    textSelectedColor: #000000;
+}
+HAccordion
+{
+	fontFamily: accordionHeader;
+	font-size:12;
+	fillAlphas:1.0,1.0;
+	fillColors:#5FA25D, #ADDCAE;
+	fillShadowColors: #B5D7B5,#000000;
+	fillShadowAlphas:0.7,0.7;
+	fillDisabledColor:#CCCCCC;
+	fillDisabledAlpha:1.0;
+    color: #354A35;	
+}
+ToggleButtonBar
+{
+	fontFamily: accordionHeader;
+	font-size:12;
+	buttonStyleName: toggleButton;
+}
+.toggleButton
+{
+	fillAlphas:1.0,1.0;
+	fillColors:#5FA25D, #ADDCAE;
+	fillShadowColors: #B5D7B5,#000000;
+	fillShadowAlphas:0.7,0.7;
+	fillDisabledColor:#CCCCCC;
+	fillDisabledAlpha:1.0;
+    color: #354A35;
+}
+ToggleButtonBar.documentTogle
+{
+	color: #020000;
+	disabledColor: #7B7623;
+	fontAntiAliasType: normal;
+	fontSize: 12;
+	backgroundDisabledColor: #020000;
+	buttonStyleName:togleDocument;
+	horizontalAlign: center;
+	horizontalGap: 2;
+}
+ 
+.togleDocument
+{
+	fillAlphas: 0.5, 0.51, 0.5, 1.0;
+	fillColors: #FFFFFF, #5FA25D, #FFFFFF, #FEFFFE;
+	cornerRadius: 4;
+	paddingLeft: 5;
+	paddingRight: 5;
+	themeColor: #FCFF00;
+	disabledColor: #617F7F;
+	borderColor: #5FA25D;
+	textRollOverColor: #0B333C;
+	textAlign: center;
+	fontWeight: bold;
+	fontStyle: normal;
+	textDecoration: normal;
+	skin:ClassReference("it.lisit.siss.fseApplication.view.skin.SkinButtonPanel");
+}
+ 
+Button.button
+{
+	cornerRadius:12;
+	fillAlphas:1.0,1.0;
+	fillColors:#5FA25D, #ADDCAE;
+	fillShadowColors: #B5D7B5,#000000;
+	fillShadowAlphas:0.7,0.7;
+	fillDisabledColor:#CCCCCC;
+	 
+	fillDisabledAlpha:1.0;
+    color: #354A35;
+    upSkin:ClassReference("it.lisit.siss.flex.server.common.graphic.skin.ButtonSkin");
+	downSkin:ClassReference("it.lisit.siss.flex.server.common.graphic.skin.ButtonSkin");
+	overSkin:ClassReference("it.lisit.siss.flex.server.common.graphic.skin.ButtonSkin"); 
+	disabledSkin:ClassReference("it.lisit.siss.flex.server.common.graphic.skin.ButtonSkin");
+}
+Button.transparent{
+    skin: Embed(source="../images/trasparent.png");
+    disabledSkin:ClassReference("it.lisit.siss.flex.server.common.graphic.skin.ButtonSkin");
+}
+DateField {
+	/*date-chooser-style-name: "dateFieldChooserStyleName";*/
+	todayColor: #5FA25D; 
+	color: #354A35;
+    skin: Embed(source='../images/calendario_scuro_16x16.png');
+    /* null the skins defined in default.css */
+    upSkin: ClassReference(null);
+    overSkin: ClassReference(null);
+    downSkin: ClassReference(null);
+    disabledSkin: ClassReference(null);
+}
+DateChooser{
+	selectionColor: #F7FE5B;
+	todayColor: #5FA25D; 
+	color: #354A35;
+	corner-radius: 10;
+	header-colors:#ffffff,#adf0a6;
+	/* Previous Month */
+    prevMonthUpSkin: Embed("../images/freccia_sinistra_scuro_16x16.png");
+    prevMonthOverSkin: Embed("../images/freccia_sinistra_scuro_16x16.png");
+    prevMonthDownSkin: Embed("../images/freccia_sinistra_scuro_16x16.png");
+    prevMonthDisabledSkin: Embed("../images/freccia_sinistra_scuro_16x16.png");
+    /* Next Month */
+    nextMonthUpSkin: Embed("../images/freccia_destra_scuro_16x16.png");
+    nextMonthOverSkin: Embed("../images/freccia_destra_scuro_16x16.png");
+    nextMonthDownSkin: Embed("../images/freccia_destra_scuro_16x16.png");
+    nextMonthDisabledSkin: Embed("../images/freccia_destra_scuro_16x16.png");
+}
+Alert{
+	header-colors:#ffffff,#adf0a6;
+	border-style: solid;
+	border-thickness: 2;
+	border-color: #72B972;
+	border-sides: bottom,right;
+	background-color: #E8FFE8;
+	headerHeight: 18; 
+	color:#354A35;
+	buttonStyleName:"button";
+}
+TabBar {
+   tabHeight: 22;
+   backgroundColor: #E8FFE8;
+   tabStyleName: "myTabsnormal";
+   selectedTabTextStyleName: "myTabsnormal";   	
+}
+HSlider,VSlider {
+	fillAlphas:1.0,1.0;
+	fillColors:#5FA25D, #ADDCAE;
+	trackColors: #5FA25D, #ADDCAE;
+   	tickColor: #5FA25D;   	
+}
+NumericStepper {
+	/* Previous Month */
+    downArrowSkin : Embed("../images/freccia_su_scuro_16x16.png");
+    downArrowOverSkin : Embed("../images/freccia_su_scuro_16x16.png");
+    downArrowDownSkin : Embed("../images/freccia_su_scuro_16x16.png");
+    downArrowDisabledSkin : Embed("../images/freccia_su_scuro_16x16.png");
+    /* Next Month */
+    upArrowSkin : Embed("../images/freccia_giu_scuro_16x16.png");
+    upArrowOverSkin : Embed("../images/freccia_giu_scuro_16x16.png");
+    upArrowDownSkin : Embed("../images/freccia_giu_scuro_16x16.png");
+    upArrowDisabledSkin : Embed("../images/freccia_giu_scuro_16x16.png");
+}
+HRule,VRule {
+	strokeColor: #5FA25D;	
+	shadowColor: #E8FFE8;	
+}
+TextInput{	
+	cornerRadius: 5;
+    borderThickness: 1;
+    borderColor: #adf0a6;
+    borderStyle: solid;
+    backgroundColor: #F9FEFB;
+    dropShadowColor: #adf0a6;
+    dropShadowEnabled: true;
+}
+ToolTip
+{
+	 
+
+	border-skin: ClassReference("it.lisit.siss.fseApplication.view.skin.NewToolTipBorder");
+	color: #042C02;
+	fontWeight: bold;
+	paddingLeft: 2;
+	paddingRight: 2;
+	backgroundColor: #F5FC82;
+}
+Canvas.statusBar{
+	borderThickness: 1;
+	border-sides:right;
+    borderColor: #adf0a6;
+    borderStyle: solid;
+    font-size:12;
+    dropShadowColor: #adf0a6;
+    dropShadowEnabled: true;
+}
+.titleBarView
+{
+	padding-right:10;
+	padding-left:10;
+	background-color:#adf0a6;
+	color:#000000;
+	text-align:left;
+	font-weight:bold;
+	font-size:10;
+	letter-spacing:2; 
+	corner-radius:8;
+	check-up-skin:Embed(source="skin.swf", symbol="overSkinCheck");
+	check-down-skin:Embed(source="skin.swf", symbol="downSkinCheck");
+	check-over-skin:Embed(source="skin.swf", symbol="upSkinCheckBox");
+	check-select-down-skin:Embed(source="skin.swf", symbol="downSelectSkinCheck");
+	check-select-over-skin:Embed(source="skin.swf", symbol="upSelectSkinCheck");
+	check-select-up-skin:Embed(source="skin.swf", symbol="overSelectSkinCheck");
+	/*check-up-skin:Embed(source="../assets/home.png");*/	
+}
+/* WindowFse */
+ Panel.windowFilter
+ {
+ 	font-size:12;
+	close-button-over-skin:Embed(source="skin.swf", symbol="btnOver");
+	close-button-down-skin:Embed(source="skin.swf", symbol="btnDown");
+	close-button-up-skin:Embed(source="skin.swf", symbol="btnOut");
+ }
+
+ DragManager
+ {
+    move-cursor:Embed(source="../images/moveDrag.png");
+ }

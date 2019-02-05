@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema targetNamespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/comunicaEventoFarmaceutico/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/comunicaEventoFarmaceutico/" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:element name="FSE.comunicaEventoFarmaceutico">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="eventoFarmaceutico" type="m:eventoFarmaceuticoType" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="dataSetVersion" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element> 
+	<xs:element name="FSE.comunicaEventoFarmaceuticoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="param" type="m:rispostaType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="eventoFarmaceuticoType">
+		<xs:all>
+			<xs:element name="numeroProgressivo" type="xs:string"/>
+			<xs:element name="strutturaErogazione" type="m:strutturaErogazioneType"/>
+			<xs:element name="cittadino" type="m:cittadinoType"/>			
+			<xs:element name="idTipoComunicazione" type="xs:string"/>
+			<xs:element name="IUP" type="xs:string"/>
+			<xs:element name="dataErogazione" type="xs:string"/>
+			<xs:element name="farmaciErogati" type="m:farmaciErogatiType"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="strutturaErogazioneType">
+		<xs:all>
+			<xs:element name="idFarmacia" type="xs:string"/>
+			<xs:element name="idASLAppartenenza" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>	
+	<xs:complexType name="cittadinoType">
+		<xs:all>
+			<xs:element name="idCittadino">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="tipo" type="m:tipoType"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:simpleType name="tipoType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CF"/>
+			<xs:enumeration value="ALTRO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="farmaciErogatiType">
+		<xs:sequence>
+			<xs:element name="farmaco" type="m:farmacoType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="farmacoType">
+		<xs:all>
+			<xs:element name="idFarmaco" type="xs:string"/>
+			<xs:element name="idPrincipioAttivo" type="xs:string"/>
+			<xs:element name="idClasseTerapeutica" type="xs:string"/>
+			<xs:element name="quantitaConfezioni" type="xs:string"/>
+			<xs:element name="unitaMisura" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="rispostaType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="esitoComunicaEventoFarmaceutico" type="m:esitoComunicaEventoFarmaceuticoType"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="esitoNegativo" type="m:esitoNegativoType"/>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="esitoComunicaEventoFarmaceuticoType">
+		<xs:all>
+			<xs:element name="numeroProgressivo" type="xs:string"/>
+			<xs:element name="esito" type="xs:string"/>
+			<xs:element name="tipoOperazione" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>	
+	<xs:complexType name="esitoNegativoType">
+		<xs:all>
+			<xs:element name="codiceErrore" type="xs:string"/>
+			<xs:element name="descErrore" type="xs:string"/>
+			<xs:element name="listaEccezioni" type="m:listaEccezioniType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaEccezioniType">
+		<xs:sequence>
+			<xs:element name="eccezione" type="m:eccezioneType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="eccezioneType">
+		<xs:all>
+			<xs:element name="codiceEccezione" type="xs:string"/>
+			<xs:element name="descEccezione" type="xs:string"/>
+			<xs:element name="nomeCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="valoreCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="descEccezioneCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceEccezioneCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="ROI" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaWarningType">
+		<xs:sequence>
+			<xs:element name="warning" type="m:warningType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="warningType">
+		<xs:all>
+			<xs:element name="codiceWarning" type="xs:string"/>
+			<xs:element name="descWarning" type="xs:string"/>
+			<xs:element name="nomeCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="valoreCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="descWarningCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceWarningCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="ROI" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+</xs:schema>

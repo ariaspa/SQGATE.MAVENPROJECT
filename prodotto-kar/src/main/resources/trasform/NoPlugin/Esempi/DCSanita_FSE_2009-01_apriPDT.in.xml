@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="DCSanita_FSE_2009-01_apriPDT.xslt"?>
+<Document>
+    <t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+	   <Security>
+			<CitCardPresent>true</CitCardPresent>
+			<CitCF>FMGGSP40H15F205O</CitCF>
+			<CitSmartCardSN>1234567890</CitSmartCardSN>
+			<FunContext>
+				<credential>
+						<vrs>
+							<mjr>2</mjr>
+							<min>1</min>
+						</vrs>
+						<validity>
+							<emittedDate>02/03/2004 16:53:05</emittedDate>
+							<sessionMaxTime>28800000</sessionMaxTime>
+						</validity>
+						<role>
+							<code>21</code>
+							<description>AMMINISTRATIVO ASL-AO</description>
+						</role>
+						<userId>GADMED10A10A010A</userId>
+						<FirstName>MARCO</FirstName>
+						<LastName>ROSSI</LastName>
+						<iupSeed>12345</iupSeed>
+						<ctf>
+							<reg>
+								<cod>030</cod>
+								<des>LOMBARDIA</des>
+							</reg>
+							<app>
+								<cod>001</cod>
+								<des>SISS</des>
+							</app>
+							<pro>
+								<cod>015</cod>
+								<des>MILANO</des>
+							</pro>
+							<ter>
+								<cod>030309</cod>
+								<des>ASL MILANO1</des>
+							</ter>
+							<str>
+								<cod>030974</cod>
+								<des>AO SALVINI</des>
+							</str>
+							<pre>
+								<cod>03007300</cod>
+								<des>OSPEDALE DI CIRCOLO</des>
+							</pre>
+							<rep>
+								<cod>4301</cod>
+								<des>UROLOGIA</des>
+							</rep>
+						</ctf>
+						<prv>
+							<iup>00000</iup>
+							<DF>V</DF>
+							<Ref>BIANCHI/GIOVANNI/GADMED10A10A010A/1328</Ref>
+						</prv>
+					</credential>
+			</FunContext>
+		</Security>
+		<Sla>
+			<Log>
+				<Global>
+					<MethodName>GADO.registraAttestaInizioAccesso</MethodName>
+					<MethodVer>http://www.crs.lombardia.it/schemas/DCSanita/GADO/2008-01/registraAttestaInizioAccesso/</MethodVer>
+					<Recipient>PC</Recipient>
+				    <TrackID>1132048757203</TrackID>
+				    <Timestamp>14/11/2008+10:59:18,562</Timestamp>
+				    <RecipientRole></RecipientRole>
+				</Global>
+			</Log>
+		</Sla>
+	</t:CoopContext>
+    <percorsoDiagnosticoTerapeutico>
+		<ll:CRSlegalContent xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" type="Text" opLegSign="true" opWeakSign="false" 	feSign="false" citAttes="true" tStamp="false" verify="OK" crypt="false">
+		    <Value>RG9jdW1lbnRvIGNsaW5pY28gZW1lc3NvIGRhOiBGU0VNRUQ3OUEwMVozNjhDaW4gZGF0YSAyNC8wMy8yMDA4IC0gMTA6MjQgSW50ZXJlc3NhdG86IEZTRUNJVFRHSU9CQkUgLSBGU0VDSVRUR0lBQ09CQkUgLSBGU0VDSVQ3MEEwMVozNjhDUmVkYXR0byBkYTogRlNFTUVEQ0lDQ0lPIC0gRlNFTUVEQkVMTEkgLSBGU0VNRUQ3OUEwMVozNjhDUmlmZXJpbWVudGkgZGVsIERvY3VtZW50byBDbGluaWNvOiBQQVRJRU5UIFNVTU1BUllJbyBzb3R0b3Njcml0dG86IEZTRU1FRENJQ0NJTyAtIEZTRU1FREJFTExJIC0gRlNFTUVENzlBMDFaMzY4Q0luIGNvbmZvcm1pdGEnIGNvbiBsJ2FydC4gODQgZGVsIGQuIGxncy4gMTk2LzIwMDMsIGNvbiBsYSBwcmVzZW50ZSBhdXRvcml6em8gbGEgY29uc3VsdGF6aW9uZSBpbiBhdXRvbm9taWEgZGVsIERvY3VtZW50byBDbGluaWNvIGluIG9nZ2V0dG8gZGEgcGFydGUgZGVsbCdJbnRlcmVzc2F0by5Pc2N1cmFtZW50byByaXNwZXR0byBhbGxlIExlZ2dpIFNwZWNpYWxpOkluIG9zc2VydmFuemEgYSBxdWFudG8gcHJldmlzdG8gZGFsbGUgTGVnZ2kgc3BlY2lhbGkgKGFydC4gMTEgZGVsbGEgbC4gMjIgbWFnZ2lvIDE5NzgsIG4uIDE5NDsgYXJ0LiA1IGRlbGxhIGwuIDUgZ2l1Z25vIDE5OTAgbi4gMTM1OyBhcnQuIDEyMCBkZWwgZC5wLnIuIDkgb3R0b2JyZSAxOTkwLCBuLiAzMDk7IGFydC4gNzM0LWJpcyBkZWwgY29kaWNlIHBlbmFsZSksIGRpY2hpYXJvIGlsIERvY3VtZW50byBDbGluaWNvIGluIG9nZ2V0dG86LSBPc2N1cmF0bywgcGVyIHF1YW50byByaWd1YXJkYSBsYSBub3JtYSBjaGUgZGlzY2lwbGluYSBpbCBUcmF0dGFtZW50byBkZWkgRGF0aSByZWxhdGl2aSBhbGxhIHRvc3NpY29kaXBlbmRlbnphOy0gTm9uIE9zY3VyYXRvLCBwZXIgcXVhbnRvIHJpZ3VhcmRhIGxhIG5vcm1hIGNoZSBkaXNjaXBsaW5hIGlsIFRyYXR0YW1lbnRvIGRlaSBEYXRpIHJlbGF0aXZpIGFsbGEgc2llcm9wb3NpdGl2aXRhJzstIE9zY3VyYXRvLCBwZXIgcXVhbnRvIHJpZ3VhcmRhIGxhIG5vcm1hIGNoZSBkaXNjaXBsaW5hIGlsIFRyYXR0YW1lbnRvIGRlaSBEYXRpIHJlbGF0aXZpIGEgdmlvbGVuemEgc3ViaXRlOy0gTm9uIE9zY3VyYXRvLCBwZXIgcXVhbnRvIHJpZ3VhcmRhIGxhIG5vcm1hIGNoZSBkaXNjaXBsaW5hIGlsIFRyYXR0YW1lbnRvIGRlaSBEYXRpIHJlbGF0aXZpIGFsbGEgaW50ZXJydXppb25lIHZvbG9udGFyaWEgZGkgZ3JhdmlkYW56YS5EaWNoaWFybyBpbCBEb2N1bWVudG8gQ2xpbmljbyBvc2N1cmF0byBzdSByaWNoaWVzdGEgZXNwbGljaXRhIGZvcm11bGF0YSBkYSBwYXJ0ZSBkZWxsJ0ludGVyZXNzYXRvLmxmaWpsaXNmaGFoZmloODQzNTczNDg5MDd0amg4OXVpZmdvNDg5bzM0aDg5</Value>				
+		</ll:CRSlegalContent>				
+		<cittadino>
+            <idCittadino tipo="CF">PDTCIT10A10A010A</idCittadino>
+            <cognomeCittadino>RIZZI</cognomeCittadino>
+            <nomeCittadino>MARIO</nomeCittadino>
+            <sessoCittadino>M</sessoCittadino>
+            <dataNascitaCittadino>19701030</dataNascitaCittadino>
+            <idComuneNascitaCittadino>015146</idComuneNascitaCittadino>
+        </cittadino>
+        <datiPDT>
+            <dataApertura>20090715</dataApertura>
+            <codicePDT>1199</codicePDT>
+            <descrizionePatologia>Descrizione Patologia!</descrizionePatologia>
+        </datiPDT>
+    </percorsoDiagnosticoTerapeutico>	
+</Document>

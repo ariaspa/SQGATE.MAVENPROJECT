@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" 
+	layout="absolute" initialize="init();"
+	backgroundColor="0xFFFFFF" 
+	xmlns:flex="it.lispa.siss.flex.*" 
+	xmlns:component="it.lispa.siss.flex.component.*">
+	 <mx:Script>
+	 	<![CDATA[
+			import com.li.dc.sebc.turboFSE.model.vo.ContentFolder;
+			import com.li.dc.sebc.turboFSE.model.vo.FolderTree;
+			import com.li.dc.sebc.turboFSE.model.vo.Tree;
+			
+			import it.lispa.siss.sebc.middleground.entity.Cittadino;
+			import it.lispa.siss.sebc.middleground.entity.DatoCodificato;
+			import it.lispa.siss.sebc.middleground.entity.Operatore;
+			import it.lispa.siss.sebc.middleground.entity.supporto.SmartCard;
+			
+			import mx.collections.ArrayCollection;
+			import mx.controls.Tree;
+			import mx.rpc.AbstractOperation;
+			import mx.rpc.Fault;
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+			import mx.rpc.remoting.RemoteObject;
+	 		
+	 		////////
+	 		[Bindable]private var albero:ArrayCollection;
+	 		
+	 		private var selected:Object;
+	 	 
+	 		private var destination:String;
+	 		/////////////////////////////
+	 		private function init():void
+	 		{
+	 			destination = "FSEOperatore";
+	 		}
+	 		private function onClickFolder(e:Event):void
+	 		{
+	 			var idFolder:String = FolderTree(selected).folder.codice;
+	 			//
+	 			var service:RemoteObject = new RemoteObject(destination);
+	 			service.addEventListener(FaultEvent.FAULT,onFaultFolder);
+	 			service.addEventListener(ResultEvent.RESULT,onResultFolder);
+	 			service.getContentFolder(getCittadino(),getOperatore(),idFolder);
+	 		}
+	 		private function onClick(e:Event):void
+	 		{
+	 			var service:RemoteObject = new RemoteObject(destination);
+	 			service.addEventListener(FaultEvent.FAULT,onFaultTree);
+	 			service.addEventListener(ResultEvent.RESULT,onResultTree);
+	 			service.getTree(getCittadino(),getOperatore(),0);
+	 		}
+	 		private function onResultFolder(e:ResultEvent):void
+	 		{
+	 			txt.text += "RESULT caricaFolder ========================================" ;
+	 			inserisci(albero, e.result as ContentFolder );
+	 			albero = new ArrayCollection( albero.toArray() );
+	 		}
+	 		private function inserisci(collection:ArrayCollection,content:ContentFolder):void
+	 		{
+	 			var where:String = FolderTree(selected).folder.codice;
+	 			var folder:FolderTree =  content.folder;
+	 			if(folder != null)
+	 			{
+	 				for(var i :uint = 0;i<collection.length;i++)
+	 				{
+	 					var fTree:FolderTree 	= collection.getItemAt( i ) as FolderTree;
+	 					var folderItem:DatoCodificato 	= fTree.folder;
+	 					if(folderItem!=null)
+	 					{
+	 						var idFolder:String 	= folderItem.codice;
+	 						if(idFolder == where)
+	 						{
+	 							// trovato
+	 							collection.setItemAt(fTree , i );
+	 							break;
+	 						}else if(fTree.children!=null && fTree.children.length>0)
+	 						{
+	 							inserisci(fTree.children,content);
+	 						}	
+	 					}
+	 				}
+	 			}
+	 		}
+	 		private function onFaultFolder(e:FaultEvent):void
+	 		{
+	 			txt.text += "FAULT caricaFolder ========================================\n" + e.message;
+	 		}
+	 		private function onResultTree(e:ResultEvent):void
+	 		{
+	 			txt.text += "RESULT caricaAlbero ========================================" ;
+	 			var tree:com.li.dc.sebc.turboFSE.model.vo.Tree = (e.result as com.li.dc.sebc.turboFSE.model.vo.Tree);
+	 			albero = tree.listaFolder;
+	 		}
+	 		private function onFaultTree(e:FaultEvent):void
+	 		{
+	 			var acapo:String	= "\n";
+	 			var fault:Fault = e.fault;
+	 			var out:String = "===============FAULT==================="+acapo;
+	 			out	+=" CONTENT -> "+fault.content+acapo; 
+	 			out	+=" MESSAGE -> "+fault.message+acapo; 
+	 			out	+=" NAME -> "+fault.name+acapo; 
+	 			out	+=" ROOTCAUSE -> "+fault.rootCause+acapo; 
+	 			out	+=" ERRORID -> "+fault.errorID+acapo; 
+	 			out	+=" FAULTCODE -> "+fault.faultCode+acapo; 
+	 			out	+=" FAULTDETAIL -> "+fault.faultDetail+acapo; 
+	 			out	+=" FAULTSTRING -> "+fault.faultString+acapo; 
+	 			out	+=" GETSTACKTRACE -> "+fault.getStackTrace()+acapo; 
+	 			out	+="===============END FAULT==================="+acapo;
+	 			txt.text += out+acapo;
+	 		}
+	 		/////////////////////////////
+			private function getOperatore():Operatore
+			{
+				var ope:Operatore			= new Operatore();
+				ope.codiceFiscale			= "VNTSPC70A22F205E";
+				var datoCod:DatoCodificato 	= new DatoCodificato();
+				datoCod.codice				= "63"
+				datoCod.descrizione			= "SPECIALISTA AO   [V]";
+				ope.ruolo					= datoCod;
+				return ope;
+			}
+	 		private function getCittadino():Cittadino
+	 		{
+	 			var cittadino:Cittadino = new Cittadino();
+	 			cittadino.codiceFiscale = "TSTSEI88A10D150Q";
+	 			/* cittadino.codiceSesso	= "F";
+	 			cittadino.dataNascita	= "01011982";
+	 			cittadino.nome			= "TREMILACENTOQUARANTA";
+	 			cittadino.cognome		= "CITTASISS"; */
+	 			cittadino.smartCard		= new SmartCard();
+	 			//cittadino.smartCard.id	= "805CC101";
+	 			return cittadino;
+	 		}
+	 		private function onChangeMenu(event:Event):void
+			{
+				event.stopPropagation();
+				var tree:mx.controls.Tree = event.target as mx.controls.Tree;
+				selected = tree.selectedItem;
+			}
+			
+			private function tipFunction(item:Object):String
+			{
+				return "TOOLTIP : "+ FolderTree( item ).tooltip;
+			}
+			override public function addChild(child:DisplayObject):DisplayObject
+			{
+				return super.addChild(child);
+			//	dispatchEvent( new FlexEvent(FlexEvent.SHOW) );
+			}
+	 	]]>
+	 </mx:Script>
+	  
+	 
+ <mx:HBox width="100%" height="100%">
+ 	<mx:VBox height="100%">
+	 	<mx:Button click="onClick(event)" label="caricaAlbero" />
+	 	<mx:Button click="onClickFolder(event)" label="caricaFolder" />
+	 	<mx:Tree height="100%" width="400" dataProvider="{albero}" change="onChangeMenu(event)" dataTipFunction="tipFunction"/>
+ 	</mx:VBox>	
+ 	<mx:TextArea id="txt" width="50%" height="100%" />
+ </mx:HBox>  
+ 
+</mx:Application> 

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<soap-env:Header>
+<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+		<Transport>
+			<Mode>Sync</Mode>
+			<Dest>DCSanita</Dest>
+		</Transport>
+			<Security>
+			<FunContext>
+				<credential>
+					<validity>
+						<emittedDate>15/11/2005+10:59:18,531</emittedDate>
+						<sessionMaxTime>15/11/2005+10:59:18,531</sessionMaxTime>
+					</validity>
+					<vrs>
+						<mjr>1</mjr>
+						<min>0</min>
+					</vrs>
+					<ctf>
+						<reg>
+							<cod/>
+							<des/>
+						</reg>
+						<app>
+							<cod/>
+							<des/>
+						</app>
+						<pro>
+							<cod/>
+							<des/>
+						</pro>
+						<ter>
+							<cod/>
+							<des/>
+						</ter>
+						<str>
+							<cod>030960</cod>
+							<des/>
+						</str>
+						<pre>
+							<cod></cod>
+							<des/>
+						</pre>
+						<rep>
+							<cod/>
+							<des/>
+						</rep>
+					</ctf>
+					<role>
+						<code>12</code>
+						<description>Specialista Ambulatoriale</description>
+					</role>
+					<userId>CCCBLL79A01Z368C</userId>
+					<iupSeed>12345</iupSeed>
+				</credential>
+			</FunContext>
+			<CitCardPresent>false</CitCardPresent>
+			<CitAuth>false</CitAuth>
+			<CitCF></CitCF>
+			<CitSmartCardSN></CitSmartCardSN>
+		</Security>
+		<Sla>
+			<Log>
+				<Global>
+					<TrackID>1132048757203</TrackID>
+					<Timestamp>15/11/2005+10:59:18,562</Timestamp>
+				</Global>
+			</Log>
+		</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+	<m:FSE.annullaEventoRicovero
+  xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/annullaEventoRicovero/"
+  dataSetVersion="1.0">
+        <eventoRicovero>
+    	<strutturaErogazione>
+       <idEnte>030960</idEnte>
+       <idPresidio>03090300</idPresidio>
+    </strutturaErogazione>
+    <cittadino>
+       <idCittadino tipo="CF">GBBGCB70A01Z368D</idCittadino>
+       </cittadino>
+   	<numeroNosologico>2009123456</numeroNosologico>
+	<idTipoAnnullamento>A<idTipoAnnullamento>
+	<motivoAnnullamento></motivoAnnullamento>
+  </eventoRicovero>
+</m:FSE.annullaEventoRicovero>
+</soap-env:Body>
+</soap-env:Envelope>

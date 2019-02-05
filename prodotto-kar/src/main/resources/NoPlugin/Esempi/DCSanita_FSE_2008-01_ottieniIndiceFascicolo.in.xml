@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+<TestInfo>
+	<Autore>Salvatore Manfredi</Autore>
+	<DataPreparazione>16/06/2009</DataPreparazione>
+	<CodiceTest>FSEIN.8059000008</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>F</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>In questa scheda si effettua effettua la consultazione del fascicolo con l’operatore abilitato alla ricerca generalista, sono presenti SC + PIN, e l’abilitazione alle reti NFR e UDT.</DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>Vengono estratti tutti i DCE/eventi con il previsto raggruppamento. In particolare nel fascicolo, i folder di tipo IUP sono raggruppati in un unico folder che fa riferimento allo stesso IUP, analogamente per Presidio.nosologico e per Presidio.numeroPratica. I folder di rete UDT e NFR sono anch’essi raggruppati in folder unici che contengono i diversi DCE. Infine è presente la struttura eventi, esterna al fascicolo, che contiene gli eventi farmaceutico, specialistico senza IUP e PS senza numeroPratica, provenienti dai flussi di rendicontazione. </DescrizioneRisultatoAtteso>
+</TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap-env:Header>
+		<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+			<Sla>
+				<Log>
+					<Global>
+						<TrackID>121551124945253853</TrackID>
+						<Timestamp>08-07-2008 12:00:49</Timestamp>
+					</Global>
+				</Log>
+			</Sla>
+			<Security>
+				<CitCardPresent>true</CitCardPresent>
+				<CitAuth>true</CitAuth>
+				<CitCF>FSPPBB75C09E507C</CitCF>
+				<CitSmartCardSN>805CC101</CitSmartCardSN>
+				<FunContext>
+					<credential>
+						<vrs>
+							<mjr>2</mjr>
+							<min>1</min>
+						</vrs>
+						<validity>
+							<emittedDate>08/07/2008 11:57:22</emittedDate>
+							<sessionMaxTime>28800000</sessionMaxTime>
+						</validity>
+						<role>
+							<code>6</code>
+							<description>MMG/PLS</description>
+						</role>
+						<attributi>
+							<attributo>
+								<cod>UDT</cod>
+								<des>RETE ONCOLOGICA LOMBARDA</des>
+							</attributo>
+						</attributi>
+						<userId>FSEMED79A01Z368C</userId>
+						<FirstName>NICOLA</FirstName>
+						<LastName>TESTA</LastName>
+						<ctf>
+							<reg>
+								<cod/>
+								<des/>
+							</reg>
+							<app>
+								<cod/>
+								<des/>
+							</app>
+							<pro>
+								<cod/>
+								<des/>
+							</pro>
+							<ter>
+								<cod/>
+								<des/>
+							</ter>
+							<str>
+								<cod>691489</cod>
+								<des>ASL CREMONA</des>
+							</str>
+							<pre>
+								<cod>03038000</cod>
+								<des/>
+							</pre>
+						</ctf>
+						<prv>
+							<iupSeed>00000</iupSeed>
+							<DF>F</DF>
+							<Ref>TESTA/NICOLA/FSEMED79A01Z368C/56789</Ref>
+						</prv>
+					</credential>
+				</FunContext>
+			</Security>
+			<Transport>
+				<Mode>Sync</Mode>
+				<Dest>DCSanita</Dest>
+			</Transport>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+		<m:FSE.ottieniIndiceFascicolo xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/ottieniIndiceFascicolo/" dataSetVersion="1.0">
+			<richiestaIndiceFascicolo>
+				<cittadino>
+					<idCittadino tipo="CF">FSPPBB75C09E507C</idCittadino>
+				</cittadino>
+				<nMaxRecord></nMaxRecord>
+				<nPagina/>
+			</richiestaIndiceFascicolo>
+		</m:FSE.ottieniIndiceFascicolo>
+	</soap-env:Body>
+</soap-env:Envelope>

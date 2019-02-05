@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<!--
+<TestInfo>
+	<Autore>Luigi Laricchia</Autore>
+	<DataPreparazione>17/08/2009</DataPreparazione>
+	<CodiceTest>IN.8071000006</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>F</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>
+		[Test casi positivi: Verificare che l'operatore faccia un accesso generalista su un DCE con sezione generalista
+		Si testa la condizione di oscuramento del DCE. DCE in chiaro]
+	</DescrizioneCaso>
+	
+	
+</TestInfo>
+
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap-env:Header>
+		<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+			<Sla>
+				<Log>
+					<Global>
+						<TrackID>121551124945253853</TrackID>
+						<Timestamp>08-07-2008 12:00:49</Timestamp>
+					</Global>
+				</Log>
+			</Sla>
+			<Security>
+				<CitCardPresent>true</CitCardPresent>
+				<CitAuth>false</CitAuth>
+				<CitCF>FSECIT70A01Z368C</CitCF>
+				<CitSmartCardSN>555QQ666</CitSmartCardSN>
+				<FunContext>
+					<credential>
+						<vrs>
+							<mjr>2</mjr>
+							<min>1</min>
+						</vrs>
+						<validity>
+							<emittedDate>08/07/2008 11:57:22</emittedDate>
+							<sessionMaxTime>28800000</sessionMaxTime>
+						</validity>
+						<role>
+							<code>10</code>
+							<description>Altro Medico</description>
+						</role>
+						<userId>OPRTST01T01T001T</userId>
+						<FirstName>MAURO</FirstName>
+						<LastName>RAMPI</LastName>
+						<ctf>
+							<reg>
+								<cod/>
+								<des/>
+							</reg>
+							<app>
+								<cod/>
+								<des/>
+							</app>
+							<pro>
+								<cod/>
+								<des/>
+							</pro>
+							<ter>
+								<cod/>
+								<des/>
+							</ter>
+							<str>
+								<cod>030960</cod>
+								<des/>
+							</str>
+							<pre>
+								<cod>03090300</cod>
+								<des/>
+							</pre>
+							<rep>
+								<cod>0800</cod>
+								<des/>
+							</rep>
+						</ctf>
+						<prv>
+							<iupSeed>00000</iupSeed>
+							<DF>F</DF>
+							<Ref>DVALOTTO/MMG/DVLMMG69A11F205N/17941</Ref>
+						</prv>
+					</credential>
+				</FunContext>
+			</Security>
+			<Transport>
+				<Mode>Sync</Mode>
+				<Dest>DCSanita</Dest>
+			</Transport>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+		<m:FSE.autorizzaDCE xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/autorizzaDCE/" dataSetVersion="1.0">
+			<richiestaAutorizzaDCE>
+				<ll:CRSlegalContent xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" type="Text" opLegSign="true" opWeakSign="false" feSign="false" verify="OK" tStamp="true">
+					<Value>TUlNTU8=</Value>
+					<VerifyInfo>
+						<Value>base64.blob</Value>
+						<Sign actor="OpLeg" result="OK">
+							<DN>DistinguishedName</DN>
+							<Expiry>ExpiryDateTime</Expiry>
+							<Serial>SerialNumber</Serial>
+							<Role>Ruolo</Role>
+							<CN>CommonName</CN>
+							<SigningTime>12-01-2003 12:12:12</SigningTime>
+						</Sign>
+						<TimeStampInfo>
+							<Stamp>DateTime</Stamp>
+							<Payload>base64.blob</Payload>
+							<SN>SerialNumber</SN>
+							<CADN>DistinguishedName</CADN>
+							<CAPolicy>TS</CAPolicy>
+							<Hash>blob</Hash>
+						</TimeStampInfo>
+					</VerifyInfo>
+				</ll:CRSlegalContent>
+				<idSetDocumenti>5</idSetDocumenti><hashDocumento>xxx</hashDocumento>
+				<noteReperibilita>qdnifnqwj ijqf jwipq fj ioqwe jfi weqp jfiwej fipwej pfoq wei</noteReperibilita>				
+				<idTipoDocumento>04</idTipoDocumento>
+				<dataOraCreazione>20090421092000</dataOraCreazione> 
+				<strutturaCreazione>
+					<idEnte>030960</idEnte>
+					<idPresidio>03090300</idPresidio>
+					<idUnitaOperativaClinica/>
+				</strutturaCreazione>				
+				<cittadino>
+					<idCittadino tipo="CF">FSECIT70A01Z368C</idCittadino>
+					<nomeCittadino>FSECITTGIOBBE</nomeCittadino>
+					<cognomeCittadino>FSECITTGIACOBBE</cognomeCittadino>
+				</cittadino>
+				<autoreDocumento>
+					<codiceFiscale>MDFMPB68M08E623I</codiceFiscale>
+					<cognome>medFSEpubbblicaDocumento</cognome>
+					<nome>medpubbblicaDocumento</nome>
+				</autoreDocumento>
+				<attributiSpecifici>
+				   <prestazioniAssociate>
+				     <prestazione>
+						<idPrestazioneSISS>0090011</idPrestazioneSISS>
+					 </prestazione>
+				   </prestazioniAssociate>
+				   <numeroPraticaPS>AAAAA</numeroPraticaPS>
+				   <numeroNosologico>2009805105</numeroNosologico>
+				   <numeroPrericovero>2009805106</numeroPrericovero>
+				</attributiSpecifici>
+			</richiestaAutorizzaDCE>
+		</m:FSE.autorizzaDCE>
+	</soap-env:Body>
+</soap-env:Envelope>

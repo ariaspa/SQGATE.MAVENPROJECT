@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+<TestInfo>
+	<Autore>MCaldara</Autore>
+	<DataPreparazione>18/02/2010</DataPreparazione>
+	<CodiceTest>FSEIN.8059000006.01-01</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>F</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>Sono preventivamente inseriti nel DB:
+	
+	  - un referto specialistico non di rete in chiaro;
+	  - un referto specialistico appartenente alla rete di patologia NFR in chiaro;
+	  - un referto di ricovero appartenente alla rete di patologia NFR, oscurato per il solo oscuramento volontario del cittadino;
+	  - un referto di pronto soccorso appartenente alla rete di patologia NFR, oscurato.
+	
+	Viene effettuata la ricerca da un operatore che ha solo l'accesso generalista (presenza della SC), e viene velorizzato in input l'idFolder
+	relativo al folder contenente il referto specialistico non di rete.
+	</DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>Viene estratto il solo referto specialistico non di rete con la corrispondente struttura del fascicolo</DescrizioneRisultatoAtteso>
+</TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap-env:Header>
+		<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+			<Sla>
+				<Log>
+					<Global>
+						<TrackID>121551124945253853</TrackID>
+						<Timestamp>08-07-2008 12:00:49</Timestamp>
+					</Global>
+				</Log>
+			</Sla>
+			<Security>
+				<CitCardPresent>true</CitCardPresent>
+				<CitAuth>false</CitAuth>
+				<CitCF>FSRFRG93H14E507N</CitCF>
+				<CitSmartCardSN>999BV667</CitSmartCardSN>
+				<FunContext>
+					<credential>
+						<vrs>
+							<mjr>2</mjr>
+							<min>1</min>
+						</vrs>
+						<validity>
+							<emittedDate>08/07/2008 11:57:22</emittedDate>
+							<sessionMaxTime>28800000</sessionMaxTime>
+						</validity>
+						<role>
+							<code>6</code>
+							<description>MMG/PLS</description>
+						</role>
+						<userId>FSRFRM58R10F205O</userId>
+						<FirstName>FSERMAURO</FirstName>
+						<LastName>FSERRAMPI</LastName>
+						<ctf>
+							<reg>
+								<cod/>
+								<des/>
+							</reg>
+							<app>
+								<cod/>
+								<des/>
+							</app>
+							<pro>
+								<cod/>
+								<des/>
+							</pro>
+							<ter>
+								<cod/>
+								<des/>
+							</ter>
+							<str>
+								<cod>691489</cod>
+								<des>ASL CREMONA</des>
+							</str>
+							<pre>
+								<cod>03038000</cod>
+								<des/>
+							</pre>
+						</ctf>
+						<prv>
+							<iupSeed>00000</iupSeed>
+							<DF>F</DF>
+							<Ref>FSERRAMPI/FSERMAURO/FSRFRM58R10F205O/17941</Ref>
+						</prv>
+					</credential>
+				</FunContext>
+			</Security>
+			<Transport>
+				<Mode>Sync</Mode>
+				<Dest>DCSanita</Dest>
+			</Transport>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+	<m:FSE.ottieniIndiceFascicolo xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/ottieniIndiceFascicolo/" dataSetVersion="1.0">
+			<richiestaIndiceFascicolo>
+				<cittadino>
+					<idCittadino tipo="CF">FSRFRG93H14E507N</idCittadino>
+				</cittadino>
+				<nMaxRecord/>
+				<nPagina/>
+			</richiestaIndiceFascicolo>
+		</m:FSE.ottieniIndiceFascicolo>
+	</soap-env:Body>
+</soap-env:Envelope>

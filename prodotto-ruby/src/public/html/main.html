@@ -1,0 +1,84 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>	  
+      <div class="navbar-brand">
+          <i class="fa fa-user-circle-o" aria-hidden="true">
+              </i> <span id="eme-user-name"></span></div>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" id="eme-logout">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="eme-tab-cnt" class="content">
+
+	<ul id="eme-tabs-contaniner" class="nav nav-tabs" role="tablist">
+		<li role="presentation" id="eme-search-li">
+			<a id="eme-search-tab" href="#eme-search-panel" aria-controls="home" role="tab" data-toggle="tab">Ricerca</a>
+		</li>
+        <li  role="presentation" id="eme-favorites-li">
+			<a href="#eme-favorites-panel" data-toggle="tab" aria-controls="home" role="tab" data-toggle="tab" id="eme-favorites-tab">Preferiti <i class="fa fa-star" aria-hidden="true"></i></a>
+		</li>
+	</ul>
+
+	<div class="tab-content">
+
+		<div role="tabpanel" class="tab-pane" id="eme-search-panel">
+			<div class="searchPanel">
+				<form class="form-horizontal">
+					<div class="form-group">
+					<label for="search" class="col-sm-2 control-label">Cerca per </label>	
+					<div class="col-sm-10">					
+						<div class="input-group">					
+							<input id="eme-search-query" type="text" class="form-control" placeholder="Id Progetto, Codice Rilascio Contrattuale, Titolo Workitem">
+							<span class="input-group-btn">
+								<button class="btn btn-default" id="eme-search-button" type="button">Cerca</button>
+							</span>
+						</div>
+					</div>
+					</div>
+				</form>
+			</div>
+			<h2>Elenco rilasci contrattuali</h2>
+			<table id="eme-risultati-container" class="table table-bordered sortable">
+				<thead>
+					<tr>
+						<th>PROGETTO POLARION</th>
+						<th>CODICE RILASCIO CONTRATTUALE</th>
+						<th>TITOLO PROGETTO DEMAND</th>
+						<th class="starUnselected"><i class="fa fa-star" aria-hidden="true"></i></th>						
+					</tr>
+				</thead>
+                <tbody>
+                </tbody>
+			</table>
+	    </div>
+
+		<div role="tabpanel" class="tab-pane" id="eme-favorites-panel">
+			<h2>Elenco rilasci contrattuali</h2>
+			<table id="eme-preferiti-container" class="table table-bordered sortable">
+				<thead>
+					<tr>
+						<th>PROGETTO POLARION</th>
+						<th>CODICE RILASCIO CONTRATTUALE</th>
+						<th>TITOLO PROGETTO DEMAND</th>
+						<th class="starUnselected"><i class="fa fa-star" aria-hidden="true"></i></th>						
+					</tr>
+				</thead>
+                <tbody>
+                </tbody>
+			</table>
+		</div>
+	</div> <!--tab-content -->
+</div> <!-- content -->

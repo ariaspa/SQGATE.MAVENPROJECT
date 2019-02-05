@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<env:Envelope xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<env:Header>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Reply servProd="CIS">
+				<Subject>SAVersion 1.3.1_05</Subject>
+			</Reply>
+		</a:AppContext>
+	</env:Header>
+	<env:Body>
+		<m:CIS.ricercaClinicaRicoveroResponse xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/CIS/2007-05/ricercaClinicaRicovero/">
+			<param>
+				<ricercaClinicaRicovero>
+					<numeroPagine>1</numeroPagine>
+					<listaEventoMaster>
+						<codicePrescrizione/>
+						<listaEventoDettagli>
+							<eventoDettagli>
+								<statoEvento>06</statoEvento>
+								<descrizioneRepartoAccettazione>MEDICINA GENERALE (NON ALTRIMENTI SPECIFICATA)</descrizioneRepartoAccettazione>
+								<codiceModalitaTrauma/>
+								<descrizioneModalitaTrauma/>
+								<descrizioneRepartoDimissione>MEDICINA GENERALE (NON ALTRIMENTI SPECIFICATA)</descrizioneRepartoDimissione>
+								<codicePrescrizione/>
+								<descrizioneSubStrutturaErogatrice>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizioneSubStrutturaErogatrice>
+								<flagNeonato/>
+								<flagRicoveroRipetuto>A</flagRicoveroRipetuto>
+								<descrizioneModalitaDimissione>ORDINARIA</descrizioneModalitaDimissione>
+								<dataAccettazione/>
+								<oraAccettazione/>
+								<flagInterventoChirurgico>S</flagInterventoChirurgico>
+								<codiceTipoProvenienzaPaziente/>
+								<numeroNosologico/>
+								<codiceSubStrutturaErogatrice>03090300</codiceSubStrutturaErogatrice>
+								<codiceDRG>301</codiceDRG>
+								<codiceRepartoDimissione>26</codiceRepartoDimissione>
+								<codiceEvento>10270921</codiceEvento>
+								<linkImmagine/>
+								<linkDocumentoCDA2/>
+								<descrizioneDRG>Mal. endocrine senza CC                           </descrizioneDRG>
+								<diagnosiAccettazione/>
+								<codiceMotivoRicovero/>
+								<dataEvento>20051012</dataEvento>
+								<dataInizioPrericovero/>
+								<descrizioneMotivoRicovero/>
+								<dataEventoIndiceRiabilitazione/>
+								<oraEvento/>
+								<operatoreAccettante/>
+								<codiceTipoRicovero>1</codiceTipoRicovero>
+								<flagRiscontroAutoptico/>
+								<reteDiPatologia/>
+								<dataFinePrericovero/>
+								<codiceFiscaleMadre/>
+								<descrizioneDisciplinaErogata>OSTETRICIA E GINECOLOGIA</descrizioneDisciplinaErogata>
+								<elencoTrasferimenti/>
+								<tipoImmagine/>
+								<elencoInterventiChirurgici/>
+								<descrizioneTipoRicovero>RICOVERO PROGRAMMATO, NON URGENTE</descrizioneTipoRicovero>
+								<dataPrenotazioneIntervento/>
+								<codiceMDC>10</codiceMDC>
+								<linkReferto/>
+								<numeroGiornateDayHospital>2</numeroGiornateDayHospital>
+								<elencoPatologie/>
+								<codiceRegimeRicovero>2</codiceRegimeRicovero>
+								<numeroGiornateDegenza>0</numeroGiornateDegenza>
+								<codiceDisciplinaErogata>37</codiceDisciplinaErogata>
+								<pesoNascita>0000</pesoNascita>
+								<descrizioneTipoProvenienzaPaziente/>
+								<descrizioneRegimeRicovero>DAY HOSPITAL</descrizioneRegimeRicovero>
+								<codiceRepartoAccettazione>26</codiceRepartoAccettazione>
+								<descrizioneMDC>Malattie e disturbi endocrini, metabolici e nutrizionali</descrizioneMDC>
+								<codiceModalitaDimissione>1</codiceModalitaDimissione>
+							</eventoDettagli>
+						</listaEventoDettagli>
+						<dataEvento>20051012</dataEvento>
+						<codiceEvento>10270921</codiceEvento>
+						<descrizioneStrutturaErogatrice>A.O. OSPEDALE DI LECCO - LECCO</descrizioneStrutturaErogatrice>
+						<descrizioneSubStrutturaErogatrice>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizioneSubStrutturaErogatrice>
+						<datiCittadino>
+							<idCittadinoNonSISS/>
+							<idAssistito>999AW989</idAssistito>
+							<codiceFiscaleCittadino>TSTTNT94T41G388F</codiceFiscaleCittadino>
+						</datiCittadino>
+						<codiceStrutturaErogatrice>030960</codiceStrutturaErogatrice>
+						<risultanteStatoEvento>02</risultanteStatoEvento>
+						<codiceSubStrutturaErogatrice>03090300</codiceSubStrutturaErogatrice>
+					</listaEventoMaster>
+					<listaEventoMaster>
+						<codicePrescrizione/>
+						<listaEventoDettagli>
+							<eventoDettagli>
+								<statoEvento>06</statoEvento>
+								<descrizioneRepartoAccettazione>MEDICINA GENERALE (NON ALTRIMENTI SPECIFICATA)</descrizioneRepartoAccettazione>
+								<codiceModalitaTrauma/>
+								<descrizioneModalitaTrauma/>
+								<descrizioneRepartoDimissione>MEDICINA GENERALE (NON ALTRIMENTI SPECIFICATA)</descrizioneRepartoDimissione>
+								<codicePrescrizione/>
+								<descrizioneSubStrutturaErogatrice>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizioneSubStrutturaErogatrice>
+								<flagNeonato/>
+								<flagRicoveroRipetuto>A</flagRicoveroRipetuto>
+								<descrizioneModalitaDimissione>TRASFERITO AD ALTRO REGIME O TIPOLOGIA RICOVERO (STESSO ISTITUTO)</descrizioneModalitaDimissione>
+								<dataAccettazione/>
+								<oraAccettazione/>
+								<flagInterventoChirurgico>S</flagInterventoChirurgico>
+								<codiceTipoProvenienzaPaziente/>
+								<numeroNosologico/>
+								<codiceSubStrutturaErogatrice>03090300</codiceSubStrutturaErogatrice>
+								<codiceDRG>203</codiceDRG>
+								<codiceRepartoDimissione>26</codiceRepartoDimissione>
+								<codiceEvento>10245303</codiceEvento>
+								<linkImmagine/>
+								<linkDocumentoCDA2/>
+								<descrizioneDRG>T.M. apparato epatobiliare o pancreas             </descrizioneDRG>
+								<diagnosiAccettazione/>
+								<codiceMotivoRicovero/>
+								<dataEvento>20050929</dataEvento>
+								<dataInizioPrericovero/>
+								<descrizioneMotivoRicovero/>
+								<dataEventoIndiceRiabilitazione/>
+								<oraEvento/>
+								<operatoreAccettante/>
+								<codiceTipoRicovero>1</codiceTipoRicovero>
+								<flagRiscontroAutoptico/>
+								<reteDiPatologia/>
+								<dataFinePrericovero/>
+								<codiceFiscaleMadre/>
+								<descrizioneDisciplinaErogata>MALATTIE INFETTIVE E TROPICALI</descrizioneDisciplinaErogata>
+								<elencoTrasferimenti/>
+								<tipoImmagine/>
+								<elencoInterventiChirurgici/>
+								<descrizioneTipoRicovero>RICOVERO PROGRAMMATO, NON URGENTE</descrizioneTipoRicovero>
+								<dataPrenotazioneIntervento/>
+								<codiceMDC>07</codiceMDC>
+								<linkReferto/>
+								<numeroGiornateDayHospital>2</numeroGiornateDayHospital>
+								<elencoPatologie/>
+								<codiceRegimeRicovero>2</codiceRegimeRicovero>
+								<numeroGiornateDegenza>0</numeroGiornateDegenza>
+								<codiceDisciplinaErogata>24</codiceDisciplinaErogata>
+								<pesoNascita>0000</pesoNascita>
+								<descrizioneTipoProvenienzaPaziente/>
+								<descrizioneRegimeRicovero>DAY HOSPITAL</descrizioneRegimeRicovero>
+								<codiceRepartoAccettazione>26</codiceRepartoAccettazione>
+								<descrizioneMDC>Malattie e disturbi epatobiliari e pancreas</descrizioneMDC>
+								<codiceModalitaDimissione>7</codiceModalitaDimissione>
+							</eventoDettagli>
+						</listaEventoDettagli>
+						<dataEvento>20050929</dataEvento>
+						<codiceEvento>10245303</codiceEvento>
+						<descrizioneStrutturaErogatrice>A.O. OSPEDALE DI LECCO - LECCO</descrizioneStrutturaErogatrice>
+						<descrizioneSubStrutturaErogatrice>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizioneSubStrutturaErogatrice>
+						<datiCittadino>
+							<idCittadinoNonSISS/>
+							<idAssistito>999AW989</idAssistito>
+							<codiceFiscaleCittadino>TSTTNT94T41G388F</codiceFiscaleCittadino>
+						</datiCittadino>
+						<codiceStrutturaErogatrice>030960</codiceStrutturaErogatrice>
+						<risultanteStatoEvento>02</risultanteStatoEvento>
+						<codiceSubStrutturaErogatrice>03090300</codiceSubStrutturaErogatrice>
+					</listaEventoMaster>
+					<listaEventoMaster>
+						<codicePrescrizione/>
+						<listaEventoDettagli>
+							<eventoDettagli>
+								<statoEvento>06</statoEvento>
+								<descrizioneRepartoAccettazione>NEFROLOGIA</descrizioneRepartoAccettazione>
+								<codiceModalitaTrauma>9</codiceModalitaTrauma>
+								<descrizioneModalitaTrauma>ALTRO</descrizioneModalitaTrauma>
+								<descrizioneRepartoDimissione>NEFROLOGIA</descrizioneRepartoDimissione>
+								<codicePrescrizione/>
+								<descrizioneSubStrutturaErogatrice>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizioneSubStrutturaErogatrice>
+								<flagNeonato/>
+								<flagRicoveroRipetuto>A</flagRicoveroRipetuto>
+								<descrizioneModalitaDimissione>DECEDUTO</descrizioneModalitaDimissione>
+								<dataAccettazione/>
+								<oraAccettazione/>
+								<flagInterventoChirurgico>S</flagInterventoChirurgico>
+								<codiceTipoProvenienzaPaziente/>
+								<numeroNosologico/>
+								<codiceSubStrutturaErogatrice>03090300</codiceSubStrutturaErogatrice>
+								<codiceDRG>416</codiceDRG>
+								<codiceRepartoDimissione>29</codiceRepartoDimissione>
+								<codiceEvento>10273547</codiceEvento>
+								<linkImmagine/>
+								<linkDocumentoCDA2/>
+								<descrizioneDRG>Setticemia, eta 17                                </descrizioneDRG>
+								<diagnosiAccettazione/>
+								<codiceMotivoRicovero/>
+								<dataEvento>20050825</dataEvento>
+								<dataInizioPrericovero/>
+								<descrizioneMotivoRicovero/>
+								<dataEventoIndiceRiabilitazione/>
+								<oraEvento/>
+								<operatoreAccettante/>
+								<codiceTipoRicovero>2</codiceTipoRicovero>
+								<flagRiscontroAutoptico>N</flagRiscontroAutoptico>
+								<reteDiPatologia/>
+								<dataFinePrericovero/>
+								<codiceFiscaleMadre/>
+								<descrizioneDisciplinaErogata>MEDICINA GENERALE</descrizioneDisciplinaErogata>
+								<elencoTrasferimenti/>
+								<tipoImmagine/>
+								<elencoInterventiChirurgici/>
+								<descrizioneTipoRicovero>RICOVERO URGENTE</descrizioneTipoRicovero>
+								<dataPrenotazioneIntervento/>
+								<codiceMDC>18</codiceMDC>
+								<linkReferto/>
+								<numeroGiornateDayHospital>0</numeroGiornateDayHospital>
+								<elencoPatologie/>
+								<codiceRegimeRicovero>1</codiceRegimeRicovero>
+								<numeroGiornateDegenza>20</numeroGiornateDegenza>
+								<codiceDisciplinaErogata>26</codiceDisciplinaErogata>
+								<pesoNascita>0000</pesoNascita>
+								<descrizioneTipoProvenienzaPaziente/>
+								<descrizioneRegimeRicovero>ORDINARIO</descrizioneRegimeRicovero>
+								<codiceRepartoAccettazione>29</codiceRepartoAccettazione>
+								<descrizioneMDC>Malattie infettive e parassitarie</descrizioneMDC>
+								<codiceModalitaDimissione>4</codiceModalitaDimissione>
+							</eventoDettagli>
+						</listaEventoDettagli>
+						<dataEvento>20050825</dataEvento>
+						<codiceEvento>10273547</codiceEvento>
+						<descrizioneStrutturaErogatrice>A.O. OSPEDALE DI LECCO - LECCO</descrizioneStrutturaErogatrice>
+						<descrizioneSubStrutturaErogatrice>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizioneSubStrutturaErogatrice>
+						<datiCittadino>
+							<idCittadinoNonSISS/>
+							<idAssistito>999AW989</idAssistito>
+							<codiceFiscaleCittadino>TSTTNT94T41G388F</codiceFiscaleCittadino>
+						</datiCittadino>
+						<codiceStrutturaErogatrice>030960</codiceStrutturaErogatrice>
+						<risultanteStatoEvento>02</risultanteStatoEvento>
+						<codiceSubStrutturaErogatrice>03090300</codiceSubStrutturaErogatrice>
+					</listaEventoMaster>
+					<listaEventoMaster>
+						<codicePrescrizione/>
+						<listaEventoDettagli>
+							<eventoDettagli>
+								<statoEvento>06</statoEvento>
+								<descrizioneRepartoAccettazione>NEFROLOGIA</descrizioneRepartoAccettazione>
+								<codiceModalitaTrauma/>
+								<descrizioneModalitaTrauma/>
+								<descrizioneRepartoDimissione>NEFROLOGIA</descrizioneRepartoDimissione>
+								<codicePrescrizione/>
+								<descrizioneSubStrutturaErogatrice>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizioneSubStrutturaErogatrice>
+								<flagNeonato/>
+								<flagRicoveroRipetuto>A</flagRicoveroRipetuto>
+								<descrizioneModalitaDimissione>ORDINARIA</descrizioneModalitaDimissione>
+								<dataAccettazione/>
+								<oraAccettazione/>
+								<flagInterventoChirurgico>N</flagInterventoChirurgico>
+								<codiceTipoProvenienzaPaziente/>
+								<numeroNosologico/>
+								<codiceSubStrutturaErogatrice>03090300</codiceSubStrutturaErogatrice>
+								<codiceDRG>296</codiceDRG>
+								<codiceRepartoDimissione>29</codiceRepartoDimissione>
+								<codiceEvento>10273634</codiceEvento>
+								<linkImmagine/>
+								<linkDocumentoCDA2/>
+								<descrizioneDRG>Dist. nutrizione e metabolismo,eta' &gt;17 con CC    </descrizioneDRG>
+								<diagnosiAccettazione/>
+								<codiceMotivoRicovero/>
+								<dataEvento>20050714</dataEvento>
+								<dataInizioPrericovero/>
+								<descrizioneMotivoRicovero/>
+								<dataEventoIndiceRiabilitazione/>
+								<oraEvento/>
+								<operatoreAccettante/>
+								<codiceTipoRicovero>2</codiceTipoRicovero>
+								<flagRiscontroAutoptico/>
+								<reteDiPatologia/>
+								<dataFinePrericovero/>
+								<codiceFiscaleMadre/>
+								<descrizioneDisciplinaErogata>MALATTIE INFETTIVE E TROPICALI</descrizioneDisciplinaErogata>
+								<elencoTrasferimenti/>
+								<tipoImmagine/>
+								<elencoInterventiChirurgici/>
+								<descrizioneTipoRicovero>RICOVERO URGENTE</descrizioneTipoRicovero>
+								<dataPrenotazioneIntervento/>
+								<codiceMDC>10</codiceMDC>
+								<linkReferto/>
+								<numeroGiornateDayHospital>0</numeroGiornateDayHospital>
+								<elencoPatologie/>
+								<codiceRegimeRicovero>1</codiceRegimeRicovero>
+								<numeroGiornateDegenza>10</numeroGiornateDegenza>
+								<codiceDisciplinaErogata>24</codiceDisciplinaErogata>
+								<pesoNascita>0000</pesoNascita>
+								<descrizioneTipoProvenienzaPaziente/>
+								<descrizioneRegimeRicovero>ORDINARIO</descrizioneRegimeRicovero>
+								<codiceRepartoAccettazione>29</codiceRepartoAccettazione>
+								<descrizioneMDC>Malattie e disturbi endocrini, metabolici e nutrizionali</descrizioneMDC>
+								<codiceModalitaDimissione>1</codiceModalitaDimissione>
+							</eventoDettagli>
+						</listaEventoDettagli>
+						<dataEvento>20050714</dataEvento>
+						<codiceEvento>10273634</codiceEvento>
+						<descrizioneStrutturaErogatrice>A.O. OSPEDALE DI LECCO - LECCO</descrizioneStrutturaErogatrice>
+						<descrizioneSubStrutturaErogatrice>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizioneSubStrutturaErogatrice>
+						<datiCittadino>
+							<idCittadinoNonSISS/>
+							<idAssistito>999AW989</idAssistito>
+							<codiceFiscaleCittadino>TSTTNT94T41G388F</codiceFiscaleCittadino>
+						</datiCittadino>
+						<codiceStrutturaErogatrice>030960</codiceStrutturaErogatrice>
+						<risultanteStatoEvento>02</risultanteStatoEvento>
+						<codiceSubStrutturaErogatrice>03090300</codiceSubStrutturaErogatrice>
+					</listaEventoMaster>
+					<listaEventoMaster>
+						<codicePrescrizione/>
+						<listaEventoDettagli>
+							<eventoDettagli>
+								<statoEvento>06</statoEvento>
+								<descrizioneRepartoAccettazione>PEDIATRIA</descrizioneRepartoAccettazione>
+								<codiceModalitaTrauma/>
+								<descrizioneModalitaTrauma/>
+								<descrizioneRepartoDimissione>PEDIATRIA</descrizioneRepartoDimissione>
+								<codicePrescrizione/>
+								<descrizioneSubStrutturaErogatrice>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizioneSubStrutturaErogatrice>
+								<flagNeonato/>
+								<flagRicoveroRipetuto/>
+								<descrizioneModalitaDimissione>ORDINARIA</descrizioneModalitaDimissione>
+								<dataAccettazione/>
+								<oraAccettazione/>
+								<flagInterventoChirurgico>N</flagInterventoChirurgico>
+								<codiceTipoProvenienzaPaziente/>
+								<numeroNosologico/>
+								<codiceSubStrutturaErogatrice>03090300</codiceSubStrutturaErogatrice>
+								<codiceDRG>429</codiceDRG>
+								<codiceRepartoDimissione>39</codiceRepartoDimissione>
+								<codiceEvento>10213641</codiceEvento>
+								<linkImmagine/>
+								<linkDocumentoCDA2/>
+								<descrizioneDRG>Disturbi organici e ritardo mentale               </descrizioneDRG>
+								<diagnosiAccettazione/>
+								<codiceMotivoRicovero/>
+								<dataEvento>20050708</dataEvento>
+								<dataInizioPrericovero/>
+								<descrizioneMotivoRicovero/>
+								<dataEventoIndiceRiabilitazione/>
+								<oraEvento/>
+								<operatoreAccettante/>
+								<codiceTipoRicovero>2</codiceTipoRicovero>
+								<flagRiscontroAutoptico/>
+								<reteDiPatologia/>
+								<dataFinePrericovero/>
+								<codiceFiscaleMadre/>
+								<descrizioneDisciplinaErogata>PNEUMOLOGIA</descrizioneDisciplinaErogata>
+								<elencoTrasferimenti/>
+								<tipoImmagine/>
+								<elencoInterventiChirurgici/>
+								<descrizioneTipoRicovero>RICOVERO URGENTE</descrizioneTipoRicovero>
+								<dataPrenotazioneIntervento/>
+								<codiceMDC>19</codiceMDC>
+								<linkReferto/>
+								<numeroGiornateDayHospital>0</numeroGiornateDayHospital>
+								<elencoPatologie/>
+								<codiceRegimeRicovero>1</codiceRegimeRicovero>
+								<numeroGiornateDegenza>5</numeroGiornateDegenza>
+								<codiceDisciplinaErogata>68</codiceDisciplinaErogata>
+								<pesoNascita>0000</pesoNascita>
+								<descrizioneTipoProvenienzaPaziente/>
+								<descrizioneRegimeRicovero>ORDINARIO</descrizioneRegimeRicovero>
+								<codiceRepartoAccettazione>39</codiceRepartoAccettazione>
+								<descrizioneMDC>Malattie e disturbi mentali</descrizioneMDC>
+								<codiceModalitaDimissione>1</codiceModalitaDimissione>
+							</eventoDettagli>
+						</listaEventoDettagli>
+						<dataEvento>20050708</dataEvento>
+						<codiceEvento>10213641</codiceEvento>
+						<descrizioneStrutturaErogatrice>A.O. OSPEDALE DI LECCO - LECCO</descrizioneStrutturaErogatrice>
+						<descrizioneSubStrutturaErogatrice>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizioneSubStrutturaErogatrice>
+						<datiCittadino>
+							<idCittadinoNonSISS/>
+							<idAssistito>999AW989</idAssistito>
+							<codiceFiscaleCittadino>TSTTNT94T41G388F</codiceFiscaleCittadino>
+						</datiCittadino>
+						<codiceStrutturaErogatrice>030960</codiceStrutturaErogatrice>
+						<risultanteStatoEvento>02</risultanteStatoEvento>
+						<codiceSubStrutturaErogatrice>03090300</codiceSubStrutturaErogatrice>
+					</listaEventoMaster>
+					<listaEventoMaster>
+						<codicePrescrizione/>
+						<listaEventoDettagli>
+							<eventoDettagli>
+								<statoEvento>06</statoEvento>
+								<descrizioneRepartoAccettazione>PEDIATRIA</descrizioneRepartoAccettazione>
+								<codiceModalitaTrauma/>
+								<descrizioneModalitaTrauma/>
+								<descrizioneRepartoDimissione>PEDIATRIA</descrizioneRepartoDimissione>
+								<codicePrescrizione/>
+								<descrizioneSubStrutturaErogatrice>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizioneSubStrutturaErogatrice>
+								<flagNeonato/>
+								<flagRicoveroRipetuto/>
+								<descrizioneModalitaDimissione>ORDINARIA</descrizioneModalitaDimissione>
+								<dataAccettazione/>
+								<oraAccettazione/>
+								<flagInterventoChirurgico>N</flagInterventoChirurgico>
+								<codiceTipoProvenienzaPaziente/>
+								<numeroNosologico/>
+								<codiceSubStrutturaErogatrice>03090300</codiceSubStrutturaErogatrice>
+								<codiceDRG>295</codiceDRG>
+								<codiceRepartoDimissione>39</codiceRepartoDimissione>
+								<codiceEvento>10242796</codiceEvento>
+								<linkImmagine/>
+								<linkDocumentoCDA2/>
+								<descrizioneDRG>Diabete eta' &lt; 35                                 </descrizioneDRG>
+								<diagnosiAccettazione/>
+								<codiceMotivoRicovero/>
+								<dataEvento>20050704</dataEvento>
+								<dataInizioPrericovero/>
+								<descrizioneMotivoRicovero/>
+								<dataEventoIndiceRiabilitazione/>
+								<oraEvento/>
+								<operatoreAccettante/>
+								<codiceTipoRicovero>1</codiceTipoRicovero>
+								<flagRiscontroAutoptico/>
+								<reteDiPatologia/>
+								<dataFinePrericovero/>
+								<codiceFiscaleMadre/>
+								<descrizioneDisciplinaErogata>PNEUMOLOGIA</descrizioneDisciplinaErogata>
+								<elencoTrasferimenti/>
+								<tipoImmagine/>
+								<elencoInterventiChirurgici/>
+								<descrizioneTipoRicovero>RICOVERO PROGRAMMATO, NON URGENTE</descrizioneTipoRicovero>
+								<dataPrenotazioneIntervento/>
+								<codiceMDC>10</codiceMDC>
+								<linkReferto/>
+								<numeroGiornateDayHospital>1</numeroGiornateDayHospital>
+								<elencoPatologie/>
+								<codiceRegimeRicovero>2</codiceRegimeRicovero>
+								<numeroGiornateDegenza>0</numeroGiornateDegenza>
+								<codiceDisciplinaErogata>68</codiceDisciplinaErogata>
+								<pesoNascita>0000</pesoNascita>
+								<descrizioneTipoProvenienzaPaziente/>
+								<descrizioneRegimeRicovero>DAY HOSPITAL</descrizioneRegimeRicovero>
+								<codiceRepartoAccettazione>39</codiceRepartoAccettazione>
+								<descrizioneMDC>Malattie e disturbi endocrini, metabolici e nutrizionali</descrizioneMDC>
+								<codiceModalitaDimissione>1</codiceModalitaDimissione>
+							</eventoDettagli>
+						</listaEventoDettagli>
+						<dataEvento>20050704</dataEvento>
+						<codiceEvento>10242796</codiceEvento>
+						<descrizioneStrutturaErogatrice>A.O. OSPEDALE DI LECCO - LECCO</descrizioneStrutturaErogatrice>
+						<descrizioneSubStrutturaErogatrice>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizioneSubStrutturaErogatrice>
+						<datiCittadino>
+							<idCittadinoNonSISS/>
+							<idAssistito>999AW989</idAssistito>
+							<codiceFiscaleCittadino>TSTTNT94T41G388F</codiceFiscaleCittadino>
+						</datiCittadino>
+						<codiceStrutturaErogatrice>030960</codiceStrutturaErogatrice>
+						<risultanteStatoEvento>02</risultanteStatoEvento>
+						<codiceSubStrutturaErogatrice>03090300</codiceSubStrutturaErogatrice>
+					</listaEventoMaster>
+					<listaEventoMaster>
+						<codicePrescrizione/>
+						<listaEventoDettagli>
+							<eventoDettagli>
+								<statoEvento>06</statoEvento>
+								<descrizioneRepartoAccettazione>NEUROLOGIA</descrizioneRepartoAccettazione>
+								<codiceModalitaTrauma/>
+								<descrizioneModalitaTrauma/>
+								<descrizioneRepartoDimissione>NEUROLOGIA</descrizioneRepartoDimissione>
+								<codicePrescrizione/>
+								<descrizioneSubStrutturaErogatrice>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizioneSubStrutturaErogatrice>
+								<flagNeonato/>
+								<flagRicoveroRipetuto>A</flagRicoveroRipetuto>
+								<descrizioneModalitaDimissione>ORDINARIA</descrizioneModalitaDimissione>
+								<dataAccettazione/>
+								<oraAccettazione/>
+								<flagInterventoChirurgico>N</flagInterventoChirurgico>
+								<codiceTipoProvenienzaPaziente/>
+								<numeroNosologico/>
+								<codiceSubStrutturaErogatrice>03090300</codiceSubStrutturaErogatrice>
+								<codiceDRG>012</codiceDRG>
+								<codiceRepartoDimissione>32</codiceRepartoDimissione>
+								<codiceEvento>9875273</codiceEvento>
+								<linkImmagine/>
+								<linkDocumentoCDA2/>
+								<descrizioneDRG>Mal. degenerative sist. nervoso                   </descrizioneDRG>
+								<diagnosiAccettazione/>
+								<codiceMotivoRicovero/>
+								<dataEvento>20050403</dataEvento>
+								<dataInizioPrericovero/>
+								<descrizioneMotivoRicovero/>
+								<dataEventoIndiceRiabilitazione/>
+								<oraEvento/>
+								<operatoreAccettante/>
+								<codiceTipoRicovero>2</codiceTipoRicovero>
+								<flagRiscontroAutoptico/>
+								<reteDiPatologia/>
+								<dataFinePrericovero/>
+								<codiceFiscaleMadre/>
+								<descrizioneDisciplinaErogata>MEDICINA GENERALE</descrizioneDisciplinaErogata>
+								<elencoTrasferimenti/>
+								<tipoImmagine/>
+								<elencoInterventiChirurgici/>
+								<descrizioneTipoRicovero>RICOVERO URGENTE</descrizioneTipoRicovero>
+								<dataPrenotazioneIntervento/>
+								<codiceMDC>01</codiceMDC>
+								<linkReferto/>
+								<numeroGiornateDayHospital>0</numeroGiornateDayHospital>
+								<elencoPatologie/>
+								<codiceRegimeRicovero>1</codiceRegimeRicovero>
+								<numeroGiornateDegenza>12</numeroGiornateDegenza>
+								<codiceDisciplinaErogata>26</codiceDisciplinaErogata>
+								<pesoNascita>0000</pesoNascita>
+								<descrizioneTipoProvenienzaPaziente/>
+								<descrizioneRegimeRicovero>ORDINARIO</descrizioneRegimeRicovero>
+								<codiceRepartoAccettazione>32</codiceRepartoAccettazione>
+								<descrizioneMDC>Malattie e disturbi sistema nervoso</descrizioneMDC>
+								<codiceModalitaDimissione>1</codiceModalitaDimissione>
+							</eventoDettagli>
+						</listaEventoDettagli>
+						<dataEvento>20050403</dataEvento>
+						<codiceEvento>9875273</codiceEvento>
+						<descrizioneStrutturaErogatrice>A.O. OSPEDALE DI LECCO - LECCO</descrizioneStrutturaErogatrice>
+						<descrizioneSubStrutturaErogatrice>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizioneSubStrutturaErogatrice>
+						<datiCittadino>
+							<idCittadinoNonSISS/>
+							<idAssistito>999AW989</idAssistito>
+							<codiceFiscaleCittadino>TSTTNT94T41G388F</codiceFiscaleCittadino>
+						</datiCittadino>
+						<codiceStrutturaErogatrice>030960</codiceStrutturaErogatrice>
+						<risultanteStatoEvento>02</risultanteStatoEvento>
+						<codiceSubStrutturaErogatrice>03090300</codiceSubStrutturaErogatrice>
+					</listaEventoMaster>
+					<listaEventoMaster>
+						<codicePrescrizione/>
+						<listaEventoDettagli>
+							<eventoDettagli>
+								<statoEvento>06</statoEvento>
+								<descrizioneRepartoAccettazione>UROLOGIA</descrizioneRepartoAccettazione>
+								<codiceModalitaTrauma/>
+								<descrizioneModalitaTrauma/>
+								<descrizioneRepartoDimissione>UROLOGIA</descrizioneRepartoDimissione>
+								<codicePrescrizione/>
+								<descrizioneSubStrutturaErogatrice>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizioneSubStrutturaErogatrice>
+								<flagNeonato/>
+								<flagRicoveroRipetuto/>
+								<descrizioneModalitaDimissione>ORDINARIA</descrizioneModalitaDimissione>
+								<dataAccettazione/>
+								<oraAccettazione/>
+								<flagInterventoChirurgico>S</flagInterventoChirurgico>
+								<codiceTipoProvenienzaPaziente/>
+								<numeroNosologico/>
+								<codiceSubStrutturaErogatrice>03090300</codiceSubStrutturaErogatrice>
+								<codiceDRG>311</codiceDRG>
+								<codiceRepartoDimissione>43</codiceRepartoDimissione>
+								<codiceEvento>9864020</codiceEvento>
+								<linkImmagine/>
+								<linkDocumentoCDA2/>
+								<descrizioneDRG>Int. per via transuretrale senza CC               </descrizioneDRG>
+								<diagnosiAccettazione/>
+								<codiceMotivoRicovero/>
+								<dataEvento>20050328</dataEvento>
+								<dataInizioPrericovero/>
+								<descrizioneMotivoRicovero/>
+								<dataEventoIndiceRiabilitazione/>
+								<oraEvento/>
+								<operatoreAccettante/>
+								<codiceTipoRicovero>1</codiceTipoRicovero>
+								<flagRiscontroAutoptico/>
+								<reteDiPatologia/>
+								<dataFinePrericovero/>
+								<codiceFiscaleMadre/>
+								<descrizioneDisciplinaErogata>MALATTIE INFETTIVE E TROPICALI</descrizioneDisciplinaErogata>
+								<elencoTrasferimenti/>
+								<tipoImmagine/>
+								<elencoInterventiChirurgici/>
+								<descrizioneTipoRicovero>RICOVERO PROGRAMMATO, NON URGENTE</descrizioneTipoRicovero>
+								<dataPrenotazioneIntervento/>
+								<codiceMDC>11</codiceMDC>
+								<linkReferto/>
+								<numeroGiornateDayHospital>0</numeroGiornateDayHospital>
+								<elencoPatologie>
+									<patologia>
+										<descrizioneDiagnosi>Aborto indotto legalmente senza complicazione riferita, completo</descrizioneDiagnosi>
+										<codiceDiagnosi>63592</codiceDiagnosi>
+										<oraRegistrazioneDiagnosi/>
+										<dataRegistrazioneDiagnosi>20050101</dataRegistrazioneDiagnosi>
+										<noteRegistrazioneDiagnosi/>
+									</patologia>
+								</elencoPatologie>
+								<codiceRegimeRicovero>1</codiceRegimeRicovero>
+								<numeroGiornateDegenza>5</numeroGiornateDegenza>
+								<codiceDisciplinaErogata>24</codiceDisciplinaErogata>
+								<pesoNascita>0000</pesoNascita>
+								<descrizioneTipoProvenienzaPaziente/>
+								<descrizioneRegimeRicovero>ORDINARIO</descrizioneRegimeRicovero>
+								<codiceRepartoAccettazione>43</codiceRepartoAccettazione>
+								<descrizioneMDC>Malattie e disturbi rene e vie urinarie</descrizioneMDC>
+								<codiceModalitaDimissione>1</codiceModalitaDimissione>
+							</eventoDettagli>
+						</listaEventoDettagli>
+						<dataEvento>20050328</dataEvento>
+						<codiceEvento>9864020</codiceEvento>
+						<descrizioneStrutturaErogatrice>A.O. OSPEDALE DI LECCO - LECCO</descrizioneStrutturaErogatrice>
+						<descrizioneSubStrutturaErogatrice>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizioneSubStrutturaErogatrice>
+						<datiCittadino>
+							<idCittadinoNonSISS/>
+							<idAssistito>999AW989</idAssistito>
+							<codiceFiscaleCittadino>TSTTNT94T41G388F</codiceFiscaleCittadino>
+						</datiCittadino>
+						<codiceStrutturaErogatrice>030960</codiceStrutturaErogatrice>
+						<risultanteStatoEvento>02</risultanteStatoEvento>
+						<codiceSubStrutturaErogatrice>03090300</codiceSubStrutturaErogatrice>
+					</listaEventoMaster>
+					<listaEventoMaster>
+						<codicePrescrizione/>
+						<listaEventoDettagli>
+							<eventoDettagli>
+								<statoEvento>06</statoEvento>
+								<descrizioneRepartoAccettazione>TERAPIA INTENSIVA NEONATALE</descrizioneRepartoAccettazione>
+								<codiceModalitaTrauma/>
+								<descrizioneModalitaTrauma/>
+								<descrizioneRepartoDimissione>PATOLOGIA NEONATALE, NEONATOLOGIA</descrizioneRepartoDimissione>
+								<codicePrescrizione/>
+								<descrizioneSubStrutturaErogatrice>OSPEDALE F. DEL PONTE - VARESE</descrizioneSubStrutturaErogatrice>
+								<flagNeonato/>
+								<flagRicoveroRipetuto/>
+								<descrizioneModalitaDimissione>ORDINARIA</descrizioneModalitaDimissione>
+								<dataAccettazione/>
+								<oraAccettazione/>
+								<flagInterventoChirurgico>S</flagInterventoChirurgico>
+								<codiceTipoProvenienzaPaziente/>
+								<numeroNosologico/>
+								<codiceSubStrutturaErogatrice>03000300</codiceSubStrutturaErogatrice>
+								<codiceDRG>386</codiceDRG>
+								<codiceRepartoDimissione>62</codiceRepartoDimissione>
+								<codiceEvento>874583427</codiceEvento>
+								<linkImmagine/>
+								<linkDocumentoCDA2/>
+								<descrizioneDRG>Neonati gravemente immaturi o sindr.distress resp.</descrizioneDRG>
+								<diagnosiAccettazione/>
+								<codiceMotivoRicovero/>
+								<dataEvento>20050307</dataEvento>
+								<dataInizioPrericovero/>
+								<descrizioneMotivoRicovero/>
+								<dataEventoIndiceRiabilitazione/>
+								<oraEvento/>
+								<operatoreAccettante/>
+								<codiceTipoRicovero>1</codiceTipoRicovero>
+								<flagRiscontroAutoptico/>
+								<reteDiPatologia/>
+								<dataFinePrericovero/>
+								<codiceFiscaleMadre>ZCCSRN75C67D869M</codiceFiscaleMadre>
+								<descrizioneDisciplinaErogata>CHIRURGIA GENERALE</descrizioneDisciplinaErogata>
+								<elencoTrasferimenti>
+									<trasferimento>
+										<oraTrasferimentoReparto/>
+										<descrizioneRepartoTrasferimento/>
+										<noteTrasferimentoReparto/>
+										<dataTrasferimentoReparto>20050217</dataTrasferimentoReparto>
+										<codiceRepartoTrasferimento>9503</codiceRepartoTrasferimento>
+									</trasferimento>
+									<trasferimento>
+										<oraTrasferimentoReparto/>
+										<descrizioneRepartoTrasferimento/>
+										<noteTrasferimentoReparto/>
+										<dataTrasferimentoReparto>20050118</dataTrasferimentoReparto>
+										<codiceRepartoTrasferimento>3893</codiceRepartoTrasferimento>
+									</trasferimento>
+									<trasferimento>
+										<oraTrasferimentoReparto/>
+										<descrizioneRepartoTrasferimento/>
+										<noteTrasferimentoReparto/>
+										<dataTrasferimentoReparto>20041122</dataTrasferimentoReparto>
+										<codiceRepartoTrasferimento>9904</codiceRepartoTrasferimento>
+									</trasferimento>
+									<trasferimento>
+										<oraTrasferimentoReparto/>
+										<descrizioneRepartoTrasferimento/>
+										<noteTrasferimentoReparto/>
+										<dataTrasferimentoReparto>20041115</dataTrasferimentoReparto>
+										<codiceRepartoTrasferimento>9672</codiceRepartoTrasferimento>
+									</trasferimento>
+									<trasferimento>
+										<oraTrasferimentoReparto/>
+										<descrizioneRepartoTrasferimento/>
+										<noteTrasferimentoReparto/>
+										<dataTrasferimentoReparto>20041115</dataTrasferimentoReparto>
+										<codiceRepartoTrasferimento>9605</codiceRepartoTrasferimento>
+									</trasferimento>
+									<trasferimento>
+										<oraTrasferimentoReparto/>
+										<descrizioneRepartoTrasferimento/>
+										<noteTrasferimentoReparto/>
+										<dataTrasferimentoReparto>20041115</dataTrasferimentoReparto>
+										<codiceRepartoTrasferimento>3892</codiceRepartoTrasferimento>
+									</trasferimento>
+								</elencoTrasferimenti>
+								<tipoImmagine/>
+								<elencoInterventiChirurgici>
+									<intervento>
+										<codiceInterventoChirurgico>9503</codiceInterventoChirurgico>
+										<noteInterventoChirurgico/>
+										<dataInterventoChirurgico>20050217</dataInterventoChirurgico>
+										<descrizioneInterventoChirurgico>ESAME APPROFONDITO DELL'OCCHIO</descrizioneInterventoChirurgico>
+										<oraInterventoChirurgico/>
+									</intervento>
+									<intervento>
+										<codiceInterventoChirurgico>3893</codiceInterventoChirurgico>
+										<noteInterventoChirurgico/>
+										<dataInterventoChirurgico>20050118</dataInterventoChirurgico>
+										<descrizioneInterventoChirurgico>ALTRO CATETERISMO VENOSO NON CLASSIFICATO ALTROVE</descrizioneInterventoChirurgico>
+										<oraInterventoChirurgico/>
+									</intervento>
+									<intervento>
+										<codiceInterventoChirurgico>9904</codiceInterventoChirurgico>
+										<noteInterventoChirurgico/>
+										<dataInterventoChirurgico>20041122</dataInterventoChirurgico>
+										<descrizioneInterventoChirurgico>TRASFUSIONE DI CONCENTRATO CELLULARE</descrizioneInterventoChirurgico>
+										<oraInterventoChirurgico/>
+									</intervento>
+									<intervento>
+										<codiceInterventoChirurgico>9672</codiceInterventoChirurgico>
+										<noteInterventoChirurgico/>
+										<dataInterventoChirurgico>20041115</dataInterventoChirurgico>
+										<descrizioneInterventoChirurgico>VENTILAZIONE MECCANICA CONTINUA PER 96 ORE CONSECUTIVE O PIU</descrizioneInterventoChirurgico>
+										<oraInterventoChirurgico/>
+									</intervento>
+									<intervento>
+										<codiceInterventoChirurgico>9605</codiceInterventoChirurgico>
+										<noteInterventoChirurgico/>
+										<dataInterventoChirurgico>20041115</dataInterventoChirurgico>
+										<descrizioneInterventoChirurgico>ALTRA INTUBAZIONE DEL TRATTO RESPIRATORIO</descrizioneInterventoChirurgico>
+										<oraInterventoChirurgico/>
+									</intervento>
+									<intervento>
+										<codiceInterventoChirurgico>3892</codiceInterventoChirurgico>
+										<noteInterventoChirurgico/>
+										<dataInterventoChirurgico>20041115</dataInterventoChirurgico>
+										<descrizioneInterventoChirurgico>CATETERISMO DELLA VENA OMBELICALE</descrizioneInterventoChirurgico>
+										<oraInterventoChirurgico/>
+									</intervento>
+								</elencoInterventiChirurgici>
+								<descrizioneTipoRicovero>RICOVERO PROGRAMMATO, NON URGENTE</descrizioneTipoRicovero>
+								<dataPrenotazioneIntervento/>
+								<codiceMDC>15</codiceMDC>
+								<linkReferto/>
+								<numeroGiornateDayHospital>0</numeroGiornateDayHospital>
+								<elencoPatologie>
+									<patologia>
+										<descrizioneDiagnosi>Reflusso esofageo</descrizioneDiagnosi>
+										<codiceDiagnosi>53081</codiceDiagnosi>
+										<oraRegistrazioneDiagnosi/>
+										<dataRegistrazioneDiagnosi>20050101</dataRegistrazioneDiagnosi>
+										<noteRegistrazioneDiagnosi/>
+									</patologia>
+									<patologia>
+										<descrizioneDiagnosi>Anemia del prematuro</descrizioneDiagnosi>
+										<codiceDiagnosi>7766</codiceDiagnosi>
+										<oraRegistrazioneDiagnosi/>
+										<dataRegistrazioneDiagnosi>20050101</dataRegistrazioneDiagnosi>
+										<noteRegistrazioneDiagnosi/>
+									</patologia>
+									<patologia>
+										<descrizioneDiagnosi>Enterocolite necrotizzante del feto o del neonato</descrizioneDiagnosi>
+										<codiceDiagnosi>7775</codiceDiagnosi>
+										<oraRegistrazioneDiagnosi/>
+										<dataRegistrazioneDiagnosi>20050101</dataRegistrazioneDiagnosi>
+										<noteRegistrazioneDiagnosi/>
+									</patologia>
+									<patologia>
+										<descrizioneDiagnosi>Neonato di basso peso per l'eta gestazionale, con segni di malnutrizione fetale, di peso 500-749 grammi</descrizioneDiagnosi>
+										<codiceDiagnosi>76412</codiceDiagnosi>
+										<oraRegistrazioneDiagnosi/>
+										<dataRegistrazioneDiagnosi>20050101</dataRegistrazioneDiagnosi>
+										<noteRegistrazioneDiagnosi/>
+									</patologia>
+									<patologia>
+										<descrizioneDiagnosi>Sindrome da distress respiratorio neonatale</descrizioneDiagnosi>
+										<codiceDiagnosi>769</codiceDiagnosi>
+										<oraRegistrazioneDiagnosi/>
+										<dataRegistrazioneDiagnosi>20050101</dataRegistrazioneDiagnosi>
+										<noteRegistrazioneDiagnosi/>
+									</patologia>
+									<patologia>
+										<descrizioneDiagnosi>Aborto indotto legalmente senza complicazione riferita, completo</descrizioneDiagnosi>
+										<codiceDiagnosi>63592</codiceDiagnosi>
+										<oraRegistrazioneDiagnosi/>
+										<dataRegistrazioneDiagnosi>20050101</dataRegistrazioneDiagnosi>
+										<noteRegistrazioneDiagnosi/>
+									</patologia>
+									<patologia>
+										<descrizioneDiagnosi>Estrema immaturita del neonato, di peso 500-749 grammi</descrizioneDiagnosi>
+										<codiceDiagnosi>76502</codiceDiagnosi>
+										<oraRegistrazioneDiagnosi/>
+										<dataRegistrazioneDiagnosi>20050101</dataRegistrazioneDiagnosi>
+										<noteRegistrazioneDiagnosi/>
+									</patologia>
+								</elencoPatologie>
+								<codiceRegimeRicovero>1</codiceRegimeRicovero>
+								<numeroGiornateDegenza>112</numeroGiornateDegenza>
+								<codiceDisciplinaErogata>09</codiceDisciplinaErogata>
+								<pesoNascita>0620</pesoNascita>
+								<descrizioneTipoProvenienzaPaziente/>
+								<descrizioneRegimeRicovero>ORDINARIO</descrizioneRegimeRicovero>
+								<codiceRepartoAccettazione>73</codiceRepartoAccettazione>
+								<descrizioneMDC>Malattie e disturbi periodo perinatale</descrizioneMDC>
+								<codiceModalitaDimissione>1</codiceModalitaDimissione>
+							</eventoDettagli>
+						</listaEventoDettagli>
+						<dataEvento>20050307</dataEvento>
+						<codiceEvento>874583427</codiceEvento>
+						<descrizioneStrutturaErogatrice>A.O. OSP.CIRC. FONDAZIONE MACCHI-VARESE</descrizioneStrutturaErogatrice>
+						<descrizioneSubStrutturaErogatrice>OSPEDALE F. DEL PONTE - VARESE</descrizioneSubStrutturaErogatrice>
+						<datiCittadino>
+							<idCittadinoNonSISS/>
+							<idAssistito>999AW989</idAssistito>
+							<codiceFiscaleCittadino>TSTTNT94T41G388F</codiceFiscaleCittadino>
+						</datiCittadino>
+						<codiceStrutturaErogatrice>030951</codiceStrutturaErogatrice>
+						<risultanteStatoEvento>02</risultanteStatoEvento>
+						<codiceSubStrutturaErogatrice>03000300</codiceSubStrutturaErogatrice>
+					</listaEventoMaster>
+				</ricercaClinicaRicovero>
+			</param>
+		</m:CIS.ricercaClinicaRicoveroResponse>
+	</env:Body>
+</env:Envelope>

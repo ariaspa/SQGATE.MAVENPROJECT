@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+    <title>FrontendPolApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body class="">
+  <!--	<div id="eme-main-body"> -->
+    <%= yield %>
+	<!-- </div> -->
+	
+
+	<div id="eme-stuff-cnt">
+<div id="eme-overlay">
+    	<img src="images/loader.gif" class="eme-ajax-loader"/>
+	</div>
+     <div id="eme-error-panel"></div>
+
+     <div class="modal fade" tabindex="-1" role="dialog" id="eme-sessionexpired">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">Sessione scaduta</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>&Egrave; necessario rifare login</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default eme-backtologin" data-dismiss="modal">Chiudi</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" tabindex="-1" role="dialog" id="eme-error">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">Errore</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>Errore imprevisto, &egrave; necessario ricaricare l'applicazione</p>
+	        <code id="eme-error-code"></code>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default eme-backtologin" data-dismiss="modal">Chiudi</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+  <div class="modal fade" tabindex="-1" role="dialog" id="eme-malformed">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+	<!--modal for help -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="eme-help-modal">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title">Help</h4>
+	      </div>
+	      <div class="modal-body" id="eme-help-body">
+	        
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<!-- modal for help -->
+	</div>
+
+    <script>
+    window.onerror = function (errorMsg, url, lineNumber, column, errorObj) {
+    	console.log("Javascript error");
+    	console.log('Error',  errorMsg);
+    	console.log('Script', url);
+    	console.log('Line', lineNumber);
+    	console.log('StackTrace', errorObj);
+	}
+
+    var runtimeData = {};
+    $(document).ajaxStart(function() {
+    	$("#eme-overlay").show();
+    });
+    $(document).ajaxStop(function() {
+    	$("#eme-overlay").hide();
+    });
+    $(document).ajaxError(function(event, jqxhr, settings, thrownError) {
+  		console.log("Ajax error");
+  		console.log(thrownError);
+  		console.log(settings);
+  		console.log("Status ", jqxhr.status);
+  		if (jqxhr.status == 401 && settings.url.endsWith("login")) {
+  			console.log("Login failed");
+  			console.log($("#eme-faillogin"));
+  			$("#eme-faillogin").show();
+  			return;
+  		}
+  		if (jqxhr.status == 401) {
+  			console.log("Session expired");
+  			$("#eme-sessionexpired").modal("show");
+  			return;
+  		}
+  		$("#eme-error").modal("show");
+  		$("#eme-error-code").html(thrownError);
+	});
+    $(document).ready(function() {
+			runtimeData.currentView = "start";
+			runtimeData.previousView = "";
+			console.log("start", runtimeData);
+    	var configPromise = loadConfig();
+    	$.when(configPromise).then(function(value) {
+    		startApp(value);
+    	});
+    });
+   
+    </script>
+  </body>
+</html>

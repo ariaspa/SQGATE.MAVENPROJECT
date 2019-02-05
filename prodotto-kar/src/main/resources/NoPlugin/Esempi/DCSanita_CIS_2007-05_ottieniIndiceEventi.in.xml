@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<TestInfo>
+	<Autore></Autore>
+	<DataPreparazione>31/01/2006</DataPreparazione>
+	<CodiceTest>IN.3540000008</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>F</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>Profilo 2,5,10,12,21,22 - SmartCard e pin presenti, consenso assente, situazione di emergenza - Interroghiamo la base dati per il cittadino con tessera='270JJ748'.</DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>Restituisce l'indice degli eventi in chiaro e oscurati del cittadino</DescrizioneRisultatoAtteso>
+</TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap-env:Header>
+		<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+			<Transport>
+				<Mode>Sync</Mode>
+				<Dest>DCSanita</Dest>
+			</Transport>
+			<Security>
+				<FunContext>
+					<credential>
+						<validity>
+							<emittedDate>15/11/2005+10:59:18,531</emittedDate>
+							<sessionMaxTime>15/11/2005+10:59:18,531</sessionMaxTime>
+						</validity>
+						<vrs>
+							<mjr>1</mjr>
+							<min>0</min>
+						</vrs>
+						<ctf>
+							<reg>
+								<cod>1</cod>
+								<des/>
+							</reg>
+							<app>
+								<cod>1</cod>
+								<des/>
+							</app>
+							<pro>
+								<cod>1</cod>
+								<des/>
+							</pro>
+							<ter>
+								<cod>1</cod>
+								<des/>
+							</ter>
+							<str>
+								<cod>030960</cod>
+								<des/>
+							</str>
+							<pre>
+								<cod>03096800</cod>
+								<des/>
+							</pre>
+							<rep>
+								<cod/>
+								<des/>
+							</rep>
+						</ctf>
+						<role>
+							<code>13</code>
+							<description>Medico sostituto</description>
+						</role>
+						<userId>TCRMXX10X00X000X</userId>
+						<iupSeed>12345</iupSeed>
+					</credential>
+				</FunContext>
+				<CitCardPresent>true</CitCardPresent>
+				<CitAuth>true</CitAuth>
+				<CitCF>TSTTNT94T41G388F</CitCF>
+				<CitSmartCardSN>270JJ748</CitSmartCardSN>
+			</Security>
+			<Sla>
+				<Log>
+					<Global>
+						<TrackID>1132048757203</TrackID>
+						<Timestamp>15/11/2005+10:59:18,562</Timestamp>
+					</Global>
+				</Log>
+			</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="9.1"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+		<m:CIS.ottieniIndiceEventi xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/CIS/2007-05/ottieniIndiceEventi/" dataSetVersion="1.1">
+			<param>
+				<ll:CRSlegalContent xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" type="Text" opLegSign="true" opWeakSign="false" feSign="false" citAttes="true" tStamp="false" verify="OK"/>
+				<ottieniIndiceEventi>
+					<datiCittadino>
+						<codiceFiscaleCittadino>TSTTNT94T41G388F</codiceFiscaleCittadino>
+						<idAssistito/>
+						<idCittadinoNonSISS/>
+					</datiCittadino>
+					<minDataEvento>20050101</minDataEvento>
+					<maxDataEvento>20061231</maxDataEvento>
+					<statoEvento/>
+				</ottieniIndiceEventi>
+			</param>
+		</m:CIS.ottieniIndiceEventi>
+	</soap-env:Body>
+</soap-env:Envelope>
+

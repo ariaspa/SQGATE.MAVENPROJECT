@@ -1,0 +1,309 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+  <SOAP-ENV:Header>
+    <a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/"
+    a:AppContext="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+
+      <Reply servProd="FSE">
+        <Subject>SAVersion 1.3.1_05</Subject>
+      </Reply>
+    </a:AppContext>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <m:FSE.ottieniIndiceFascicoloResponse xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/ottieniIndiceFascicolo/">
+
+      <param>
+        <nPagine>1</nPagine>
+        <ottieniIndiceFascicolo>
+          <cittadino>
+            <idCittadino>CGNNPR80A01F205D</idCittadino>
+          </cittadino>
+          <indiceFascicolo>
+            <listaFolder>
+              <folder>
+                <descrizioneFolder>PRERICOVERI</descrizioneFolder>
+                <idTipoFolder>80</idTipoFolder>
+                <etichettaFolder>PRERICOVERI</etichettaFolder>
+                <idFolder></idFolder>
+                <attributiSpecificiFolder>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>1</nLivelloFolder>
+                <idTipoFolderPadre></idTipoFolderPadre>
+                <idStatoFolder></idStatoFolder>
+              </folder>
+              <folder>
+                <descrizioneFolder>PRERICOVERO</descrizioneFolder>
+                <idTipoFolder>81</idTipoFolder>
+                <etichettaFolder>
+                numeroPrericovero</etichettaFolder>
+                <idFolder>184516581</idFolder>
+                <attributiSpecificiFolder>
+                  <c:folder_prericovero xmlns:c="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_prericovero/">
+
+                    <strutturaErogazione>
+                      <idPresidio>03090300</idPresidio>
+                      <descrizioneEnte>A.O. OSPEDALE DI LECCO -
+                      LECCO</descrizioneEnte>
+                      <idEnte>030960</idEnte>
+                      <descrizionePresidio>OSPEDALE DI CIRCOLO "A.
+                      MANZONI" - LECCO</descrizionePresidio>
+                    </strutturaErogazione>
+                    <datiPrericovero>
+                      <idRepartoRicovero></idRepartoRicovero>
+                      <codiceDiagnosi>V3200</codiceDiagnosi>
+                      <descrizioneDiagnosi>GEMELLO DI GEMELLO NATO
+                      MORTO,NATO IN OSPEDALE,NATO SENZA MENZIONE DI
+                      PARTO CESAREO</descrizioneDiagnosi>
+                      <dataOraFinePrericovero>
+                      20100323142416</dataOraFinePrericovero>
+                      <numeroPrericovero>
+                      2009000001</numeroPrericovero>
+                      <dataOraInizioPrericovero>
+                      20100315142416</dataOraInizioPrericovero>
+                      <descrizioneRepartoRicovero>
+                      </descrizioneRepartoRicovero>
+                    </datiPrericovero>
+                  </c:folder_prericovero>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>2</nLivelloFolder>
+                <idTipoFolderPadre>80</idTipoFolderPadre>
+                <idStatoFolder>OK</idStatoFolder>
+              </folder>
+              <folder>
+                <descrizioneFolder>PRERICOVERO</descrizioneFolder>
+                <idTipoFolder>81</idTipoFolder>
+                <etichettaFolder>
+                numeroPrericovero</etichettaFolder>
+                <idFolder>184516681</idFolder>
+                <attributiSpecificiFolder>
+                  <c:folder_prericovero xmlns:c="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_prericovero/">
+
+                    <strutturaErogazione>
+                      <idPresidio>03090300</idPresidio>
+                      <descrizioneEnte>A.O. OSPEDALE DI LECCO -
+                      LECCO</descrizioneEnte>
+                      <idEnte>030960</idEnte>
+                      <descrizionePresidio>OSPEDALE DI CIRCOLO "A.
+                      MANZONI" - LECCO</descrizionePresidio>
+                    </strutturaErogazione>
+                    <datiPrericovero>
+                      <idRepartoRicovero></idRepartoRicovero>
+                      <codiceDiagnosi>V3200</codiceDiagnosi>
+                      <descrizioneDiagnosi>GEMELLO DI GEMELLO NATO
+                      MORTO,NATO IN OSPEDALE,NATO SENZA MENZIONE DI
+                      PARTO CESAREO</descrizioneDiagnosi>
+                      <dataOraFinePrericovero>
+                      20100322142418</dataOraFinePrericovero>
+                      <numeroPrericovero>
+                      2009000002</numeroPrericovero>
+                      <dataOraInizioPrericovero>
+                      20100315142418</dataOraInizioPrericovero>
+                      <descrizioneRepartoRicovero>
+                      </descrizioneRepartoRicovero>
+                    </datiPrericovero>
+                  </c:folder_prericovero>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>2</nLivelloFolder>
+                <idTipoFolderPadre>80</idTipoFolderPadre>
+                <idStatoFolder>OK</idStatoFolder>
+              </folder>
+              <folder>
+                <descrizioneFolder>PRERICOVERO</descrizioneFolder>
+                <idTipoFolder>81</idTipoFolder>
+                <etichettaFolder>
+                numeroPrericovero</etichettaFolder>
+                <idFolder>184516781</idFolder>
+                <attributiSpecificiFolder>
+                  <c:folder_prericovero xmlns:c="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_prericovero/">
+
+                    <strutturaErogazione>
+                      <idPresidio>03002400</idPresidio>
+                      <descrizioneEnte>A.O. OSPEDALE DI LECCO -
+                      LECCO</descrizioneEnte>
+                      <idEnte>030960</idEnte>
+                      <descrizionePresidio>OSPEDALE DI
+                      CIRCOLO"S.L.MANDIC"-
+                      MERATE</descrizionePresidio>
+                    </strutturaErogazione>
+                    <datiPrericovero>
+                      <idRepartoRicovero></idRepartoRicovero>
+                      <codiceDiagnosi>V3200</codiceDiagnosi>
+                      <descrizioneDiagnosi>GEMELLO DI GEMELLO NATO
+                      MORTO,NATO IN OSPEDALE,NATO SENZA MENZIONE DI
+                      PARTO CESAREO</descrizioneDiagnosi>
+                      <dataOraFinePrericovero>
+                      20100322142418</dataOraFinePrericovero>
+                      <numeroPrericovero>
+                      2009000002</numeroPrericovero>
+                      <dataOraInizioPrericovero>
+                      20100315142418</dataOraInizioPrericovero>
+                      <descrizioneRepartoRicovero>
+                      </descrizioneRepartoRicovero>
+                    </datiPrericovero>
+                  </c:folder_prericovero>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>2</nLivelloFolder>
+                <idTipoFolderPadre>80</idTipoFolderPadre>
+                <idStatoFolder>OK</idStatoFolder>
+              </folder>
+              <folder>
+                <descrizioneFolder>PRERICOVERO</descrizioneFolder>
+                <idTipoFolder>81</idTipoFolder>
+                <etichettaFolder>
+                numeroPrericovero</etichettaFolder>
+                <idFolder>184516881</idFolder>
+                <attributiSpecificiFolder>
+                  <c:folder_prericovero xmlns:c="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_prericovero/">
+
+                    <strutturaErogazione>
+                      <idPresidio>03090300</idPresidio>
+                      <descrizioneEnte>A.O. OSPEDALE DI LECCO -
+                      LECCO</descrizioneEnte>
+                      <idEnte>030960</idEnte>
+                      <descrizionePresidio>OSPEDALE DI CIRCOLO "A.
+                      MANZONI" - LECCO</descrizionePresidio>
+                    </strutturaErogazione>
+                    <datiPrericovero>
+                      <idRepartoRicovero></idRepartoRicovero>
+                      <codiceDiagnosi>V3200</codiceDiagnosi>
+                      <descrizioneDiagnosi>GEMELLO DI GEMELLO NATO
+                      MORTO,NATO IN OSPEDALE,NATO SENZA MENZIONE DI
+                      PARTO CESAREO</descrizioneDiagnosi>
+                      <dataOraFinePrericovero>
+                      20100322142418</dataOraFinePrericovero>
+                      <numeroPrericovero>
+                      2009000003</numeroPrericovero>
+                      <dataOraInizioPrericovero>
+                      20100315142418</dataOraInizioPrericovero>
+                      <descrizioneRepartoRicovero>
+                      </descrizioneRepartoRicovero>
+                    </datiPrericovero>
+                  </c:folder_prericovero>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>2</nLivelloFolder>
+                <idTipoFolderPadre>80</idTipoFolderPadre>
+                <idStatoFolder>OK</idStatoFolder>
+              </folder>
+              <folder>
+                <descrizioneFolder>PRERICOVERO</descrizioneFolder>
+                <idTipoFolder>81</idTipoFolder>
+                <etichettaFolder>
+                numeroPrericovero</etichettaFolder>
+                <idFolder>184516981</idFolder>
+                <attributiSpecificiFolder>
+                  <c:folder_prericovero xmlns:c="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_prericovero/">
+
+                    <strutturaErogazione>
+                      <idPresidio>03093000</idPresidio>
+                      <descrizioneEnte>FONDAZIONE SALVATORE
+                      MAUGERI</descrizioneEnte>
+                      <idEnte>690032</idEnte>
+                      <descrizionePresidio>FOND.S.MAUGERI-CL.LAVORO
+                      E RIAB.-TRADATE</descrizionePresidio>
+                    </strutturaErogazione>
+                    <datiPrericovero>
+                      <idRepartoRicovero></idRepartoRicovero>
+                      <codiceDiagnosi>V3200</codiceDiagnosi>
+                      <descrizioneDiagnosi>GEMELLO DI GEMELLO NATO
+                      MORTO,NATO IN OSPEDALE,NATO SENZA MENZIONE DI
+                      PARTO CESAREO</descrizioneDiagnosi>
+                      <dataOraFinePrericovero>
+                      20100322142418</dataOraFinePrericovero>
+                      <numeroPrericovero>
+                      2009000003</numeroPrericovero>
+                      <dataOraInizioPrericovero>
+                      20100315142418</dataOraInizioPrericovero>
+                      <descrizioneRepartoRicovero>
+                      </descrizioneRepartoRicovero>
+                    </datiPrericovero>
+                  </c:folder_prericovero>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>2</nLivelloFolder>
+                <idTipoFolderPadre>80</idTipoFolderPadre>
+                <idStatoFolder>OK</idStatoFolder>
+              </folder>
+              <folder>
+                <descrizioneFolder>PRERICOVERO</descrizioneFolder>
+                <idTipoFolder>81</idTipoFolder>
+                <etichettaFolder>
+                numeroPrericovero</etichettaFolder>
+                <idFolder>184517081</idFolder>
+                <attributiSpecificiFolder>
+                  <c:folder_prericovero xmlns:c="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_prericovero/">
+
+                    <strutturaErogazione>
+                      <idPresidio>03090300</idPresidio>
+                      <descrizioneEnte>A.O. OSPEDALE DI LECCO -
+                      LECCO</descrizioneEnte>
+                      <idEnte>030960</idEnte>
+                      <descrizionePresidio>OSPEDALE DI CIRCOLO "A.
+                      MANZONI" - LECCO</descrizionePresidio>
+                    </strutturaErogazione>
+                    <datiPrericovero>
+                      <idRepartoRicovero></idRepartoRicovero>
+                      <codiceDiagnosi>V3200</codiceDiagnosi>
+                      <descrizioneDiagnosi>GEMELLO DI GEMELLO NATO
+                      MORTO,NATO IN OSPEDALE,NATO SENZA MENZIONE DI
+                      PARTO CESAREO</descrizioneDiagnosi>
+                      <dataOraFinePrericovero>
+                      20100322142418</dataOraFinePrericovero>
+                      <numeroPrericovero>
+                      2009000004</numeroPrericovero>
+                      <dataOraInizioPrericovero>
+                      20100315142418</dataOraInizioPrericovero>
+                      <descrizioneRepartoRicovero>
+                      </descrizioneRepartoRicovero>
+                    </datiPrericovero>
+                  </c:folder_prericovero>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>2</nLivelloFolder>
+                <idTipoFolderPadre>80</idTipoFolderPadre>
+                <idStatoFolder>OK</idStatoFolder>
+              </folder>
+              <folder>
+                <descrizioneFolder>PRERICOVERO</descrizioneFolder>
+                <idTipoFolder>81</idTipoFolder>
+                <etichettaFolder>
+                numeroPrericovero</etichettaFolder>
+                <idFolder>184517181</idFolder>
+                <attributiSpecificiFolder>
+                  <c:folder_prericovero xmlns:c="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_prericovero/">
+
+                    <strutturaErogazione>
+                      <idPresidio>03093000</idPresidio>
+                      <descrizioneEnte>FONDAZIONE SALVATORE
+                      MAUGERI</descrizioneEnte>
+                      <idEnte>690032</idEnte>
+                      <descrizionePresidio>FOND.S.MAUGERI-CL.LAVORO
+                      E RIAB.-TRADATE</descrizionePresidio>
+                    </strutturaErogazione>
+                    <datiPrericovero>
+                      <idRepartoRicovero></idRepartoRicovero>
+                      <codiceDiagnosi>V3200</codiceDiagnosi>
+                      <descrizioneDiagnosi>GEMELLO DI GEMELLO NATO
+                      MORTO,NATO IN OSPEDALE,NATO SENZA MENZIONE DI
+                      PARTO CESAREO</descrizioneDiagnosi>
+                      <dataOraFinePrericovero>20100322142419</dataOraFinePrericovero>
+                      <numeroPrericovero>2009000005</numeroPrericovero>
+                      <dataOraInizioPrericovero>20100315142419</dataOraInizioPrericovero>
+                      <descrizioneRepartoRicovero></descrizioneRepartoRicovero>
+                    </datiPrericovero>
+                  </c:folder_prericovero>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>2</nLivelloFolder>
+                <idTipoFolderPadre>80</idTipoFolderPadre>
+                <idStatoFolder>OK</idStatoFolder>
+              </folder>
+            </listaFolder>
+          </indiceFascicolo>
+        </ottieniIndiceFascicolo>
+        <esitoOttieniIndiceFascicolo>
+          <esito>OK</esito>
+        </esitoOttieniIndiceFascicolo>
+      </param>
+    </m:FSE.ottieniIndiceFascicoloResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+	xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Header>
+		<a:AppContext
+			xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/"
+			a:AppContext="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Reply servProd="FSE">
+				<Subject></Subject>
+			</Reply>
+		</a:AppContext>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+		<m:FSE.verificaStatoDistintaDCEResponse
+			xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2011-01/verificaStatoDistintaDCE/">
+			<param>
+				<esitoVerificaStatoDistintaDCE>
+					<esito>Elaborazione conclusa con successo</esito>
+				</esitoVerificaStatoDistintaDCE>
+			</param>
+		</m:FSE.verificaStatoDistintaDCEResponse>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

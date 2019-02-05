@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+<TestInfo>
+	<Autore>MCaldara</Autore>
+	<DataPreparazione>6/04/2009</DataPreparazione>
+	<CodiceTest>FSEDRIN.8059000010.07-07</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>F</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso></DescrizioneCaso>
+	<DescrizioneRisultatoAtteso></DescrizioneRisultatoAtteso>
+</TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap-env:Header>
+		<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+			<Sla>
+				<Log>
+					<Global>
+						<TrackID>121551124945223432</TrackID>
+						<Timestamp>08-07-2008 12:00:49</Timestamp>
+					</Global>
+				</Log>
+			</Sla>
+			<Security>
+				<CitCardPresent>false</CitCardPresent>
+				<CitAuth>false</CitAuth>
+				<CitCF></CitCF>
+				<CitSmartCardSN></CitSmartCardSN>
+				<FunContext>
+					<credential>
+						<vrs>
+							<mjr>2</mjr>
+							<min>1</min>
+						</vrs>
+						<validity>
+							<emittedDate>08/07/2008 11:57:22</emittedDate>
+							<sessionMaxTime>28800000</sessionMaxTime>
+						</validity>
+					<role>
+						<code>5</code>
+		                <description>Direttore Medico</description>
+					</role>
+						<userId>MDCPPN55M28F205H</userId>
+						<FirstName>PEPPINO</FirstName>
+						<LastName>MEDICOBUONO</LastName>
+						<ctf>
+						<reg>
+							<cod/>
+							<des/>
+						</reg>
+						<app>
+							<cod/>
+							<des/>
+						</app>
+						<pro>
+							<cod/>
+							<des/>
+						</pro>
+						<ter>
+							<cod/>
+							<des/>
+						</ter>
+						<str>
+							<cod>030960</cod>
+							<des/>
+						</str>
+						<pre>
+							<cod>03090300</cod>
+							<des/>
+						</pre>
+						<rep>
+							<cod>0801</cod>
+							<des/>
+						</rep>
+						</ctf>
+							<attributi>
+							<attributo tipo="PRRP">
+								<cod>UDT</cod>
+								<des/>
+							</attributo>
+							<attributo tipo="PRRP">
+								<cod>ROL</cod>
+								<des/>
+							</attributo>							
+						</attributi>																							
+						<prv>
+							<iupSeed>00000</iupSeed>
+							<DF>F</DF>
+							<Ref>MEDICOBUONO/PEPPINO/MDCPPN55M28F205H</Ref>
+						</prv>
+					</credential>
+				</FunContext>
+			</Security>
+			<Transport>
+				<Mode>Sync</Mode>
+				<Dest>DCSanita</Dest>
+			</Transport>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>	
+	<soap-env:Body>
+	<m:FSE.ottieniIndiceFascicolo xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/ottieniIndiceFascicolo/" dataSetVersion="1.0">
+			<richiestaIndiceFascicolo>
+				<cittadino>
+					<idCittadino tipo="CF">CGNNPR80A01F205D</idCittadino>
+				</cittadino>
+				<nMaxRecord/>
+				<nPagina/>
+			</richiestaIndiceFascicolo>
+		</m:FSE.ottieniIndiceFascicolo>
+	</soap-env:Body>
+</soap-env:Envelope>

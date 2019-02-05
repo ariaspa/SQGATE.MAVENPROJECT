@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/folder_ricovero/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/folder_ricovero/" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:complexType name="strutturaErogazioneType">
+		<xs:all>
+			<xs:element name="idEnte" type="xs:string"/>
+			<xs:element name="descrizioneEnte" type="xs:string"/>
+			<xs:element name="idPresidio" type="xs:string"/>
+			<xs:element name="descrizionePresidio" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="datiAccettazioneType">
+		<xs:all>
+			<xs:element name="idRegimeRicovero" type="xs:string"/>
+			<xs:element name="descrizioneRegimeRicovero" type="xs:string"/>
+			<xs:element name="idTipoRicovero" type="xs:string"/>
+			<xs:element name="descrizioneTipoRicovero" type="xs:string"/>
+			<xs:element name="idProvenienzaPaziente" type="xs:string"/>
+			<xs:element name="descrizioneProvenienzaPaziente" type="xs:string"/>
+			<xs:element name="idOnereDegenza" type="xs:string"/>
+			<xs:element name="descrizioneOnereDegenza" type="xs:string"/>
+			<xs:element name="idModalitaTrauma" type="xs:string"/>
+			<xs:element name="descrizioneModalitaTrauma" type="xs:string"/>
+			<xs:element name="numeroPrericovero" type="xs:string"/>
+			<xs:element name="IUP" type="xs:string"/>
+			<xs:element name="descrizioneDiagnosiIngresso" type="xs:string"/>
+			<xs:element name="codiceDiagnosiIngresso" type="xs:string"/>
+			<xs:element name="numeroPraticaPS" type="xs:string"/>
+			<xs:element name="motivoRicoveroDH" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="datiDimissioneType">
+		<xs:all>
+			<xs:element name="dataOraDimissione" type="xs:string"/>
+			<xs:element name="idRepartoDimissione" type="xs:string"/>
+			<xs:element name="descrizioneRepartoDimissione" type="xs:string"/>
+			<xs:element name="idModalitaDimissione" type="xs:string"/>
+			<xs:element name="descrizioneModalitaDimissione" type="xs:string"/>
+			<xs:element name="codiceDiagnosiPrincipaleDimissione" type="xs:string"/>
+			<xs:element name="descrizioneDiagnosiPrincipaleDimissione" type="xs:string"/>
+			<xs:element name="pesoNascita" type="xs:string"/>
+			<xs:element name="flagAutoptico" type="xs:string"/>
+			<xs:element name="giorniDegenzaOrdinaria" type="xs:string"/>
+			<xs:element name="giorniPresenzaDH" type="xs:string"/>
+			<xs:element name="dataEventoIndice" type="xs:string"/>
+			<xs:element name="idStatoCivile" type="xs:string"/>
+			<xs:element name="descrizioneStatoCivile" type="xs:string"/>
+			<xs:element name="idCittadinanza" type="xs:string"/>
+			<xs:element name="descrizioneCittadinanza" type="xs:string"/>
+			<xs:element name="idComuneResidenza" type="xs:string"/>
+			<xs:element name="descrizioneComuneResidenza" type="xs:string"/>
+			<xs:element name="idPosizioneProfessionale" type="xs:string"/>
+			<xs:element name="descrizionePosizioneProfessionale" type="xs:string"/>
+			<xs:element name="elencoDiagnosi" type="m:elencoDiagnosiType" minOccurs="0"/>
+			<xs:element name="elencoInterventi" type="m:elencoInterventiType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="trasferimentoType">
+		<xs:all>
+			<xs:element name="dataTrasferimento" type="xs:string"/>
+			<xs:element name="idRepartoOrigine" type="xs:string"/>
+			<xs:element name="descrizioneRepartoOrigine" type="xs:string"/>
+			<xs:element name="idRepartoDestinazione" type="xs:string"/>
+			<xs:element name="descrizioneRepartoDestinazione" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="elencoTrasferimentiType">
+		<xs:sequence>
+			<xs:element name="trasferimento" type="m:trasferimentoType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="diagnosiType">
+		<xs:all>
+			<xs:element name="dataFormulazioneDiagnosi" type="xs:string"/>
+			<xs:element name="idDiagnosi" type="xs:string"/>
+			<xs:element name="descrizioneDiagnosi" type="xs:string"/>
+			<xs:element name="noteDiagnosi" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="interventoType">
+		<xs:all>
+			<xs:element name="dataIntervento" type="xs:string"/>
+			<xs:element name="idIntervento" type="xs:string"/>
+			<xs:element name="descrizioneIntervento" type="xs:string"/>
+			<xs:element name="noteIntervento" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="elencoDiagnosiType">
+		<xs:sequence>
+			<xs:element name="diagnosi" type="m:diagnosiType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="elencoInterventiType">
+		<xs:sequence>
+			<xs:element name="intervento" type="m:interventoType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="neonatoType">
+		<xs:all>
+			<xs:element name="dataNascitaNeonato" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="eventoRicoveroType">
+		<xs:all>
+			<xs:element name="strutturaErogazione" type="m:strutturaErogazioneType" minOccurs="0"/>
+			<xs:element name="neonato" type="m:neonatoType" minOccurs="0"/>
+			<xs:element name="numeroNosologico" type="xs:string" minOccurs="0"/>
+			<xs:element name="dataOraRicovero" type="xs:string" minOccurs="0"/>
+			<xs:element name="idRepartoRicovero" type="xs:string" minOccurs="0"/>
+			<xs:element name="descrizioneRepartoRicovero" type="xs:string" minOccurs="0"/>
+			<xs:element name="datiAccettazione" type="m:datiAccettazioneType" minOccurs="0"/>
+			<xs:element name="datiDimissione" type="m:datiDimissioneType" minOccurs="0"/>
+			<xs:element name="elencoTrasferimenti" type="m:elencoTrasferimentiType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema targetNamespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/pubblicaDocumenti/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/pubblicaDocumenti/"
+           xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" schemaLocation="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/"/>
+
+	<xs:group name="documentoApplicativo"> 
+		<xs:choice> 
+			<xs:element name="documentoClinicoElettronico" type="m:DCEType" /> 
+			<xs:element name="documentoClinicoElettronicoSenzaDAO" type="m:DCESDType" /> 
+		</xs:choice> 
+	</xs:group> 
+	
+	<xs:element name="FSE.pubblicaDocumenti"> 
+		<xs:complexType> 
+			<xs:group ref="m:documentoApplicativo" minOccurs="1" maxOccurs="unbounded"/> 
+			<xs:attribute name="dataSetVersion" type="xs:string" use="required"/> 
+		</xs:complexType> 
+	</xs:element> 
+
+	<xs:element name="FSE.pubblicaDocumentiResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="param" type="m:rispostaType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="DCEType">
+		<xs:all>
+			<xs:element ref="ll:CRSlegalContent" />
+			<xs:element name="numeroProgressivo" type="xs:string"/>
+			<xs:element name="strutturaCreazione" type="m:strutturaType"/>
+			<xs:element name="strutturaConservazione" type="m:strutturaType"/>
+			<xs:element name="idTipoDocumento" type="xs:string"/>
+			<xs:element name="disciplinaErogazione" type="xs:string" minOccurs="0"/>
+			<xs:element name="caratterizzazioniCliniche" type="m:caratterizzazioniClinicheType" minOccurs="0"/>
+			<xs:element name="versioneXSLT" type="xs:string"/>
+			<xs:element name="dataOraCreazione" type="xs:string"/>
+			<xs:element name="listaDocumenti" type="m:listaDocumentiType"/>
+			<xs:element name="listaAllegati" type="m:listaAllegatiType" minOccurs="0"/> 
+			<xs:element name="aggiornamento" type="m:aggiornamentoType" minOccurs="0"/>
+			<xs:element name="reteDiPatologia" type="xs:string" minOccurs="0"/>
+			<xs:element name="sezioneFascicolo" type="xs:string"/>
+			<xs:element name="idTipoDocumentoLOINC" type="xs:string" minOccurs="0"/>
+			<xs:element name="cittadino" type="m:cittadinoType"/>
+			<xs:element name="autoreDocumento" type="m:autoreDocumentoType"/>
+			<xs:element name="operatoreAutorizzante" type="m:operatoreAutorizzanteType"/>
+			<xs:element name="statoAutorizzazioneDocumento" type="xs:string" minOccurs="0"/>
+			<xs:element name="noteReperibilita" type="xs:string" minOccurs="0"/>
+			<xs:element name="oscuramento" type="m:oscuramentoType"/>
+			<xs:element name="attributiSpecifici" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="DCESDType">
+		<xs:all>
+			<xs:element name="numeroProgressivo" type="xs:string"/>
+			<xs:element name="strutturaCreazione" type="m:strutturaType"/>
+			<xs:element name="strutturaConservazione" type="m:strutturaType"/>
+			<xs:element name="idTipoDocumento" type="xs:string"/>
+			<xs:element name="disciplinaErogazione" type="xs:string" minOccurs="0"/>
+			<xs:element name="caratterizzazioniCliniche" type="m:caratterizzazioniClinicheType" minOccurs="0"/>
+			<xs:element name="versioneXSLT" type="xs:string" minOccurs="0"/>
+			<xs:element name="dataOraCreazione" type="xs:string"/>
+			<xs:element name="listaDocumenti" type="m:listaDocumentiType"/>
+			<xs:element name="listaAllegati" type="m:listaAllegatiType" minOccurs="0"/>
+			<xs:element name="aggiornamento" type="m:aggiornamentoType" minOccurs="0"/>
+			<xs:element name="reteDiPatologia" type="xs:string" minOccurs="0"/>
+			<xs:element name="sezioneFascicolo" type="xs:string" minOccurs="0"/>
+			<xs:element name="idTipoDocumentoLOINC" type="xs:string" minOccurs="0"/>
+			<xs:element name="cittadino" type="m:cittadinoType"/>
+			<xs:element name="autoreDocumento" type="m:autoreDocumentoType"/>
+			<xs:element name="operatoreAutorizzante" type="m:operatoreAutorizzanteType" minOccurs="0"/>
+			<xs:element name="statoAutorizzazioneDocumento" type="xs:string"/>
+			<xs:element name="noteReperibilita" type="xs:string" minOccurs="0"/>
+			<xs:element name="oscuramento" type="m:oscuramentoType" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="attributiSpecifici" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="strutturaType">
+		<xs:all>
+			<xs:element name="idEnte" type="xs:string"/>
+			<xs:element name="idPresidio" type="xs:string" minOccurs="0"/>
+			<xs:element name="idUnitaOperativaClinica" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="caratterizzazioniClinicheType">
+		<xs:sequence>
+			<xs:element name="caratterizzazione" type="m:caratterizzazioneType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="caratterizzazioneType">
+		<xs:all>
+			<xs:element name="dizionario" type="xs:string"/>
+			<xs:element name="codice" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaDocumentiType">
+		<xs:sequence>
+			<xs:element name="documento" type="m:documentoType" maxOccurs="2"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="documentoType">
+		<xs:all>
+			<xs:element name="idArchiviazioneDocumento" type="xs:string"/>
+			<xs:element name="idRepository" type="xs:string"/>
+			<xs:element name="linguaggioDocumento" type="xs:string"/>
+			<xs:element name="formato" type="xs:string"/>
+			<xs:element name="firmato" type="xs:string"/>
+			<xs:element name="contenuto" type="xs:string" minOccurs="0"/>
+			<xs:element name="validazioneSchema" type="xs:string" minOccurs="0"/>
+			<xs:element name="hashDocumento" type="xs:string"/>
+			<xs:element name="algoritmoHash" type="xs:string"/>
+			<xs:element name="sizeDocumento" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaAllegatiType">
+		<xs:sequence>
+			<xs:element name="allegato" type="m:allegatoType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="allegatoType">
+		<xs:all>
+			<xs:element name="linkAllegato" type="xs:string"/>
+			<xs:element name="formatoAllegato" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="aggiornamentoType">
+		<xs:all>
+			<xs:element name="idDocumentoRiferimento" type="xs:string" minOccurs="0"/>
+			<xs:element name="naturaAggiornamento" type="xs:string"/>
+			<xs:element name="versioneDocumentoRiferimento" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="cittadinoType">
+		<xs:all>
+			<xs:element name="idCittadino">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="tipo" type="m:tipoType"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="cognomeCittadino" type="xs:string"/>
+			<xs:element name="nomeCittadino" type="xs:string"/>
+			<xs:element name="sessoCittadino" type="xs:string"/>
+			<xs:element name="dataNascitaCittadino" type="xs:string"/>
+			<xs:element name="idComuneNascitaCittadino" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="autoreDocumentoType">
+		<xs:all>
+			<xs:element name="codiceFiscale" type="xs:string"/>
+			<xs:element name="cognome" type="xs:string"/>
+			<xs:element name="nome" type="xs:string"/>
+			<xs:element name="ruolo" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="operatoreAutorizzanteType">
+		<xs:all>
+			<xs:element name="idEnte" type="xs:string"/>
+			<xs:element name="idPresidio" type="xs:string" minOccurs="0"/>
+			<xs:element name="idUnitaOperativaClinica" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceFiscaleAutorizzante" type="xs:string"/>
+			<xs:element name="cognomeAutorizzante" type="xs:string"/>
+			<xs:element name="nomeAutorizzante" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="oscuramentoType">
+		<xs:sequence>
+			<xs:element name="tipoOscuramento" type="m:tipoOscuramentoType" minOccurs="5" maxOccurs="5"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoOscuramentoType">
+		<xs:all>
+			<xs:element name="idCausaleOscuramento" type="xs:string"/>
+			<xs:element name="valoreOscuramento" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:simpleType name="tipoType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CF"/>
+			<xs:enumeration value="ALTRO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="rispostaType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="esitoPubblicazioneDocumenti" type="m:esitoPubblicazioneDocumentiType"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="esitoNegativo" type="m:esitoNegativoType"/>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="esitoPubblicazioneDocumentiType">
+		<xs:all>
+			<xs:element name="numeroProgressivo" type="xs:string"/>
+			<xs:element name="esito" type="xs:string"/>
+			<xs:element name="listaUriDocumenti" type="m:listaUriDocumentiType"/>
+			<xs:element name="idSetDocumenti" type="xs:string"/>
+			<xs:element name="nVersione" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaUriDocumentiType">
+		<xs:sequence>
+			<xs:element name="uriDocumenti" type="m:uriDocumentiType" maxOccurs="2"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="uriDocumentiType">
+		<xs:all>
+			<xs:element name="uri" type="xs:string"/>
+			<xs:element name="formato" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="esitoNegativoType">
+		<xs:all>
+			<xs:element name="codiceErrore" type="xs:string"/>
+			<xs:element name="descErrore" type="xs:string"/>
+			<xs:element name="listaEccezioni" type="m:listaEccezioniType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaEccezioniType">
+		<xs:sequence>
+			<xs:element name="eccezione" type="m:eccezioneType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="eccezioneType">
+		<xs:all>
+			<xs:element name="codiceEccezione" type="xs:string"/>
+			<xs:element name="descEccezione" type="xs:string"/>
+			<xs:element name="nomeCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="valoreCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="descEccezioneCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceEccezioneCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="ROI" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaWarningType">
+		<xs:sequence>
+			<xs:element name="warning" type="m:warningType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="warningType">
+		<xs:all>
+			<xs:element name="codiceWarning" type="xs:string"/>
+			<xs:element name="descWarning" type="xs:string"/>
+			<xs:element name="nomeCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="valoreCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="descWarningCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceWarningCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="ROI" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+</xs:schema>

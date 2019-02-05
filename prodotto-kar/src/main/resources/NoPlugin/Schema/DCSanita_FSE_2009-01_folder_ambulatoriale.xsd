@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/folder_ambulatoriale/" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/folder_ambulatoriale/" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:complexType name="medicoRichiedenteType">
+		<xs:all>
+			<xs:element name="codiceFiscale" type="xs:string"/>
+			<xs:element name="codiceRegionale" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="prestazioneType">
+		<xs:all>
+			<xs:element name="idPrestazioneSISS" type="xs:string"/>
+			<xs:element name="descrizionePrestazioneSISS" type="xs:string"/>
+			<xs:element name="flagAggiuntiva" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="prestazioniAssociateType">
+		<xs:sequence>
+			<xs:element name="prestazione" type="m:prestazioneType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="eventoAmbulatorialeType">
+		<xs:all>
+			<xs:element name="idEnte" type="xs:string" minOccurs="0"/>
+			<xs:element name="descrizioneEnte" type="xs:string" minOccurs="0"/>
+			<xs:element name="idPresidio" type="xs:string" minOccurs="0"/>
+			<xs:element name="descrizionePresidio" type="xs:string" minOccurs="0"/>
+			<xs:element name="IUP" type="xs:string" minOccurs="0"/>
+			<xs:element name="numeroCartellaAmbulatoriale" type="xs:string" minOccurs="0"/>
+			<xs:element name="idPrescrizioneRUR" type="xs:string" minOccurs="0"/>
+			<xs:element name="dataPrescrizione" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceDiagnosi" type="xs:string" minOccurs="0"/>
+			<xs:element name="descrizioneDiagnosi" type="xs:string" minOccurs="0"/>
+			<xs:element name="quesitoDiagnostico" type="xs:string" minOccurs="0"/>
+			<xs:element name="idProvenienzaPaziente" type="xs:string" minOccurs="0"/>
+			<xs:element name="descrizioneProvenienzaPaziente" type="xs:string" minOccurs="0"/>
+			<xs:element name="idClassePriorita" type="xs:string" minOccurs="0"/>
+			<xs:element name="descrizioneClassePriorita" type="xs:string" minOccurs="0"/>
+			<xs:element name="idRegimeErogazione" type="xs:string" minOccurs="0"/>
+			<xs:element name="descrizioneRegimeErogazione" type="xs:string" minOccurs="0"/>
+			<xs:element name="idEsenzione" type="xs:string" minOccurs="0"/>
+			<xs:element name="descrizioneEsenzione" type="xs:string" minOccurs="0"/>
+			<xs:element name="medicoRichiedente" type="m:medicoRichiedenteType" minOccurs="0"/>
+			<xs:element name="idTipoPrestazione" type="xs:string" minOccurs="0"/>
+			<xs:element name="descrizioneTipoPrestazione" type="xs:string" minOccurs="0"/>
+			<xs:element name="dataAccettazione" type="xs:string" minOccurs="0"/>
+			<xs:element name="dataPrenotazione" type="xs:string" minOccurs="0"/>
+			<xs:element name="prestazioniAssociate" type="m:prestazioniAssociateType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+</xs:schema>

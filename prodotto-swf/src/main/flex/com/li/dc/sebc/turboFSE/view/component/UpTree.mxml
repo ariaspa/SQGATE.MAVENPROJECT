@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Tree xmlns:mx="http://www.adobe.com/2006/mxml" 
+	initialize="init()" 
+	implements="it.lispa.siss.sebc.flex.help.IHelp">
+	<mx:Metadata>
+	   	[ Event( name="dragEnter", type="com.li.dc.sebc.turboFSE.events.WrapDragEvent") ]
+	   	[ Event( name="dragDrop", type="com.li.dc.sebc.turboFSE.events.WrapDragEvent") ]
+	   	[ Event( name="dragComplete", type="com.li.dc.sebc.turboFSE.events.WrapDragEvent") ]
+	</mx:Metadata>
+	<mx:Script>
+	
+		<![CDATA[
+		
+			import com.li.dc.sebc.turboFSE.util.TurboDataDescriptor;
+			import mx.collections.ICollectionView;
+			import com.li.dc.sebc.turboFSE.util.CollectionFSETree;
+			import mx.controls.treeClasses.TreeItemRenderer;
+			 
+			import mx.collections.ArrayCollection;
+			import mx.controls.listClasses.BaseListData;
+			import com.li.dc.sebc.turboFSE.model.vo.FolderTree;
+			import mx.controls.treeClasses.TreeListData;
+			import com.li.dc.sebc.turboFSE.events.WrapDragEvent;
+			import flash.geom.Point;
+			import mx.events.DragEvent;
+			import mx.core.IToolTip;
+			import mx.core.UITextField;
+			import com.li.dc.sebc.turboFSE.view.skin.ItemRenderFSE;
+			import mx.events.ToolTipEvent;
+			import mx.controls.listClasses.IListItemRenderer;
+			import mx.core.ScrollPolicy;
+			
+			//import mx.controls.treeClasses.DefaultDataDescriptor
+			/////////////////////_rootModel
+			public var nameId:String = "upTree";
+			
+			public function getIDHelp(): String
+			{
+				return nameId;
+			}
+			public function feedback(play:Boolean):void{}
+			override public function createItemRenderer(data:Object):IListItemRenderer
+    		{
+    			//var getRender:Boolean	= (data!=null && data is FolderTree && (data as FolderTree).visible)
+     			//if(!getRender)return null;
+    			var item:IListItemRenderer = super.createItemRenderer(data);
+    			item.addEventListener(ToolTipEvent.TOOL_TIP_SHOW,onShowToolTip);
+    			item.addEventListener(Event.REMOVED_FROM_STAGE,onRemoveStage);
+    			//
+    			item.addEventListener(DragEvent.DRAG_ENTER, onDragEvent);
+    			item.addEventListener(DragEvent.DRAG_DROP,  onDragEvent);
+    			item.addEventListener(DragEvent.DRAG_COMPLETE, onDragEvent);
+    			item.addEventListener(DragEvent.DRAG_EXIT, onDragEvent);
+    			item.addEventListener(DragEvent.DRAG_OVER, onDragEvent);
+    			item.addEventListener(DragEvent.DRAG_START, onDragEvent);
+    			 this.dataProvider
+    			return item;
+    		}
+    		private function onRemoveStage(e:Event):void
+			{
+				var t:* = e.target;
+				t.removeEventListener(ToolTipEvent.TOOL_TIP_SHOW,onShowToolTip);
+				t.removeEventListener(Event.REMOVED_FROM_STAGE,onRemoveStage);
+				
+				t.removeEventListener(DragEvent.DRAG_ENTER, onDragEvent);
+    			t.removeEventListener(DragEvent.DRAG_DROP,  onDragEvent);
+    			t.removeEventListener(DragEvent.DRAG_COMPLETE, onDragEvent);
+    			t.removeEventListener(DragEvent.DRAG_EXIT, onDragEvent);
+    			t.removeEventListener(DragEvent.DRAG_OVER, onDragEvent);
+    			t.removeEventListener(DragEvent.DRAG_START, onDragEvent);
+			}
+			private function onDragEvent(e:DragEvent):void
+			{
+				var wrap:WrapDragEvent = new WrapDragEvent(e.type,e);
+				dispatchEvent( wrap );
+			}
+			 
+    		private function onShowToolTip(event:ToolTipEvent):void
+			{
+				if(event.toolTip)
+				{
+					var tip:IToolTip = event.toolTip;
+					this.callLater(moveTip,[event.target,tip]);
+				}
+			}
+			private function moveTip(target:DisplayObject,tip:IToolTip):void
+			{
+				var num:uint = ItemRenderFSE(target).numChildren;
+			//	mx.controls.treeClasses::TreeItemRenderer
+				var txtf:UITextField;
+				for(var i:uint = 0;i<num;i++)
+				{
+					if(ItemRenderFSE(target).getChildAt(i) is UITextField)
+					{
+						txtf = 	ItemRenderFSE(target).getChildAt(i) as UITextField;
+						break;
+					}
+				}
+				var point:Point = new Point(target.x,target.y);
+				point = target.parent.localToGlobal(point);
+				var nwy:Number = point.y - tip.height - 10;
+				var nwx:Number = (txtf!=null) ? txtf.x : point.x;
+				if(nwy<0)
+				{
+					nwy	 = 0;
+					nwx  = txtf.width;
+				}
+				tip.y = nwy;
+				tip.x = nwx;
+			}
+			private function init():void
+			{
+            	horizontalScrollPolicy = ScrollPolicy.AUTO;
+         	}
+         	public function getCollection():ICollectionView
+         	{
+         		return this.collection;
+         	}
+         	override public function get maxHorizontalScrollPosition():Number
+	        {
+	        	if (isNaN(mx_internal::_maxHorizontalScrollPosition))
+	                  return 0;
+	              
+	              return mx_internal::_maxHorizontalScrollPosition;
+	        }
+	        override public function set maxHorizontalScrollPosition(value:Number):void
+         	{
+	              mx_internal::_maxHorizontalScrollPosition = value;
+	              dispatchEvent(new Event("maxHorizontalScrollPositionChanged"));
+	           
+	              scrollAreaChanged = true;
+	              invalidateDisplayList();
+         	}
+			override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
+         	{
+            	// we call measureWidthOfItems to get the max width of the item renderers.
+              	// then we see how much space we need to scroll, setting maxHorizontalScrollPosition appropriately
+              	var diffWidth:Number = measureWidthOfItems(0,0) - (unscaledWidth - viewMetrics.left - viewMetrics.right);
+              	if (diffWidth <= 0){                    
+              		maxHorizontalScrollPosition = NaN;                
+              	}else{                     
+              		maxHorizontalScrollPosition = diffWidth;                                 
+              	}
+              	super.updateDisplayList(unscaledWidth, unscaledHeight);           
+            } 
+            override protected function initListData(item:Object, treeListData:TreeListData):void
+    		{
+        		//if (item == null || !(item is FolderTree) || !(item as FolderTree).visible)return;
+        		super.initListData(item,treeListData)
+     	 	} 
+            override protected function makeListData(data:Object, uid:String, rowNum:int):BaseListData
+	    	{
+	    		
+		       // var treeListData:TreeListData = new TreeListData(itemToLabel(data), uid, this, rowNum);
+		       // initListData(data, treeListData);
+		       // return treeListData;
+		       return super.makeListData(data,uid,rowNum);
+	    	}
+     		override public function itemToItemRenderer(item:Object):IListItemRenderer
+     		{
+     			return super.itemToItemRenderer(item);
+     		}
+     		override public function itemToLabel(data:Object):String
+     		{
+     			return super.itemToLabel(data);
+     		}
+     		 
+     		override public function set dataProvider(value:Object):void
+     		{
+     			super.dataProvider = value;
+     		}
+		]]>
+	</mx:Script>
+</mx:Tree>

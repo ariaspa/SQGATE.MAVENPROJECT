@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	<mx:Script>
+		<![CDATA[
+			import it.lisit.siss.flex.server.common.graphic.ImageDefinition;
+		]]>
+	</mx:Script>
+	<mx:Canvas width="813" height="134" styleName="borderStyle" backgroundColor="#F3FFF7" verticalCenter="0" horizontalCenter="0">
+		<mx:Text styleName="textBold" text="Attenzione:&#xa;&#xa;applicazione attiva nella nuova finestra." width="752" height="87" x="49" y="26"/>
+		<mx:Image x="12" y="25" source="{ImageDefinition.ICONA_INFO}"/>
+	</mx:Canvas>
+	 
+</mx:Canvas>

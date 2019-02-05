@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<TestInfo>
+	<Autore></Autore>
+	<DataPreparazione>31/01/2006</DataPreparazione>
+	<CodiceTest>IN.8580174001</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>F</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>Registrazione di un referto autorizzato con le seguenti caratteristiche: referto Sostitutivo(03) con ROI = "01", referto padre Specialistico standard avente URI = "http://dominioEsterno/linkReferto1.html" per il cittadino con CF="TCRMXX10X00X000X" inserito in precedenza tra i contatti</DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>Referto inserito correttamente con URI = "http://dominioEsterno/refertoSostitutivoSpecialistico.html" e registrazione dell’autorizzazione per il cittadino effettuata correttamente</DescrizioneRisultatoAtteso>
+</TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap-env:Header>
+		<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+			<Transport>
+				<Mode>Sync</Mode>
+				<Dest>DCSanita</Dest>
+			</Transport>
+			<Security>
+				<FunContext>
+					<credential>
+						<validity>
+							<emittedDate>15/11/2005+10:59:18,531</emittedDate>
+							<sessionMaxTime>15/11/2005+10:59:18,531</sessionMaxTime>
+						</validity>
+						<vrs>
+							<mjr>1</mjr>
+							<min>0</min>
+						</vrs>
+						<ctf>
+							<reg>
+								<cod>1</cod>
+								<des/>
+							</reg>
+							<app>
+								<cod>1</cod>
+								<des/>
+							</app>
+							<pro>
+								<cod>1</cod>
+								<des/>
+							</pro>
+							<ter>
+								<cod>1</cod>
+								<des/>
+							</ter>
+							<str>
+								<cod>030960</cod>
+								<des/>
+							</str>
+							<pre>
+								<cod/>
+								<des/>
+							</pre>
+							<rep>
+								<cod/>
+								<des/>
+							</rep>
+						</ctf>
+						<role>
+							<code>2</code>
+							<description>Medico di pronto soccorso</description>
+						</role>
+						<userId>RMPMRA63A20M952K</userId>
+						<FirstName>MAURO</FirstName>
+						<LastName>RAMPI</LastName>
+						<iupSeed>12345</iupSeed>
+					</credential>
+				</FunContext>
+				<CitCardPresent>false</CitCardPresent>
+				<CitAuth>false</CitAuth>
+				<CitCF>CITUNO01R01F251C</CitCF>
+				<CitSmartCardSN>251CC001</CitSmartCardSN>
+			</Security>
+			<Sla>
+				<Log>
+					<Global>
+						<TrackID>1132048757203</TrackID>
+						<Timestamp>15/11/2005+10:59:18,562</Timestamp>
+					</Global>
+				</Log>
+			</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="9.1"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+		<m:CRM.registraRefertiAggiornamento xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/CRM/2005-01/registraRefertiAggiornamento/" dataSetVersion="1.0">
+			<registraRefertiAggiornamento>
+				<ll:CRSlegalContent xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" type="Text" opLegSign="true" opWeakSign="false" feSign="false" verify="OK" tStamp="true"/>
+				<at:CRSattachment xmlns:at="http://www.crs.lombardia.it/schemas/mw/2004-01/attachment/"/>
+				<st:CRSstream xmlns:st="http://www.crs.lombardia.it/schemas/mw/2004-01/stream/"/>
+				<numeroProgressivo>01</numeroProgressivo>
+				<idServizioRefertazione>http://dominioEsterno/</idServizioRefertazione>
+				<idReferto>refertoSostitutivoSpecialistico.html</idReferto>
+				<data>20020624</data>
+				<idStruttura>030960</idStruttura>
+				<idSubStruttura>03090300</idSubStruttura>
+				
+				<uriRefertoPadre>http://dominioEsterno/linkReferto1.html</uriRefertoPadre>
+				<naturaReferto>02</naturaReferto>
+				<linkImmagine/>
+				<tipoImmagine/>
+				<linkDocumentoCDA2/>
+				<reteDiPatologia/>
+				<idUnitaOperativaClinica/>
+				<cittadino>
+					<idCittadinoNonSISS/>
+					<idAssistito>TESTCRM1</idAssistito>
+					<codiceFiscaleCittadino>TCRMXX10X00X000X</codiceFiscaleCittadino>
+					<cognomeCittadino>COGNOME</cognomeCittadino>
+					<nomeCittadino>NOME</nomeCittadino>
+					
+					
+				</cittadino>
+				<medicoRefertante>
+					<codiceFiscale>RMPMRA63A20M952K</codiceFiscale>
+					<cognome>RAMPI</cognome>
+					<nome>MAURO</nome>
+				</medicoRefertante>
+			</registraRefertiAggiornamento>
+		</m:CRM.registraRefertiAggiornamento>
+	</soap-env:Body>
+</soap-env:Envelope>

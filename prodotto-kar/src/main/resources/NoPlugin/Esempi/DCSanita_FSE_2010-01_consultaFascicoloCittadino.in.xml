@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+<TestInfo>
+	<Autore>Graziano Angelè</Autore>
+	<DataPreparazione>6/04/2009</DataPreparazione>
+	<CodiceTest>FSEIN.8060000006.03-03</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>F</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>Test sui controlli di business - Operatore abilitato al servizio, ma non c è la Smart Card del cittadino e non si è in nessun altra delle condizioni di medico che ha in cura il cittadino</DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>EA0002 - Contesto operatore non valido</DescrizioneRisultatoAtteso>
+		<confrontoBody>
+		<ignora>//idSetDocumenti</ignora>
+		<ignora>//idAggregazioneDocumento</ignora>
+		<ignora>//dataOraAccettazione</ignora>		
+	</confrontoBody>
+</TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap-env:Header>
+		<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+			<Sla>
+				<Log>
+					<Global>
+						<TrackID>121551124945253853</TrackID>
+						<Timestamp>08-07-2008 12:00:49</Timestamp>
+					</Global>
+				</Log>
+			</Sla>
+			<Security>
+				<CitCardPresent>true</CitCardPresent>
+				<CitAuth>true</CitAuth>
+				<CitCF>FSPPBB75C09E507C</CitCF>
+				<CitSmartCardSN>805CC101</CitSmartCardSN>
+				<FunContext>
+					<credential>
+						<vrs>
+							<mjr>2</mjr>
+							<min>1</min>
+						</vrs>
+						<validity>
+							<emittedDate>08/07/2008 11:57:22</emittedDate>
+							<sessionMaxTime>28800000</sessionMaxTime>
+						</validity>
+						<role>
+							<code>49</code>
+							<description>Cittadino</description>
+						</role>
+						<userId>FSPPBB75C09E507C</userId>
+						<FirstName> </FirstName>
+						<LastName> </LastName>
+						<ctf>
+							<reg>
+								<cod/>
+								<des/>
+							</reg>
+							<app>
+								<cod/>
+								<des/>
+							</app>
+							<pro>
+								<cod/>
+								<des/>
+							</pro>
+							<ter>
+								<cod/>
+								<des/>
+							</ter>
+							<str>
+								<cod>691489</cod>
+								<des>ASL CREMONA</des>
+							</str>
+							<pre>
+								<cod>03038000</cod>
+								<des/>
+							</pre>
+							<rep>
+								<cod>5604</cod>
+								<des/>
+							</rep>
+						</ctf>
+						<prv>
+							<iupSeed>00000</iupSeed>
+							<DF>F</DF>
+							<Ref> </Ref>
+						</prv>
+					</credential>
+				</FunContext>
+			</Security>
+			<Transport>
+				<Mode>Sync</Mode>
+				<Dest>DCSanita</Dest>
+			</Transport>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+		<m:FSE.consultaFascicoloCittadino xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2010-01/consultaFascicoloCittadino/" dataSetVersion="1.0">
+			<richiestaConsultaFascicoloCittadino>
+				<cittadino>
+					<idCittadino tipo="CF">FSPPBB75C09E507C</idCittadino>
+				</cittadino>
+					<dataInizio>20000101</dataInizio>
+					<dataFine>20100720</dataFine>						
+				<idTipoFolder>40</idTipoFolder>
+				<nMaxRecord/>
+				<nPagina/>
+			</richiestaConsultaFascicoloCittadino>
+		</m:FSE.consultaFascicoloCittadino>
+	</soap-env:Body>
+</soap-env:Envelope>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" 
+	layout="horizontal"
+	showCloseButton="true" 
+	xmlns:component="com.li.dc.sebc.turboFSE.view.component.*" 
+	xmlns:accordion="it.lispa.siss.sebc.flex.graphic.accordion.*">
+	
+	<mx:Metadata>
+	   	[ Event( name="clickRicerca", type="com.li.dc.sebc.turboFSE.events.TurboEvent") ]
+	   	[ Event( name="clickCancella", type="com.li.dc.sebc.turboFSE.events.TurboEvent") ]
+	   	[ Event( name="changePanelFilter", type="com.li.dc.sebc.turboFSE.events.TurboEvent") ]
+	</mx:Metadata>
+	
+	<mx:Script>
+		<![CDATA[
+			import com.li.dc.sebc.turboFSE.events.TurboEvent;
+			import it.lispa.siss.sebc.flex.graphic.accordion.HAccordion;
+			import it.lispa.siss.sebc.flex.debug.Debug;
+			import com.li.dc.sebc.turboFSE.view.component.CanvasFSE;
+			import com.li.dc.sebc.turboFSE.view.component.CanvasFiltriGenerici;
+			import com.li.dc.sebc.turboFSE.view.component.CanvasFiltriData;
+		 
+			//====================================================== 
+			//[Embed(systemFont="Trebuchet MS", fontWeight="bold", fontName="accordionHeader", mimeType="application/x-font")] 
+            //private var font:Class;	
+            //
+            private var oldSelctChild:CanvasFSE; 
+            private var fgenerici:CanvasFiltriGenerici;
+            private var fdata:CanvasFiltriData; 
+             
+            public var selected:Boolean						= false;
+            public var indexSelected:int					= -1;
+           	[Bindable]public var indexAccordion:int 		= -1;
+            [Bindable]public var styleNameAccordion:String 	= "HAccordion"; 
+            [Bindable]public var styleNameButton:String 	= "button"; 
+            [Bindable]public var labelRicerca:String 		= "Inizia Ricerca"; 
+            [Bindable]public var labelCancella:String 		= "Cancella Tutto"; 
+             
+            //====================================================== 
+			public function reset():void
+		 	{
+		 		fgenerici.reset();
+			 	fdata.reset();
+		 	}
+		 	public function closeAll():void
+			{
+				if(oldSelctChild !=null)
+				{
+					if(oldSelctChild is CanvasFiltriGenerici)
+					{
+						CanvasFiltriGenerici(oldSelctChild).closeAll();		
+					}
+				}
+				oldSelctChild = null;
+			} 
+		 	//======================================================
+		 	 
+		 	private function clickRicerca(event:MouseEvent):void
+			{
+				 dispatchEvent(new TurboEvent(TurboEvent.CLICK_RICERCA));
+			}
+			/* cancella i filtri selezionati */
+			private function clickButton(event:MouseEvent):void
+			{
+				 dispatchEvent(new TurboEvent(TurboEvent.CLICK_CANCELLA));
+			}
+			private function getIndex(target:CanvasFSE):int 
+			{
+				var index:int = -1;
+				if(target is CanvasFiltriGenerici)
+				{
+					index = 0;
+				}else if(target is CanvasFiltriData)
+				{
+					index = 1;
+				}
+				return index;
+			}
+			private function onSelectFilter(e:Event):void
+			{
+				var index:int = getIndex(e.target as CanvasFSE);
+				if(index>-1)
+				{
+					indexSelected	= index;
+					selected		= true;
+					dispatchEvent(new TurboEvent(TurboEvent.CHANGE_PANEL_FILTER));	
+				}
+			}
+			private function onFilterDeselect(e:Event):void
+			{
+				var index:int = getIndex(e.target as CanvasFSE); 
+				if(index>-1)
+				{
+					indexSelected	= index;
+					selected		= false;
+					dispatchEvent(new TurboEvent(TurboEvent.CHANGE_PANEL_FILTER));	
+				}
+			}
+			private function onCompleteUpdate(e:Event):void 
+			{
+				oldSelctChild = HAccordion(e.target).selectedChild as CanvasFSE;
+			}
+			private function onChangeIndexAccordion(e:Event):void
+			{
+				closeAll();
+				oldSelctChild = HAccordion(e.target).selectedChild as CanvasFSE;	
+			}
+			private function updateGenerici(event:Event):void
+			{
+				fgenerici = event.target as CanvasFiltriGenerici;
+			}
+			private function updateData(event:Event):void
+			{
+				fdata = event.target as CanvasFiltriData;
+			}
+			//====================================================
+		]]>
+	</mx:Script>
+	
+	
+	<mx:VBox width="100%" height="100%">
+		<accordion:HAccordion
+			styleName="{styleNameAccordion}"
+			backgroundAlpha="0"
+			selectedIndex="{indexAccordion}" 
+			updateComplete="onCompleteUpdate(event);"
+			change="onChangeIndexAccordion(event);"
+			width="100%" 
+			height="100%"
+			horizontalGap="0"
+			textAlign="right" shadowDirection="left" shadowDistance="4">
+					
+			<component:CanvasFiltriGenerici
+				id="canvasFiltriGenerici"
+				updateComplete="updateGenerici(event);"
+				filterSelect="onSelectFilter(event);"
+				filterDeselect="onFilterDeselect(event);"
+				label="Filtri Generici" width="100%" height="100%"/>
+			
+			<component:CanvasFiltriData  
+				id="canvasFiltriData"
+				updateComplete="updateData(event);"
+				filterSelect="onSelectFilter(event);"
+				filterDeselect="onFilterDeselect(event);"
+				label="Filtri Data" width="100%" height="100%"/>
+			
+		</accordion:HAccordion>
+		
+		<mx:Spacer height="8" />
+		
+		<mx:HBox 
+			backgroundAlpha="0"
+			height="30" 
+			width="100%" 
+			verticalAlign="middle" 
+			horizontalAlign="center" 
+			horizontalGap="20">
+				
+			<!--<mx:Button styleName="{styleNameButton}" label="{labelRicerca}" click="clickRicerca(event);"/>-->
+				
+			<mx:Button styleName="{styleNameButton}" label="{labelCancella}" click="clickButton(event);"/>
+				
+		</mx:HBox>
+	</mx:VBox>
+</mx:TitleWindow>

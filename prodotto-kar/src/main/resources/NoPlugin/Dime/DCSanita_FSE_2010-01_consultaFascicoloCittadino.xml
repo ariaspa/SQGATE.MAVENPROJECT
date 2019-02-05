@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<MethodDefinition>
+	<Common>
+		<Description>
+		Il servizio consente di consultare il fascicolo sanitario elettronico a un cittadino. ver. 2010-01
+		</Description>
+		<Owner>DCSanita</Owner>
+		<MethodName>FSE.consultaFascicoloCittadino</MethodName>
+		<Namespace>http://www.crs.lombardia.it/schemas/DCSanita/FSE/2010/consultaFascicoloCittadino/</Namespace>
+		<ValidateAlways>False</ValidateAlways>
+		<RequireTransform>False</RequireTransform>
+		<RequirePlugin>False</RequirePlugin>
+		<InvokeViaPDL>True</InvokeViaPDL>
+		<InvokeViaPDS>False</InvokeViaPDS>
+		<AccessConditions>
+			RUOLO="49"  
+		</AccessConditions>
+		<SLA>
+			<Availability>9900</Availability>
+			<ResponseTime>2500</ResponseTime>
+		</SLA>
+	</Common>
+	<CASE>
+		<CitNO>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="richiestaConsultaFascicoloCittadino" min="0" max="20">
+					<D_opLegSign>False</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+				</ApplicationDocument>
+			</DIMA>
+		</CitNO>
+		<CitSI>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="richiestaConsultaFascicoloCittadino" min="0" max="20">
+					<D_opLegSign>False</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+				</ApplicationDocument>
+			</DIMA>
+		</CitSI>
+	</CASE>
+	<DIMAresponse>
+		<ApplicationDocument name="param" min="1" max="120">
+			<D_feSign>False</D_feSign>
+			<D_crypt>False</D_crypt>
+			<D_tStamp>False</D_tStamp>
+		</ApplicationDocument>
+	</DIMAresponse>
+</MethodDefinition>

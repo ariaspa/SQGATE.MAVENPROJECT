@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2014-01/attributi_cce/"
+    xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2014-01/attributi_cce/"
+    xmlns:c="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_neonato/"
+    elementFormDefault="unqualified" attributeFormDefault="unqualified">
+    
+    <xs:import namespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_neonato/"
+        schemaLocation="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_neonato/"/>
+    
+    <xs:element name="attributi_cce" type="m:attributiCclinicaType"/>
+
+    <xs:complexType name="attributiCclinicaType">
+        <xs:all>
+            <xs:element name="idPresidio" type="xs:string" minOccurs="1"/>
+            <xs:element name="numeroNosologico" type="xs:string" minOccurs="1"/>
+            <xs:element name="IUP" type="xs:string" minOccurs="0"/>
+            <xs:element name="neonato" type="c:neonatoType" minOccurs="0"/>
+            <xs:element name="dataOraAccettazione" type="xs:string" minOccurs="1"/>
+        </xs:all>
+    </xs:complexType>
+    
+    
+</xs:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_pdt/" targetNamespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_pdt/" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:element name="descrizionePDT">
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="datiPDT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="dataApertura"/>
+				<xs:element name="dataChiusura"/>
+				<xs:element name="codicePDT"/>
+				<xs:element name="descrizionePDT"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="dataChiusura">
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="dataApertura">
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="codicePDT">
+		<xs:complexType/>
+	</xs:element>
+</xs:schema>

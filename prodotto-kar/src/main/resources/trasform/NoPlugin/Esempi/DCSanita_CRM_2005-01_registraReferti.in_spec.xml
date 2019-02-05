@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document>
+	<refertoSpecialisticoAutorizzato>
+		<idStruttura>030960</idStruttura>
+		<idSubStruttura>03090300</idSubStruttura>
+		<data>20020624</data>
+		<idUnitaOperativaClinica>AAAAAAAAAA</idUnitaOperativaClinica>
+		<hashReferto>JJJJJJ</hashReferto>
+		<ora>10:10:10</ora>
+		<versioneXSLT>001</versioneXSLT>
+		<cittadino>
+			<codiceFiscaleCittadino>TCRMXX10X00X000X</codiceFiscaleCittadino>
+			<cognomeCittadino>COGNOME</cognomeCittadino>
+			<nomeCittadino>NOME</nomeCittadino>
+		</cittadino>
+		<medicoAutorizzante>
+			<codiceFiscaleAutorizzante>MEDDUE02R01F251M</codiceFiscaleAutorizzante>
+			<cognomeAutorizzante>RAMPI</cognomeAutorizzante>
+			<nomeAutorizzante>MAURO</nomeAutorizzante>
+		</medicoAutorizzante>
+		<prestazioniAssociate>
+			<prestazione>
+				<idPrestazione>3565858</idPrestazione>
+			</prestazione>
+			<prestazione>
+				<idPrestazione>PREST_FIT2</idPrestazione>
+			</prestazione>
+			<prestazione>
+				<idPrestazione>PREST_FIT1</idPrestazione>
+			</prestazione>
+			<prestazione>
+				<idPrestazione>0091224</idPrestazione>
+			</prestazione>
+		</prestazioniAssociate>
+	</refertoSpecialisticoAutorizzato>
+	<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+		<Security>
+			<FunContext>
+				<credential>
+					<userId>RMPMRA63A20M952K</userId>
+					<FirstName>MAURO</FirstName>
+					<LastName>RAMPI</LastName>
+				</credential>
+			</FunContext>
+		</Security>
+	</t:CoopContext>
+</Document>

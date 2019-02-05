@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:mx="http://www.adobe.com/2006/mxml"
+	borderColor="#5FA25D"
+	width="100%" height="100%" borderStyle="solid" 
+	borderThickness="1" paddingBottom="4" paddingLeft="4" paddingRight="4" paddingTop="4">
+	<mx:Metadata>
+		[Event(name="buttonClick", type="flash.events.Event")]
+	</mx:Metadata>
+	<mx:Script>
+		<![CDATA[
+			import mx.controls.Button;
+			//////////////////////////////////////
+			public var index:int = -1;
+			public var styleNameButton:String = "button";
+			//////////////////////////////////////
+			protected var _listNameButton:Array;
+			protected var _listButton:Array;
+			public function set listButton(value:Array):void
+			{
+				_listNameButton = value;
+				clearButton();
+				createButton();
+			}
+			public function get listButton():Array{return _listNameButton;}
+			////////////////////////////////////////////////
+			protected function clearButton():void
+			{
+				if(_listButton!=null)
+				{
+					for(var i:uint = 0;i<_listButton.length;i++)
+					{
+						if(this.contains(_listButton[i]))
+						{
+							clearListener(_listButton[i]);
+							this.removeChild( _listButton[i] );
+						}
+					}
+				}
+			}
+			private function createButton():void
+			{
+				if(_listNameButton!=null)
+				{
+					_listButton = new Array();
+					var perc:uint = 100/_listNameButton.length;
+					for(var i:uint = 0;i<_listNameButton.length;i++)
+					{
+						var lab:String = _listNameButton[i];
+						var btn:Button = getButton(lab,perc);
+						addListener(btn);
+						_listButton.push( btn );
+						this.addChild( btn );
+					}
+				}
+			}
+			private function getButton(lab:String,perc:int):Button
+			{
+				var btn:Button 		= new Button();
+				btn.percentWidth 	= perc;
+				btn.height 			= 20;
+				btn.label			= lab;
+				btn.styleName		= styleNameButton;
+				btn.setStyle("cornerRadius",0);
+				btn.enabled			= true;
+				btn.buttonMode		= true;		
+				return btn;
+			}
+			private function clearListener(btn:Button):void
+			{
+				btn.removeEventListener(MouseEvent.CLICK,onClick);
+			}
+			private function addListener(btn:Button):void
+			{
+				btn.addEventListener(MouseEvent.CLICK,onClick);
+			}
+			private function onClick(e:Event):void
+			{
+				var target:Button = e.target as Button;
+				e.stopPropagation(); 
+				for(var i:uint= 0;i<_listButton.length;i++)
+				{
+					if(_listButton[i]== target)
+					{
+						index = i;
+						break;
+					}
+				}
+				updateClick();
+				dispatchEvent(new Event("buttonClick"));
+			}
+			protected function updateClick():void
+			{
+				
+			}
+		]]>
+	</mx:Script>
+</mx:HBox>

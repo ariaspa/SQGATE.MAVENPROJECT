@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml"
+		width="40" height="40">
+	<mx:Script>
+		<![CDATA[
+			import mx.core.UIComponent;
+			/*
+			import sandy.core.Scene3D;
+			import sandy.materials.Appearance;
+			import sandy.materials.Material;
+			import sandy.materials.BitmapMaterial;
+			import sandy.materials.attributes.LightAttributes;
+			import sandy.materials.attributes.MaterialAttributes;
+			import sandy.core.scenegraph.Node;
+			import sandy.core.scenegraph.Group;
+			import sandy.core.scenegraph.Camera3D;
+			import sandy.primitive.Box;
+			*/
+			import flash.display.Bitmap;
+			import mx.events.FlexEvent;
+			 
+			//
+			private var uiComponet:UIComponent;
+		//	private var scena:Scene3D;
+			private var texture:Class;
+			private var inStop:Boolean = false;
+			public function set icoLogo(value:Class):void
+			{
+				if(value!=null)
+				{
+					updateIco();
+				}
+				//if(value!=null && value!=texture)
+				//{
+					//texture = value;
+				//	updateIco();
+				//}
+			}
+			public function get icoLogo():Class
+			{
+				return texture;
+			}
+			//
+			public static const ACTIVITY:String = "activity";
+			public static const QUIET:String 	= "quiet";
+
+			private function activity_enterStateHandler(event:FlexEvent):void
+			{
+				rotateLogo();
+			}
+			private function quiet_enterStateHandler(event:FlexEvent):void
+			{
+				stopLogo();
+			}
+			private function updateIco():void
+			{
+				//var bitmap:Bitmap 	= new texture() as Bitmap;
+				
+				/*var cam:Camera3D 	= new Camera3D( 100, 100 ,45);
+				cam.x				= 0;
+				cam.y				= 0;
+				cam.z				= -400;
+				
+				var group:Group 	= new Group("root");
+				var node:Node 		= new Box("rosa",100,100,100);
+				group.addChild( node );
+				
+				var materialAttr:MaterialAttributes = new MaterialAttributes(new LightAttributes( true, 0.1));
+         		var material:Material 				= new BitmapMaterial(  bitmap.bitmapData , materialAttr);
+				
+				material.lightingEnable = true;
+         		group.appearance 		= new Appearance( material );
+         		var sprite:Sprite		= new Sprite();
+				scena					= new Scene3D("scena",sprite,cam,group);
+				
+				
+				scena.light.setPower( 80 );
+				scena.light.setDirection(0,0,120);
+				
+				if(uiComponet!=null)
+				{
+					this.removeChild( uiComponet );
+				}
+				
+				uiComponet = new UIComponent();
+				uiComponet.addChild( sprite );
+				uiComponet.x = -30;
+				uiComponet.y = -33;
+				this.addChild( uiComponet );
+				scena.render();*/
+				
+			}
+			/////////
+			private function rotateLogo():void
+			{
+				inStop = false;
+				this.removeEventListener(Event.ENTER_FRAME,onEnterFrame); 
+				this.addEventListener(Event.ENTER_FRAME,onEnterFrame); 
+			}
+			private function stopLogo():void
+			{
+				inStop = true;
+				//this.removeEventListener(Event.ENTER_FRAME,onEnterFrame); 
+			}
+			private function onEnterFrame(e:Event):void
+			{
+				render();
+			}
+			private function render():void
+			{
+				/*var rosa:Node = scena.root.getChildByName("rosa");
+				Box(rosa).rotateY += 2;
+				scena.render();
+				////////
+				if(inStop)
+				{
+					if((Box(rosa).rotateY%90) == 0)
+					{
+						//Box(rosa).rotateY += 2;
+						inStop = false;
+						this.removeEventListener(Event.ENTER_FRAME,onEnterFrame);
+					}
+				} */
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:states>
+		<mx:State name="{ACTIVITY}" enterState="activity_enterStateHandler(event)" />
+		<mx:State name="{QUIET}" enterState="quiet_enterStateHandler(event)" />
+	</mx:states>
+	
+</mx:Canvas>

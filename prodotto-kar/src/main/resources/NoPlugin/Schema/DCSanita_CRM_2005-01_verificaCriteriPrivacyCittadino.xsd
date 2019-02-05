@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema targetNamespace="http://www.crs.lombardia.it/schemas/DCSanita/CRM/2005-01/verificaCriteriPrivacyCittadino/" xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/CRM/2005-01/verificaCriteriPrivacyCittadino/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:element name="CRM.verificaCriteriPrivacyCittadino">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="verificaCriteriPrivacyCittadino" type="m:richiestaType"/>
+			</xs:all>
+			<xs:attribute name="dataSetVersion" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="richiestaType">
+		<xs:all>
+			<xs:element name="linkReferto" type="xs:string"/>
+			<xs:element name="codiceFiscale" type="xs:string"/>
+			<xs:element name="idCittadinoNonSISS" type="xs:string"/>
+			<xs:element name="idAssistito" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="CRM.verificaCriteriPrivacyCittadinoResponse">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="param" type="m:rispostaType"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="rispostaType">
+		<xs:choice>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element name="rispostaVerificaCriteriPrivacyCittadino" type="m:rispostaVerificaCriteriPrivacyCittadinoType" minOccurs="0"/>
+					<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				</xs:sequence>
+				<xs:sequence>
+					<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+					<xs:element name="rispostaVerificaCriteriPrivacyCittadino" type="m:rispostaVerificaCriteriPrivacyCittadinoType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:choice>
+			<xs:sequence>
+				<xs:element name="esitoNegativo" type="m:esitoNegativoType"/>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="rispostaVerificaCriteriPrivacyCittadinoType">
+		<xs:all>
+			<xs:element name="idAssistito" type="xs:string"/>
+			<xs:element name="codiceFiscale" type="xs:string"/>
+			<xs:element name="idCittadinoNonSISS" type="xs:string"/>
+			<xs:element name="linkReferto" type="xs:string"/>
+			<xs:element name="hashReferto" type="xs:string"/>
+			<xs:element name="condAutorizzazione" type="m:condType"/>
+			<xs:element name="condConsenso" type="m:condType"/>
+			<xs:element name="condOscuramento" type="m:condType"/>
+			<xs:element name="noteReperibilita" type="xs:string" minOccurs="0"/>
+			<xs:element name="visibilitaTestoReferto" type="m:condType"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="esitoNegativoType">
+		<xs:all>
+			<xs:element name="codiceErrore" type="xs:string"/>
+			<xs:element name="descErrore" type="xs:string"/>
+			<xs:element name="listaEccezioni" type="m:listaEccezioniType" minOccurs="0"/>
+			<xs:element name="dettaglio" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaEccezioniType">
+		<xs:sequence>
+			<xs:element name="eccezione" type="m:eccezioneType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="eccezioneType">
+		<xs:all>
+			<xs:element name="codiceEccezione" type="xs:string"/>
+			<xs:element name="descEccezione" type="xs:string"/>
+			<xs:element name="nomeCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="valoreCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="descEccezioneCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceEccezioneCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="ROI" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaWarningType">
+		<xs:sequence>
+			<xs:element name="warning" type="m:warningType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="warningType">
+		<xs:all>
+			<xs:element name="codiceWarning" type="xs:string"/>
+			<xs:element name="descWarning" type="xs:string"/>
+			<xs:element name="nomeCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="valoreCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="descWarningCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceWarningCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="ROI" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:simpleType name="condType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="S"/>
+			<xs:enumeration value="N"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

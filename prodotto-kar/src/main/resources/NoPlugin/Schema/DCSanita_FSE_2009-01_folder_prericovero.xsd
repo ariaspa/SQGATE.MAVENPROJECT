@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_prericovero/" targetNamespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_prericovero/" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:element name="strutturaErogazione">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idEnte"/>
+				<xs:element name="descrizioneEnte"/>
+				<xs:element name="idPresidio"/>
+				<xs:element name="descrizionePresidio"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="numeroPrericovero">
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="neonato">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="dataNascitaNeonato"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="idRepartoRicovero">
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="idPresidio">
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="idEnte">
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="descrizioneRepartoRicovero">
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="descrizionePresidio">
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="descrizioneEnte">
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="descrizioneDiagnosi">
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="datiPrericovero">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="numeroPrericovero"/>
+				<xs:element name="dataOraInizioPrericovero"/>
+				<xs:element name="dataOraFinePrericovero"/>
+				<xs:element name="IUP"/>
+				<xs:element name="idRepartoRicovero"/>
+				<xs:element name="descrizioneRepartoRicovero"/>
+				<xs:element name="codiceDiagnosi"/>
+				<xs:element name="descrizioneDiagnosi"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="folder_prericovero">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="strutturaErogazione"/>
+				<xs:element name="neonato"/>
+				<xs:element name="datiPrericovero"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IUP">
+		<xs:complexType/>
+	</xs:element>
+</xs:schema>

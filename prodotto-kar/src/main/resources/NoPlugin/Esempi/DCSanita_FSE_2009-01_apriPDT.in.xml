@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+<TestInfo>
+	<Autore>Imed Cherigui</Autore>
+	<DataPreparazione>17/07/2009</DataPreparazione>
+	<CodiceTest>IN.8063000001</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>F</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>Apertura di un PDT, accesso in assenza di smartcard cittadino: operatore abilitato al servizio(Medico di Pronto Soccorso / codice=2) </DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>ok</DescrizioneRisultatoAtteso>
+	<confrontoBody>
+		<ignora>dataApertura</ignora>
+	</confrontoBody></TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap-env:Header>
+		<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+			<Transport>
+				<Mode>Sync</Mode>
+				<Dest>DCSanita</Dest>
+			</Transport>
+			<Security>
+				<FunContext>
+					<credential>
+						<validity>
+							<emittedDate>10/01/2008+10:59:18,531</emittedDate>
+							<sessionMaxTime>10/01/2008+10:59:18,531</sessionMaxTime>
+						</validity>
+						<vrs>
+							<mjr></mjr>
+							<min></min>
+						</vrs>
+						<ctf>
+							<reg>
+								<cod></cod>
+								<des/>
+							</reg>
+							<app>
+								<cod></cod>
+								<des/>
+							</app>
+							<pro>
+								<cod></cod>
+								<des/>
+							</pro>
+							<ter>
+								<cod></cod>
+								<des/>
+							</ter>
+							<str>
+								<cod>19722</cod>
+								<des/>
+							</str>
+							<pre>
+								<cod></cod>
+								<des/>
+							</pre>
+							<rep>
+								<cod></cod>
+								<des/>
+							</rep>
+						</ctf>
+						<role>
+							<code>2</code>
+							<description>Operatore abilitato al servizio</description>
+						</role>
+						<FirstName>MARCO</FirstName>
+						<LastName>ROSSI</LastName>
+						<userId>PDTMED10A10A010A</userId>
+						<iupSeed></iupSeed>
+					</credential>
+				</FunContext>
+				<CitCardPresent>false</CitCardPresent>
+				<CitAuth>false</CitAuth>
+				<CitCF>PDTCIT10A10A010A</CitCF>
+				<CitSmartCardSN></CitSmartCardSN>
+			</Security>
+			<Sla>
+				<Log>
+					<Global>
+						<TrackID>0000000000001</TrackID>
+						<Timestamp>16/07/2009+18:47:18,562</Timestamp>
+					</Global>
+				</Log>
+			</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+		<m:FSE.apriPDT xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/apriPDT/" dataSetVersion="1.0">
+			<percorsoDiagnosticoTerapeutico>
+				<ll:CRSlegalContent xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" type="Text" opLegSign="true" opWeakSign="false" 	feSign="false" citAttes="true" tStamp="false" verify="OK" crypt="false">
+				   <Value>RG9jdW1lbnRvIGNsaW5pY28gZW1lc3NvIGRhOiBGU0VNRUQ3OUEwMVozNjhDaW4gZGF0YSAyNC8wMy8yMDA4IC0gMTA6MjQgSW50ZXJlc3NhdG86IEZTRUNJVFRHSU9CQkUgLSBGU0VDSVRUR0lBQ09CQkUgLSBGU0VDSVQ3MEEwMVozNjhDUmVkYXR0byBkYTogRlNFTUVEQ0lDQ0lPIC0gRlNFTUVEQkVMTEkgLSBGU0VNRUQ3OUEwMVozNjhDUmlmZXJpbWVudGkgZGVsIERvY3VtZW50byBDbGluaWNvOiBQQVRJRU5UIFNVTU1BUllJbyBzb3R0b3Njcml0dG86IEZTRU1FRENJQ0NJTyAtIEZTRU1FREJFTExJIC0gRlNFTUVENzlBMDFaMzY4Q0luIGNvbmZvcm1pdGEnIGNvbiBsJ2FydC4gODQgZGVsIGQuIGxncy4gMTk2LzIwMDMsIGNvbiBsYSBwcmVzZW50ZSBhdXRvcml6em8gbGEgY29uc3VsdGF6aW9uZSBpbiBhdXRvbm9taWEgZGVsIERvY3VtZW50byBDbGluaWNvIGluIG9nZ2V0dG8gZGEgcGFydGUgZGVsbCdJbnRlcmVzc2F0by5Pc2N1cmFtZW50byByaXNwZXR0byBhbGxlIExlZ2dpIFNwZWNpYWxpOkluIG9zc2VydmFuemEgYSBxdWFudG8gcHJldmlzdG8gZGFsbGUgTGVnZ2kgc3BlY2lhbGkgKGFydC4gMTEgZGVsbGEgbC4gMjIgbWFnZ2lvIDE5NzgsIG4uIDE5NDsgYXJ0LiA1IGRlbGxhIGwuIDUgZ2l1Z25vIDE5OTAgbi4gMTM1OyBhcnQuIDEyMCBkZWwgZC5wLnIuIDkgb3R0b2JyZSAxOTkwLCBuLiAzMDk7IGFydC4gNzM0LWJpcyBkZWwgY29kaWNlIHBlbmFsZSksIGRpY2hpYXJvIGlsIERvY3VtZW50byBDbGluaWNvIGluIG9nZ2V0dG86LSBPc2N1cmF0bywgcGVyIHF1YW50byByaWd1YXJkYSBsYSBub3JtYSBjaGUgZGlzY2lwbGluYSBpbCBUcmF0dGFtZW50byBkZWkgRGF0aSByZWxhdGl2aSBhbGxhIHRvc3NpY29kaXBlbmRlbnphOy0gTm9uIE9zY3VyYXRvLCBwZXIgcXVhbnRvIHJpZ3VhcmRhIGxhIG5vcm1hIGNoZSBkaXNjaXBsaW5hIGlsIFRyYXR0YW1lbnRvIGRlaSBEYXRpIHJlbGF0aXZpIGFsbGEgc2llcm9wb3NpdGl2aXRhJzstIE9zY3VyYXRvLCBwZXIgcXVhbnRvIHJpZ3VhcmRhIGxhIG5vcm1hIGNoZSBkaXNjaXBsaW5hIGlsIFRyYXR0YW1lbnRvIGRlaSBEYXRpIHJlbGF0aXZpIGEgdmlvbGVuemEgc3ViaXRlOy0gTm9uIE9zY3VyYXRvLCBwZXIgcXVhbnRvIHJpZ3VhcmRhIGxhIG5vcm1hIGNoZSBkaXNjaXBsaW5hIGlsIFRyYXR0YW1lbnRvIGRlaSBEYXRpIHJlbGF0aXZpIGFsbGEgaW50ZXJydXppb25lIHZvbG9udGFyaWEgZGkgZ3JhdmlkYW56YS5EaWNoaWFybyBpbCBEb2N1bWVudG8gQ2xpbmljbyBvc2N1cmF0byBzdSByaWNoaWVzdGEgZXNwbGljaXRhIGZvcm11bGF0YSBkYSBwYXJ0ZSBkZWxsJ0ludGVyZXNzYXRvLmxmaWpsaXNmaGFoZmloODQzNTczNDg5MDd0amg4OXVpZmdvNDg5bzM0aDg5</Value>				
+				</ll:CRSlegalContent>				
+			    <cittadino>
+                   <idCittadino tipo="CF">PDTCIT10A10A010A</idCittadino>
+                   <cognomeCittadino>RIZZI</cognomeCittadino>
+                   <nomeCittadino>MARIO</nomeCittadino>
+                   <sessoCittadino>M</sessoCittadino>
+                   <dataNascitaCittadino>19701030</dataNascitaCittadino>
+                   <idComuneNascitaCittadino>015146</idComuneNascitaCittadino>
+                </cittadino>
+                <datiPDT>
+                   <dataApertura>20090715</dataApertura>
+                   <codicePDT>1100</codicePDT>
+                   <descrizionePatologia>descrizione patologia</descrizionePatologia>
+                </datiPDT>
+			</percorsoDiagnosticoTerapeutico>
+		</m:FSE.apriPDT>
+	</soap-env:Body>
+</soap-env:Envelope>

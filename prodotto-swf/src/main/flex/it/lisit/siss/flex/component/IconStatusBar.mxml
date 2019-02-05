@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" verticalAlign="middle"
+	initialize="init();" implements="it.lisit.siss.flex.core.IUserMessage">
+	 
+	<mx:Script>
+		<![CDATA[
+			import it.lisit.siss.flex.core.IDisplayerMessage;
+			import it.lisit.siss.flex.core.IEnvelopeMessage;
+			import it.lisit.siss.flex.core.Core;
+			import it.lisit.siss.flex.core.MessageObject;
+			import it.lisit.siss.flex.utility.Queue;
+			import it.lisit.siss.flex.core.ManagerSound;
+			import mx.core.UIComponent;
+			import mx.states.IOverride;
+			import mx.events.EffectEvent;
+			import it.lisit.siss.flex.core.DefaultDisplayMessage;
+			import it.lisit.siss.flex.core.MessageManager;
+			import it.lisit.siss.flex.graphic.ImageDefinition;
+			import it.lisit.siss.flex.core.ConstStatusBar;
+			import it.lisit.siss.flex.sebwebsiss;
+			use namespace sebwebsiss;
+			//
+			import mx.effects.Fade;
+			import mx.controls.Image;
+			//////////////////////
+			public var maxBlink:uint;
+			public var activeBlink:Boolean				= false;
+			public var changeStateAfterClick:Boolean	= false;
+			public var soundActive:Boolean				= false;
+			public var automaticClick:Boolean 			= false;
+			//
+			public var iconWarning:Class;
+			public var iconError:Class;
+			public var iconInfo:Class;
+			public var iconGood:Class;
+			//private var labelMessage:String;
+			public var toolTipWarning:String;
+			public var toolTipError:String;
+			public var toolTipInfo:String;
+			//
+			public var labelMessageWarning:String;
+			public var labelMessageError:String;
+			public var labelMessageInfo:String;
+			public var labelMessageCheck:String;
+			//////////////////////
+			private var countBlink:uint;
+			private var iconImage:Image;
+			private var fade:Fade;		
+			[Bindable] 
+			private var currentIcon:Class;
+			[Bindable] 
+			private var imageButtonMode:Boolean;
+			[Bindable]
+			private var toolTipMessage:String;
+			[Bindable]
+			private var labelMessage:String;
+			private var oldLabelMessage:String;
+			///////////////////////////////////////////////////////
+			public var displayerMessage:IDisplayerMessage;
+			private var defaultDisplayerMessage:IDisplayerMessage
+			private var lastMessage:MessageObject;
+			//
+			
+			
+			private var envelope:IEnvelopeMessage;
+			private function init( ):void
+			{
+				Core.message.internalAddUser(this,500);
+				defaultDisplayerMessage = new DefaultDisplayMessage(this);
+				maxBlink		= 5;
+				toolTipMessage 	= null;
+				imageButtonMode = true;
+				countBlink		= 0;
+				fade			= getFade();
+				currentIcon		= ImageDefinition.ICONA_OK;
+				imageButtonMode		= false;
+				this.currentState	= ConstStatusBar.OK;
+			}
+			private function getValidType(type:String):Boolean
+			{
+				switch(type)
+				{
+					case ConstStatusBar.ERROR:
+					case ConstStatusBar.INFO:
+					case ConstStatusBar.WARNING:
+						 return true
+				}
+				return false;
+			}
+			public function analyze( type:String ):Boolean
+			{
+				return getValidType( type );
+			}
+			public function useMessage( envelope:IEnvelopeMessage ):void
+			{
+				this.envelope	= envelope;
+				lastMessage = envelope.getMessage();
+				checkStatusBar( lastMessage.type );
+			}
+			public function clear():void
+			{
+				lastMessage = null;
+				this.currentState = ConstStatusBar.OK;
+			}
+			private function playSound(type:String):void
+			{
+				if(soundActive)
+					ManagerSound.getInstance().playStatusBarMessage( type );
+			}
+			 
+			private function checkStatusBar(curr:String):void
+			{
+				var devoBlinkare:Boolean	= (activeBlink && !automaticClick );
+				var devoAprire:Boolean		= (automaticClick);
+				var devoCambiare:Boolean	= devoBlinkare || devoAprire;
+				if(devoCambiare)
+				{
+					this.currentState	= curr;
+					playSound(curr);
+				}
+				if(devoBlinkare)
+				{
+					playBlink();
+				}else if(devoAprire)
+				{
+					clickIcon();
+				}
+			}
+			private function clickIcon():void
+			{
+				if(!fade.isPlaying && lastMessage!=null)
+				{
+					iconImage.visible = false;
+					oldLabelMessage = labelMessage;
+					labelMessage = "";
+					var displayer:IDisplayerMessage = (displayerMessage==null) ? defaultDisplayerMessage : displayerMessage;
+					displayer.afterCloseDisplayer( afterClose );				
+					displayer.showDisplayer( lastMessage );	
+				}
+			} 
+			public function closeDisplayer():void
+			{
+				var displayer:IDisplayerMessage = (displayerMessage==null) ? defaultDisplayerMessage : displayerMessage;
+				displayer.closeDisplayer();
+			}
+			private function afterClose():void
+			{
+				iconImage.visible = true;
+				labelMessage = oldLabelMessage;
+				if(this.envelope!=null)
+				{
+					if(changeStateAfterClick)
+					{
+						this.currentState	= ConstStatusBar.OK;
+					}
+					this.envelope.completeUse();
+					this.envelope = null;
+					
+				}
+			}
+			private function getFade():Fade
+			{
+				var fd:Fade 	= new Fade();
+				fd.duration		= 400;
+				fd.alphaFrom 	= 0;
+				fd.alphaTo 		= 1;
+				fd.addEventListener(EffectEvent.EFFECT_END,onEnd);
+				return fd;
+			}
+			
+			private function onClickImage(e:MouseEvent):void
+			{
+				clickIcon();	 
+			}
+			private function playBlink():void
+			{
+				if(countBlink<maxBlink)
+				{
+					countBlink++;
+					fade.play([iconImage]);
+				}else
+				{
+					countBlink	= 0;
+				}
+			}
+			private function onEnd(e:EffectEvent):void
+			{
+				playBlink();
+			}
+			sebwebsiss function callChangeState():void
+    		{
+    			var st:String	=  this.currentState;
+    			switch(st)
+    			{
+    				case ConstStatusBar.INFO:
+    					this.currentIcon = (iconInfo==null) ? ImageDefinition.ICONA_INFO : iconInfo;
+    					this.toolTipMessage	= (toolTipInfo==null) ? "È presente un messaggio di informazioni" :  toolTipInfo;
+    					this.labelMessage	= (this.labelMessageInfo==null) ? "Informazione":this.labelMessageInfo; 
+    					imageButtonMode = true;
+    					break;
+    				case ConstStatusBar.WARNING:
+    					this.currentIcon = (iconWarning==null) ? ImageDefinition.ICONA_WARNING : iconWarning;
+    					this.toolTipMessage	= (toolTipWarning==null) ? "È presente un messaggio di attenzione" :  toolTipWarning;
+    					this.labelMessage	= (this.labelMessageWarning==null) ? "Attenzione":this.labelMessageWarning;
+    					imageButtonMode = true;
+    					break;
+    				case ConstStatusBar.OK:
+    					this.currentIcon = (iconGood==null) ? ImageDefinition.ICONA_OK : iconGood;
+    					this.toolTipMessage	= null;
+    					this.labelMessage	= (this.labelMessageCheck==null) ? "":this.labelMessageCheck;
+    					imageButtonMode = false;
+    					break;
+    				case ConstStatusBar.ERROR:
+    					this.currentIcon = (iconError==null) ? ImageDefinition.ICONA_ERROR : iconError;
+    					this.toolTipMessage	= (toolTipError==null) ? "È presente un messaggio di errore" :  toolTipError;
+    					this.labelMessage	= (this.labelMessageError==null) ? "Errore":this.labelMessageError;
+    					imageButtonMode = true;
+    					break;
+    			}
+    		}
+    		////////////////////////////////////////////////////////////
+    		////////////////////////////////////////////////////////////
+		]]>
+	</mx:Script>
+	<mx:states>
+		<mx:State name="ok" overrides="{[new OverrideStateIconStatusBar()]}" />
+		<mx:State name="info" overrides="{[new OverrideStateIconStatusBar()]}" />
+		<mx:State name="warning" overrides="{[new OverrideStateIconStatusBar()]}" />
+		<mx:State name="error" overrides="{[new OverrideStateIconStatusBar()]}" />
+	</mx:states>
+	  
+	<mx:Image 
+		source="{ currentIcon }" 
+		width="16" height="16"
+		buttonMode="{imageButtonMode}" 
+		errorString="{toolTipMessage}"
+		click="onClickImage(event);">
+		<mx:addedToStage>
+			<![CDATA[
+				this.iconImage 	= event.target as Image;
+			]]>
+		</mx:addedToStage>
+	</mx:Image>	
+	<mx:Label text="{labelMessage}"/>
+</mx:HBox>
+ 

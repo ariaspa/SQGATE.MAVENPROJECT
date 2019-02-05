@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CanvasFSE 
+	xmlns="com.li.dc.sebc.turboFSE.view.component.*" 
+	implements="it.lispa.siss.sebc.flex.help.IHelp"
+	xmlns:mx="http://www.adobe.com/2006/mxml" >
+	<mx:Metadata>
+		[Event(name="changeSelectButton", type="flash.events.Event")]
+	</mx:Metadata>
+	<mx:Script>
+		<![CDATA[
+			import com.li.dc.sebc.turboFSE.view.viste.Vista;
+			import com.li.dc.sebc.turboFSE.view.component.TitleBarView;
+			/////////////////////////////////////
+			[Bindable]public var labelTitle:String; 
+			[Bindable]public var colorBackground:uint;
+			  
+			 private var _currentVista:Vista;
+			
+			public function get currentVista():Vista
+			{
+				return _currentVista;
+			}
+			public function set currentVista(value:Vista):void
+			{
+				_currentVista = value;
+				container.currVista = value;
+			}
+			
+			public var selectButton:Boolean;
+			private function onChangeSelect(e:Event):void
+			{
+				selectButton = (e.target as TitleBarView).selectButton;
+				dispatchEvent(new Event("changeSelectButton"));
+			}
+			public function feedback(play:Boolean):void{}
+			public function getIDHelp(): String
+			{
+				//
+				return "boxView";
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:VBox height="100%"  width="100%" verticalGap="0" borderStyle="none">
+	
+		<TitleBarView label="{labelTitle}" toolTip="{labelTitle}" 
+			changeSelect="onChangeSelect(event);" 
+			colorBackGround="{colorBackground}" 
+			styleName="titleBarView" width="100%" height="32" />
+			
+		<mx:VBox verticalGap="0" width="100%" height="100%" borderColor="#72B972" borderStyle="outset">
+			<ContainerViste  id="container" width="100%"
+			backgroundAlpha="1"  backgroundColor="#E8FFE8" />	
+		</mx:VBox>	
+			 
+	</mx:VBox>
+	
+</CanvasFSE>

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<MethodDefinition>
+	<Common>
+		   <Description>
+			Il servizio permette di generare la comunicazione di un documento firmato (in formato XML o testuale) da parte di un operatore amministrativo relativo alla distinta di conservazione digitale di una lista di DCE (documenti clinici elettronici) che sono gia stati pubblicati o che lo saranno in futuro.
+		   </Description>
+		<Owner>DCSanita</Owner>
+		<MethodName>FSE.comunicaDistintaDCE</MethodName>
+		<Namespace>http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/comunicaDistintaDCE/</Namespace>
+		<ValidateAlways>False</ValidateAlways>
+		<RequireTransform>True</RequireTransform>
+		<RequirePlugin>False</RequirePlugin>
+		<InvokeViaPDL>True</InvokeViaPDL>
+		<InvokeViaPDS>False</InvokeViaPDS>
+		<AccessConditions>
+			RUOLO="2" or RUOLO="52" or
+			RUOLO="3" or RUOLO="53" or
+			RUOLO="5" or RUOLO="55" or
+			RUOLO="9" or RUOLO="59" or
+			RUOLO="10" or RUOLO="60" or
+			RUOLO="12" or RUOLO="62" or
+			RUOLO="13" or RUOLO="63" or
+			RUOLO="15" or RUOLO="65" or
+			RUOLO="21" or RUOLO="71"
+		</AccessConditions>
+		<SLA>
+			<Availability>9900</Availability>
+			<ResponseTime>2500</ResponseTime>
+		</SLA>
+	</Common>
+	<CASE>
+		<CitNO>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="distintaDCE" min="1" max="1">
+					<D_opLegSign>Apply</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+					<D_type>Xml</D_type>
+                    <D_xmlDSPolicy>DCSanita_FSE_2009-01_comunicaDistintaDCE</D_xmlDSPolicy>
+				</ApplicationDocument>
+			</DIMA>
+		</CitNO>
+		<CitSI>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="distintaDCE" min="1" max="1">
+					<D_opLegSign>Apply</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+					<D_type>Xml</D_type>
+                    <D_xmlDSPolicy>DCSanita_FSE_2009-01_comunicaDistintaDCE</D_xmlDSPolicy>
+				</ApplicationDocument>
+			</DIMA>
+		</CitSI>
+	</CASE>
+	<DIMAresponse>
+		<ApplicationDocument name="param" min="1" max="1">
+			<D_feSign>False</D_feSign>
+			<D_crypt>False</D_crypt>
+			<D_tStamp>False</D_tStamp>
+		</ApplicationDocument>
+	</DIMAresponse>
+</MethodDefinition>

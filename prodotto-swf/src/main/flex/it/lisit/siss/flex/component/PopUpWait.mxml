@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:mx="http://www.adobe.com/2006/mxml" 
+	layout="absolute" 
+	width="404" height="120" 
+	implements="it.lisit.siss.flex.core.IWait">
+	<mx:Script>
+		<![CDATA[
+			import mx.events.EffectEvent;
+			import mx.events.TweenEvent;
+			import it.lisit.siss.flex.effects.AnimateColor;
+			import mx.core.UIComponent;
+			import it.lisit.siss.flex.color.HTMLTabColor;
+			import mx.core.FlexSprite;
+			import mx.containers.Canvas;
+			////////////////
+			private var listBox:Array;
+			private var box:Canvas;
+			private const COLOR:uint		= 0x5FA25D;
+			private const FROM_COLOR:uint	= HTMLTabColor.WHITE;
+			private var index:uint;
+			private var curUI:UIColorBox;
+			/////////////////////////////////////////
+			private function playNext():void
+			{
+				curUI = listBox[index];
+				index++;
+				if(index>=listBox.length)index = 0;
+				curUI.play();
+			}
+			private function onStop(e:Event):void
+			{
+				curUI.removeEventListener("stopEffect",onStop);
+				playNext();
+			} 
+			private function onRemove(e:Event):void
+			{
+				this.removeEventListener(Event.REMOVED_FROM_STAGE,onRemove);
+				curUI.removeEventListener("stopEffect",onStop);
+			}
+			private function createBar():void
+			{
+				this.addEventListener(Event.REMOVED_FROM_STAGE,onRemove);
+				this.title 				= "Attendere prego... elaborazione in corso";
+				///
+				index				= 0;
+			 	listBox 			= new Array();
+			 	var gapW:uint		= 2;	
+			 	var stepH:Number	= box.height/10;
+			 	var nsw:uint		= 20;
+			 	var stepW:Number	= (box.width-(gapW*(nsw-2)))/nsw;
+			 	var hB:Number		= stepH*6;
+			 	var yPos:uint		= stepH*2;
+			 	var xPos:uint		= gapW;
+			 	for(var i:uint=0;i<nsw;i++)
+			 	{
+			 		var uibox:UIColorBox 	= new UIColorBox(stepW,hB,FROM_COLOR,COLOR,150);
+			 		uibox.x					= xPos;
+			 		uibox.y					= yPos;
+			 		uibox.addEventListener("stopEffect",onStop);
+			 		box.addChild( uibox );
+			 		xPos	+= stepW+gapW;
+			 		listBox.push( uibox );
+			 	}
+			 	playNext();
+			}
+		]]>
+	</mx:Script>
+	<mx:Canvas
+		width="100%" height="100%">
+		<mx:addedToStage>
+			<![CDATA[
+				this.box = event.target as Canvas;
+				this.createBar();
+			]]>
+		</mx:addedToStage>
+	</mx:Canvas>
+</mx:Panel>

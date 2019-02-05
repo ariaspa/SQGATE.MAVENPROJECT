@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<!--
+<TestInfo>
+	<Autore>Rosalinda Spallino</Autore>
+	<DataPreparazione>20/04/2011</DataPreparazione>
+	<CodiceTest></CodiceTest>
+	<CodiceContesto></CodiceContesto>
+	<TipoTest> FD </TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso> Verifica Distinta DCE: nRichiesta valorizzato correttamente con il valore della comunica distinta della scheda eseguita in precedenza</DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>Dati risposta: Ok verifica distinta eseguita correttamente, esecuzione ComunicaDistinta201101 "Conclusa senza errori"</DescrizioneRisultatoAtteso>
+	<confrontoBody><ignora>//nRichiesta</ignora></confrontoBody>
+</TestInfo>
+
+-->
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Header>
+<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+		<Transport>
+			<Mode>Sync</Mode>
+		    <Dest>DCSanita</Dest>
+		</Transport>
+		   <Security>
+			<FunContext>
+				<credential>
+					<validity>
+						<emittedDate>15/11/2005+10:59:18,531</emittedDate>
+						<sessionMaxTime>15/11/2005+10:59:18,531</sessionMaxTime>
+					</validity>
+					<vrs>
+						<mjr></mjr>
+						<min></min>
+					</vrs>
+					<ctf>
+						<reg>
+							<cod/>
+							<des/>
+						</reg>
+						<app>
+							<cod/>
+							<des/>
+						</app>
+						<pro>
+							<cod/>
+							<des/>
+						</pro>
+						<ter>
+							<cod/>
+							<des/>
+						</ter>
+						<str>
+							<cod>030960</cod>
+							<des/>
+						</str>
+						<pre>
+							<cod/>
+							<des/>
+						</pre>
+						<rep>
+							<cod/>
+							<des/>
+						</rep>
+					</ctf>
+					<role>
+						<code>2</code>
+		                <description>Medico di Pronto Soccorso</description>
+					</role>
+				  <userId>MDCPPN55M28F205H</userId>
+				  <FirstName>PEPPINO</FirstName>
+				  <LastName>MEDICOBUONO</LastName>
+				  <prv>
+					<FirstName>PEPPINO</FirstName><LastName>MEDICOBUONO</LastName><prv><iupSeed>46184</iupSeed><DF>M</DF><Ref>PEPPINO/MEDICOBUONO/MDCPPN55M28F205H/null</Ref></prv>
+					<DF>M</DF>
+					<Ref>PEPPINO/MEDICOBUONO/MDCPPN55M28F205H/null</Ref> 
+				  </prv>					 
+				</credential>
+			</FunContext>
+			<CitCardPresent>false</CitCardPresent>
+			<CitAuth>false</CitAuth>
+			<CitCF></CitCF>
+			<CitSmartCardSN></CitSmartCardSN>
+		</Security>
+		<Sla>
+			<Log>
+				<Global>
+				   <TrackID>1132048757203</TrackID>
+				   <Timestamp>15/11/2005+10:59:18,562</Timestamp>
+				   <MethodName>verificaStatoDistintaDCE</MethodName>
+				</Global>
+			</Log>
+		</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+	<m:FSE.verificaStatoDistintaDCE xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2011-01/verificaStatoDistintaDCE/" dataSetVersion="1.0">
+       <statoDistintaDCE>
+			<nRichiesta>1</nRichiesta>
+	   </statoDistintaDCE>
+	</m:FSE.verificaStatoDistintaDCE>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

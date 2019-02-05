@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema targetNamespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/predisponiPubblicazioneDCE/" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/predisponiPubblicazioneDCE/"
+	xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" 
+
+	elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	
+	<xs:import namespace="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" 
+	schemaLocation="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/"/>
+		
+		<xs:element name="FSE.predisponiPubblicazioneDCE">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="documentoClinicoElettronico" type="m:DCEType"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="FSE.predisponiPubblicazioneDCEResponse">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="param" type="m:rispostaType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+	<xs:complexType name="DCEType">
+		<xs:all>
+			<xs:element name="strutturaCreazione" type="m:strutturaCreazioneType"/>
+			<xs:element name="idTipoDocumento" type="xs:string"/>
+			<xs:element name="listaDocumenti" type="m:listaDocumentiRequestType"/>
+			<xs:element name="dataOraCreazione" type="xs:string"/>
+			<xs:element name="idDocumentoRiferimento" type="xs:string" minOccurs="0"/>
+			<xs:element name="cittadino" type="m:cittadinoType"/>
+			<xs:element name="autoreDocumento" type="m:autoreDocumentoType"/>
+			<xs:element name="generaDAO" type="xs:string"/>
+			<xs:element name="oscuramento" type="m:oscuramentoType"/>
+			<xs:element name="statoAutorizzazioneConsultazione" type="xs:string"/>
+			<xs:element name="attributiSpecifici" type="m:attributiSpecificiType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="strutturaCreazioneType">
+		<xs:all>
+			<xs:element name="idEnte" type="xs:string"/>
+			<xs:element name="idPresidio" type="xs:string"/>
+			<xs:element name="idUnitaOperativaClinica" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaDocumentiRequestType">
+		<xs:sequence>
+			<xs:element name="documento" type="m:documentoRequestType" maxOccurs="2"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="documentoRequestType">
+	 	<xs:all>
+		 	<xs:element name="formato" type="xs:string"/>
+			<xs:element name="firmato" type="xs:string"/>
+			<xs:element name="testoDocumento" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="cittadinoType">
+			<xs:all>
+				<xs:element name="idCittadino">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="tipo" type="m:tipoType"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="cognomeCittadino" type="xs:string"/>
+				<xs:element name="nomeCittadino" type="xs:string"/>
+				<xs:element name="sessoCittadino" type="xs:string"/>
+				<xs:element name="dataNascitaCittadino" type="xs:string"/>
+			</xs:all>
+	</xs:complexType>
+	<xs:complexType name="autoreDocumentoType">
+		<xs:all>
+			<xs:element name="codiceFiscale" type="xs:string"/>
+			<xs:element name="cognome" type="xs:string"/>
+			<xs:element name="nome" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="oscuramentoType">
+		<xs:sequence>
+			<xs:element name="tipoOscuramento" type="m:tipoOscuramentoType" minOccurs="5" maxOccurs="5"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoOscuramentoType">
+		<xs:all>
+			<xs:element name="idCausaleOscuramento" type="xs:string"/>
+			<xs:element name="valoreOscuramento" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:simpleType name="tipoType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CF"/>
+			<xs:enumeration value="ALTRO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="rispostaType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="esitoGenerazioneAutorizzazione" type="m:esitoGenerazioneAutorizzazioneType"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="esitoNegativo" type="m:esitoNegativoType"/>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="esitoGenerazioneAutorizzazioneType">
+		<xs:all>
+			<xs:element name="esito" type="xs:string"/>
+			<xs:element name="autorizzazione" type="m:autorizzazioneType"/>
+			<xs:element name="medicoAutorizzante" type="m:medicoAutorizzante"/>
+			<xs:element name="listaDocumenti" type="m:listaDocumentiResponseType"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="autorizzazioneType">
+		<xs:all>
+			<xs:element name="contenuto" type="xs:string"/>
+			<xs:element name="tipoDocumento" type="xs:string"/>
+			<xs:element name="versioneXSLT" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="medicoAutorizzante">
+		<xs:all>
+			<xs:element name="codiceFiscaleAutorizzante" type="xs:string"/>
+			<xs:element name="cognomeAutorizzante" type="xs:string"/>
+			<xs:element name="nomeAutorizzante" type="xs:string"/>
+   		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaDocumentiResponseType">
+		<xs:sequence>
+			<xs:element name="documento" type="m:documentoResponseType" maxOccurs="2"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="documentoResponseType">
+		<xs:all>
+			<xs:element name="formato" type="xs:string"/>
+			<xs:element name="hashDocumento" type="xs:string"/>
+			<xs:element name="algoritmoHash" type="xs:string"/>
+			<xs:element name="sizeDocumento" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaWarningType">
+		<xs:sequence>
+			<xs:element name="warning" type="m:warningType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="warningType">
+		<xs:all>
+			<xs:element name="codiceWarning" type="xs:string"/>
+			<xs:element name="descWarning" type="xs:string"/>
+			<xs:element name="nomeCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="valoreCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="descWarningCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceWarningCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="ROI" type="xs:string"/>
+		</xs:all>	
+	</xs:complexType>	
+		<xs:complexType name="esitoNegativoType">
+		<xs:all>
+			<xs:element name="codiceErrore" type="xs:string"/>
+			<xs:element name="descErrore" type="xs:string"/>
+			<xs:element name="listaEccezioni" type="m:listaEccezioniType" minOccurs="0"/>
+		</xs:all>	
+	</xs:complexType>	
+	<xs:complexType name="listaEccezioniType">
+		<xs:sequence>
+			<xs:element name="eccezioni" type="m:eccezioniType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="eccezioniType">
+		<xs:all>
+			<xs:element name="codiceEccezione" type="xs:string"/>
+			<xs:element name="descEccezione" type="xs:string"/>
+			<xs:element name="nomeCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="valoreCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="descEccezioneCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceEccezioneCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="ROI" type="xs:string" minOccurs="0"/>
+		</xs:all>	
+	</xs:complexType>
+	<xs:complexType name="attributiSpecificiType">
+		<xs:choice>
+			<xs:element name="attributi_referto" type="m:attributiRefertoType"/> 
+			<xs:element name="attributi_psoccorso" type="m:attributiPSType"/>
+			<xs:element name="attributi_enote" type="m:attributiEvaluationNoteType" />
+			<xs:element name="attributi_ldimissione" type="m:attributiLdimissioneType"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="neonatoType">
+		<xs:sequence>
+			<xs:element name="dataNascitaNeonato" type="xs:string" minOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="prestazioneType" >
+		<xs:all>
+			<xs:element name="IUP" type="xs:string" minOccurs="1"/>
+			<xs:element name="idPrestazioneSISS" type="xs:string" minOccurs="1"/>
+			<xs:element name="quantitaErogata" type="xs:string" minOccurs="1"/>
+			<xs:element name="flagAggiuntiva" type="xs:string" minOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="prestazioniAssociateType">
+		<xs:sequence>
+			<xs:element name="prestazione" type="m:prestazioneType" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="medicoRichiedenteType">
+		<xs:all>
+			<xs:element name="cognome" type="xs:string" minOccurs="1" />
+			<xs:element name="nome" type="xs:string" minOccurs="1" />
+			<xs:element name="codiceFiscale" type="xs:string" minOccurs="1" />
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="attributiRefertoType">
+		<xs:all>
+			<xs:element name="idPresidio" type="xs:string" minOccurs="0"/>
+			<xs:element name="numeroNosologico" type="xs:string" minOccurs="0"/>
+			<xs:element name="numeroPraticaPS" type="xs:string" minOccurs="0"/>
+			<xs:element name="numeroCartellaAmbulatoriale" type="xs:string" minOccurs="0"/>
+			<xs:element name="neonato" type="m:neonatoType" minOccurs="0"/>
+			<xs:element name="dataOraRichiesta" type="xs:string" minOccurs="0"/>
+			<xs:element name="madicoRichiedente" type="m:medicoRichiedenteType" minOccurs="0" />
+			<xs:element name="idUnitaOperativaRichiedente" type="xs:string" minOccurs="0" />
+			<xs:element name="prestazioniAssociate" type="m:prestazioniAssociateType" minOccurs="1" />
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="attributiEvaluationNoteType">
+		<xs:all>
+			<xs:element name="idPresidio" type="xs:string" minOccurs="1"/>
+			<xs:element name="numeroNosologico" type="xs:string" minOccurs="1"/>
+			<xs:element name="neonato" type="m:neonatoType" minOccurs="0"/>
+			<xs:element name="dataOraIngresso" type="xs:string" minOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="attributiPSType">
+		<xs:all>
+			<xs:element name="idPresidio" type="xs:string" minOccurs="1"/>
+			<xs:element name="numeroPraticaPS" type="xs:string" minOccurs="1"/>
+			<xs:element name="dataOraAccettazione" type="xs:string" minOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="attributiLdimissioneType">
+		<xs:all>
+			<xs:element name="idPresidio" type="xs:string" minOccurs="1"/>
+			<xs:element name="numeroNosologico" type="xs:string" minOccurs="1"/>
+			<xs:element name="IUP" type="xs:string" minOccurs="0"/>
+			<xs:element name="neonato" type="m:neonatoType" minOccurs="0"/>
+			<xs:element name="dataOraAccettazione" type="xs:string" minOccurs="1"/>
+		</xs:all>
+	</xs:complexType>
+</xs:schema>

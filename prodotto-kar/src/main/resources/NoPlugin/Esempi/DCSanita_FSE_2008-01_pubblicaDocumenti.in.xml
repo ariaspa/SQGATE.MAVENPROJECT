@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+<TestInfo>
+	<Autore>Dino Cimmino</Autore>
+	<DataPreparazione>10/04/2008</DataPreparazione>
+	<CodiceTest>IN.8051120001</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>F</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>Test di inserimento di un documento di tipo 11 (Verbale di contatto telefonico) II documento</DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>OK</DescrizioneRisultatoAtteso>
+	<confrontoBody>
+		<ignora>//idSetDocumenti</ignora>
+	</confrontoBody>
+</TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<soap-env:Header>
+<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+		<Transport>
+			<Mode>Sync</Mode>
+			<Dest>DCSanita</Dest>
+		</Transport>
+			<Security>
+			<FunContext>
+				<credential>
+					<validity>
+						<emittedDate>15/11/2005+10:59:18,531</emittedDate>
+						<sessionMaxTime>15/11/2005+10:59:18,531</sessionMaxTime>
+					</validity>
+					<vrs>
+						<mjr>1</mjr>
+						<min>0</min>
+					</vrs>
+					<ctf>
+						<reg>
+							<cod/>
+							<des/>
+						</reg>
+						<app>
+							<cod/>
+							<des/>
+						</app>
+						<pro>
+							<cod/>
+							<des/>
+						</pro>
+						<ter>
+							<cod/>
+							<des/>
+						</ter>
+						<str>
+							<cod>030960</cod>
+							<des/>
+						</str>
+						<pre>
+							<cod>03090300</cod>
+							<des/>
+						</pre>
+						<rep>
+							<cod>0800</cod>
+							<des/>
+						</rep>
+					</ctf>
+					<role>
+						<code>3</code>
+						<description>Operatore Amministrativo</description>
+					</role>
+					<userId>CCCBLL79A01Z368C</userId>
+					<iupSeed>12345</iupSeed>
+				</credential>
+			</FunContext>
+			<CitCardPresent>true</CitCardPresent>
+			<CitAuth>false</CitAuth>
+			<CitCF>GBBGCB70A01Z368C</CitCF>
+			<CitSmartCardSN></CitSmartCardSN>
+		</Security>
+		<Sla>
+			<Log>
+				<Global>
+					<TrackID>1132048757203</TrackID>
+					<Timestamp>15/11/2005+10:59:18,562</Timestamp>
+				</Global>
+			</Log>
+		</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+	<m:FSE.pubblicaDocumenti xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2007-01/pubblicaDocumenti/" dataSetVersion="1.0">
+		<documentoClinicoElettronico>
+			<ll:CRSlegalContent xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" type="Text" opLegSign="true" opWeakSign="true" feSign="false" citAttes="false" tStamp="false" verify="OK" crypt="false">
+				<Value>FkaW5vCQkJDQoJCQkJCQkNCgk=</Value>
+				<VerifyInfo>
+				<Value>RG9jdW1lbnRvIGNsaW5pY28gZW1lc3NvIGRhOiAwMzA5NjAsIDAzMDkwMzAwLCAwODAwSW4gZGF0YSAwMy8wNC8yMDA4IC0gMTY6MjQgSW50ZXJlc3NhdG86IEdJT0JCRSAtIEdJQUNPQkJFIC0gR0JCR0NCNzBBMDFaMzY4Q1JlZGF0dG8gZGE6IENJQ0NJTyAtIEJFTExJIC0gQ0NDQkxMNzlBMDFaMzY4Q1JpZmVyaW1lbnRpIGRlbCBEb2N1bWVudG8gQ2xpbmljbzogVkVSQkFMRSBESSBDT05UQVRUTyBURUxFRk9OSUNPSW8gc290dG9zY3JpdHRvOiBudWxsIC0gbnVsbCAtIENDQ0JMTDc5QTAxWjM2OENJbiBjb25mb3JtaXRhJyBjb24gbCdhcnQuIDg0IGRlbCBkLiBsZ3MuIDE5Ni8yMDAzLCBjb24gbGEgcHJlc2VudGUgYXV0b3JpenpvIGxhIGNvbnN1bHRhemlvbmUgaW4gYXV0b25vbWlhIGRlbCBEb2N1bWVudG8gQ2xpbmljbyBpbiBvZ2dldHRvIGRhIHBhcnRlIGRlbGwnSW50ZXJlc3NhdG8uT3NjdXJhbWVudG8gcmlzcGV0dG8gYWxsZSBMZWdnaSBTcGVjaWFsaTpJbiBvc3NlcnZhbnphIGEgcXVhbnRvIHByZXZpc3RvIGRhbGxlIExlZ2dpIHNwZWNpYWxpIChhcnQuIDExIGRlbGxhIGwuIDIyIG1hZ2dpbyAxOTc4LCBuLiAxOTQ7IGFydC4gNSBkZWxsYSBsLiA1IGdpdWdubyAxOTkwIG4uIDEzNTsgYXJ0LiAxMjAgZGVsIGQucC5yLiA5IG90dG9icmUgMTk5MCwgbi4gMzA5OyBhcnQuIDczNC1iaXMgZGVsIGNvZGljZSBwZW5hbGUpLCBkaWNoaWFybyBpbCBEb2N1bWVudG8gQ2xpbmljbyBpbiBvZ2dldHRvOi0gT3NjdXJhdG8sIHBlciBxdWFudG8gcmlndWFyZGEgbGEgbm9ybWEgY2hlIGRpc2NpcGxpbmEgaWwgVHJhdHRhbWVudG8gZGVpIERhdGkgcmVsYXRpdmkgYWxsYSB0b3NzaWNvZGlwZW5kZW56YTstIE5vbiBPc2N1cmF0bywgcGVyIHF1YW50byByaWd1YXJkYSBsYSBub3JtYSBjaGUgZGlzY2lwbGluYSBpbCBUcmF0dGFtZW50byBkZWkgRGF0aSByZWxhdGl2aSBhbGxhIHNpZXJvcG9zaXRpdml0YSc7LSBPc2N1cmF0bywgcGVyIHF1YW50byByaWd1YXJkYSBsYSBub3JtYSBjaGUgZGlzY2lwbGluYSBpbCBUcmF0dGFtZW50byBkZWkgRGF0aSByZWxhdGl2aSBhIHZpb2xlbnphIHN1Yml0ZTstIE5vbiBPc2N1cmF0bywgcGVyIHF1YW50byByaWd1YXJkYSBsYSBub3JtYSBjaGUgZGlzY2lwbGluYSBpbCBUcmF0dGFtZW50byBkZWkgRGF0aSByZWxhdGl2aSBhbGxhIGludGVycnV6aW9uZSB2b2xvbnRhcmlhIGRpIGdyYXZpZGFuemEuRGljaGlhcm8gaWwgRG9jdW1lbnRvIENsaW5pY28gb3NjdXJhdG8gc3UgcmljaGllc3RhIGVzcGxpY2l0YSBmb3JtdWxhdGEgZGEgcGFydGUgZGVsbCdJbnRlcmVzc2F0by4K</Value>
+		       </VerifyInfo>
+	        </ll:CRSlegalContent>
+	        <at:CRSattachment xmlns:at="http://www.crs.lombardia.it/schemas/mw/2004-01/attachment/"/>
+	        <st:CRSstream xmlns:st="http://www.crs.lombardia.it/schemas/mw/2004-01/stream/"/>
+    <numeroProgressivo>10</numeroProgressivo>
+	<strutturaCreazione>
+       <idEnte>030960</idEnte>
+       <idPresidio>03090300</idPresidio>
+       <idUnitaOperativaClinica>0800</idUnitaOperativaClinica>
+    </strutturaCreazione>
+    <strutturaConservazione>
+       <idEnte>030960</idEnte>
+    </strutturaConservazione>
+    <idTipoDocumento>11</idTipoDocumento>
+	<disciplinaErogazione>08</disciplinaErogazione>
+	<caratterizzazioniCliniche>
+      <caratterizzazione>
+        <dizionario>2.16.840.1.113883.6.103</dizionario>
+        <codice>20224</codice>
+      </caratterizzazione>
+	  <caratterizzazione>
+        <dizionario>2.16.840.1.113883.6.3</dizionario>
+        <codice>20230</codice>
+      </caratterizzazione>
+    </caratterizzazioniCliniche>
+    <versioneXSLT>001</versioneXSLT>
+    <dataOraCreazione>20080403162458</dataOraCreazione>
+	<listaDocumenti>
+	    <documento>
+	       <idArchiviazioneDocumento>T11-inserimento-V1-S2-NFR</idArchiviazioneDocumento>
+	       <idRepository>REPTEST</idRepository>
+	       <linguaggioDocumento>01</linguaggioDocumento>
+	       <formato>TXT</formato>
+	       <firmato>S</firmato>
+	       <contenuto></contenuto>
+	       <validazioneSchema>PSU_V1</validazioneSchema>
+	       <hashDocumento>lfijlisfhahfih84357348907tjh89uifgo489o34h89</hashDocumento>
+	       <algoritmoHash>01</algoritmoHash>
+	       <sizeDocumento>35</sizeDocumento>
+	    </documento>
+	</listaDocumenti>
+	<listaAllegati>
+      <allegato>
+        <linkAllegato>www.documenti.it</linkAllegato>
+        <formatoAllegato>01</formatoAllegato>
+      </allegato>
+	  <allegato>
+        <linkAllegato>www.aridocumentao.com</linkAllegato>
+        <formatoAllegato>01</formatoAllegato>
+      </allegato>
+    </listaAllegati>
+    <reteDiPatologia>NFR</reteDiPatologia>
+    <sezioneFascicolo>02</sezioneFascicolo>
+    <idTipoDocumentoLOINC></idTipoDocumentoLOINC>
+    <cittadino>
+       <idCittadino tipo="CF">GBBGCB70A01Z368C</idCittadino>
+       <cognomeCittadino>GIACOBBE</cognomeCittadino>
+       <nomeCittadino>GIOBBE</nomeCittadino>
+       <sessoCittadino>M</sessoCittadino>
+       <dataNascitaCittadino>19930614</dataNascitaCittadino>
+       <idComuneNascitaCittadino>097042</idComuneNascitaCittadino>
+    </cittadino>
+    <autoreDocumento>
+       <codiceFiscale>CCCBLL79A01Z368C</codiceFiscale>
+       <cognome>BELLI</cognome>
+       <nome>CICCIO</nome>
+       <ruolo></ruolo>
+    </autoreDocumento>
+    <operatoreAutorizzante>
+       <idEnte>030960</idEnte>
+       <idPresidio>03090300</idPresidio>
+       <idUnitaOperativaClinica>0800</idUnitaOperativaClinica>
+       <codiceFiscaleAutorizzante>CCCBLL79A01Z368C</codiceFiscaleAutorizzante>
+       <cognomeAutorizzante>BELLI</cognomeAutorizzante>
+       <nomeAutorizzante>CICCIO</nomeAutorizzante>
+    </operatoreAutorizzante>
+    <statoAutorizzazioneDocumento>SI</statoAutorizzazioneDocumento>
+    <noteReperibilita>qdnifnqwj ijqf jwipq fj ioqwe jfi weqp jfiwej fipwej pfoq wei</noteReperibilita>
+	<oscuramento>
+       <tipoOscuramento>
+	      <idCausaleOscuramento>10</idCausaleOscuramento>
+		  <valoreOscuramento>SI</valoreOscuramento>
+       </tipoOscuramento>
+		 <tipoOscuramento>
+	      <idCausaleOscuramento>20</idCausaleOscuramento>
+		  <valoreOscuramento>NO</valoreOscuramento>
+       </tipoOscuramento>
+	    <tipoOscuramento>
+	      <idCausaleOscuramento>30</idCausaleOscuramento>
+		  <valoreOscuramento>SI</valoreOscuramento>
+       </tipoOscuramento>
+	    <tipoOscuramento>
+	      <idCausaleOscuramento>40</idCausaleOscuramento>
+		  <valoreOscuramento>NO</valoreOscuramento>
+       </tipoOscuramento>
+	    <tipoOscuramento>
+	      <idCausaleOscuramento>50</idCausaleOscuramento>
+		  <valoreOscuramento>SI</valoreOscuramento>
+       </tipoOscuramento>
+    </oscuramento>
+    <attributiSpecifici></attributiSpecifici>
+  </documentoClinicoElettronico>
+</m:FSE.pubblicaDocumenti>
+</soap-env:Body>
+</soap-env:Envelope>

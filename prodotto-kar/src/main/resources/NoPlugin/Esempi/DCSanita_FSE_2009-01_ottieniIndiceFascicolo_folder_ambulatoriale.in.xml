@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+<TestInfo>
+	<Autore>MCaldara</Autore>
+	<DataPreparazione>18/02/2010</DataPreparazione>
+	<CodiceTest>FSEDRIN.8060000014.07-11</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>F</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>Test sui controlli di business - Operatore abilitato al servizio, ma non c è la Smart Card del cittadino e non si è in nessun altra delle condizioni di medico che ha in cura il cittadino</DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>EA0002 - Contesto operatore non valido</DescrizioneRisultatoAtteso>
+	<confrontoBody>
+		<ignora>//idFolder</ignora>
+		<ignora>//idSetDocumenti</ignora>
+		<ignora>//dataOraAccettazione</ignora>
+		<ignora>//dataPrescrizione</ignora>
+		<ignora>//idSetDocumenti</ignora>
+		<ignora>//idFolder</ignora>
+		<ignora>//idAggregazioneDocumento</ignora>
+</confrontoBody>
+</TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap-env:Header>
+		<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+			<Sla>
+				<Log>
+					<Global>
+						<TrackID>121551124945253853</TrackID>
+						<Timestamp>08-07-2008 12:00:49</Timestamp>
+					</Global>
+				</Log>
+			</Sla>
+			<Security>
+				<CitCardPresent>true</CitCardPresent>
+				<CitAuth>false</CitAuth>
+				<CitCF>FSECIT70A01Z368C</CitCF>
+				<CitSmartCardSN/>
+				<FunContext>
+					<credential>
+						<vrs>
+							<mjr>2</mjr>
+							<min>1</min>
+						</vrs>
+						<validity>
+							<emittedDate>08/07/2008 11:57:22</emittedDate>
+							<sessionMaxTime>28800000</sessionMaxTime>
+						</validity>
+						<role>
+							<code>6</code>
+							<description>MMG/PLS</description>
+						</role>
+						<attributi>
+							<attributo tipo="PRRP">
+								<cod>ROL</cod>
+								<des>RETE ONCOLOGICA LOMBARDA</des>
+							</attributo>
+							<attributo tipo="PRRP">
+								<cod>UDT</cod>
+								<des>RETE ONCOLOGICA LOMBARDA</des>
+							</attributo>
+						</attributi>
+						<userId>FSEMED79A01Z368C</userId>
+						<FirstName>NICOLA</FirstName>
+						<LastName>TESTA</LastName>
+						<ctf>
+							<reg>
+								<cod/>
+								<des/>
+							</reg>
+							<app>
+								<cod/>
+								<des/>
+							</app>
+							<pro>
+								<cod/>
+								<des/>
+							</pro>
+							<ter>
+								<cod/>
+								<des/>
+							</ter>
+							<str>
+								<cod>030968</cod>
+								<des>ASL CREMONA</des>
+							</str>
+							<pre>
+								<cod>03096800</cod>
+								<des/>
+							</pre>
+							<rep>
+								<cod>5604</cod>
+								<des/>
+							</rep>
+						</ctf>
+						<prv>
+							<iupSeed>00000</iupSeed>
+							<DF>F</DF>
+							<Ref>TESTA/NICOLA/FSEMED79A01Z368C/56789</Ref>
+						</prv>
+					</credential>
+				</FunContext>
+			</Security>
+			<Transport>
+				<Mode>Sync</Mode>
+				<Dest>DCSanita</Dest>
+			</Transport>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+	<m:FSE.ottieniIndiceFascicolo xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/ottieniIndiceFascicolo/" dataSetVersion="1.0">
+			<richiestaIndiceFascicolo>
+				<cittadino>
+					<idCittadino tipo="CF">FSECIT70A01Z368C</idCittadino>
+				</cittadino>
+			</richiestaIndiceFascicolo>
+		</m:FSE.ottieniIndiceFascicolo>
+	</soap-env:Body>
+</soap-env:Envelope>

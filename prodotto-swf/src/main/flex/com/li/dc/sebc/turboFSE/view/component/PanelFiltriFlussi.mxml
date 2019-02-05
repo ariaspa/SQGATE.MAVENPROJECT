@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" 
+	layout="horizontal"
+	styleName="windowFilter"
+	showCloseButton="true"
+	width="100%" height="100%">
+	
+	<mx:Metadata>
+		[Event(name="changeFilterData", type="com.li.dc.sebc.turboFSE.events.TurboEvent")]
+	</mx:Metadata>
+	
+	<mx:Script>
+		<![CDATA[
+			import it.lispa.siss.sebc.flex.graphic.image.ImageDefinition;
+			import com.li.dc.sebc.turboFSE.util.UtilDate;
+			import com.li.dc.sebc.turboFSE.events.TurboEvent;
+			import mx.events.CalendarLayoutChangeEvent;
+			////////////////////////////////////////////// 
+			[Bindable]public var dateInizioFlussi:Date;
+			[Bindable]public var dateFineFlussi:Date;
+			 
+			[Bindable]public var labelButtonAggiorna:String = "Aggiorna";
+			[Bindable]public var styleButton:String 		= "button";
+			[Bindable]public var iconButtonAggiorna:Class 	= ImageDefinition.ICONA_BOTTONE_AGGIORNA_16X16;
+			////////////////////////////////////////////// 
+			/*private function onClickAggiorna(event:Event):void
+			{
+				event.stopPropagation();
+				this.dispatchEvent( new TurboEvent(TurboEvent.CLICK_BUTTON_AGGIORNA) );
+			}*/
+			private function changeDateFieldEnd(event:CalendarLayoutChangeEvent):void
+			{
+				if(dateFineFlussi	!= event.newDate)
+				{
+					dateFineFlussi	= event.newDate;
+					sendData();
+				}
+				 
+			}
+			
+			private function changeDateFieldIni(event:CalendarLayoutChangeEvent):void
+			{
+				if(dateInizioFlussi	!= event.newDate)
+				{
+					dateInizioFlussi = event.newDate;
+					sendData();
+				}
+			}
+			private function sendData():void
+			{
+				this.dispatchEvent( new TurboEvent(TurboEvent.CHANGE_FILTER_DATA) );
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:Box verticalAlign="middle" horizontalAlign="center" width="100%" height="100%">
+	
+		<mx:VBox paddingTop="12" paddingLeft="12" paddingRight="12" paddingBottom="12"
+			verticalAlign="middle"  horizontalAlign="center" borderColor="#CCCCCC" borderStyle="solid" borderThickness="1" verticalGap="20">
+			
+			<mx:HBox >
+				<mx:Label text="Data inizio : "/>				
+				<mx:DateField selectedDate="{dateInizioFlussi}"
+						minYear="1900" monthNames="{UtilDate.MESI}" dayNames="{UtilDate.GIORNI}" 
+						formatString="{UtilDate.FORMATTER_STRING}" change="changeDateFieldIni(event)" yearNavigationEnabled="true"/>
+			</mx:HBox>
+			
+			<mx:HBox >
+				<mx:Label text="Data fine : " />	
+				<mx:DateField selectedDate="{dateFineFlussi}"
+					 	minYear="1900" monthNames="{UtilDate.MESI}" dayNames="{UtilDate.GIORNI}" formatString="{UtilDate.FORMATTER_STRING}"
+						change="changeDateFieldEnd(event)" yearNavigationEnabled="true" />
+			</mx:HBox>
+		
+			<!--<mx:Button label="{labelButtonAggiorna}" styleName="{styleButton}"  icon="{iconButtonAggiorna}" click="onClickAggiorna(event);"/>-->	
+		
+		</mx:VBox>
+		
+	</mx:Box>
+	
+</mx:TitleWindow>

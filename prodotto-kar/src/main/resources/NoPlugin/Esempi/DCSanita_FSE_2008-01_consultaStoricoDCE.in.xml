@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+<TestInfo>
+	<Autore>Luigi Laricchia</Autore>
+	<DataPreparazione>6/04/2009</DataPreparazione>
+	<CodiceTest>FSEIN.8073000001.02-20</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>F</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>Verifica della logica di business. Viene inserito un idSetDocumenti che non esiste</DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>EA0004/ED0011 - su idSetDocumenti</DescrizioneRisultatoAtteso>
+</TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap-env:Header>
+		<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+			<Sla>
+				<Log>
+					<Global>
+						<TrackID>121551124945253853</TrackID>
+						<Timestamp>08-07-2008 12:00:49</Timestamp>
+					</Global>
+				</Log>
+			</Sla>
+			<Security>
+				<CitCardPresent>true</CitCardPresent>
+				<CitAuth>true</CitAuth>
+				<CitCF>FSRFRG93H14E507N</CitCF>
+				<CitSmartCardSN>999BV667</CitSmartCardSN>
+				<FunContext>
+					<credential>
+					<validity>
+						<emittedDate>15/11/2005+10:59:18,531</emittedDate>
+						<sessionMaxTime>15/11/2005+10:59:18,531</sessionMaxTime>
+					</validity>
+					<vrs>
+						<mjr>1</mjr>
+						<min>0</min>
+					</vrs>
+					<ctf>
+						<reg>
+							<cod/>
+							<des/>
+						</reg>
+						<app>
+							<cod/>
+							<des/>
+						</app>
+						<pro>
+							<cod/>
+							<des/>
+						</pro>
+						<ter>
+							<cod/>
+							<des/>
+						</ter>
+						<str>
+							<cod>030960</cod>
+							<des/>
+						</str>
+						<pre>
+							<cod>03090300</cod>
+							<des/>
+						</pre>
+						<rep>
+							<cod>0801</cod>
+						<des/>
+						</rep>
+					</ctf>
+					<role>
+						<code>6</code>
+		                <description>Medico MMG/PLS</description>
+					</role>
+					<attributi>
+							<attributo tipo="PRRP">
+								<cod>ROL</cod>
+								<des>RETE ONCOLOGICA LOMBARDA</des>
+							</attributo>
+					</attributi>
+				  <userId>FSRFRN83C04F205U</userId>
+				  <iupSeed>46187</iupSeed>
+				</credential>
+				</FunContext>
+			</Security>
+			<Transport>
+				<Mode>Sync</Mode>
+				<Dest>DCSanita</Dest>
+			</Transport>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>	
+		<m:FSE.consultaStoricoDCE xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/consultaStoricoDCE/" dataSetVersion="1.0">
+			<richiestaConsultaStoricoDCE>
+			    <cittadino> 
+				    <idCittadino tipo="CF">FSRFRG93H14E507N</idCittadino>
+				</cittadino>
+				<idSetDocumenti>1</idSetDocumenti>
+			</richiestaConsultaStoricoDCE>
+		</m:FSE.consultaStoricoDCE>
+	</soap-env:Body>
+</soap-env:Envelope>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HeadVista xmlns="com.li.dc.sebc.turboFSE.view.viste.headVista.*" 
+	horizontalAlign="left" verticalAlign="top"
+	verticalGap="0"
+	xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="100%" 
+	xmlns:component="com.li.dc.sebc.turboFSE.view.component.*">
+	<mx:Script>
+		<![CDATA[
+			import com.li.dc.sebc.turboFSE.model.vo.DataFarmaceutico;
+			//////////////////////////////////////////////////////////////////////
+			[Bindable] private var dataProviderGrid:Object;
+			[Bindable] private var rowCountDataGrid:uint 	= 3;
+			[Bindable] private var labErogazione:String 	= "";
+			//////////////////////////////////////////////////////////////////////
+			override protected function updateData():void
+			{
+				if(this.dataVista is DataFarmaceutico)
+				{
+					labErogazione = (this.dataVista as DataFarmaceutico).labErogazione;
+					dataProviderGrid = (this.dataVista as DataFarmaceutico).dataProviderGrid;
+					rowCountDataGrid = (this.dataVista as DataFarmaceutico).rowCountDataGrid;
+				}
+			} 
+		]]>
+	</mx:Script>
+	
+	<component:LabelValue labelText="Data Erogazione :" labelValue="{labErogazione}"/>
+	
+	<mx:Spacer height="5" />	
+
+	<mx:Label text="ELENCO FARMACI EROGATI" width="100%" color="0x336600" fontSize="12" fontWeight="bold" textAlign="center"/>
+
+	<mx:DataGrid width="100%" editable="false" 
+		selectable="false" resizableColumns="true" 
+		variableRowHeight="true" verticalAlign="middle" textAlign="center"
+		dataProvider="{dataProviderGrid}"
+		rowCount="{rowCountDataGrid}">
+		<mx:columns>
+			<mx:DataGridColumn headerText="Denominazione Commerciale" dataField="denominazioneCommercialeFarmaco" />
+			<mx:DataGridColumn headerText="Principio Attivo" dataField="descPrincipioAttivoFarmaco"/> 
+			<mx:DataGridColumn headerText="Classe Terapeutica" dataField="descClasseTerapeuticaFarmaco"/> 
+			<mx:DataGridColumn headerText="Quantità" dataField="quantitaConfezioni"/> 
+			<mx:DataGridColumn headerText="Unità misura" dataField="unitaMisura"/> 
+		</mx:columns>
+	</mx:DataGrid>
+	<mx:Spacer height="100%"/> 
+</HeadVista>

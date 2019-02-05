@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<!--
+<TestInfo>
+	<Autore>Mauro Martello</Autore>
+	<DataPreparazione>01/10/2008</DataPreparazione>
+	<CodiceTest>IN.8052000012</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>F</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>Invocazione metodo identificaPrescrizione del GSSC per identificare la prescrizione specificando lo IUP nel caso esista una prescrizione i cui dati sono coerenti con GSSC</DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>OK</DescrizioneRisultatoAtteso>
+</TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<soap-env:Header>
+<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+		<Transport>
+			<Mode>Sync</Mode>
+			<Dest>DCSanita</Dest>
+		</Transport>
+			<Security>
+			<FunContext>
+				<credential>
+					<validity>
+						<emittedDate>15/11/2005+10:59:18,531</emittedDate>
+						<sessionMaxTime>15/11/2005+10:59:18,531</sessionMaxTime>
+					</validity>
+					<vrs>
+						<mjr>1</mjr>
+						<min>0</min>
+					</vrs>
+					<ctf>
+						<reg>
+							<cod/>
+							<des/>
+						</reg>
+						<app>
+							<cod/>
+							<des/>
+						</app>
+						<pro>
+							<cod/>
+							<des/>
+						</pro>
+						<ter>
+							<cod/>
+							<des/>
+						</ter>
+						<str>
+							<cod>MI1477</cod>
+							<des/>
+						</str>
+						<pre>
+							<cod>03090300</cod>
+							<des/>
+						</pre>
+						<rep><cod>0800</cod>
+							<des/>
+						</rep>
+					</ctf>
+					<role>
+						<code>1</code>
+						<description>Specialista Ambulatoriale</description>
+					</role>
+					<userId>FSEMED79A01Z368C</userId>
+					<iupSeed>12345</iupSeed>
+				</credential>
+			</FunContext>
+			<CitCardPresent>false</CitCardPresent>
+			<CitAuth>false</CitAuth>
+			<CitCF></CitCF>
+			<CitSmartCardSN></CitSmartCardSN>
+		</Security>
+		<Sla>
+			<Log>
+				<Global>
+					<TrackID>1132048757203</TrackID>
+					<Timestamp>15/11/2005+10:59:18,562</Timestamp>
+				</Global>
+			</Log>
+		</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+	<m:FSE.comunicaEventoFarmaceutico
+  xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/comunicaEventoFarmaceutico/"
+  dataSetVersion="1.0">
+        <eventoFarmaceutico>
+    <numeroProgressivo>20</numeroProgressivo>
+	<strutturaErogazione>
+       <idASLAppartenenza>030311</idASLAppartenenza>
+       <idFarmacia>MI1477</idFarmacia>
+  </strutturaErogazione>
+    <cittadino>
+       <idCittadino tipo="CF">FSECIT70A01Z368C</idCittadino>
+    </cittadino>
+    <idTipoComunicazione>E</idTipoComunicazione>
+	<IUP>TEST000234</IUP>
+    <dataErogazione>20080801</dataErogazione>
+    <farmaciErogati>
+       	<farmaco>
+				<idFarmaco>023513029</idFarmaco>
+        <idPrincipioAttivo>373300</idPrincipioAttivo>
+				<idClasseTerapeutica>M01AB</idClasseTerapeutica>
+				<quantitaConfezioni>1</quantitaConfezioni>
+      </farmaco>
+      <farmaco>
+				<idFarmaco>023798010</idFarmaco>
+        <idPrincipioAttivo>C658000</idPrincipioAttivo>
+				<idClasseTerapeutica>S01CA49</idClasseTerapeutica>
+				<quantitaConfezioni>0</quantitaConfezioni>
+      </farmaco>  
+    </farmaciErogati>
+  </eventoFarmaceutico>
+</m:FSE.comunicaEventoFarmaceutico>
+</soap-env:Body>
+</soap-env:Envelope>

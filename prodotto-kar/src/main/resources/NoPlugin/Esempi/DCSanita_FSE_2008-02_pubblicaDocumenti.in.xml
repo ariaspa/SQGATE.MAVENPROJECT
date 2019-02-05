@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+<TestInfo>
+	<Autore>Cusumano Salvatore
+</Autore>
+<DataPreparazione>20/02/2009 </DataPreparazione>
+<CodiceTest></CodiceTest>
+<CodiceContesto> </CodiceContesto>
+<TipoTest>IN.1</TipoTest>
+<Priorita>H</Priorita>
+<DescrizioneCaso>Test sui controlli di Assert – Attributo mancante dataNascitaNeonato. 
+</DescrizioneCaso>
+<DescrizioneRisultatoAtteso>EA0004: Dato input non valido; ED0008: Attributo dobj mancante o errato</DescrizioneRisultatoAtteso>
+<confrontoBody>
+<ignora>//idSetDocumenti</ignora>
+	</confrontoBody>
+</TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<soap-env:Header>
+<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+		<Transport>
+			<Mode>Sync</Mode>
+		    <Dest>DCSanita</Dest>
+		</Transport>
+		   <Security>
+			<FunContext>
+				<credential>
+					<validity>
+						<emittedDate>15/11/2005+10:59:18,531</emittedDate>
+						<sessionMaxTime>15/11/2005+10:59:18,531</sessionMaxTime>
+					</validity>
+					<vrs>
+						<mjr>1</mjr>
+						<min>0</min>
+					</vrs>
+					<ctf>
+						<reg>
+							<cod/>
+							<des/>
+						</reg>
+						<app>
+							<cod/>
+							<des/>
+						</app>
+						<pro>
+							<cod/>
+							<des/>
+						</pro>
+						<ter>
+							<cod/>
+							<des/>
+						</ter>
+						<str>
+							<cod>030960</cod>
+							<des/>
+						</str>
+						<pre>
+							<cod>03090300</cod>
+							<des/>
+						</pre>
+						<rep>
+							<cod>0801</cod>
+							<des/>
+						</rep>
+					</ctf>
+					<role>
+						<code>3</code>
+		                <description>Operatore Amministrativo</description>
+					</role>
+				  <userId>MDFMPB68M08E623I</userId>
+				  <iupSeed>12345</iupSeed>
+				</credential>
+			</FunContext>
+			<CitCardPresent>true</CitCardPresent>
+			<CitAuth>false</CitAuth>
+			<CitCF>FSCCNC75C09E623G</CitCF>
+			<CitSmartCardSN>
+</CitSmartCardSN>
+		</Security>
+		<Sla>
+			<Log>
+				<Global>
+				   <TrackID>1132048757203</TrackID>
+				   <Timestamp>15/11/2005+10:59:18,562</Timestamp>
+				</Global>
+			</Log>
+		</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+	<m:FSE.pubblicaDocumenti
+  xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-02/pubblicaDocumenti/"
+  dataSetVersion="1.0">
+        <documentoClinicoElettronicoSenzaDAO>
+         <numeroProgressivo>10</numeroProgressivo>
+	<strutturaCreazione>
+		<idEnte>030960</idEnte>
+		<idPresidio>03090300</idPresidio>
+		<idUnitaOperativaClinica>0801</idUnitaOperativaClinica>
+    </strutturaCreazione>
+    <strutturaConservazione>
+       <idEnte>030960</idEnte>
+    </strutturaConservazione>
+    <idTipoDocumento>05</idTipoDocumento>
+	<disciplinaErogazione>08</disciplinaErogazione>
+	<caratterizzazioniCliniche>
+      <caratterizzazione>
+        <dizionario>2.16.840.1.113883.6.103</dizionario>
+        <codice>20224</codice>
+      </caratterizzazione>
+	  <caratterizzazione>
+        <dizionario>2.16.840.1.113883.6.3</dizionario>
+        <codice>20230</codice>
+      </caratterizzazione>
+    </caratterizzazioniCliniche>
+    <versioneXSLT>001</versioneXSLT>
+    <dataOraCreazione>TODAY(yyyyMMddHH24mm)-1</dataOraCreazione>
+	<listaDocumenti>
+	    <documento>
+	       <idArchiviazioneDocumento>uauauauauauauau</idArchiviazioneDocumento>
+	       <idRepository>REPTEST</idRepository>
+	       <linguaggioDocumento>01</linguaggioDocumento>
+	       <formato>TXT</formato>
+	       <firmato>S</firmato>
+	       <contenuto>
+	</contenuto>
+	       <validazioneSchema>PSU_V1</validazioneSchema>
+	       <hashDocumento>lfijlisfhahfih84357348907tjh89uifgo489o34h89</hashDocumento>
+	       <algoritmoHash>01</algoritmoHash>
+	       <sizeDocumento>35</sizeDocumento>
+	    </documento>
+	</listaDocumenti>
+	<listaAllegati>
+      <allegato>
+        <linkAllegato>http://www.house.md.san/tacl1s1.jpg</linkAllegato>
+        <formatoAllegato>01</formatoAllegato>
+      </allegato>
+	  <allegato>
+        <linkAllegato>documenti</linkAllegato>
+        <formatoAllegato>01</formatoAllegato>
+      </allegato>
+    </listaAllegati>
+    <reteDiPatologia>UDT</reteDiPatologia>
+    <sezioneFascicolo>03</sezioneFascicolo>
+    <idTipoDocumentoLOINC>
+</idTipoDocumentoLOINC>
+    <cittadino>
+       <idCittadino tipo="CF">FSCCNC75C09E623G</idCittadino>
+       <cognomeCittadino>FSEpubbblicaDocumento</cognomeCittadino>
+       <nomeCittadino>pubbblicaDocumento</nomeCittadino>
+       <sessoCittadino>M</sessoCittadino>                  
+       <dataNascitaCittadino>19750309</dataNascitaCittadino>
+       <idComuneNascitaCittadino>013124</idComuneNascitaCittadino>
+    </cittadino>
+    <autoreDocumento>
+       <codiceFiscale>MDFMPB68M08E623I</codiceFiscale>
+       <cognome>medFSEpubbblicaDocumento</cognome>
+       <nome>medpubbblicaDocumento</nome>
+       <ruolo>
+</ruolo>
+    </autoreDocumento>
+    <operatoreAutorizzante>
+       <idEnte>030960</idEnte>
+       <idPresidio>03090300</idPresidio>
+       <idUnitaOperativaClinica>
+</idUnitaOperativaClinica>
+       <codiceFiscaleAutorizzante>MDFMPB68M08E623I</codiceFiscaleAutorizzante>
+       <cognomeAutorizzante>medFSEpubbblicaDocumento</cognomeAutorizzante>
+       <nomeAutorizzante>medpubbblicaDocumento</nomeAutorizzante>
+    </operatoreAutorizzante>
+    <statoAutorizzazioneDocumento>SI</statoAutorizzazioneDocumento>
+    <noteReperibilita>qdnifnqwj ijqf jwipq fj ioqwe jfi weqp jfiwej fipwej pfoq
+wei</noteReperibilita>
+	<oscuramento>
+       <tipoOscuramento>
+	      <idCausaleOscuramento>10</idCausaleOscuramento>
+		  <valoreOscuramento>NO</valoreOscuramento>
+       </tipoOscuramento>
+		 <tipoOscuramento>
+	      <idCausaleOscuramento>20</idCausaleOscuramento>
+		  <valoreOscuramento>NO</valoreOscuramento>
+       </tipoOscuramento>
+	    <tipoOscuramento>
+	      <idCausaleOscuramento>30</idCausaleOscuramento>
+		  <valoreOscuramento>NO</valoreOscuramento>
+       </tipoOscuramento>
+	    <tipoOscuramento>
+	      <idCausaleOscuramento>40</idCausaleOscuramento>
+		  <valoreOscuramento>NO</valoreOscuramento>
+       </tipoOscuramento>
+	    <tipoOscuramento>
+	      <idCausaleOscuramento>50</idCausaleOscuramento>
+		  <valoreOscuramento>NO</valoreOscuramento>
+       </tipoOscuramento>
+    </oscuramento>
+    <attributiSpecifici>
+	<c:attributi_ldimissioni xmlns:c="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-02/attributi_ldimissioni/">
+	   <idPresidio>03090300</idPresidio>
+				<numeroNosologico></numeroNosologico>
+				<IUP>ABB123456</IUP>
+				<neonato>
+					<dataNascitaNeonato>20090101</dataNascitaNeonato>
+				</neonato>
+        <dataOraAccettazione></dataOraAccettazione>
+     </c:attributi_ldimissioni>
+	 </attributiSpecifici>
+  </documentoClinicoElettronicoSenzaDAO>
+</m:FSE.pubblicaDocumenti>
+</soap-env:Body>
+</soap-env:Envelope>

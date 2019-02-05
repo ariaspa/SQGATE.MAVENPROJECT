@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TitleWindow xmlns:mx="http://www.adobe.com/2006/mxml" 
+	paddingLeft="4" paddingRight="4" paddingTop="0" paddingBottom="4" 
+	showCloseButton="true"
+	borderStyle="none"
+	textAlign="center"
+	backgroundAlpha="1" 
+	xmlns:component="com.li.dc.sebc.turboFSE.view.component.*" initialize="init()"> 
+	<mx:Script>
+		<![CDATA[
+			import  com.li.dc.sebc.turboFSE.view.component.TimelineFilter;
+			//
+			public var filt: TimelineFilter;
+			private function init():void
+			{
+				filt = filtersline;
+			}
+		]]>
+	</mx:Script>	
+	<component:TimelineFilter id="filtersline" width="100%" height="100%"/>
+		
+</mx:TitleWindow>

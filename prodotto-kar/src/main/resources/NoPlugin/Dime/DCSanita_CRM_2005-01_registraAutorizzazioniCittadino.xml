@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<MethodDefinition>
+	<Common>
+		<Description>
+			Il metodo registra ed archivia nella Base Dati del SISS l'autorizzazione del cittadino alla consultazione dei suoi referti. 
+		   </Description>
+		<Owner>DCSanita</Owner>
+		<MethodName>CRM.registraAutorizzazioniCittadino</MethodName>
+		<Namespace>http://www.crs.lombardia.it/schemas/DCSanita/CRM/2005-01/registraAutorizzazioniCittadino/</Namespace>
+		<ValidateAlways>False</ValidateAlways>
+		<RequireTransform>True</RequireTransform>
+		<RequirePlugin>False</RequirePlugin>
+		<InvokeViaPDL>True</InvokeViaPDL>
+		<InvokeViaPDS>False</InvokeViaPDS>
+		<AccessConditions>
+			RUOLO="2"  or RUOLO="52" or
+			RUOLO="5"  or RUOLO="55" or
+			RUOLO="6"  or RUOLO="56" or
+			RUOLO="10" or RUOLO="60" or
+			RUOLO="12" or RUOLO="62" or
+			RUOLO="13" or RUOLO="63" or
+			RUOLO="14" or RUOLO="64" or
+			RUOLO="21" or RUOLO="71" or
+			RUOLO="22" or RUOLO="72"
+		</AccessConditions>
+		<SLA>
+			<Availability>9900</Availability>
+			<ResponseTime>2500</ResponseTime>
+		</SLA>
+	</Common>
+	<CASE>
+		<CitNO>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="registraAutorizzazioniCittadino" min="1" max="20">
+					<D_opLegSign>Apply</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+				</ApplicationDocument>
+			</DIMA>
+		</CitNO>
+		<CitSI>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="registraAutorizzazioniCittadino" min="1" max="20">
+					<D_opLegSign>Apply</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+				</ApplicationDocument>
+			</DIMA>
+		</CitSI>
+		<CitPIN>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="registraAutorizzazioniCittadino" min="1" max="20">
+					<D_opLegSign>Apply</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+				</ApplicationDocument>
+			</DIMA>
+		</CitPIN>
+	</CASE>
+	<DIMAresponse>
+		<ApplicationDocument name="param" min="1" max="20">
+			<D_feSign>False</D_feSign>
+			<D_crypt>False</D_crypt>
+			<D_tStamp>False</D_tStamp>
+		</ApplicationDocument>
+	</DIMAresponse>
+</MethodDefinition>

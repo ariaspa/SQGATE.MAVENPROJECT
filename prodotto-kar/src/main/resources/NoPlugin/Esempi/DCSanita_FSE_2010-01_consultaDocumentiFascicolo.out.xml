@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+	<SOAP-ENV:Header>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/" a:AppContext="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Reply servProd="FSE">
+				<Subject/>
+			</Reply>
+		</a:AppContext>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+		<m:FSE.consultaDocumentiFascicoloResponse xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2010-01/consultaDocumentiFascicolo/">
+			<param>
+				<esitoConsultaDocumentiFascicolo>
+					<esito>OK</esito>
+				</esitoConsultaDocumentiFascicolo>
+				<consultaDocumentiFascicolo>
+					<parametriRicerca>
+						<dataInizio>19000101</dataInizio>
+						<dataFine>20111129</dataFine>
+					</parametriRicerca>
+					<documentiFascicolo>
+						<listaDCE>
+							<setDocumentale>
+								<idTipoDocumento>26</idTipoDocumento>
+								<strutturaArchiviazione>
+									<idEnte>030960</idEnte>
+									<descrizioneEnte>A.O. OSPEDALE DI LECCO - LECCO</descrizioneEnte>
+								</strutturaArchiviazione>
+								<idTipoDocumentoLOINC/>
+								<idSetDocumenti>1000254767</idSetDocumenti>
+								<strutturaCreazione>
+									<descrizioneUnitaOperativaClinica/>
+									<idUnitaOperativaClinica/>
+									<descrizionePresidio>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizionePresidio>
+									<idEnte>030960</idEnte>
+									<descrizioneEnte>A.O. OSPEDALE DI LECCO - LECCO</descrizioneEnte>
+									<idPresidio>03090300</idPresidio>
+								</strutturaCreazione>
+								<noteReperibilita>cercami in Brasile che forse sono lì</noteReperibilita>
+								<statoAutorizzazioneDocumento>SI</statoAutorizzazioneDocumento>
+								<operatoreAutorizzante>
+									<codiceFiscaleAutorizzante>MDCPPN54M28F205G</codiceFiscaleAutorizzante>
+									<nomeAutorizzante>PEPPINO</nomeAutorizzante>
+									<cognomeAutorizzante>MEDICOBUONO</cognomeAutorizzante>
+								</operatoreAutorizzante>
+								<autoreDocumento>
+									<cognome>MEDICOBUONO</cognome>
+									<ruolo/>
+									<nome>PEPPINO</nome>
+									<codiceFiscale>MDCPPN54M28F205G</codiceFiscale>
+								</autoreDocumento>
+								<idDocumentoRiferimento>0</idDocumentoRiferimento>
+								<dataOraCreazione>20110702112400</dataOraCreazione>
+								<naturaAggiornamento>STD</naturaAggiornamento>
+								<descrizioneReteDiPatologia/>
+								<nVersioneDocumentoRiferimento/>
+								<listaDocumenti>
+									<documento>
+										<firmato>S</firmato>
+										<validazioneSchema>2.16.840.1.113883.2.9.2.30.3.1.3.9.11.1</validazioneSchema>
+										<uri>030960.REPTEST06.06_TESTPDT</uri>
+										<algoritmoHash/>
+										<hashDocumento>lfijlisfhahfih84357348907tjh89uifgo489o34h89</hashDocumento>
+										<linguaggioDocumento>ITALIANO</linguaggioDocumento>
+										<sizeDocumento>35</sizeDocumento>
+										<formato>CDA2</formato>
+									</documento>
+								</listaDocumenti>
+								<idAggregazioneDocumento>1000254767</idAggregazioneDocumento>
+								<idDisciplinaErogazione>08</idDisciplinaErogazione>
+								<nVersione/>
+								<reteDiPatologia/>
+								<flagCopiato>N</flagCopiato>
+								<listaAllegati>
+									<allegato>
+										<etichettaAllegato>doc</etichettaAllegato>
+										<linkAllegato>documentia</linkAllegato>
+										<formatoAllegato>Immagine DICOM consultabile via WEBSISS</formatoAllegato>
+									</allegato>
+									<allegato>
+										<etichettaAllegato>doc</etichettaAllegato>
+										<linkAllegato>documentiu</linkAllegato>
+										<formatoAllegato>Immagine DICOM consultabile via WEBSISS</formatoAllegato>
+									</allegato>
+								</listaAllegati>
+								<descrizioneTipoDocumento>DOCUMENTO PROGRAMMAZIONE CLINICO ASSISTENZIALE</descrizioneTipoDocumento>
+								<attributiSpecificiDCE/>
+								<caratterizzazioniCliniche>
+									<caratterizzazione>
+										<dizionario>2.16.840.1.113883.2.9.2.30.3.1.6.11</dizionario>
+										<codice>A.428</codice>
+									</caratterizzazione>
+								</caratterizzazioniCliniche>
+								<descrizioneDisciplinaErogazione>CARDIOLOGIA</descrizioneDisciplinaErogazione>
+							</setDocumentale>
+							<setDocumentale>
+								<idTipoDocumento>26</idTipoDocumento>
+								<strutturaArchiviazione>
+									<idEnte>030960</idEnte>
+									<descrizioneEnte>A.O. OSPEDALE DI LECCO - LECCO</descrizioneEnte>
+								</strutturaArchiviazione>
+								<idTipoDocumentoLOINC/>
+								<idSetDocumenti>1000254768</idSetDocumenti>
+								<strutturaCreazione>
+									<descrizioneUnitaOperativaClinica/>
+									<idUnitaOperativaClinica/>
+									<descrizionePresidio>OSPEDALE DI CIRCOLO "A. MANZONI" - LECCO</descrizionePresidio>
+									<idEnte>030960</idEnte>
+									<descrizioneEnte>A.O. OSPEDALE DI LECCO - LECCO</descrizioneEnte>
+									<idPresidio>03090300</idPresidio>
+								</strutturaCreazione>
+								<noteReperibilita>cercami in Brasile che forse sono lì</noteReperibilita>
+								<statoAutorizzazioneDocumento>SI</statoAutorizzazioneDocumento>
+								<operatoreAutorizzante>
+									<codiceFiscaleAutorizzante>MDCPPN54M28F205G</codiceFiscaleAutorizzante>
+									<nomeAutorizzante>PEPPINO</nomeAutorizzante>
+									<cognomeAutorizzante>MEDICOBUONO</cognomeAutorizzante>
+								</operatoreAutorizzante>
+								<autoreDocumento>
+									<cognome>MEDICOBUONO</cognome>
+									<ruolo/>
+									<nome>PEPPINO</nome>
+									<codiceFiscale>MDCPPN54M28F205G</codiceFiscale>
+								</autoreDocumento>
+								<idDocumentoRiferimento>0</idDocumentoRiferimento>
+								<dataOraCreazione>20110702112400</dataOraCreazione>
+								<naturaAggiornamento>STD</naturaAggiornamento>
+								<descrizioneReteDiPatologia/>
+								<nVersioneDocumentoRiferimento/>
+								<listaDocumenti>
+									<documento>
+										<firmato>S</firmato>
+										<validazioneSchema>2.16.840.1.113883.2.9.2.30.3.1.3.9.11.1</validazioneSchema>
+										<uri>030960.REPTEST07.07_TESTPDT</uri>
+										<algoritmoHash/>
+										<hashDocumento>lfijlisfhahfih84357348907tjh89uifgo489o34h89</hashDocumento>
+										<linguaggioDocumento>ITALIANO</linguaggioDocumento>
+										<sizeDocumento>35</sizeDocumento>
+										<formato>CDA2</formato>
+									</documento>
+								</listaDocumenti>
+								<idAggregazioneDocumento>1000254768</idAggregazioneDocumento>
+								<idDisciplinaErogazione>08</idDisciplinaErogazione>
+								<nVersione/>
+								<reteDiPatologia/>
+								<flagCopiato>N</flagCopiato>
+								<listaAllegati>
+									<allegato>
+										<etichettaAllegato>doc</etichettaAllegato>
+										<linkAllegato>documentia</linkAllegato>
+										<formatoAllegato>Immagine DICOM consultabile via WEBSISS</formatoAllegato>
+									</allegato>
+									<allegato>
+										<etichettaAllegato>doc</etichettaAllegato>
+										<linkAllegato>documentiu</linkAllegato>
+										<formatoAllegato>Immagine DICOM consultabile via WEBSISS</formatoAllegato>
+									</allegato>
+								</listaAllegati>
+								<descrizioneTipoDocumento>DOCUMENTO PROGRAMMAZIONE CLINICO ASSISTENZIALE</descrizioneTipoDocumento>
+								<attributiSpecificiDCE/>
+								<caratterizzazioniCliniche>
+									<caratterizzazione>
+										<dizionario>2.16.840.1.113883.2.9.2.30.3.1.6.11</dizionario>
+										<codice>B.43</codice>
+									</caratterizzazione>
+								</caratterizzazioniCliniche>
+								<descrizioneDisciplinaErogazione>CARDIOLOGIA</descrizioneDisciplinaErogazione>
+							</setDocumentale>
+						</listaDCE>
+					</documentiFascicolo>
+					<cittadino>
+						<sessoCittadino>M</sessoCittadino>
+						<idCittadino>MDCPPN54M28F205G</idCittadino>
+						<dataNascitaCittadino>19640505</dataNascitaCittadino>
+						<idCittadino-tipo>CF</idCittadino-tipo>
+						<nomeCittadino>FRANCO</nomeCittadino>
+						<cognomeCittadino>CITTO</cognomeCittadino>
+						<idComuneNascitaCittadino>013075</idComuneNascitaCittadino>
+					</cittadino>
+				</consultaDocumentiFascicolo>
+			</param>
+		</m:FSE.consultaDocumentiFascicoloResponse>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

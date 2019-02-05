@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Document>
+	 <distintaDCE>
+            <ll:CRSlegalContent xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" type="Text">
+		<Value>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIERhdGEgMDMvMDMvMjAwOAoJCQkKCU9nZ2V0dG86IERpc3RpbnRhIGRlbGxhIENvbnNlcnZhemlvbmUgZW1lc3NhIGRhIEEuTy4gT1NQRURBTEUgREkgTEVDQ08gKDAzMDk2MCkKCQoJQ29uIGxhIHByZXNlbnRlIHNpIGNvbXVuaWNhIGxhIHZhcmlhemlvbmUgZGVsbG8gc3RhdG8gZGkgQ29uc2VydmF6aW9uZSBkZWkgZG9jdW1lbnRpIHNvdHRvIGVsZW5jYXRpIHBlciBsZSBmaW5hbGl0YScgcHJvcHJpZSBkaSBlc2liaXppb25lIGRlZ2xpIHN0ZXNzaSBzdSBGYXNjaWNvbG8gU2FuaXRhcmlvIEVsZXR0cm9uaWNvLgoJCgkJMS4gSWwgZG9jdW1lbnRvIGF2ZW50ZSBVUkkgMDMwOTYwLlJFUFRFU1QuVDEwLWluc2VyaW1lbnRvLTEgZScgZGEgcml0ZW5lcnNpIGNvbnNlcnZhdG8gYSBmYXIgZGF0YSBkYSAxNS8wMS8yMDA5CgkJMi4gSWwgZG9jdW1lbnRvIGF2ZW50ZSBVUkkgMDMwOTYwLlJFUFRFU1QuVDEwLWluc2VyaW1lbnRvLTIgZScgZGEgcml0ZW5lcnNpIG5vbiBwaXUnIGNvbnNlcnZhdG8gYSBmYXIgZGF0YSBkYSAxOC8wMi8yMDA5CgkJMy4gSWwgZG9jdW1lbnRvIGF2ZW50ZSBVUkkgMDMwOTYwLlJFUFRFU1QuVDEwLWluc2VyaW1lbnRvLTMgZScgZGEgcml0ZW5lcnNpIG5vbiBwaXUnIGNvbnNlcnZhdG8gYSBmYXIgZGF0YSBkYSAyMC8wMy8yMDA5CgoJVHV0dGkgaSBkb2N1bWVudGkgc29wcmEgaW5kaWNhdGkgYWZmZXJpc2Nvbm8gYWwgcmVwb3NpdG9yeTogKFJFUFRFU1QpLgoJCQoJCQoJRGF0YSBlIG9yYSBlbWlzc2lvbmU6IDAzLzAzLzIwMDggMTc6MjQ=</Value>
+	        </ll:CRSlegalContent>
+			<dataOraInvio>20080303172400</dataOraInvio>
+			<idEnteErogante>030960</idEnteErogante>
+			<descrizioneEnteErogatore>A.O. OSPEDALE DI LECCO</descrizioneEnteErogatore>
+			<idRepository>REPTEST</idRepository>			
+			<listaDCE>
+				<DCE>
+					<URIDCE>030960.REPTEST.T10-inserimento-1</URIDCE>
+					<hashDocumento>aaaaaaaaa</hashDocumento>
+					<algoritmoHash>01</algoritmoHash>
+					<dataOraConservazione>20090115173023</dataOraConservazione>
+					<flagConservato>S</flagConservato>
+				</DCE>
+				<DCE>
+					<URIDCE>030960.REPTEST.T10-inserimento-2</URIDCE>
+					<hashDocumento>bbbbbbbbb</hashDocumento>
+					<algoritmoHash>01</algoritmoHash>
+					<dataOraConservazione>20090218173023</dataOraConservazione>
+					<flagConservato>N</flagConservato>
+				</DCE>
+				<DCE>
+					<URIDCE>030960.REPTEST.T10-inserimento-3</URIDCE>
+					<hashDocumento>cccccccccc</hashDocumento>
+					<algoritmoHash>01</algoritmoHash>
+					<dataOraConservazione>20090320173023</dataOraConservazione>
+					<flagConservato>N</flagConservato>
+				</DCE>				
+			</listaDCE>
+		</distintaDCE>
+	
+	<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+		<Transport>
+			<Mode>Sync</Mode>
+		    <Dest>DCSanita</Dest>
+		</Transport>
+		   <Security>
+			<FunContext>
+				<credential>
+					<validity>
+						<emittedDate>15/11/2005+10:59:18,531</emittedDate>
+						<sessionMaxTime>15/11/2005+10:59:18,531</sessionMaxTime>
+					</validity>
+					<vrs>
+						<mjr>1</mjr>
+						<min>0</min>
+					</vrs>
+					<ctf>
+						<reg>
+							<cod/>
+							<des/>
+						</reg>
+						<app>
+							<cod/>
+							<des/>
+						</app>
+						<pro>
+							<cod/>
+							<des/>
+						</pro>
+						<ter>
+							<cod/>
+							<des/>
+						</ter>
+						<str>
+							<cod>030960</cod>
+							<des/>
+						</str>
+						<pre>
+							<cod></cod>
+							<des/>
+						</pre>
+						<rep>
+							<cod></cod>
+							<des/>
+						</rep>
+					</ctf>
+					<role>
+						<code>3</code>
+		                <description>Amministrativo di Aderente</description>
+					</role>
+				  <userId>CCCBLL79A01Z368C</userId>
+				  <iupSeed>12345</iupSeed>
+				  <FirstName>NICOLA</FirstName>
+				  <LastName>TESTA</LastName>
+				</credential>
+			</FunContext>
+			<CitCardPresent>false</CitCardPresent>
+			<CitAuth>false</CitAuth>
+			<CitCF></CitCF>
+			<CitSmartCardSN></CitSmartCardSN>
+		</Security>
+		<Sla>
+			<Log>
+				<Global>
+				   <MethodName>FSE.comunicaDistintaDCE</MethodName>
+				   <MethodVer>http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/comunicaDistintaDCE/</MethodVer>
+				   <Recipient>PC</Recipient>
+				   <TrackID>1132048757203</TrackID>
+				   <Timestamp>15/11/2005+10:59:18,562</Timestamp>
+				   <RecipientRole></RecipientRole>
+				</Global>
+				
+			</Log>
+		</Sla>
+		
+	</t:CoopContext>
+	
+</Document>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

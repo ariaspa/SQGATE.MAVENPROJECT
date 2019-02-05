@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<weblogic-ejb-jar xmlns="http://www.bea.com/ns/weblogic/90" xmlns:j2ee="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bea.com/ns/weblogic/90 http://www.bea.com/ns/weblogic/90/weblogic-ejb-jar.xsd">
+	<weblogic-enterprise-bean>
+		<ejb-name>FSELIc</ejb-name>
+		<stateless-session-descriptor>
+			<pool>
+				<initial-beans-in-free-pool>20</initial-beans-in-free-pool>
+			</pool>
+		</stateless-session-descriptor>			
+			<resource-description>
+				<res-ref-name>jdbc/SebcDB</res-ref-name>
+				<jndi-name>DB_SEBC</jndi-name>
+			</resource-description>
+			<resource-description>
+				<res-ref-name>jdbc/SebcDBTest</res-ref-name>
+				<jndi-name>DB_SEBC_Virtuale</jndi-name>
+			</resource-description>
+			<resource-description>
+				<res-ref-name>jdbc/SissDB</res-ref-name>
+				<jndi-name>DB_SEBC</jndi-name>
+			</resource-description>			
+			<resource-description>
+				<res-ref-name>jdbc/RefDataDB</res-ref-name>
+				<jndi-name>DB_DC</jndi-name>
+			</resource-description>
+			<resource-description>
+				<res-ref-name>jdbc/RefDataDBVirtuale</res-ref-name>
+				<jndi-name>DB_DC</jndi-name>
+			</resource-description>
+			<resource-description>
+				<res-ref-name>jdbc/SecurityDB</res-ref-name>
+				<jndi-name>DB_SECURITY</jndi-name>
+			</resource-description>
+					<resource-description>
+				<res-ref-name>jdbc/FSEOP_REALE</res-ref-name>
+				<jndi-name>FSEOP_REALE</jndi-name>
+			</resource-description>
+			<resource-description>
+				<res-ref-name>jdbc/FSEOP_VIRTUALE</res-ref-name>
+				<jndi-name>FSEOP_VIRTUALE</jndi-name>
+			</resource-description>							
+		<enable-call-by-reference>true</enable-call-by-reference>
+		<jndi-name>com/li/dc/sebc/fse/il/FSELIc</jndi-name>
+	</weblogic-enterprise-bean>
+</weblogic-ejb-jar>

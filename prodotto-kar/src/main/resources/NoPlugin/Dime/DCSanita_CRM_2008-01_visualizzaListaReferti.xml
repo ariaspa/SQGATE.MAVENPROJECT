@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<MethodDefinition>
+	<Common>
+		<Description>
+			Il servizio visualizzaListaReferti consente la ricerca delle informazioni sui referti di uno specifico assistito. 
+		   </Description>
+		<Owner>DCSanita</Owner>
+		<MethodName>CRM.visualizzaListaReferti</MethodName>
+		<Namespace>http://www.crs.lombardia.it/schemas/DCSanita/CRM/2008-01/visualizzaListaReferti/</Namespace>
+		<ValidateAlways>False</ValidateAlways>
+		<RequireTransform>False</RequireTransform>
+		<RequirePlugin>False</RequirePlugin>
+		<InvokeViaPDL>True</InvokeViaPDL>
+		<InvokeViaPDS>False</InvokeViaPDS>
+		<AccessConditions>
+			RUOLO="2"  or RUOLO="52" or
+			RUOLO="5"  or RUOLO="55" or
+			RUOLO="6"  or RUOLO="56" or
+			RUOLO="10" or RUOLO="60" or						
+			RUOLO="12" or RUOLO="62" or
+			RUOLO="13" or RUOLO="63" or
+			RUOLO="14" or RUOLO="64"
+		</AccessConditions>
+		<SLA>
+			<Availability>9900</Availability>
+			<ResponseTime>2500</ResponseTime>
+		</SLA>
+	</Common>
+	<CASE>
+		<CitNO>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="visualizzaListaReferti" min="1" max="1">
+					<D_opLegSign>False</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+				</ApplicationDocument>
+			</DIMA>
+		</CitNO>
+		<CitSI>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="visualizzaListaReferti" min="1" max="1">
+					<D_opLegSign>False</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+				</ApplicationDocument>
+			</DIMA>
+		</CitSI>
+		<CitPIN>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="visualizzaListaReferti" min="1" max="1">
+					<D_opLegSign>False</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+				</ApplicationDocument>
+			</DIMA>
+		</CitPIN>
+	</CASE>
+	<DIMAresponse>
+		<ApplicationDocument name="param" min="1" max="1">
+			<D_feSign>False</D_feSign>
+			<D_crypt>False</D_crypt>
+			<D_tStamp>False</D_tStamp>
+		</ApplicationDocument>
+	</DIMAresponse>
+</MethodDefinition>

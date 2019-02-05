@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/folder_ps/" targetNamespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/folder_ps/" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:complexType name="prestazioneType">
+		<xs:all>
+			<xs:element name="idPrestazioneSISS" type="xs:string"/>
+			<xs:element name="descrizionePrestazioneSISS" type="xs:string"/>
+			<xs:element name="quantitaErogata" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="prestazioniAssociateType">
+		<xs:sequence>
+			<xs:element name="prestazione" type="m:prestazioneType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="strutturaErogazioneType">
+		<xs:all>
+			<xs:element name="idEnte" type="xs:string"/>
+			<xs:element name="descrizioneEnte" type="xs:string"/>
+			<xs:element name="idPresidio" type="xs:string"/>
+			<xs:element name="descrizionePresidio" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="datiAccettazioneType">
+		<xs:all>
+			<xs:element name="idModalitaIngresso" type="xs:string"/>
+			<xs:element name="descrizioneModalitaIngresso" type="xs:string"/>
+			<xs:element name="idModalitaTrauma" type="xs:string"/>
+			<xs:element name="descrizioneModalitaTrauma" type="xs:string"/>
+			<xs:element name="idDisciplina" type="xs:string"/>
+			<xs:element name="descrizioneDisciplina" type="xs:string"/>
+			<xs:element name="idClassePrioritaTriage" type="xs:string"/>
+			<xs:element name="descrizioneClassePrioritaTriage" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="datiDimissioneType">
+		<xs:all>
+			<xs:element name="dataOraUscita" type="xs:string"/>
+			<xs:element name="idModalitaDimissione" type="xs:string"/>
+			<xs:element name="descrizioneModalitaDimissione" type="xs:string"/>
+			<xs:element name="codiceDiagnosiDimissione" type="xs:string"/>
+			<xs:element name="descrizioneDiagnosiDimissione" type="xs:string"/>
+			<xs:element name="prognosi" type="xs:string"/>
+			<xs:element name="noteDimissione" type="xs:string"/>
+			<xs:element name="elencoPrestazioni" type="m:prestazioniAssociateType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="trasferimentoType">
+		<xs:all>
+			<xs:element name="dataTrasferimento" type="xs:string"/>
+			<xs:element name="idRepartoOrigine" type="xs:string"/>
+			<xs:element name="descrizioneRepartoOrigine" type="xs:string"/>
+			<xs:element name="idRepartoDestinazione" type="xs:string"/>
+			<xs:element name="descrizioneRepartoDestinazione" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="elencoTrasferimentiType">
+		<xs:sequence>
+			<xs:element name="trasferimento" type="m:trasferimentoType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="eventoPSType">
+		<xs:all>
+			<xs:element name="strutturaErogazione" type="m:strutturaErogazioneType" minOccurs="0"/>
+			<xs:element name="numeroPraticaPS" type="xs:string" minOccurs="0"/>
+			<xs:element name="dataOraIngresso" type="xs:string" minOccurs="0"/>
+			<xs:element name="datiAccettazione" type="m:datiAccettazioneType" minOccurs="0"/>
+			<xs:element name="datiDimissione" type="m:datiDimissioneType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+</xs:schema>

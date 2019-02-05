@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CanvasFSE 
+	xmlns="com.li.dc.sebc.turboFSE.view.component.*" 
+	horizontalScrollPolicy="off"
+	verticalScrollPolicy="off"
+	backgroundAlpha="1"
+	backgroundColor="0xE8FFE8"
+	implements="it.lispa.siss.sebc.flex.help.IHelp"
+	xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%">
+	
+	<mx:Metadata>
+		[Event(name="changeSelectItemDownTree", type="flash.events.Event")]	
+		[Event(name="changeSelectItemUpTree", type="flash.events.Event")]	
+		[Event(name="changeSelectButton", type="flash.events.Event")]		
+	</mx:Metadata>
+	
+	<mx:Script>
+		<![CDATA[
+		
+			import com.li.dc.sebc.turboFSE.controller.ConstCommand;
+			import it.lispa.siss.sebc.flex.mvc.controller.Controller;
+			import com.li.dc.sebc.turboFSE.view.component.TitleBarView;
+			//////////////////////////////////////////////////////////
+			[Bindable] public var title:String
+			[Bindable] public var tooltipTitle:String
+			[Bindable] public var colorBackGroundTitle:uint;  
+			[Bindable] public var dataProviderUpTree:Object;
+			[Bindable] public var dataProviderDownTree:Object;
+			//////////////////////////////////////////////////////////
+			public var selectButton:Boolean = false;
+			public var selectItemUpTree:Object;
+			public var selectItemDownTree:Object;
+			//////////////////////////////////////////////////////////
+			/* indica quale tree era attivo, false ==  UpTree */
+			private var openFlag:Boolean = false;
+			//////////////////////////////////////////////////////////
+			public var idHelp:String = "boxTree";
+			
+			public function getIDHelp(): String
+			{
+				return idHelp;
+			}
+			public function feedback(play:Boolean):void{}
+			private function onChangeSelect(event:Event):void
+			{
+				event.stopPropagation();
+				var tit:TitleBarView = event.target as TitleBarView;
+				selectButton = tit.selectButton;
+				dispatchEvent(new Event("changeSelectButton"));
+			}
+			private function onChangeMenu(event:Event):void
+			{
+				event.stopPropagation();
+				if(openFlag)
+				{
+					openFlag = false;
+					downTree.openItems = [];
+				}
+				selectItemUpTree = event.currentTarget.selectedItem;	
+				dispatchEvent(new Event("changeSelectItemUpTree"));  
+			}
+			private function onChangeMenuViste(event:Event):void
+			{
+				event.stopPropagation();
+				var index:int = event.currentTarget.selectedIndex;
+				if(index>=0)
+				{
+					if(!openFlag)
+					{
+						/* Così non rifà continuamente questo */
+						upTree.openItems = [];
+						openFlag = true;
+					}
+					selectItemDownTree = event.currentTarget.selectedItem;
+					dispatchEvent(new Event("changeSelectItemDownTree"));
+				}
+			}
+			public override function reset():void
+			{
+				upTree.openItems 	= [];
+				downTree.openItems 	= [];
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:VBox verticalGap="0" width="100%" height="100%">
+		<TitleBarView 
+			nameId="titleBoxTreeFascicolo"
+			label="{title}" 
+			toolTip="{tooltipTitle}"
+			changeSelect="onChangeSelect(event);"
+			colorBackGround="{colorBackGroundTitle}"
+			styleName="titleBarView"
+			width="100%" height="32" />
+			
+		<mx:VBox verticalGap="0" width="100%" height="100%" borderColor="#72B972" borderStyle="outset">
+			<mx:Spacer height="6"/>	
+			
+			<UpTree 
+				nameId="upTreeFascicolo"
+				height="100%" 
+				width="100%" 
+				id="upTree"
+				change="onChangeMenu(event);"
+				dataProvider="{dataProviderUpTree}"/>
+				
+			<mx:HRule width="100%" />
+			
+			<DownTree id="downTree"
+				width="100%"
+				maxHeight="120"
+				change="onChangeMenuViste(event);"
+				dataProvider="{dataProviderDownTree}"/> 
+		</mx:VBox>
+	</mx:VBox>
+	
+</CanvasFSE>

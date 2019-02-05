@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<!--
+<TestInfo>
+	<Autore>Terrasi Andrea</Autore>
+	<DataPreparazione>11/05/2011</DataPreparazione>
+	<CodiceTest></CodiceTest>
+	<CodiceContesto></CodiceContesto>
+	<TipoTest> BL </TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>Comunica Distinta: Documento firmato con tutti i dati corretti</DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>Ok, comunica della distinta del DCE avvenuta con successo</DescrizioneRisultatoAtteso>
+	<confrontoBody><ignora>//nRichiesta</ignora></confrontoBody>
+</TestInfo>
+
+-->
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Header>
+<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+		<Transport>
+			<Mode>Sync</Mode>
+		    <Dest>DCSanita</Dest>
+		</Transport>
+		   <Security>
+			<FunContext>
+				<credential>
+					<validity>
+						<emittedDate>15/11/2005+10:59:18,531</emittedDate>
+						<sessionMaxTime>15/11/2005+10:59:18,531</sessionMaxTime>
+					</validity>
+					<vrs>
+						<mjr></mjr>
+						<min></min>
+					</vrs>
+					<ctf>
+						<reg>
+							<cod/>
+							<des/>
+						</reg>
+						<app>
+							<cod/>
+							<des/>
+						</app>
+						<pro>
+							<cod/>
+							<des/>
+						</pro>
+						<ter>
+							<cod/>
+							<des/>
+						</ter>
+						<str>
+							<cod>030960</cod>
+							<des/>
+						</str>
+						<pre>
+							<cod/>
+							<des/>
+						</pre>
+						<rep>
+							<cod/>
+							<des/>
+						</rep>
+					</ctf>
+					<role>
+						<code>2</code>
+		                <description>Medico di Pronto Soccorso</description>
+					</role>
+				  <userId>MDCPPN55M28F205H</userId>
+				  <FirstName>PEPPINO</FirstName>
+				  <LastName>MEDICOBUONO</LastName>
+				  <prv>
+					<FirstName>PEPPINO</FirstName><LastName>MEDICOBUONO</LastName><prv><iupSeed>46184</iupSeed><DF>M</DF><Ref>PEPPINO/MEDICOBUONO/MDCPPN55M28F205H/null</Ref></prv>
+					<DF>M</DF>
+					<Ref>PEPPINO/MEDICOBUONO/MDCPPN55M28F205H/null</Ref> 
+				  </prv>					 
+				</credential>
+			</FunContext>
+			<CitCardPresent>false</CitCardPresent>
+			<CitAuth>false</CitAuth>
+			<CitCF></CitCF>
+			<CitSmartCardSN></CitSmartCardSN>
+		</Security>
+		<Sla>
+			<Log>
+				<Global>
+				   <TrackID>1132048757203</TrackID>
+				   <Timestamp>15/11/2005+10:59:18,562</Timestamp>
+				   <MethodName>comunicaDistintaDCE</MethodName>
+				</Global>
+			</Log>
+		</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+	<m:FSE.comunicaDistintaDCE xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2011-01/comunicaDistintaDCE/" dataSetVersion="1.0">
+       <distintaDCE>  
+			<ll:CRSlegalContent xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" type="Text" opLegSign="true" opWeakSign="true" feSign="false" citAttes="false" tStamp="false" verify="OK" crypt="false">	
+				<Value>MDMwOTYwLlJFUFRFU1QuRlNFNTJfVDI7bGZpamxpc2ZoYWhmaWg4NDM1NzM0ODkwN3RqaDg5dWlmZ280ODlvMzRoODk7MDE7TjsyMDExMDQyMTE3MjQwMA==</Value>
+			</ll:CRSlegalContent>
+			<dataOraInvio>20110421172400</dataOraInvio>
+			<idEnteErogante>030960</idEnteErogante>
+			<idRepository>REPTEST</idRepository>
+		</distintaDCE>
+	</m:FSE.comunicaDistintaDCE>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

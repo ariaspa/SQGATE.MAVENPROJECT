@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+  <SOAP-ENV:Header>
+    <a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/"
+    a:AppContext="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+
+      <Reply servProd="FSE">
+        <Subject>SAVersion 1.3.1_05</Subject>
+      </Reply>
+    </a:AppContext>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <m:FSE.ottieniIndiceFascicoloResponse xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/ottieniIndiceFascicolo/">
+
+      <param>
+        <nPagine>1</nPagine>
+        <ottieniIndiceFascicolo>
+          <eventi>
+            <listaEventi>
+              <evento>
+                <idEvento>1111</idEvento>
+                <idTipoEvento>01</idTipoEvento>
+                <descrizioneTipoEvento>
+                FARMACEUTICO</descrizioneTipoEvento>
+                <dataErogazioneEvento>
+                20060110</dataErogazioneEvento>
+              </evento>
+              <evento>
+                <idEvento>5555</idEvento>
+                <idTipoEvento>02</idTipoEvento>
+                <descrizioneTipoEvento>
+                DIAGNOSTICO</descrizioneTipoEvento>
+                <dataErogazioneEvento>
+                20060110</dataErogazioneEvento>
+              </evento>
+              <evento>
+                <idEvento>6666</idEvento>
+                <idTipoEvento>05</idTipoEvento>
+                <descrizioneTipoEvento>PRONTO
+                SOCCORSO</descrizioneTipoEvento>
+                <dataErogazioneEvento>
+                20060110</dataErogazioneEvento>
+              </evento>
+            </listaEventi>
+          </eventi>
+          <indiceFascicolo>
+            <listaFolder>
+              <folder>
+                <descrizioneFolder>EPISODI DIAGNOSI E
+                CURA</descrizioneFolder>
+                <idTipoFolder>14</idTipoFolder>
+                <etichettaFolder>EPISODI DIAGNOSI E
+                CURA</etichettaFolder>
+                <idFolder></idFolder>
+                <attributiSpecificiFolder>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>1</nLivelloFolder>
+                <idTipoFolderPadre></idTipoFolderPadre>
+                <idStatoFolder></idStatoFolder>
+              </folder>
+              <folder>
+                <descrizioneFolder>RICOVERI</descrizioneFolder>
+                <idTipoFolder>19</idTipoFolder>
+                <etichettaFolder>RICOVERI</etichettaFolder>
+                <idFolder></idFolder>
+                <attributiSpecificiFolder>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>2</nLivelloFolder>
+                <idTipoFolderPadre>14</idTipoFolderPadre>
+                <idStatoFolder></idStatoFolder>
+              </folder>
+              <folder>
+                <descrizioneFolder>NOSOLOGICO</descrizioneFolder>
+                <idTipoFolder>20</idTipoFolder>
+                <etichettaFolder>NUMNOS1</etichettaFolder>
+                <idFolder>REND333320</idFolder>
+                <attributiSpecificiFolder>
+                  <c:folder_ricovero xmlns:c="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_ricovero/">
+
+                    <dataOraRicovero>200601101010</dataOraRicovero>
+                    <numeroNosologico>NUMNOS1</numeroNosologico>
+                    <idRepartoRicovero></idRepartoRicovero>
+                    <strutturaErogazione>
+                      <idPresidio>025002</idPresidio>
+                      <descrizioneEnte>A.O. S.ANNA -
+                      COMO</descrizioneEnte>
+                      <idEnte>030959</idEnte>
+                      <descrizionePresidio>NEUROPS.INFANTILE
+                      OSP.S.ANNA</descrizionePresidio>
+                    </strutturaErogazione>
+                    <descrizioneRepartoRicovero>
+                    </descrizioneRepartoRicovero>
+                    <datiDimissione>
+                      <codiceDiagnosiPrincipaleDimissione>
+                      65811</codiceDiagnosiPrincipaleDimissione>
+                      <descrizioneDiagnosiPrincipaleDimissione>
+                      ROTTURA PREMATURA DELLE MEMBRANE,PARTO CON O
+                      SENZA MENZIONE DELLA CONDIZIONE
+                      ANTEPARTUM</descrizioneDiagnosiPrincipaleDimissione>
+                      <descrizioneRepartoDimissione>PRESTAZIONI DI
+                      LABORATORIO ANALISI
+                      CHIMICHE</descrizioneRepartoDimissione>
+                      <dataOraDimissione></dataOraDimissione>
+                      <idRepartoDimissione>00</idRepartoDimissione>
+                    </datiDimissione>
+                  </c:folder_ricovero>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>3</nLivelloFolder>
+                <idTipoFolderPadre>19</idTipoFolderPadre>
+                <idStatoFolder>OK</idStatoFolder>
+              </folder>
+              <folder>
+                <descrizioneFolder>DIAGNOSTICA STRUMENTALE E
+                SPECIALISTICA AMBULATORIALE</descrizioneFolder>
+                <idTipoFolder>15</idTipoFolder>
+                <etichettaFolder>DIAGNOSTICA STRUMENTALE E
+                SPECIALISTICA AMBULATORIALE</etichettaFolder>
+                <idFolder></idFolder>
+                <attributiSpecificiFolder>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>2</nLivelloFolder>
+                <idTipoFolderPadre>14</idTipoFolderPadre>
+                <idStatoFolder></idStatoFolder>
+              </folder>
+              <folder>
+                <descrizioneFolder>IUP</descrizioneFolder>
+                <idTipoFolder>16</idTipoFolder>
+                <etichettaFolder>PRESCR1</etichettaFolder>
+                <idFolder>REND444416</idFolder>
+                <attributiSpecificiFolder>
+                  <c:folder_ambulatoriale xmlns:c="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_ambulatoriale/">
+
+                    <IUP>PRESCR1</IUP>
+                    <descrizionePresidio>NEUROPS.INFANTILE
+                    OSP.S.ANNA</descrizionePresidio>
+                    <prestazioniAssociate>
+                      <prestazione>
+                        <idPrestazioneSISS>
+                        6988903</idPrestazioneSISS>
+                        <descrizionePrestazioneSISS>TAC RACHIDE:
+                        METAMERO
+                        AGGIUNTIVO</descrizionePrestazioneSISS>
+                        <flagAggiuntiva></flagAggiuntiva>
+                      </prestazione>
+                    </prestazioniAssociate>
+                    <idEnte>030959</idEnte>
+                    <dataAccettazione>20060110</dataAccettazione>
+                    <descrizioneEnte>A.O. S.ANNA -
+                    COMO</descrizioneEnte>
+                    <idPresidio>025002</idPresidio>
+                  </c:folder_ambulatoriale>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>3</nLivelloFolder>
+                <idTipoFolderPadre>15</idTipoFolderPadre>
+                <idStatoFolder>OK</idStatoFolder>
+              </folder>
+            </listaFolder>
+          </indiceFascicolo>
+          <cittadino>
+            <idCittadino>FSRFRG93H14E507N</idCittadino>
+          </cittadino>
+        </ottieniIndiceFascicolo>
+        <esitoOttieniIndiceFascicolo>
+          <esito>OK</esito>
+        </esitoOttieniIndiceFascicolo>
+      </param>
+    </m:FSE.ottieniIndiceFascicoloResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

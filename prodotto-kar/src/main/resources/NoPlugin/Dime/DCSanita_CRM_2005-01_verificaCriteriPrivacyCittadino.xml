@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<MethodDefinition>
+	<Common>
+		<Description>
+			Il metodo permette di verificare se il cittadino abbia accesso alla consultazione di un proprio referto. 
+		   </Description>
+		<Owner>DCSanita</Owner>
+		<MethodName>CRM.verificaCriteriPrivacyCittadino</MethodName>
+		<Namespace>http://www.crs.lombardia.it/schemas/DCSanita/CRM/2005-01/verificaCriteriPrivacyCittadino/</Namespace>
+		<ValidateAlways>False</ValidateAlways>
+		<RequireTransform>False</RequireTransform>
+		<RequirePlugin>False</RequirePlugin>
+		<InvokeViaPDL>False</InvokeViaPDL>
+		<InvokeViaPDS>True</InvokeViaPDS>
+		<ApplicationId>CR</ApplicationId>
+		<AccessConditions>
+			RUOLO="20" or RUOLO="70"
+		</AccessConditions>
+		<SLA>
+			<Availability>9900</Availability>
+			<ResponseTime>2500</ResponseTime>
+		</SLA>
+	</Common>
+	<CASE>
+		<CitSI>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="verificaCriteriPrivacyCittadino" min="1" max="1">
+					<D_opLegSign>False</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+				</ApplicationDocument>
+			</DIMA>
+		</CitSI>
+		<CitPIN>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="verificaCriteriPrivacyCittadino" min="1" max="1">
+					<D_opLegSign>False</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+				</ApplicationDocument>
+			</DIMA>
+		</CitPIN>
+		<CitNO>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="verificaCriteriPrivacyCittadino" min="1" max="1">
+					<D_opLegSign>False</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+				</ApplicationDocument>
+			</DIMA>
+		</CitNO>
+	</CASE>
+	<DIMAresponse>
+		<ApplicationDocument name="param" min="1" max="1">
+			<D_feSign>False</D_feSign>
+			<D_crypt>False</D_crypt>
+			<D_tStamp>False</D_tStamp>
+		</ApplicationDocument>
+	</DIMAresponse>
+</MethodDefinition>

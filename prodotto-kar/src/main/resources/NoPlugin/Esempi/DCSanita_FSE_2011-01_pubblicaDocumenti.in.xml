@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+<TestInfo>
+	<Autore>Terrasi Andrea</Autore>
+	<DataPreparazione>29/03/2011</DataPreparazione>
+	<CodiceTest>IN.8051111010</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>BL</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>
+		Test sulla logica di business: Test di inserimento del documento (id 1) di tipo 09 (Patient Summary) nella sezioneFascicolo 1
+	</DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>Ok</DescrizioneRisultatoAtteso>
+	<confrontoBody>
+		<ignora>//idSetDocumenti</ignora>
+	</confrontoBody>
+</TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<soap-env:Header>
+<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+		<Transport>
+			<Mode>Sync</Mode>
+		    <Dest>DCSanita</Dest>
+		</Transport>
+		   <Security>
+			<FunContext>
+				<credential>
+					<validity>
+						<emittedDate>15/11/2005+10:59:18,531</emittedDate>
+						<sessionMaxTime>15/11/2005+10:59:18,531</sessionMaxTime>
+					</validity>
+					<vrs>
+						<mjr>1</mjr>
+						<min>0</min>
+					</vrs>
+					<ctf>
+						<reg>
+							<cod/>
+							<des/>
+						</reg>
+						<app>
+							<cod/>
+							<des/>
+						</app>
+						<pro>
+							<cod/>
+							<des/>
+						</pro>
+						<ter>
+							<cod/>
+							<des/>
+						</ter>
+						<str>
+							<cod>030960</cod>
+							<des/>
+						</str>
+						<pre>
+							<cod>03090300</cod>
+							<des/>
+						</pre>
+						<rep>
+							<cod>0801</cod>
+							<des/>
+						</rep>
+					</ctf>
+					<role>
+						<code>3</code>
+		                <description>Operatore Amministrativo</description>
+					</role>
+				  <userId>MDCPPN55M28F205H</userId>
+				  <FirstName>PEPPINO</FirstName><LastName>MEDICOBUONO</LastName><prv><iupSeed>12345</iupSeed><DF>F</DF><Ref>PEPPINO/MEDICOBUONO/MDCPPN55M28F205H/null</Ref></prv>
+				</credential>
+			</FunContext>
+			<CitCardPresent>true</CitCardPresent>
+			<CitAuth>false</CitAuth>
+			<CitCF>CTRLBR84S15G388T</CitCF>
+			<CitSmartCardSN>
+</CitSmartCardSN>
+		</Security>
+		<Sla>
+			<Log>
+				<Global>
+				   <TrackID>1132048757203</TrackID>
+				   <Timestamp>15/11/2005+10:59:18,562</Timestamp>
+				</Global>
+			</Log>
+		</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+	<m:FSE.pubblicaDocumenti
+  xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2011-01/pubblicaDocumenti/"
+  dataSetVersion="1.0">
+  <documentoClinicoElettronicoDAOXML>
+	<ll:CRSlegalContent xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" type="Xml" opLegSign="true" opWeakSign="true" feSign="false" citAttes="false" tStamp="false" verify="OK" crypt="false">	
+<Value>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pjxkb2N1bWVudG9BdXRvcml6emF6aW9uZU9zY3VyYW1lbnRvIHhtbG5zPSJodHRwOi8vd3d3LmNycy5sb21iYXJkaWEuaXQvc2NoZW1hcy9EQ1Nhbml0YS9GU0UvMjAxMS0wMS9kb2N1bWVudG9BdXRvcml6emF6aW9uZU9zY3VyYW1lbnRvLyI+PHN0cnV0dHVyYUNyZWF6aW9uZT48aWRFbnRlPjAzMDk2MDwvaWRFbnRlPjxpZFByZXNpZGlvPjAzMDkwMzAwPC9pZFByZXNpZGlvPjxpZFVuaXRhT3BlcmF0aXZhQ2xpbmljYS8+PC9zdHJ1dHR1cmFDcmVhemlvbmU+PGlkVGlwb0RvY3VtZW50bz4wOTwvaWRUaXBvRG9jdW1lbnRvPjxkYXRhT3JhQ3JlYXppb25lPlRPREFZKHl5eXlNTWRkSEgyNG1tKS0xPC9kYXRhT3JhQ3JlYXppb25lPjxsaXN0YURvY3VtZW50aT48ZG9jdW1lbnRvPjxmb3JtYXRvPlRYVDwvZm9ybWF0bz48ZmlybWF0bz5TPC9maXJtYXRvPjxoYXNoRG9jdW1lbnRvPmxmaWpsaXNmaGFoZmloODQzNTczNDg5MDd0amg4OXVpZmdvNDg5bzM0aDg5PC9oYXNoRG9jdW1lbnRvPjxhbGdvcml0bW9IYXNoPjAxPC9hbGdvcml0bW9IYXNoPjwvZG9jdW1lbnRvPjwvbGlzdGFEb2N1bWVudGk+PGNpdHRhZGlubz48aWRDaXR0YWRpbm8gdGlwbz0iQ0YiPkNUUkxCUjg0UzE1RzM4OFQ8L2lkQ2l0dGFkaW5vPjxjb2dub21lQ2l0dGFkaW5vPkNJVFJPTkU8L2NvZ25vbWVDaXR0YWRpbm8+PG5vbWVDaXR0YWRpbm8+QUxCRVJPPC9ub21lQ2l0dGFkaW5vPjxzZXNzb0NpdHRhZGlubz5NPC9zZXNzb0NpdHRhZGlubz48ZGF0YU5hc2NpdGFDaXR0YWRpbm8+MTk4NDExMTU8L2RhdGFOYXNjaXRhQ2l0dGFkaW5vPjwvY2l0dGFkaW5vPjxhdXRvcmVEb2N1bWVudG8+PGNvZGljZUZpc2NhbGU+TURDUFBONTVNMjhGMjA1SDwvY29kaWNlRmlzY2FsZT48Y29nbm9tZT5NRURJQ09CVU9OTzwvY29nbm9tZT48bm9tZT5QRVBQSU5PPC9ub21lPjwvYXV0b3JlRG9jdW1lbnRvPjxzdGF0b0F1dG9yaXp6YXppb25lRG9jdW1lbnRvPlNJPC9zdGF0b0F1dG9yaXp6YXppb25lRG9jdW1lbnRvPjxvc2N1cmFtZW50bz48dGlwb09zY3VyYW1lbnRvPjxpZENhdXNhbGVPc2N1cmFtZW50bz4xMDwvaWRDYXVzYWxlT3NjdXJhbWVudG8+PHZhbG9yZU9zY3VyYW1lbnRvPk5PPC92YWxvcmVPc2N1cmFtZW50bz48L3RpcG9Pc2N1cmFtZW50bz48dGlwb09zY3VyYW1lbnRvPjxpZENhdXNhbGVPc2N1cmFtZW50bz4yMDwvaWRDYXVzYWxlT3NjdXJhbWVudG8+PHZhbG9yZU9zY3VyYW1lbnRvPk5PPC92YWxvcmVPc2N1cmFtZW50bz48L3RpcG9Pc2N1cmFtZW50bz48dGlwb09zY3VyYW1lbnRvPjxpZENhdXNhbGVPc2N1cmFtZW50bz4zMDwvaWRDYXVzYWxlT3NjdXJhbWVudG8+PHZhbG9yZU9zY3VyYW1lbnRvPk5PPC92YWxvcmVPc2N1cmFtZW50bz48L3RpcG9Pc2N1cmFtZW50bz48dGlwb09zY3VyYW1lbnRvPjxpZENhdXNhbGVPc2N1cmFtZW50bz40MDwvaWRDYXVzYWxlT3NjdXJhbWVudG8+PHZhbG9yZU9zY3VyYW1lbnRvPk5PPC92YWxvcmVPc2N1cmFtZW50bz48L3RpcG9Pc2N1cmFtZW50bz48dGlwb09zY3VyYW1lbnRvPjxpZENhdXNhbGVPc2N1cmFtZW50bz41MDwvaWRDYXVzYWxlT3NjdXJhbWVudG8+PHZhbG9yZU9zY3VyYW1lbnRvPk5PPC92YWxvcmVPc2N1cmFtZW50bz48L3RpcG9Pc2N1cmFtZW50bz48L29zY3VyYW1lbnRvPjwvZG9jdW1lbnRvQXV0b3JpenphemlvbmVPc2N1cmFtZW50bz4=</Value>
+		<VerifyInfo>
+<Value>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pjxkb2N1bWVudG9BdXRvcml6emF6aW9uZU9zY3VyYW1lbnRvIHhtbG5zPSJodHRwOi8vd3d3LmNycy5sb21iYXJkaWEuaXQvc2NoZW1hcy9EQ1Nhbml0YS9GU0UvMjAxMS0wMS9kb2N1bWVudG9BdXRvcml6emF6aW9uZU9zY3VyYW1lbnRvLyI+PHN0cnV0dHVyYUNyZWF6aW9uZT48aWRFbnRlPjAzMDk2MDwvaWRFbnRlPjxpZFByZXNpZGlvPjAzMDkwMzAwPC9pZFByZXNpZGlvPjxpZFVuaXRhT3BlcmF0aXZhQ2xpbmljYS8+PC9zdHJ1dHR1cmFDcmVhemlvbmU+PGlkVGlwb0RvY3VtZW50bz4wOTwvaWRUaXBvRG9jdW1lbnRvPjxkYXRhT3JhQ3JlYXppb25lPlRPREFZKHl5eXlNTWRkSEgyNG1tKS0xPC9kYXRhT3JhQ3JlYXppb25lPjxsaXN0YURvY3VtZW50aT48ZG9jdW1lbnRvPjxmb3JtYXRvPlRYVDwvZm9ybWF0bz48ZmlybWF0bz5TPC9maXJtYXRvPjxoYXNoRG9jdW1lbnRvPmxmaWpsaXNmaGFoZmloODQzNTczNDg5MDd0amg4OXVpZmdvNDg5bzM0aDg5PC9oYXNoRG9jdW1lbnRvPjxhbGdvcml0bW9IYXNoPjAxPC9hbGdvcml0bW9IYXNoPjwvZG9jdW1lbnRvPjwvbGlzdGFEb2N1bWVudGk+PGNpdHRhZGlubz48aWRDaXR0YWRpbm8gdGlwbz0iQ0YiPkNUUkxCUjg0UzE1RzM4OFQ8L2lkQ2l0dGFkaW5vPjxjb2dub21lQ2l0dGFkaW5vPkNJVFJPTkU8L2NvZ25vbWVDaXR0YWRpbm8+PG5vbWVDaXR0YWRpbm8+QUxCRVJPPC9ub21lQ2l0dGFkaW5vPjxzZXNzb0NpdHRhZGlubz5NPC9zZXNzb0NpdHRhZGlubz48ZGF0YU5hc2NpdGFDaXR0YWRpbm8+MTk4NDExMTU8L2RhdGFOYXNjaXRhQ2l0dGFkaW5vPjwvY2l0dGFkaW5vPjxhdXRvcmVEb2N1bWVudG8+PGNvZGljZUZpc2NhbGU+TURDUFBONTVNMjhGMjA1SDwvY29kaWNlRmlzY2FsZT48Y29nbm9tZT5NRURJQ09CVU9OTzwvY29nbm9tZT48bm9tZT5QRVBQSU5PPC9ub21lPjwvYXV0b3JlRG9jdW1lbnRvPjxzdGF0b0F1dG9yaXp6YXppb25lRG9jdW1lbnRvPlNJPC9zdGF0b0F1dG9yaXp6YXppb25lRG9jdW1lbnRvPjxvc2N1cmFtZW50bz48dGlwb09zY3VyYW1lbnRvPjxpZENhdXNhbGVPc2N1cmFtZW50bz4xMDwvaWRDYXVzYWxlT3NjdXJhbWVudG8+PHZhbG9yZU9zY3VyYW1lbnRvPk5PPC92YWxvcmVPc2N1cmFtZW50bz48L3RpcG9Pc2N1cmFtZW50bz48dGlwb09zY3VyYW1lbnRvPjxpZENhdXNhbGVPc2N1cmFtZW50bz4yMDwvaWRDYXVzYWxlT3NjdXJhbWVudG8+PHZhbG9yZU9zY3VyYW1lbnRvPk5PPC92YWxvcmVPc2N1cmFtZW50bz48L3RpcG9Pc2N1cmFtZW50bz48dGlwb09zY3VyYW1lbnRvPjxpZENhdXNhbGVPc2N1cmFtZW50bz4zMDwvaWRDYXVzYWxlT3NjdXJhbWVudG8+PHZhbG9yZU9zY3VyYW1lbnRvPk5PPC92YWxvcmVPc2N1cmFtZW50bz48L3RpcG9Pc2N1cmFtZW50bz48dGlwb09zY3VyYW1lbnRvPjxpZENhdXNhbGVPc2N1cmFtZW50bz40MDwvaWRDYXVzYWxlT3NjdXJhbWVudG8+PHZhbG9yZU9zY3VyYW1lbnRvPk5PPC92YWxvcmVPc2N1cmFtZW50bz48L3RpcG9Pc2N1cmFtZW50bz48dGlwb09zY3VyYW1lbnRvPjxpZENhdXNhbGVPc2N1cmFtZW50bz41MDwvaWRDYXVzYWxlT3NjdXJhbWVudG8+PHZhbG9yZU9zY3VyYW1lbnRvPk5PPC92YWxvcmVPc2N1cmFtZW50bz48L3RpcG9Pc2N1cmFtZW50bz48L29zY3VyYW1lbnRvPjwvZG9jdW1lbnRvQXV0b3JpenphemlvbmVPc2N1cmFtZW50bz4=</Value>
+		</VerifyInfo>
+	</ll:CRSlegalContent>
+         <numeroProgressivo>10</numeroProgressivo>
+	<strutturaCreazione>
+		<idEnte>030960</idEnte>
+		<idPresidio>03090300</idPresidio>
+		<idUnitaOperativaClinica></idUnitaOperativaClinica>
+    </strutturaCreazione>
+    <strutturaArchiviazione>
+       <idEnte>030305</idEnte>
+    </strutturaArchiviazione>
+    <idTipoDocumento>09</idTipoDocumento>
+	<disciplinaErogazione>08</disciplinaErogazione>
+	<caratterizzazioniCliniche>
+      <caratterizzazione>
+        <dizionario>2.16.840.1.113883.6.103</dizionario>
+        <codice>20224</codice>
+      </caratterizzazione>
+	  <caratterizzazione>
+        <dizionario>2.16.840.1.113883.6.3</dizionario>
+        <codice>20230</codice>
+      </caratterizzazione>
+    </caratterizzazioniCliniche>
+    <dataOraCreazione>TODAY(yyyyMMddHH24mm)-1</dataOraCreazione>
+	<listaDocumenti>
+	    <documento>
+	       <idArchiviazioneDocumento>uauauauauauauau</idArchiviazioneDocumento>
+	       <idRepository>REPTEST</idRepository>
+	       <linguaggioDocumento>01</linguaggioDocumento>
+	       <formato>TXT</formato>
+	       <firmato>S</firmato>
+	       <contenuto>
+		   </contenuto>
+	       <validazioneSchema>PSU_V1</validazioneSchema>
+	       <hashDocumento>lfijlisfhahfih84357348907tjh89uifgo489o34h89</hashDocumento>
+	       <algoritmoHash>01</algoritmoHash>
+	       <sizeDocumento>35</sizeDocumento>
+	    </documento>
+	</listaDocumenti>
+	<listaAllegati>
+      <allegato>
+        <linkAllegato>http://www.house.md.san/tacl1s1.jpg</linkAllegato>
+        <formatoAllegato>01</formatoAllegato>
+		<etichettaAllegato>doc</etichettaAllegato>
+	  </allegato>
+	  <allegato>
+        <linkAllegato>documenti</linkAllegato>
+        <formatoAllegato>01</formatoAllegato>
+		<etichettaAllegato>doc</etichettaAllegato>
+	  </allegato>
+    </listaAllegati>
+    <reteDiPatologia></reteDiPatologia>
+    <sezioneFascicolo>01</sezioneFascicolo>
+    <idTipoDocumentoLOINC>
+</idTipoDocumentoLOINC>
+    <cittadino>
+       <idCittadino tipo="CF">CTRLBR84S15G388T</idCittadino>
+       <cognomeCittadino>CITRONE</cognomeCittadino>
+       <nomeCittadino>ALBERO</nomeCittadino>
+       <sessoCittadino>M</sessoCittadino>                  
+       <dataNascitaCittadino>19841115</dataNascitaCittadino>
+       <idComuneNascitaCittadino>018110</idComuneNascitaCittadino>
+    </cittadino>
+    <autoreDocumento>
+       <codiceFiscale>MDCPPN55M28F205H</codiceFiscale>
+       <cognome>MEDICOBUONO</cognome>
+       <nome>PEPPINO</nome>
+       <ruolo>
+</ruolo>
+    </autoreDocumento>
+    <operatoreAutorizzante>
+       <idEnte>030960</idEnte>
+       <idPresidio>03090300</idPresidio>
+       <idUnitaOperativaClinica>
+</idUnitaOperativaClinica>
+       <codiceFiscaleAutorizzante>MDCPPN55M28F205H</codiceFiscaleAutorizzante>
+       <cognomeAutorizzante>MEDICOBUONO</cognomeAutorizzante>
+       <nomeAutorizzante>PEPPINO</nomeAutorizzante>
+    </operatoreAutorizzante>
+    <statoAutorizzazioneDocumento>SI</statoAutorizzazioneDocumento>
+    <noteReperibilita>qdnifnqwj ijqf jwipq fj ioqwe jfi weqp jfiwej fipwej pfoqwei</noteReperibilita>
+	<oscuramento>
+       <tipoOscuramento>
+	      <idCausaleOscuramento>10</idCausaleOscuramento>
+		  <valoreOscuramento>NO</valoreOscuramento>
+       </tipoOscuramento>
+		 <tipoOscuramento>
+	      <idCausaleOscuramento>20</idCausaleOscuramento>
+		  <valoreOscuramento>NO</valoreOscuramento>
+       </tipoOscuramento>
+	    <tipoOscuramento>
+	      <idCausaleOscuramento>30</idCausaleOscuramento>
+		  <valoreOscuramento>NO</valoreOscuramento>
+       </tipoOscuramento>
+	    <tipoOscuramento>
+	      <idCausaleOscuramento>40</idCausaleOscuramento>
+		  <valoreOscuramento>NO</valoreOscuramento>
+       </tipoOscuramento>
+	    <tipoOscuramento>
+	      <idCausaleOscuramento>50</idCausaleOscuramento>
+		  <valoreOscuramento>NO</valoreOscuramento>
+       </tipoOscuramento>
+    </oscuramento>
+    <attributiSpecifici>
+	</attributiSpecifici>
+  </documentoClinicoElettronicoDAOXML>
+</m:FSE.pubblicaDocumenti>
+</soap-env:Body>
+</soap-env:Envelope>

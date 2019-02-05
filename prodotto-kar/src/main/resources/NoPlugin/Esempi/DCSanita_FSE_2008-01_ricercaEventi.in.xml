@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+<TestInfo>
+	<Autore>Graziano Angele'</Autore>
+	<DataPreparazione>30/10/2008</DataPreparazione>
+	<CodiceTest>IN.8058000008</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>F</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>Test sulle ricerche positive con i corretti controlli su dataInizio e dataFine: come il test N°1, ma in questo caso l'intervallo date impostato e' maggiore del valore impostato nei parametri generali (dc.sebc.FSE.configurazione.MAX_GIORNI_PERIODO_VALIDO_RICERCA), ed il servizio ridefinisce l'intervallo di ricerca, estraendo tutti gli eventi presenti</DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>vengono estratti correttamente i dati di dettaglio dei cinque eventi in stato 'accettato' piu' un warning WA0042 (eventi gia' rendicontati, con nome campo = concatenazione dei due idEvento separati da un |), piu' un warning WA0013 ('intervallo date ridefinito').</DescrizioneRisultatoAtteso>
+	<confrontoBody>
+		<ignora>//idSetDocumenti</ignora>
+	</confrontoBody></TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap-env:Header>
+		<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+			<Sla>
+				<Log>
+					<Global>
+						<TrackID>121551124945253853</TrackID>
+						<Timestamp>08-07-2008 12:00:49</Timestamp>
+					</Global>
+				</Log>
+			</Sla>
+			<Security>
+				<CitCardPresent>false</CitCardPresent>
+				<CitAuth>false</CitAuth>
+				<CitCF>GBBGCB70A01Z368C</CitCF>
+				<CitSmartCardSN/>
+				<FunContext>
+					<credential>
+						<vrs>
+							<mjr>2</mjr>
+							<min>1</min>
+						</vrs>
+						<validity>
+							<emittedDate>08/07/2008 11:57:22</emittedDate>
+							<sessionMaxTime>28800000</sessionMaxTime>
+						</validity>
+						<role>
+							<code>5</code>
+							<description>Direttore Medico</description>
+						</role>
+						<userId>DVLMMG69A11F205N</userId>
+						<FirstName>MMG</FirstName>
+						<LastName>DVALOTTO</LastName>
+						<ctf>
+							<reg>
+								<cod/>
+								<des/>
+							</reg>
+							<app>
+								<cod/>
+								<des/>
+							</app>
+							<pro>
+								<cod/>
+								<des/>
+							</pro>
+							<ter>
+								<cod/>
+								<des/>
+							</ter>
+							<pre>
+								<cod>03090300</cod>
+								<des/>
+							</pre>
+							<str>
+								<cod>030960</cod>
+								<des>A.O. OSPEDALE DI LECCO - LECCO</des>
+							</str>
+						</ctf>
+						<prv>
+							<iupSeed>00000</iupSeed>
+							<DF>F</DF>
+							<Ref>DVALOTTO/MMG/DVLMMG69A11F205N/17941</Ref>
+						</prv>
+					</credential>
+				</FunContext>
+			</Security>
+			<Transport>
+				<Mode>Sync</Mode>
+				<Dest>DCSanita</Dest>
+			</Transport>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+		<m:FSE.ricercaEventi xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/ricercaEventi/" dataSetVersion="1.0">
+			<evento>
+				<strutturaErogazione>
+					<idPresidio>03090300</idPresidio>
+					<idEnte>030960</idEnte>
+				</strutturaErogazione>
+				<cittadino>
+					<idCittadino tipo="CF">GBBGCB70A01Z368C</idCittadino>
+				</cittadino>
+				<idTipoEvento/>
+				<idEvento/>
+				<dataInizio>TODAY(yyyyMMdd)-3000</dataInizio>
+				<dataFine>TODAY(yyyyMMdd)</dataFine>
+				<maxRecords/>
+				<numeroPagina/>
+			</evento>
+		</m:FSE.ricercaEventi>
+	</soap-env:Body>
+</soap-env:Envelope>

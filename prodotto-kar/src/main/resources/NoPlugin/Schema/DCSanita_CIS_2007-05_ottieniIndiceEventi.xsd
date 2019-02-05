@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XML Spy v4.1 U (http://www.xmlspy.com) by manfredi_le15 (ietba) -->
+<xs:schema targetNamespace="http://www.crs.lombardia.it/schemas/DCSanita/CIS/2007-05/ottieniIndiceEventi/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/CIS/2007-05/ottieniIndiceEventi/" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:element name="CIS.ottieniIndiceEventi">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="param" type="m:richiestaType"/>
+			</xs:all>
+			<xs:attribute name="dataSetVersion" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="richiestaType">
+		<xs:all>
+			<xs:element name="ottieniIndiceEventi" type="m:ottieniIndiceEventiReqType"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="ottieniIndiceEventiReqType">
+		<xs:all>
+			<xs:element name="datiCittadino" type="m:datiCittadinoType"/>
+			<xs:element name="statoEvento" type="xs:string" minOccurs="0"/>
+			<xs:element name="minDataEvento" type="xs:string" minOccurs="0"/>
+			<xs:element name="maxDataEvento" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="datiCittadinoType">
+		<xs:all>
+			<xs:element name="codiceFiscaleCittadino" type="xs:string"/>
+			<xs:element name="idAssistito" type="xs:string"/>
+			<xs:element name="idCittadinoNonSISS" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:element name="CIS.ottieniIndiceEventiResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="param" type="m:rispostaType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="rispostaType">
+		<xs:all>
+			<xs:element name="ottieniIndiceEventi" type="m:rispostaOttieniIndiceEventiType" minOccurs="0"/>
+			<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+			<xs:element name="esitoNegativo" type="m:esitoNegativoType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="rispostaOttieniIndiceEventiType">
+		<xs:all>
+			<xs:element name="listaTipi" type="m:listaTipiType" minOccurs="0"/>
+			<xs:element name="listaDiscipline" type="m:listaDisciplineType" minOccurs="0"/>
+			<xs:element name="listaSpecialita" type="m:listaSpecialitaType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaTipiType">
+		<xs:sequence>
+			<xs:element name="tipoEvento" type="m:tipoEventoType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="tipoEventoType">
+		<xs:all>
+			<xs:element name="codTipo" type="xs:string"/>
+			<xs:element name="descTipo" type="xs:string"/>
+			<xs:element name="listaSottoTipi" type="m:listaSottoTipiType"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaSottoTipiType">
+		<xs:sequence>
+			<xs:element name="sottoTipo" type="m:sottoTipoType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="sottoTipoType">
+		<xs:all>
+			<xs:element name="codSottoTipo" type="xs:string"/>
+			<xs:element name="descSottoTipo" type="xs:string"/>
+			<xs:element name="listaDettaglioST" type="m:listaDettaglioSTType"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaDettaglioSTType">
+		<xs:sequence>
+			<xs:element name="dettaglioST" type="m:dettaglioSTType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="dettaglioSTType">
+		<xs:all>
+			<xs:element name="codDettaglioST" type="xs:string"/>
+			<xs:element name="descDettaglioST" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaDisciplineType">
+		<xs:sequence>
+			<xs:element name="disciplina" type="m:disciplinaType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="listaSpecialitaType">
+		<xs:sequence>
+			<xs:element name="specialita" type="m:specialitaType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="disciplinaType">
+		<xs:all>
+			<xs:element name="codDisc" type="xs:string"/>
+			<xs:element name="descDisc" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="specialitaType">
+		<xs:sequence>
+			<xs:element name="codSpec" type="xs:string"/>
+			<xs:element name="descSpec" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="esitoNegativoType">
+		<xs:all>
+			<xs:element name="codiceErrore" type="xs:string"/>
+			<xs:element name="descErrore" type="xs:string"/>
+			<xs:element name="listaEccezioni" type="m:listaEccezioniType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaEccezioniType">
+		<xs:sequence>
+			<xs:element name="eccezione" type="m:eccezioneType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="eccezioneType">
+		<xs:all>
+			<xs:element name="codiceEccezione" type="xs:string"/>
+			<xs:element name="descEccezione" type="xs:string"/>
+			<xs:element name="nomeCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="valoreCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="descEccezioneCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceEccezioneCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="ROI" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaWarningType">
+		<xs:sequence>
+			<xs:element name="warning" type="m:warningType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="warningType">
+		<xs:all>
+			<xs:element name="codiceWarning" type="xs:string"/>
+			<xs:element name="descWarning" type="xs:string"/>
+			<xs:element name="nomeCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="valoreCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="descWarningCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceWarningCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="ROI" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+</xs:schema>

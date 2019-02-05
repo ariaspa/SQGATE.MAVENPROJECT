@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+<TestInfo>
+	<Autore>Manfredi Salvatore</Autore>
+  	<DataPreparazione>22/05/2007</DataPreparazione>
+  	<CodiceContesto>C06</CodiceContesto>
+  	<TipoTest>F</TipoTest>
+  	<Priorita>H</Priorita>
+  	<DescrizioneCaso>
+		-Emergenza attiva ricercaClinicaAmbulatorialeEventiEmergenzaTutti
+		-Con entranbi gli identificatori Cittadino CRMZEI29S25G388H - 074LF317
+		-Range di date
+		-Stato evento 05
+  	</DescrizioneCaso>
+  	<DescrizioneRisultatoAtteso>
+		Condizioni di ricerca soddisfatte
+  	</DescrizioneRisultatoAtteso>
+</TestInfo>
+-->
+<soap-env:Envelope 
+	xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" 
+	xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" 
+	xmlns:xsd="http://www.w3.org/1999/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" 
+	soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap-env:Header>
+		<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+			<Transport>
+				<Mode>Sync</Mode>
+				<Dest>DCSanita</Dest>
+			</Transport>
+			<Security>
+				<FunContext>
+					<credential>
+						<validity>
+							<emittedDate>10/08/2005+16:44:40,796</emittedDate>
+							<sessionMaxTime>10/08/2005+16:44:40,796</sessionMaxTime>
+						</validity>
+						<vrs>
+							<mjr>1</mjr>
+							<min>0</min>
+						</vrs>
+						<ctf>
+							<reg>
+								<cod/>
+								<des/>
+							</reg>
+							<app>
+								<cod/>
+								<des/>
+							</app>
+							<pro>
+								<cod/>
+								<des/>
+							</pro>
+							<ter>
+								<cod/>
+								<des/>
+							</ter>
+							<str>
+								<cod>030968</cod>
+								<des/>
+							</str>
+							<pre>
+								<cod/>
+								<des/>
+							</pre>
+							<rep>
+								<cod/>
+								<des/>
+							</rep>
+						</ctf>
+						<role>
+							<code>5</code>
+							<description>Direttore medico</description>
+						</role>
+						<userId>MEDUNO01R01F351M</userId>
+						<iupSeed>12345</iupSeed>
+					</credential>
+				</FunContext>
+				<CitCardPresent>true</CitCardPresent>
+				<CitAuth>true</CitAuth>
+				<CitCF>CRMZEI29S25G388H</CitCF>
+				<CitSmartCardSN>074LF317</CitSmartCardSN>
+			</Security>
+			<Sla>
+				<Log>
+					<Global>
+						<TrackID>1123685078265</TrackID>
+						<Timestamp>10/08/2005+16:44:40,828</Timestamp>
+					</Global>
+				</Log>
+			</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2007-05/appcontext/">
+			<Request clientProd="DCSanita"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+		<m:CIS.ricercaClinicaAmbulatoriale xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/CIS/2007-05/ricercaClinicaAmbulatoriale/" dataSetVersion="1.0">
+			<param>
+				<ricercaClinicaAmbulatoriale>
+					<datiCittadino>
+						<idAssistito>074LF317</idAssistito>
+						<codiceFiscaleCittadino>CRMZEI29S25G388H</codiceFiscaleCittadino>
+						<idCittadinoNonSISS></idCittadinoNonSISS>
+					</datiCittadino>
+					<datiClinici>
+						<tipoEvento></tipoEvento>
+						<sottoTipo></sottoTipo>
+						<codiceDisciplinaErogata></codiceDisciplinaErogata>
+						<statoEvento>05</statoEvento>
+					</datiClinici>
+					<minDataEvento>20050101</minDataEvento>
+					<maxDataEvento>20070501</maxDataEvento>
+					<maxRecords></maxRecords>
+				</ricercaClinicaAmbulatoriale>
+			</param>
+		</m:CIS.ricercaClinicaAmbulatoriale>
+	</soap-env:Body>
+</soap-env:Envelope>
+

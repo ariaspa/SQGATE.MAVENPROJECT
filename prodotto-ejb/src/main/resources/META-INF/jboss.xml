@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<jboss>
+  <enterprise-beans>
+    <session>
+	<ejb-name>FSELIc</ejb-name>
+	<jndi-name>com/li/dc/sebc/fse/il/FSELIc</jndi-name>
+      	<resource-ref>
+		<res-ref-name>jdbc/SebcDB</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<jndi-name>java:DB_SEBC</jndi-name>
+	</resource-ref>
+	<resource-ref>
+		<res-ref-name>jdbc/SebcDBTest</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<jndi-name>java:DB_SEBC_Virtuale</jndi-name>
+	</resource-ref>
+	<resource-ref>
+		<res-ref-name>jdbc/SissDB</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<jndi-name>java:DB_SS</jndi-name>
+	</resource-ref>
+	<resource-ref>
+		<res-ref-name>jdbc/SSDBVirt</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<jndi-name>java:DB_SS</jndi-name>
+	</resource-ref>
+	<resource-ref>
+		<res-ref-name>jdbc/RefDataDB</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<jndi-name>java:DB_DC</jndi-name>
+	</resource-ref>
+	<resource-ref>
+		<res-ref-name>jdbc/RefDataDBVirtuale</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<jndi-name>java:DB_DC</jndi-name>
+	</resource-ref>
+	<resource-ref>
+		<res-ref-name>jdbc/SecurityDB</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<jndi-name>java:DB_SECURITY</jndi-name>
+	</resource-ref>
+    </session>
+    
+  </enterprise-beans>
+
+  
+</jboss>

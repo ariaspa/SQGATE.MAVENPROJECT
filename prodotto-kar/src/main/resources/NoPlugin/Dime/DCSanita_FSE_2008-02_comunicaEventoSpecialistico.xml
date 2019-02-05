@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<MethodDefinition>
+	<Common>
+		   <Description>
+			Il servizio registra nella base dati del Domino Centrale le informazioni relative ad una comunicazione di un’accettazione di un evento sanitario di tipo specialistico.
+		   </Description>
+		<Owner>DCSanita</Owner>
+		<MethodName>FSE.comunicaEventoSpecialistico</MethodName>
+		<Namespace>http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-02/comunicaEventoSpecialistico/</Namespace>
+		<ValidateAlways>False</ValidateAlways>
+		<RequireTransform>False</RequireTransform>
+		<RequirePlugin>False</RequirePlugin>
+		<InvokeViaPDL>True</InvokeViaPDL>
+		<InvokeViaPDS>True</InvokeViaPDS>
+		<AccessConditions>
+			RUOLO="2"  or RUOLO="52" or
+			RUOLO="3"  or RUOLO="53" or
+			RUOLO="5"  or RUOLO="55" or
+			RUOLO="9"  or RUOLO="59" or
+			RUOLO="12" or RUOLO="62" or
+			RUOLO="13" or RUOLO="63" or
+			RUOLO="15" or RUOLO="65" or
+			RUOLO="21" or RUOLO="71"
+		</AccessConditions>
+		<GrantedAutomaticProcedures>PopolaFSE</GrantedAutomaticProcedures>
+		<SLA>
+			<Availability>9900</Availability>
+			<ResponseTime>2500</ResponseTime>
+		</SLA>
+	</Common>
+	<CASE>
+		<CitNO>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="eventoSpecialistico" min="0" max="20">
+					<D_opLegSign>False</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+				</ApplicationDocument>
+			</DIMA>
+		</CitNO>
+		<CitSI>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="eventoSpecialistico" min="0" max="20">
+					<D_opLegSign>False</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+				</ApplicationDocument>
+			</DIMA>
+		</CitSI>
+	</CASE>
+	<DIMAresponse>
+		<ApplicationDocument name="param" min="1" max="120">
+			<D_feSign>False</D_feSign>
+			<D_crypt>False</D_crypt>
+			<D_tStamp>False</D_tStamp>
+		</ApplicationDocument>
+	</DIMAresponse>
+</MethodDefinition>

@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+  <SOAP-ENV:Header>
+    <a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/"
+    a:AppContext="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+
+      <Reply servProd="FSE">
+        <Subject>SAVersion 1.3.1_05</Subject>
+      </Reply>
+    </a:AppContext>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <m:FSE.ottieniIndiceFascicoloResponse xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/ottieniIndiceFascicolo/">
+
+      <param>
+        <nPagine>1</nPagine>
+        <ottieniIndiceFascicolo>
+          <cittadino>
+            <idCittadino>FSECIT70A01Z368C</idCittadino>
+          </cittadino>
+          <indiceFascicolo>
+            <listaFolder>
+              <folder>
+                <descrizioneFolder>EPISODI DIAGNOSI E
+                CURA</descrizioneFolder>
+                <idTipoFolder>14</idTipoFolder>
+                <etichettaFolder>EPISODI DIAGNOSI E
+                CURA</etichettaFolder>
+                <idFolder></idFolder>
+                <attributiSpecificiFolder>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>1</nLivelloFolder>
+                <idTipoFolderPadre></idTipoFolderPadre>
+                <idStatoFolder></idStatoFolder>
+              </folder>
+              <folder>
+                <descrizioneFolder>DIAGNOSTICA STRUMENTALE E
+                SPECIALISTICA AMBULATORIALE</descrizioneFolder>
+                <idTipoFolder>15</idTipoFolder>
+                <etichettaFolder>DIAGNOSTICA STRUMENTALE E
+                SPECIALISTICA AMBULATORIALE</etichettaFolder>
+                <idFolder></idFolder>
+                <attributiSpecificiFolder>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>2</nLivelloFolder>
+                <idTipoFolderPadre>14</idTipoFolderPadre>
+                <idStatoFolder></idStatoFolder>
+              </folder>
+              <folder>
+                <descrizioneFolder>CARTELLA
+                AMBULATORIALE</descrizioneFolder>
+                <idTipoFolder>17</idTipoFolder>
+                <etichettaFolder>CARTELLA
+                AMBULATORIALE</etichettaFolder>
+                <idFolder></idFolder>
+                <attributiSpecificiFolder>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>3</nLivelloFolder>
+                <idTipoFolderPadre>15</idTipoFolderPadre>
+                <idStatoFolder></idStatoFolder>
+              </folder>
+              <folder>
+                <descrizioneFolder>IUP IN CARTELLA
+                AMBULATORIALE</descrizioneFolder>
+                <idTipoFolder>18</idTipoFolder>
+                <etichettaFolder>TEST000220</etichettaFolder>
+                <idFolder>22018</idFolder>
+                <attributiSpecificiFolder>
+                  <c:folder_ambulatoriale xmlns:c="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_ambulatoriale/">
+
+                    <idEnte>691489</idEnte>
+                    <prestazioniAssociate>
+                      <prestazione>
+                        <idPrestazioneSISS>
+                        0090034</idPrestazioneSISS>
+                        <descrizionePrestazioneSISS>ACIDO
+                        VALPROICO</descrizionePrestazioneSISS>
+                        <flagAggiuntiva>N</flagAggiuntiva>
+                      </prestazione>
+                      <prestazione>
+                        <idPrestazioneSISS>
+                        0090035</idPrestazioneSISS>
+                        <descrizionePrestazioneSISS>ACIDO
+                        VANILMANDELICO (VMA)
+                        [DU]</descrizionePrestazioneSISS>
+                        <flagAggiuntiva>N</flagAggiuntiva>
+                      </prestazione>
+                    </prestazioniAssociate>
+                    <idPresidio>03038000</idPresidio>
+                    <numeroCartellaAmbulatoriale>
+                    0000001</numeroCartellaAmbulatoriale>
+                    <descrizionePresidio>OSPEDALE DI
+                    VIADANA</descrizionePresidio>
+                    <IUP>TEST000220</IUP>
+                    <descrizioneEnte>IN RETE S.C.P.A. CONSORZIO DI
+                    IMPRESE PER LO SVILUPPO DEI SERVIZI ALLA
+                    PERSONA</descrizioneEnte>
+                    <dataAccettazione>20100308</dataAccettazione>
+                  </c:folder_ambulatoriale>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>4</nLivelloFolder>
+                <idTipoFolderPadre>17</idTipoFolderPadre>
+                <idStatoFolder>OK</idStatoFolder>
+              </folder>
+            </listaFolder>
+          </indiceFascicolo>
+        </ottieniIndiceFascicolo>
+        <esitoOttieniIndiceFascicolo>
+          <esito>OK</esito>
+        </esitoOttieniIndiceFascicolo>
+      </param>
+    </m:FSE.ottieniIndiceFascicoloResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

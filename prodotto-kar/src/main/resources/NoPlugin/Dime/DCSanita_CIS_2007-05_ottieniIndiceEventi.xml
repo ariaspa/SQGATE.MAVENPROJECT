@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<MethodDefinition>
+	<Common>
+		<Description>
+			Il servizio restituisce l’elenco dei tipi di evento e delle discipline per i quali sono presenti eventi nella base dati di riferimento, associati ad eventi in chiaro.
+			Per ogni tipologia di evento, vengono restituiti i sottotipi evento.
+		   </Description>
+		<Owner>DCSanita</Owner>
+		<MethodName>CIS.ottieniIndiceEventi</MethodName>
+		<Namespace>http://www.crs.lombardia.it/schemas/DCSanita/CIS/2007-05/ottieniIndiceEventi/</Namespace>
+		<ValidateAlways>False</ValidateAlways>
+		<RequireTransform>False</RequireTransform>
+		<RequirePlugin>False</RequirePlugin>
+		<InvokeViaPDL>True</InvokeViaPDL>
+		<InvokeViaPDS>False</InvokeViaPDS>
+		<AccessConditions>
+			RUOLO="2"  or RUOLO="52" or
+			RUOLO="5"  or RUOLO="55" or
+			RUOLO="6"  or RUOLO="56" or
+			RUOLO="10" or RUOLO="60" or
+			RUOLO="12" or RUOLO="62" or
+			RUOLO="13" or RUOLO="63" or
+			RUOLO="14" or RUOLO="64" or
+			RUOLO="21" or RUOLO="71" or
+			RUOLO="22" or RUOLO="72"
+		</AccessConditions>
+		<SLA>
+			<Availability>9900</Availability>
+			<ResponseTime>2500</ResponseTime>
+		</SLA>
+	</Common>
+	<CASE>
+		<CitNO>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="param" min="1" max="1">
+					<D_opLegSign>False</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+				</ApplicationDocument>
+			</DIMA>
+		</CitNO>
+		<CitSI>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="param" min="1" max="1">
+					<D_opLegSign>False</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+				</ApplicationDocument>
+			</DIMA>
+		</CitSI>
+		<CitPIN>
+			<DIMA>
+				<DFaccepted>False</DFaccepted>
+				<ApplicationDocument name="param" min="1" max="1">
+					<D_opLegSign>False</D_opLegSign>
+					<D_opWeakSign>False</D_opWeakSign>
+					<D_citAttes>False</D_citAttes>
+					<D_feSign>False</D_feSign>
+					<D_crypt>False</D_crypt>
+					<D_tStamp>False</D_tStamp>
+				</ApplicationDocument>
+			</DIMA>
+		</CitPIN>
+	</CASE>
+	<DIMAresponse>
+		<ApplicationDocument name="param" min="1" max="1">
+			<D_feSign>False</D_feSign>
+			<D_crypt>False</D_crypt>
+			<D_tStamp>False</D_tStamp>
+		</ApplicationDocument>
+	</DIMAresponse>
+</MethodDefinition>

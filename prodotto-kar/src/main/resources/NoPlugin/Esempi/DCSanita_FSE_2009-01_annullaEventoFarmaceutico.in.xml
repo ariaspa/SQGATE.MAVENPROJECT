@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<!--
+<TestInfo>
+	<Autore>Mauro Martello</Autore>
+	<DataPreparazione>01/10/2008</DataPreparazione>
+	<CodiceTest>IN.8053000012</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>F</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>Annullamento evento</DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>OK:stato evento farmaceutico 06</DescrizioneRisultatoAtteso>
+	<confrontoBody>
+	<ignora>//codiceCittadino</ignora>
+	</confrontoBody>
+</TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<soap-env:Header>
+<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+		<Transport>
+			<Mode>Sync</Mode>
+			<Dest>DCSanita</Dest>
+		</Transport>
+			<Security>
+			<FunContext>
+				<credential>
+					<validity>
+						<emittedDate>15/11/2005+10:59:18,531</emittedDate>
+						<sessionMaxTime>15/11/2005+10:59:18,531</sessionMaxTime>
+					</validity>
+					<vrs>
+						<mjr>1</mjr>
+						<min>0</min>
+					</vrs>
+					<ctf>
+						<reg>
+							<cod/>
+							<des/>
+						</reg>
+						<app>
+							<cod/>
+							<des/>
+						</app>
+						<pro>
+							<cod/>
+							<des/>
+						</pro>
+						<ter>
+							<cod/>
+							<des/>
+						</ter>
+						<str>
+							<cod>MI1477</cod>
+							<des/>
+						</str>
+						<pre>
+							<cod/>
+							<des/>
+						</pre>
+						<rep><cod/>
+							<des/>
+						</rep>
+					</ctf>
+					<role>
+						<code>1</code>
+						<description>Farmacista Titolare</description>
+					</role>
+					<userId>FSDFNT64E22F205K</userId>
+					<iupSeed>12345</iupSeed>
+				</credential>
+			</FunContext>
+			<CitCardPresent>false</CitCardPresent>
+			<CitAuth>false</CitAuth>
+			<CitCF></CitCF>
+			<CitSmartCardSN></CitSmartCardSN>
+		</Security>
+		<Sla>
+			<Log>
+				<Global>
+					<TrackID>1132048757203</TrackID>
+					<Timestamp>15/11/2005+10:59:18,562</Timestamp>
+				</Global>
+			</Log>
+		</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+	<m:FSE.annullaEventoFarmaceutico
+  xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/annullaEventoFarmaceutico/"
+  dataSetVersion="1.0">
+        <eventoFarmaceutico>
+    	<farmacia>
+      <idFarmacia>MI1477</idFarmacia>
+    </farmacia>
+    <cittadino>
+        <idCittadino tipo="CF">FSPFML83L15C933L</idCittadino>
+       </cittadino>
+   	<IUP>TESTY7013A</IUP>
+	<motivoAnnullamento></motivoAnnullamento>
+  </eventoFarmaceutico>
+</m:FSE.annullaEventoFarmaceutico>
+</soap-env:Body>
+</soap-env:Envelope>

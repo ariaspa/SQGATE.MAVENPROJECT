@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/201001/consultaFascicoloCittadino/" xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" xmlns:sdLd="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_ldimissione/" xmlns:sdPs="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_psoccorso/" xmlns:sdRe="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_referto/" xmlns:sdEn="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_enote/" xmlns:sfFa="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/attributi_farmaci/" xmlns:sfPs="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_ps/" xmlns:sfRi="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_ricovero/" xmlns:sfAm="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_ambulatoriale/" xmlns:sfCl="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_classificazione_citt/" xmlns:sfVa="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_vaccinazioni/" xmlns:ns1="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/attributi_pdt/" xmlns:ns2="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/attributi_prericovero/" xmlns:ns3="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/consultaFascicolo/" targetNamespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/consultaFascicolo/" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" schemaLocation="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/"/>
+	<xs:import namespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_referto/" schemaLocation="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_referto/"/>
+	<xs:import namespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_enote/" schemaLocation="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_enote/"/>
+	<xs:import namespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_psoccorso/" schemaLocation="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_psoccorso/"/>
+	<xs:import namespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_ldimissione/" schemaLocation="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_ldimissione/"/>
+	<xs:import namespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/attributi_farmaci/" schemaLocation="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/attributi_farmaci/"/>
+	<xs:import namespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_ps/" schemaLocation="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_ps/"/>
+	<xs:import namespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_ricovero/" schemaLocation="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_ricovero/"/>
+	<xs:import namespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_ambulatoriale/" schemaLocation="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_ambulatoriale/"/>
+	<xs:import namespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_classificazione_citt/" schemaLocation="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_classificazione_citt/"/>
+	<xs:import namespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_vaccinazioni/" schemaLocation="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_vaccinazioni/"/>
+	<xs:import namespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/attributi_pdt/" schemaLocation="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2008-01/attributi_pdt/"/>
+	<xs:import namespace="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/attributi_prericovero/" schemaLocation="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/attributi_prericovero/"/>
+	<xs:element name="FSE.consultaFascicoloCittadino">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="richiestaConsultaFascicolo" type="m:richiestaConsultaFascicoloCittadinoType"/>
+			</xs:all>
+			<xs:attribute name="dataSetVersion" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FSE.consultaFascicoloCittadinoResponse">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="FSE.consultaFascicoloCittadino" type="m:rispostaType"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="richiestaConsultaFascicoloCittadinoType">
+		<xs:all>
+			<xs:element name="cittadino" type="m:cittadinoType"/>
+			<xs:element name="idFolder" type="xs:string" minOccurs="0"/>
+			<xs:element name="idTipoFolder" type="xs:string" minOccurs="0"/>
+			<xs:element name="dataInizio" type="xs:string" minOccurs="0"/>
+			<xs:element name="dataFine" type="xs:string" minOccurs="0"/>
+			<xs:element name="nMaxRecord" type="xs:string" minOccurs="0"/>
+			<xs:element name="nPagina" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="cittadinoType">
+		<xs:all>
+			<xs:element name="idCittadino">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="tipo" type="xs:string" use="required" fixed="CF"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="rispostaType">
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="esitoNegativo" type="m:esitoNegativoType"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="esitoConsultaFascicolo" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="nPagine" type="xs:string"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="consultaFascicolo" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="nPagine" type="xs:string"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="nPagine" type="xs:string"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="nPagine" type="xs:string"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="nPagine" type="xs:string"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="nPagine" type="xs:string"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="nPagine" type="xs:string"/>
+				<xs:element name="esitoConsultaFascicoloCittadino" type="m:esitoConsultaFascicoloCittadinoType"/>
+				<xs:element name="consultaFascicoloCittadino" type="m:consultaFascicoloCittadinoType"/>
+				<xs:element name="listaWarning" type="m:listaWarningType" minOccurs="0"/>
+			</xs:sequence>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="esitoNegativoType">
+		<xs:all>
+			<xs:element name="codiceErrore" type="xs:string"/>
+			<xs:element name="descErrore" type="xs:string"/>
+			<xs:element name="listaEccezioni" type="m:listaEccezioniType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaEccezioniType">
+		<xs:sequence>
+			<xs:element name="eccezione" type="m:eccezioneType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="eccezioneType">
+		<xs:all>
+			<xs:element name="codiceEccezione" type="xs:string"/>
+			<xs:element name="descEccezione" type="xs:string"/>
+			<xs:element name="nomeCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="valoreCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="descEccezioneCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceEccezioneCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="ROI" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="listaWarningType">
+		<xs:sequence>
+			<xs:element name="warning" type="m:warningType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="warningType">
+		<xs:all>
+			<xs:element name="codiceWarning" type="xs:string"/>
+			<xs:element name="descWarning" type="xs:string"/>
+			<xs:element name="nomeCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="valoreCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="descWarningCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="codiceWarningCampo" type="xs:string" minOccurs="0"/>
+			<xs:element name="ROI" type="xs:string" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="esitoConsultaFascicoloCittadinoType">
+		<xs:all>
+			<xs:element name="esito" type="xs:string"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="consultaFascicoloCittadinoType">
+		<xs:all>
+			<xs:element name="cittadino" type="m:cittadinoOutType"/>
+			<xs:element name="fascicolo" type="m:fascicoloType" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="cittadinoOutType">
+		<xs:all>
+			<xs:element name="idCittadino"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="fascicoloType">
+		<xs:all>
+			<xs:element name="listaFolder">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="folder" type="m:folderType" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="folderType">
+		<xs:all>
+			<xs:element name="idFolder" type="xs:string"/>
+			<xs:element name="idTipoFolder" type="xs:string"/>
+			<xs:element name="descrizioneFolder" type="xs:string"/>
+			<xs:element name="etichettaFolder" type="xs:string"/>
+			<xs:element name="idStatoFolder" type="xs:string"/>
+			<xs:element name="idTipoFolderPadre" type="xs:string"/>
+			<xs:element name="nLivelloFolder" type="xs:string"/>
+			<xs:element name="attributiSpecificiFolder" type="m:attributiSpecificiFolderType"/>
+			<xs:element name="listaDCE" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="setDocumentale" type="m:setDocumentaleType" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="setDocumentaleType">
+		<xs:all>
+			<xs:element name="strutturaCreazione">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="idEnte" type="xs:string"/>
+						<xs:element name="descrizioneEnte" type="xs:string"/>
+						<xs:element name="idPresidio" type="xs:string"/>
+						<xs:element name="descrizionePresidio" type="xs:string"/>
+						<xs:element name="idUnitaOperativaClinica" type="xs:string"/>
+						<xs:element name="descrizioneUnitaOperativaClinica" type="xs:string"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="strutturaArchiviazione">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="idEnte" type="xs:string"/>
+						<xs:element name="descrizioneEnte" type="xs:string"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="idTipoDocumento" type="xs:string"/>
+			<xs:element name="descrizioneTipoDocumento" type="xs:string"/>
+			<xs:element name="idDisciplinaErogazione" type="xs:string"/>
+			<xs:element name="descrizioneDisciplinaErogazione" type="xs:string"/>
+			<xs:element name="flagCopiato" type="xs:string"/>
+			<xs:element name="noteReperibilita" type="xs:string"/>
+			<xs:element name="caratterizzazioniCliniche">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="caratterizzazione" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:all>
+									<xs:element name="dizionario" type="xs:string"/>
+									<xs:element name="codice" type="xs:string"/>
+								</xs:all>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="oscuramento">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="tipoOscuramento" minOccurs="5" maxOccurs="5">
+							<xs:complexType>
+								<xs:all>
+									<xs:element name="idCausaleOscuramento" type="xs:string"/>
+									<xs:element name="valoreOscuramento" type="xs:string"/>
+								</xs:all>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="dataOraCreazione" type="xs:string"/>
+			<xs:element name="idAggregazioneDocumento" type="xs:string"/>
+			<xs:element name="idSetDocumenti" type="xs:string"/>
+			<xs:element name="nVersione" type="xs:string"/>
+			<xs:element name="idDocumentoRiferimento" type="xs:string"/>
+			<xs:element name="nVersioneDocumentoRiferimento" type="xs:string"/>
+			<xs:element name="naturaAggiornamento" type="xs:string"/>
+			<xs:element name="listaDocumenti">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="documento" maxOccurs="2">
+							<xs:complexType>
+								<xs:all>
+									<xs:element name="linguaggioDocumento" type="xs:string"/>
+									<xs:element name="formato" type="xs:string"/>
+									<xs:element name="firmato" type="xs:string"/>
+									<xs:element name="uri" type="xs:string"/>
+									<xs:element name="validazioneSchema" type="xs:string"/>
+									<xs:element name="hashDocumento" type="xs:string"/>
+									<xs:element name="algoritmoHash" type="xs:string"/>
+									<xs:element name="sizeDocumento" type="xs:string"/>
+								</xs:all>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="listaAllegati">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="allegato" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:all>
+									<xs:element name="linkAllegato" type="xs:string"/>
+									<xs:element name="etichettaAllegato" type="xs:string"/>
+									<xs:element name="formatoAllegato" type="xs:string"/>
+								</xs:all>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="reteDiPatologia" type="xs:string"/>
+			<xs:element name="descrizioneReteDiPatologia" type="xs:string"/>
+			<xs:element name="idTipoDocumentoLOINC" type="xs:string"/>
+			<xs:element name="autoreDocumento">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="codiceFiscale" type="xs:string"/>
+						<xs:element name="cognome" type="xs:string"/>
+						<xs:element name="nome" type="xs:string"/>
+						<xs:element name="ruolo" type="xs:string"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="operatoreAutorizzante" minOccurs="0">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="codiceFiscaleAutorizzante" type="xs:string"/>
+						<xs:element name="cognomeAutorizzante" type="xs:string"/>
+						<xs:element name="nomeAutorizzante" type="xs:string"/>
+					</xs:all>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="statoAutorizzazioneDocumento" type="xs:string"/>
+			<xs:element name="noteReperibilita" type="xs:string"/>
+			<xs:element name="attributiSpecificiDCE" type="m:attributiSpecificiDCEType"/>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="attributiSpecificiFolderType">
+		<xs:choice>
+			<xs:element name="attributi_ambulatoriale" type="sfAm:eventoAmbulatorialeType"/>
+			<xs:element name="attributi_ricovero" type="sfRi:eventoRicoveroType"/>
+			<xs:element name="attributi_ps" type="sfPs:eventoPSType"/>
+			<xs:element name="attributi_farmaci" type="sfFa:eventoFarmaceuticoType"/>
+			<xs:element name="attributi_vaccinazioni" type="sfVa:eventoVaccinazioneType"/>
+			<xs:element name="attributi_classificazione_citt" type="sfCl:classificazioneType"/>
+			<xs:element name="attributi_pdt" type="sfVa:pdType"/>
+			<xs:element name="attributi_prericovero" type="sfCl:prericoveroType"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="attributiSpecificiDCEType">
+		<xs:choice>
+			<xs:element name="attributi_referto" type="sdRe:attributiRefertoType"/>
+			<xs:element name="attributi_psoccorso" type="sdPs:attributiPSType"/>
+			<xs:element name="attributi_ldimissione" type="sdLd:attributiLDimissioniType"/>
+			<xs:element name="attributi_enote" type="sdEn:attributiEvaluationNoteType"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:TabNavigator xmlns:mx="http://www.adobe.com/2006/mxml" 
+	addedToStage="onAddedStage(event)"
+	removedFromStage="onremoveStage(event)"
+	width="100%" height="100%">
+	
+	<mx:Script>
+		<![CDATA[
+		override public function set tabIndex(index:int):void
+		{
+			super.tabIndex 		= index;
+			this.selectedIndex 	= index;
+		}
+		override public function addChild(child:DisplayObject):DisplayObject
+		{
+			return super.addChild(child);
+		}
+		override public function addChildAt(child:DisplayObject,index:int):DisplayObject
+		{
+			return super.addChildAt( child , index );
+		}
+		private function onAddedStage(event:Event):void
+		{
+			 
+		} 
+		private function onremoveStage(event:Event):void
+		{
+		
+		}
+		]]>
+	</mx:Script>
+</mx:TabNavigator>

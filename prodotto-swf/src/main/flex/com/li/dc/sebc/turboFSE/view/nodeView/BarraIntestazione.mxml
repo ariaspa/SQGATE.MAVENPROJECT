@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox 	xmlns:mx="http://www.adobe.com/2006/mxml" 
+			xmlns:component="com.li.dc.sebc.turboFSE.view.component.*"
+			width="100%" height="50" 
+		   	verticalScrollPolicy="off" horizontalScrollPolicy="off" 
+		   	verticalAlign="middle"
+		   	paddingLeft="4"
+		   	paddingRight="4" >
+		   	
+		   <mx:Metadata>
+		   		[Event(name="clickHome", type="flash.events.Event")]
+		   </mx:Metadata>
+		   <!-- QUESTO E' IL VECCHIO BANNER -->
+	<mx:Script>
+		<![CDATA[
+			 /////////////
+			[Bindable] public var visibleButton:Boolean = false;  
+			[Bindable] public var stateLogo:String;  
+			[Bindable] public var labelBarraIntestazione:String;  
+			[Bindable] public var toolTipButtonHome:String;  
+			[Bindable] public var labelButtonHome:String;  
+			[Bindable] public var styleButton:String;  
+			[Bindable] public var iconaButtonHome:Class;
+			[Bindable] public var iconaLogo:Class;
+			  /////////////
+			private function goHome(event:MouseEvent):void
+			{
+				this.dispatchEvent(new Event("clickHome"));	 
+			}
+		]]>
+	</mx:Script>
+	  
+	<component:Logo3DMXML currentState="{stateLogo}" icoLogo="{iconaLogo}" />
+	
+	<mx:Spacer width="10" />
+	
+	<mx:Label color="#000000" width="100%" text="{labelBarraIntestazione}"  
+		 fontSize="16"  fontWeight="bold"/>
+		
+	<mx:Button  visible="{visibleButton}"
+				styleName="{styleButton}"
+				icon="{iconaButtonHome}"
+				toolTip="{toolTipButtonHome}" 
+				label="{labelButtonHome}" 
+				click="goHome(event)" />
+	
+</mx:HBox>

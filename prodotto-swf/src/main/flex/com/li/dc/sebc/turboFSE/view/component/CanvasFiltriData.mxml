@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CanvasFSE  xmlns="com.li.dc.sebc.turboFSE.view.component.*" 
+	xmlns:mx="http://www.adobe.com/2006/mxml">
+	<mx:Metadata>
+		[Event(name="filterDeselect", type="com.li.dc.sebc.turboFSE.events.TurboEvent")]
+		[Event(name="filterSelect", type="com.li.dc.sebc.turboFSE.events.TurboEvent")]
+	</mx:Metadata>
+	<mx:Script>
+		<![CDATA[
+			import com.li.dc.sebc.turboFSE.util.UtilDate;
+			import com.li.dc.sebc.turboFSE.events.TurboEvent;
+			 
+			import it.lispa.siss.sebc.flex.color.UtilsColor;
+			import it.lispa.siss.sebc.flex.color.HTMLTabColor;
+			//==========================================================================================
+			[Bindable] public var toolTipBox:String 	= "Scegliere il periodo in cui cercare"; 
+			[Bindable] public var toolTipButton:String 	= "Azzera le scelte effettuate"; 
+			[Bindable] public var labelButton:String 	= "cancella"; 
+			[Bindable] public var styleButton:String 	= "button"; 
+			[Bindable] public var todayDate:Date 		= new Date();
+			
+			public var errorDateMajorEnd:String 		= "Attenzione hai tentato di selezionare una data maggiore di quella finale"; 
+			public var errorDateMajorToday:String 		= "Attenzione hai tentato di selezionare una data maggiore di quella odierna"; 
+			public var errorDateMinorStart:String 		= "Attenzione hai tentato di selezionare una data minore di quella iniziale"; 
+			 
+			
+			  
+			//==========================================================================================
+			public override function reset():void
+			{
+				removeToolTipsError();
+				if(toDateFiled!=null)
+				{
+					toDateFiled.selectedDate = cloneDate(todayDate);
+				}	
+				if(fromDateFiled!=null)
+				{
+					fromDateFiled.selectedDate = null;
+				}
+				showSelectTab(false);
+			}
+			private function cloneDate(dt:Date):Date
+			{
+				if(dt==null) return null;
+				return new Date(dt.getFullYear(),dt.getMonth(),dt.getDate(),dt.getHours(),dt.getMinutes(),dt.getSeconds());
+			}
+			private function onClick(event:MouseEvent):void
+			{
+				reset();
+			}
+			/* precisione fino alle ore */
+			private function isMajorDate(start:Date, end:Date):Boolean
+			{
+				return UtilDate.isMajor(start,end);
+			}
+			private function removeListenerToolTip(target:DateField):void
+			{
+				target.removeEventListener(MouseEvent.ROLL_OUT,onEndToolTip);
+				target.errorString = null;
+			}
+			private function onEndToolTip(e:MouseEvent):void
+			{
+				var target:DateField = e.target as DateField;
+				removeListenerToolTip(target);
+			}
+			private function startChange(dateFrom:Date , dateTo:Date ):Boolean
+			{
+				var isErrorToday:Boolean 	= isMajorDate(dateFrom,todayDate);
+				var isErrorFrom:Boolean 	= isMajorDate(dateFrom,dateTo);
+				if(isErrorFrom || isErrorToday )
+				{
+					fromDateFiled.selectedDate 	= isErrorFrom ? cloneDate( dateTo ) : cloneDate( todayDate );
+					fromDateFiled.errorString 	= isErrorFrom ? errorDateMajorEnd :  errorDateMajorToday;
+					fromDateFiled.addEventListener(MouseEvent.ROLL_OUT,onEndToolTip);
+					return true;
+				}
+				return false;
+			}
+			private function endChange(dateFrom:Date , dateTo:Date):Boolean
+			{
+				var isErrorEnd:Boolean 		= isMajorDate(dateTo,todayDate);
+				var isErrorFrom:Boolean 	= isMajorDate(dateFrom,dateTo);
+				if(isErrorFrom || isErrorEnd )
+				{
+					fromDateFiled.selectedDate 	= isErrorEnd ? cloneDate( dateTo ) : cloneDate( todayDate );
+					fromDateFiled.errorString 	= isErrorEnd ? errorDateMajorEnd :  errorDateMinorStart;
+					fromDateFiled.addEventListener(MouseEvent.ROLL_OUT,onEndToolTip);
+					return true;
+				}
+				return false;
+			}
+			private function removeToolTipsError( ):void
+			{
+				if(fromDateFiled!=null)
+					removeListenerToolTip(fromDateFiled);
+				if(toDateFiled!=null)
+					removeListenerToolTip(toDateFiled);
+			}
+			private function changeDateField(event:Event):void
+			{
+				removeToolTipsError();
+				var dateField:DateField 	= event.target as DateField;
+				var isFromChange:Boolean 	= (dateField==fromDateFiled);
+				var dateFrom:Date 			= cloneDate(fromDateFiled.selectedDate);
+				var dateTo:Date 			= cloneDate(toDateFiled.selectedDate);
+				var isError:Boolean 		= isFromChange ? startChange( dateFrom , dateTo ) : endChange( dateFrom , dateTo );
+				if(dateFrom !=null && !isError)
+				{
+					showSelectTab(true);
+				}	
+			}
+			private function showSelectTab(f:Boolean):void
+			{
+				var nameEvent:String = f ? TurboEvent.FILTER_SELECT : TurboEvent.FILTER_DESELECT;
+				dispatchEvent(new TurboEvent(nameEvent));	
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:Box width="100%" height="100%" 
+		verticalAlign="middle"
+		horizontalAlign="center">
+		<mx:VBox
+				borderStyle="solid"
+				borderThickness="1"
+				borderColor="#888888"
+				width="350"
+				height="250"
+				verticalAlign="middle"
+				horizontalAlign="center"
+				verticalScrollPolicy="off"
+				horizontalScrollPolicy="off">
+				
+			<mx:Box width="100%" 
+				height="100%" 
+				toolTip="{toolTipBox}"
+				verticalAlign="middle"
+				horizontalAlign="center">
+					<mx:HBox>
+						<mx:Label text="Da : " color="0" 
+							filters="{[new DropShadowFilter(3,90,HTMLTabColor.BLUEVIOLET,0.8,5,5)]}"/>
+						<mx:DateField id="fromDateFiled" change="changeDateField(event)"/>	
+					</mx:HBox>
+					<mx:HBox>
+						<mx:Label text=" a : " color="0" 
+							filters="{[new DropShadowFilter(3,90,HTMLTabColor.BLUEVIOLET,0.8,5,5)]}"/>
+						<mx:DateField id="toDateFiled"  change="changeDateField(event)" 
+							selectedDate="{todayDate}" maxYear="{todayDate.getFullYear()}"/>	
+					</mx:HBox>		
+			</mx:Box>			
+			
+			<mx:Spacer width="50%" />
+			
+			<mx:Box
+				toolTip="{toolTipButton}" 
+				verticalAlign="middle"
+				horizontalAlign="center"
+				width="100%" 
+				height="100%" >
+				<mx:Button 
+					label="{labelButton}" 
+					styleName="{styleButton}"
+					click="onClick(event)"/>
+			</mx:Box>		
+		</mx:VBox>
+	</mx:Box>
+			
+</CanvasFSE>

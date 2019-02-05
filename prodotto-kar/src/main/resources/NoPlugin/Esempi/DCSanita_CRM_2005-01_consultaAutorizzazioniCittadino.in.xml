@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap-env:Header>
+		<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+			<Transport>
+				<Mode>Sync</Mode>
+				<Dest>DCSanita</Dest>
+			</Transport>
+			<Security>
+				<FunContext>
+					<credential>
+						<validity>
+							<emittedDate>31/01/2006+11:53:56,937</emittedDate>
+							<sessionMaxTime>31/01/2006+11:53:56,937</sessionMaxTime>
+						</validity>
+						<vrs>
+							<mjr>1</mjr>
+							<min>0</min>
+						</vrs>
+						<ctf>
+							<reg>
+								<cod/>
+								<des/>
+							</reg>
+							<app>
+								<cod/>
+								<des/>
+							</app>
+							<pro>
+								<cod/>
+								<des/>
+							</pro>
+							<ter>
+								<cod/>
+								<des/>
+							</ter>
+							<str>
+								<cod>030968</cod>
+								<des/>
+							</str>
+							<pre>
+								<cod/>
+								<des/>
+							</pre>
+							<rep>
+								<cod/>
+								<des/>
+							</rep>
+						</ctf>
+						<role>
+							<code>11</code>
+							<description>Uffico Privacy</description>
+						</role>
+						<userId>BGLPRZ50M47A271S</userId>
+						<iupSeed>030968</iupSeed>
+					</credential>
+				</FunContext>
+				<CitCardPresent>false</CitCardPresent>
+				<CitAuth>false</CitAuth>
+				<CitCF>CITUNO01R01F251C</CitCF>
+				<CitSmartCardSN>171FW588</CitSmartCardSN>
+			</Security>
+			<Sla>
+				<Log>
+					<Global>
+						<TrackID>1138272836562</TrackID>
+						<Timestamp>31/01/2006+11:53:57,218</Timestamp>
+					</Global>
+				</Log>
+			</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="9.1"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+		<m:CRM.consultaAutorizzazioniCittadino xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/CRM/2005-01/consultaAutorizzazioniCittadino/" dataSetVersion="1.1">
+			<consultaAutorizzazioniCittadino>
+				<ll:CRSlegalContent xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" type="Text" opLegSign="false" opWeakSign="false" feSign="false" citAttes="false" tStamp="false" verify="OK"/>
+				<at:CRSattachment xmlns:at="http://www.crs.lombardia.it/schemas/mw/2004-01/attachment/"/>
+				<st:CRSstream xmlns:st="http://www.crs.lombardia.it/schemas/mw/2004-01/stream/"/>
+				<codiceFiscaleCittadino>CITUNO01R01F251C</codiceFiscaleCittadino>
+			</consultaAutorizzazioniCittadino>
+		</m:CRM.consultaAutorizzazioniCittadino>
+	</soap-env:Body>
+</soap-env:Envelope>

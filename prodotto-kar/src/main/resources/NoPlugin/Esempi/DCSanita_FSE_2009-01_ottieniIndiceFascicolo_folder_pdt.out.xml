@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+xmlns:xsd="http://www.w3.org/1999/XMLSchema"
+xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance">
+  <SOAP-ENV:Header>
+    <a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/"
+    a:AppContext="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+
+      <Reply servProd="FSE">
+        <Subject>SAVersion 1.3.1_05</Subject>
+      </Reply>
+    </a:AppContext>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <m:FSE.ottieniIndiceFascicoloResponse xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/ottieniIndiceFascicolo/">
+
+      <param>
+        <nPagine>1</nPagine>
+        <ottieniIndiceFascicolo>
+          <cittadino>
+            <idCittadino>PDTCIT10A10A010A</idCittadino>
+          </cittadino>
+          <indiceFascicolo>
+            <listaFolder>
+              <folder>
+                <descrizioneFolder>PIANO DIAGNOSTICO
+                TERAPEUTICO</descrizioneFolder>
+                <idTipoFolder>50</idTipoFolder>
+                <etichettaFolder>PIANO DIAGNOSTICO
+                TERAPEUTICO</etichettaFolder>
+                <idFolder></idFolder>
+                <attributiSpecificiFolder>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>1</nLivelloFolder>
+                <idTipoFolderPadre></idTipoFolderPadre>
+                <idStatoFolder></idStatoFolder>
+              </folder>
+              <folder>
+                <descrizioneFolder>
+                PDT-PATOLOGIA</descrizioneFolder>
+                <idTipoFolder>51</idTipoFolder>
+                <etichettaFolder>PDT-PATOLOGIA</etichettaFolder>
+                <idFolder>184520651</idFolder>
+                <attributiSpecificiFolder>
+                  <c:folder_pdt xmlns:c="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/folder_pdt/">
+
+                    <datiPDT>
+                      <dataApertura>20090915</dataApertura>
+                      <codicePDT>1</codicePDT>
+                      <descrizionePDT>SCOMPENSO
+                      CARDIACO</descrizionePDT>
+                      <dataChiusura>20090915</dataChiusura>
+                    </datiPDT>
+                  </c:folder_pdt>
+                </attributiSpecificiFolder>
+                <nLivelloFolder>2</nLivelloFolder>
+                <idTipoFolderPadre>50</idTipoFolderPadre>
+                <idStatoFolder>OK</idStatoFolder>
+              </folder>
+            </listaFolder>
+          </indiceFascicolo>
+        </ottieniIndiceFascicolo>
+        <esitoOttieniIndiceFascicolo>
+          <esito>OK</esito>
+        </esitoOttieniIndiceFascicolo>
+      </param>
+    </m:FSE.ottieniIndiceFascicoloResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

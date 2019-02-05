@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<!--
+<TestInfo>
+	<Autore>Vito Euegnio Leonetti</Autore>
+	<DataPreparazione>10/09/2009</DataPreparazione>
+	<CodiceTest>IN.8067000009</CodiceTest>
+	<CodiceContesto>C06</CodiceContesto>
+	<TipoTest>FUN9_BL</TipoTest>
+	<Priorita>H</Priorita>
+	<DescrizioneCaso>IdentificaCittadinoEsteso: I dati cittadino congruenti con i dati presenti in AR op.1 </DescrizioneCaso>
+	<DescrizioneRisultatoAtteso>OK</DescrizioneRisultatoAtteso>
+</TestInfo>
+-->
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<soap-env:Header>
+<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+		<Transport>
+			<Mode>Sync</Mode>
+			<Dest>DCSanita</Dest>
+		</Transport>
+			<Security>
+			<FunContext>
+				<credential>
+					<validity>
+						<emittedDate>15/11/2005+10:59:18,531</emittedDate>
+						<sessionMaxTime>15/11/2005+10:59:18,531</sessionMaxTime>
+					</validity>
+					<vrs>
+						<mjr>1</mjr>
+						<min>0</min>
+					</vrs>
+					<ctf>
+						<reg>
+							<cod/>
+							<des/>
+						</reg>
+						<app>
+							<cod/>
+							<des/>
+						</app>
+						<pro>
+							<cod/>
+							<des/>
+						</pro>
+						<ter>
+							<cod/>
+							<des/>
+						</ter>
+						<str>
+							<cod>030960</cod>
+							<des/>
+						</str>
+						<pre>
+							<cod>03090300</cod>
+							<des/>
+						</pre>
+						<rep><cod>0800</cod>
+							<des/>
+						</rep>
+					</ctf>
+					<role>
+						<code>15</code>
+						<description>Infermiere</description>
+					</role>
+					<userId>FSEMED79A01Z368C</userId>
+					<iupSeed>12345</iupSeed>
+				</credential>
+			</FunContext>
+			<CitCardPresent>false</CitCardPresent>
+			<CitAuth>false</CitAuth>
+			<CitCF></CitCF>
+			<CitSmartCardSN></CitSmartCardSN>
+		</Security>
+		<Sla>
+			<Log>
+				<Global>
+					<TrackID>1132048757203</TrackID>
+					<Timestamp>15/11/2005+10:59:18,562</Timestamp>
+				</Global>
+			</Log>
+		</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+	<m:FSE.comunicaEventoPrericovero xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/comunicaEventoPrericovero/" dataSetVersion="1.0">
+        <eventoPrericovero>
+			<numeroProgressivo>1</numeroProgressivo>
+			<strutturaErogazione>
+			   <idEnte>030960</idEnte>
+			   <idPresidio>03090300</idPresidio>
+			</strutturaErogazione>
+			<cittadino>
+			   <idCittadino tipo="CF">CGNNPR80A01F205D</idCittadino>
+			   <cognomeCittadino>COGNOMEPRERICOVERO</cognomeCittadino>
+			   <nomeCittadino>NOMEPRERICOVERO</nomeCittadino>
+			   <sessoCittadino>M</sessoCittadino>
+			   <dataNascitaCittadino>19800101</dataNascitaCittadino>
+			   <idComuneNascitaCittadino>015146</idComuneNascitaCittadino>
+			</cittadino>
+			<idTipoComunicazione>A</idTipoComunicazione>
+			<datiPrericovero>
+				<numeroPrericovero>2009000001</numeroPrericovero>
+				<dataOraInizioPrericovero>200909011212</dataOraInizioPrericovero>
+				<dataOraFinePrericovero>TODAY(yyyyMMddHH24mm)</dataOraFinePrericovero>
+				<IUP>TEST008067</IUP>
+				<idRepartoRicovero></idRepartoRicovero>
+				<codiceDiagnosi>V3200</codiceDiagnosi>
+			</datiPrericovero>
+		</eventoPrericovero>
+	</m:FSE.comunicaEventoPrericovero>
+</soap-env:Body>
+</soap-env:Envelope>

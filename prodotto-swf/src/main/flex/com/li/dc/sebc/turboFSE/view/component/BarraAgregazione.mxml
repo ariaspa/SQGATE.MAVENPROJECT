@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:HBox xmlns:mx="http://www.adobe.com/2006/mxml"
+	removedFromStage="onRemoveStage(event)" 
+	addedToStage="addToStage(event)"
+	horizontalGap="0"
+	backgroundAlpha="0"
+	width="100%" height="34" 
+	horizontalAlign="right" 
+	verticalAlign="middle" 
+	xmlns:component="com.li.dc.sebc.turboFSE.view.component.*">
+	<mx:Script>
+		<![CDATA[
+			import it.lispa.siss.sebc.flex.debug.Debug;
+			import mx.events.PropertyChangeEvent;
+			import mx.events.FlexEvent;
+			import mx.binding.utils.BindingUtils;
+			import com.li.dc.sebc.turboFSE.model.vo.DataAgregazione;
+			import com.li.dc.sebc.turboFSE.events.TurboEvent;
+			////////////////////////////////////////////////////////
+			[Bindable] private var tipAgregazione:String;
+			[Bindable] private var tooltipIcoDce:String;
+			[Bindable] private var labelAgregazione:String;
+			[Bindable] private var iconDCE:Class;
+			
+			[Bindable] private var _selected:Boolean = false;
+			[Bindable] private var toogleSelected:Boolean = false;
+			//////
+			[Bindable] public var enableFocus:Boolean	= false;
+			 
+			private var _dataAgregazione:DataAgregazione = null;
+			private var _oldDataAgregazione:DataAgregazione = null;
+			public function set dataAgregazione(value:DataAgregazione):void
+			{
+				_oldDataAgregazione	= _dataAgregazione;
+				_dataAgregazione = value;
+				updateData();
+			}
+			public function get dataAgregazione():DataAgregazione
+			{
+				return _dataAgregazione;
+			}
+			private function updateData():void
+			{
+				refresh( );
+				//dataAgregazione.statoDCE
+				try{
+					removeListener(_oldDataAgregazione);
+				}catch(e:Error){}
+				addListener(dataAgregazione);
+			}
+			public function refresh( ):void
+			{
+				labelAgregazione	= dataAgregazione.labelAgregazione;
+				tipAgregazione		= dataAgregazione.tipAgregazione;
+				iconDCE				= dataAgregazione.iconDCE;
+				_selected			= dataAgregazione.isSelect;
+				this.enabled		= dataAgregazione.enable;
+				enableFocus			= dataAgregazione.inFocus;
+				tooltipIcoDce		= dataAgregazione.toolTipIconDCE; 
+			}
+			private function addToStage(event:Event):void
+			{
+				if(_dataAgregazione!=null)
+				{
+					updateData( );
+				}
+			}
+			private function onRemoveStage(event:Event):void
+			{
+				if(_dataAgregazione!=null)
+				{
+					removeListener(_dataAgregazione);
+				}
+			}
+			private function removeListener(data:DataAgregazione):void
+			{
+				if(data!=null)
+				{
+					data.removeEventListener(TurboEvent.DATA_AGREGAZIONE_CHANGE_ENABLE,onEnableData);
+					data.removeEventListener(TurboEvent.DATA_AGREGAZIONE_CHANGE_FOCUS,onFocusData);
+					data.removeEventListener(TurboEvent.DATA_AGREGAZIONE_CHANGE_SELECT,onSelectData);	
+					data.removeEventListener(TurboEvent.REFRESH,onRefreshData);
+				}
+			}
+			private function addListener(data:DataAgregazione):void
+			{
+				Debug.logDebug("BarraAgregazione addListener : "+data);
+				if(data!=null)
+				{
+					data.addEventListener(TurboEvent.DATA_AGREGAZIONE_CHANGE_ENABLE,onEnableData);
+					data.addEventListener(TurboEvent.DATA_AGREGAZIONE_CHANGE_FOCUS,onFocusData);
+					data.addEventListener(TurboEvent.DATA_AGREGAZIONE_CHANGE_SELECT,onSelectData);	
+					data.addEventListener(TurboEvent.REFRESH,onRefreshData);	
+				}
+			}
+			private function onRefreshData(e:TurboEvent):void
+			{
+				refresh();
+			}
+			private function onFocusData(e:TurboEvent):void
+			{
+				toogleSelected = dataAgregazione.inFocus; 
+			}
+			private function onEnableData(e:TurboEvent):void
+			{
+				this.enabled = dataAgregazione.enable;	
+				Debug.logDebug("BarraAgregazione enabled : "+enabled);
+			}
+			private function onSelectData(e:TurboEvent):void
+			{
+				Debug.logDebug("BarraAgregazione onSelectData : dataAgregazione.isSelect : "+dataAgregazione.isSelect);
+				_selected	= dataAgregazione.isSelect;	
+				if(!_selected)
+				{
+					toogleSelected = _selected;
+				}	
+			}
+			private function onClickIconDce(event:MouseEvent):void
+			{
+				//Debug.logDebug("TODO::barra agregazione onClickIconDce");
+				Debug.logDebug("BarraAgregazione onClickIconDce   " );
+				this.dispatchEvent(new TurboEvent(TurboEvent.CLICK_ICON_DCE));
+			} 
+			
+			private function onClickButtonDCE(event:MouseEvent):void
+			{
+				if(dataAgregazione !=null)
+				{		
+					var t:ButtonDCE = event.target as ButtonDCE;
+					Debug.logDebug("BarraAgregazione onClickButtonDCE  t.selected : " +t.selected);
+					dataAgregazione.isSelect = t.selected;
+				}
+			}
+			
+			private function onClickFocus(event:MouseEvent):void
+			{
+				if(dataAgregazione !=null)
+				{
+					var t:ButtonIconaFocus 	= event.target as ButtonIconaFocus;
+					// posso mettere il fuoco solo se non lo è
+					if( t.selected && !dataAgregazione.inFocus)
+					{
+						Debug.logDebug("BarraAgregazione onClickFocus  t.selected : " +t.selected);
+						dataAgregazione.inFocus = t.selected;
+					}
+				}
+			}
+			
+		]]>
+	</mx:Script>
+	<mx:Spacer width="4" />
+	<!-- _select quando una supercazzola (barraAgregazione) è selezionata allora il bottone del focus è attivo -->
+	<component:ButtonIconaFocus height="30" width="30" enabled="{_selected}"  click="onClickFocus(event)" selected="{toogleSelected}"/>
+	
+	<mx:Spacer width="4" />
+	
+	<component:ButtonIconaDce height="30" width="30"
+		toolTip="{tooltipIcoDce}" 
+		dceIcon="{iconDCE}" click="onClickIconDce(event)"/>
+	
+	<mx:Spacer width="4" />
+	<component:ButtonDCE
+		selected="{_selected}" 
+		width="100%" height="30"  
+		label="{labelAgregazione}" 
+		toolTip="{tipAgregazione}" 
+		click="onClickButtonDCE(event)"/>
+</mx:HBox>

@@ -1,0 +1,12 @@
+{
+ "baseurl": "/v1",
+ "endpoint": {
+ 	"login": "/login",
+ 	"search": "/search",
+ 	"progettodemand": "/progettodemand",
+ 	"favorites": "/favorites",
+ 	"logout": "/logout"
+ },
+ "apikey": "48405fc2-bf47-3838-b953-0d67cc51a0f7",
+ "polappheader": "X-polapp-token"
+}

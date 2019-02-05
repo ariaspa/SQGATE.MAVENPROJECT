@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap-env:Header>
+		<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+			<Transport>
+				<Mode>Sync</Mode>
+				<Dest>DCSanita</Dest>
+			</Transport>
+			<Security>
+				<FunContext>
+					<credential>
+						<vrs>
+							<mjr>2</mjr>
+							<min>1</min>
+						</vrs>
+						<validity>
+							<emittedDate>02/03/2004 16:53:05</emittedDate>
+							<sessionMaxTime>28800000</sessionMaxTime>
+						</validity>
+						<role>
+							<code>12</code>
+							<description>AMMINISTRATIVO ASL-AO</description>
+						</role>
+						<userId>VRDGTN68C01F205O</userId>
+						<FirstName>GAETANO </FirstName>
+						<LastName>VERDI </LastName>
+						<ctf>
+							<reg>
+								<cod>030</cod>
+								<des>LOMBARDIA</des>
+							</reg>
+							<app>
+								<cod>001</cod>
+								<des>SISS</des>
+							</app>
+							<pro>
+								<cod>015</cod>
+								<des>MILANO</des>
+							</pro>
+							<ter>
+								<cod>030309</cod>
+								<des>ASL MILANO1</des>
+							</ter>
+							<str>
+								<cod>030974</cod>
+								<des>AO SALVINI</des>
+							</str>
+							<pre>
+								<cod>03007300</cod>
+								<des>OSPEDALE DI CIRCOLO</des>
+							</pre>
+							<rep>
+								<cod>4301</cod>
+								<des>UROLOGIA</des>
+							</rep>
+						</ctf>
+						<prv>
+							<iup>00000</iup>
+							<DF>V</DF>
+							<Ref>VERDI/GAETANO/VRDGTN68C01F205O/1328</Ref>
+						</prv>
+					</credential>
+				</FunContext>
+				<CitCardPresent>true</CitCardPresent>
+				<CitAuth>true</CitAuth>
+				<CitCF>TCRMXX10X00X000X</CitCF>
+				<CitSmartCardSN>TESTCRM1</CitSmartCardSN>
+			</Security>
+			<Sla>
+				<Log>
+					<Global>
+						<TrackID>1132048757203</TrackID>
+						<Timestamp>15/11/2005+10:59:18,562</Timestamp>
+					</Global>
+				</Log>
+			</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="9.1"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+		<m:CRM.registraReferti xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/CRM/2005-01/registraReferti/" dataSetVersion="1.1">
+			<refertoSpecialistico>
+				<ll:CRSlegalContent xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" type="Text" opLegSign="false" opWeakSign="false" feSign="false" citAttes="false" tStamp="false" verify="OK" crypt="true"/>
+				<at:CRSattachment xmlns:at="http://www.crs.lombardia.it/schemas/mw/2004-01/attachment/"/>
+				<st:CRSstream xmlns:st="http://www.crs.lombardia.it/schemas/mw/2004-01/stream/"/>
+				<numeroProgressivo>01</numeroProgressivo>
+				<idServizioRefertazione>http://dominioEsterno/</idServizioRefertazione>
+				<idReferto>linkReferto1.html</idReferto>
+				<idStruttura>030960</idStruttura>
+				<idSubStruttura>03090300</idSubStruttura>
+				<idTipoReferto>01</idTipoReferto>
+				<data>20020624</data>
+				<livelloOscuramento/>
+				<linkImmagine/>
+				<tipoImmagine/>
+				<linkDocumentoCDA2/>
+				<reteDiPatologia/>
+				<noteReperibilita/>
+				<cittadino>
+					<idCittadinoNonSISS/>
+					<idAssistito>TESTCRM1</idAssistito>
+					<codiceFiscaleCittadino>TCRMXX10X00X000X</codiceFiscaleCittadino>
+					<cognomeCittadino>COGNOME</cognomeCittadino>
+					<nomeCittadino>NOME</nomeCittadino>
+					<sessoCittadino/>
+					<dataNascitaCittadino/>
+					<comuneNascitaCittadino/>
+					<indirizzoResidenza/>
+					<localitaResidenza/>
+					<indirizzoDomicilio/>
+					<localitaDomicilio/>
+					<numeroTelefono/>
+					<asl/>
+					<regione/>
+					<cittadinanza/>
+				</cittadino>
+				<medicoRefertante>
+					<codiceFiscale>RMPMRA63A20M952K</codiceFiscale>
+					<cognome>RAMPI</cognome>
+					<nome>MAURO</nome>
+				</medicoRefertante>
+				<prestazioniAssociate>
+					<prestazione>
+						<idPrescrizione/>
+						<idPrestazione>0091224</idPrestazione>
+						<codiceRur/>
+						<idDisciplina>01</idDisciplina>
+						<quantitaErogata>1</quantitaErogata>
+						<prestazionePrescritta/>
+					</prestazione>
+					<prestazione>
+						<idPrescrizione>TXX2CRM807</idPrescrizione>
+						<idPrestazione>389394</idPrestazione>
+						<codiceRur/>
+						<idDisciplina>01</idDisciplina>
+						<quantitaErogata/>
+						<prestazionePrescritta/>
+					</prestazione>
+				</prestazioniAssociate>
+			</refertoSpecialistico>
+		</m:CRM.registraReferti>
+	</soap-env:Body>
+</soap-env:Envelope>

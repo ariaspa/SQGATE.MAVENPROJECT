@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/XMLSchema-instance" xmlns:xsd="http://www.w3.org/1999/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" soap-env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<soap-env:Header>
+<t:CoopContext xmlns:t="http://www.crs.lombardia.it/schemas/mw/2004-01/coopcontext/">
+		<Transport>
+			<Mode>Sync</Mode>
+		    <Dest>DCSanita</Dest>
+		</Transport>
+		   <Security>
+			<FunContext>
+				<credential>
+					<validity>
+						<emittedDate>15/11/2005+10:59:18,531</emittedDate>
+						<sessionMaxTime>15/11/2005+10:59:18,531</sessionMaxTime>
+					</validity>
+					<vrs>
+						<mjr>1</mjr>
+						<min>0</min>
+					</vrs>
+					<ctf>
+						<reg>
+							<cod/>
+							<des/>
+						</reg>
+						<app>
+							<cod/>
+							<des/>
+						</app>
+						<pro>
+							<cod/>
+							<des/>
+						</pro>
+						<ter>
+							<cod/>
+							<des/>
+						</ter>
+						<str>
+							<cod>030960</cod>
+							<des/>
+						</str>
+						<pre>
+							<cod></cod>
+							<des/>
+						</pre>
+						<rep>
+							<cod></cod>
+							<des/>
+						</rep>
+					</ctf>
+					<role>
+						<code>3</code>
+		                <description>Operatore Amministrativo</description>
+					</role>
+				  <userId>CTNVNC78E12L669J</userId>
+				  <iupSeed>12345</iupSeed>
+				  <FirstName>VINCENZO</FirstName>
+				  <LastName>CISTERNINO</LastName>
+				</credential>
+			</FunContext>
+			<CitCardPresent>false</CitCardPresent>
+			<CitAuth>false</CitAuth>
+			<CitCF></CitCF>
+			<CitSmartCardSN></CitSmartCardSN>
+		</Security>
+		<Sla>
+			<Log>
+				<Global>
+				   <TrackID>1132048757203</TrackID>
+				   <Timestamp>15/11/2005+10:59:18,562</Timestamp>
+				</Global>
+			</Log>
+		</Sla>
+		</t:CoopContext>
+		<a:AppContext xmlns:a="http://www.crs.lombardia.it/schemas/mw/2004-01/appcontext/">
+			<Request clientProd="DCSanita" clientVer="1.0"/>
+		</a:AppContext>
+	</soap-env:Header>
+	<soap-env:Body>
+	<m:FSE.comunicaDistintaDCE
+  xmlns:m="http://www.crs.lombardia.it/schemas/DCSanita/FSE/2009-01/comunicaDistintaDCE/"
+  dataSetVersion="1.0">
+        <distintaDCE>
+            <ll:CRSlegalContent xmlns:ll="http://www.crs.lombardia.it/schemas/mw/2004-01/legalContent/" type="Text">
+<Value>RG9jdW1lbnRvIGNsaW5pY28gZW1lc3NvIGRhOiBDQ0NCTEw3OUEwMVozNjhDaW4gZGF0YSAyMS8wMy8yMDA4IC0gMTc6MjQgSW50ZXJlc3NhdG86IEdJT0JCRSAtIEdJQUNPQkJFIC0gR0JCR0NCNzBBMDFaMzY4Q1JlZGF0dG8gZGE6IENJQ0NJTyAtIEJFTExJIC0gQ0NDQkxMNzlBMDFaMzY4Q1JpZmVyaW1lbnRpIGRlbCBEb2N1bWVudG8gQ2xpbmljbzogUEFUSUVOVCBTVU1NQVJZSW8gc290dG9zY3JpdHRvOiBOSUNPTEEgLSBURVNUQSAtIENDQ0JMTDc5QTAxWjM2OENJbiBjb25mb3JtaXRhJyBjb24gbCdhcnQuIDg0IGRlbCBkLiBsZ3MuIDE5Ni8yMDAzLCBjb24gbGEgcHJlc2VudGUgYXV0b3JpenpvIGxhIGNvbnN1bHRhemlvbmUgaW4gYXV0b25vbWlhIGRlbCBEb2N1bWVudG8gQ2xpbmljbyBpbiBvZ2dldHRvIGRhIHBhcnRlIGRlbGwnSW50ZXJlc3NhdG8uT3NjdXJhbWVudG8gcmlzcGV0dG8gYWxsZSBMZWdnaSBTcGVjaWFsaTpJbiBvc3NlcnZhbnphIGEgcXVhbnRvIHByZXZpc3RvIGRhbGxlIExlZ2dpIHNwZWNpYWxpIChhcnQuIDExIGRlbGxhIGwuIDIyIG1hZ2dpbyAxOTc4LCBuLiAxOTQ7IGFydC4gNSBkZWxsYSBsLiA1IGdpdWdubyAxOTkwIG4uIDEzNTsgYXJ0LiAxMjAgZGVsIGQucC5yLiA5IG90dG9icmUgMTk5MCwgbi4gMzA5OyBhcnQuIDczNC1iaXMgZGVsIGNvZGljZSBwZW5hbGUpLCBkaWNoaWFybyBpbCBEb2N1bWVudG8gQ2xpbmljbyBpbiBvZ2dldHRvOi0gTm9uIE9zY3VyYXRvLCBwZXIgcXVhbnRvIHJpZ3VhcmRhIGxhIG5vcm1hIGNoZSBkaXNjaXBsaW5hIGlsIFRyYXR0YW1lbnRvIGRlaSBEYXRpIHJlbGF0aXZpIGFsbGEgdG9zc2ljb2RpcGVuZGVuemE7LSBOb24gT3NjdXJhdG8sIHBlciBxdWFudG8gcmlndWFyZGEgbGEgbm9ybWEgY2hlIGRpc2NpcGxpbmEgaWwgVHJhdHRhbWVudG8gZGVpIERhdGkgcmVsYXRpdmkgYWxsYSBzaWVyb3Bvc2l0aXZpdGEnOy0gT3NjdXJhdG8sIHBlciBxdWFudG8gcmlndWFyZGEgbGEgbm9ybWEgY2hlIGRpc2NpcGxpbmEgaWwgVHJhdHRhbWVudG8gZGVpIERhdGkgcmVsYXRpdmkgYSB2aW9sZW56YSBzdWJpdGU7LSBOb24gT3NjdXJhdG8sIHBlciBxdWFudG8gcmlndWFyZGEgbGEgbm9ybWEgY2hlIGRpc2NpcGxpbmEgaWwgVHJhdHRhbWVudG8gZGVpIERhdGkgcmVsYXRpdmkgYWxsYSBpbnRlcnJ1emlvbmUgdm9sb250YXJpYSBkaSBncmF2aWRhbnphLkRpY2hpYXJvIGlsIERvY3VtZW50byBDbGluaWNvIG9zY3VyYXRvIHN1IHJpY2hpZXN0YSBlc3BsaWNpdGEgZm9ybXVsYXRhIGRhIHBhcnRlIGRlbGwnSW50ZXJlc3NhdG8ubGZpamxpc2ZoYWhmaWg4NDM1NzM0ODkwN3RqaDg5dWlmZ280ODlvMzRoODk=</Value>
+	        </ll:CRSlegalContent>
+			<dataOraInvio>20080303172400</dataOraInvio>
+			<idEnteErogante>030960</idEnteErogante>
+			<descrizioneEnteErogante>A.O. OSPEDALE DI LECCO - LECCO</descrizioneEnteErogante>
+			<idRepository>REPTEST</idRepository>
+			<listaDCE>
+				
+				<DCE>
+					<URIDCE>030960.REPTEST.FSE52_T1</URIDCE>
+					<hashDocumento>lfijlisfhahfih84357348907tjh89uifgo489o34h89</hashDocumento>
+					<algoritmoHash>01</algoritmoHash>
+					<dataOraConservazione>20080321172400</dataOraConservazione>
+					<flagConservazione>N</flagConservazione>
+				</DCE>
+			</listaDCE>
+		</distintaDCE>
+	</m:FSE.comunicaDistintaDCE>
+</soap-env:Body>
+</soap-env:Envelope>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
