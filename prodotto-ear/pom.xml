@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<parent>
+	<groupId>it.lispa.progetto.servizio</groupId> 
+	<artifactId>servizio</artifactId>
+	<version>1.0.0</version>
+</parent>
+
+<artifactId>applicativo-ear</artifactId>
+<version>1.0.0</version>
+<packaging>ear</packaging>
+
+<licenses> 
+  <license> 
+    <name>Lispa License, Version 1.0</name> 
+    <url>http://cm-maven.adlispa.local/licenza/license.txt</url> 
+    <distribution>repo</distribution> 
+    <comments>Licenza di prodotti erogati da Lispa S.p.A per Regione Lombardia</comments> 
+  </license> 
+</licenses>
+
+<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<defaultJavaBundleDir>APP-INF/lib</defaultJavaBundleDir>
+					<displayName>applicativo-prova</displayName>
+
+					<modules>
+						<ejbModule>
+							<groupId>it.lispa.progetto.servizio</groupId>
+							<artifactId>applicativo-ejb</artifactId>
+						</ejbModule>
+						
+						<webModule>
+							<groupId>it.lispa.progetto.servizio</groupId>
+							<artifactId>applicativo-war</artifactId>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+
+		<dependency>
+			<groupId>it.lispa.progetto.servizio</groupId>
+			<artifactId>applicativo-ejb</artifactId>
+			<version>1.0.0</version>
+			<type>ejb</type>
+		</dependency>
+
+<dependency>
+			<groupId>it.lispa.progetto.servizio</groupId>
+			<artifactId>applicativo-war</artifactId>
+			<version>1.0.0</version>
+			<type>war</type>
+  </dependency>
+	</dependencies>
+</project>

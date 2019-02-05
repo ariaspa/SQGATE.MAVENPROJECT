@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+	  <groupId>it.lispa.progetto.servizio</groupId> 
+	  <artifactId>servizio</artifactId>
+	  <version>1.0.0</version>
+	</parent>
+
+	<artifactId>applicativo-ejb</artifactId>
+	<packaging>ejb</packaging>
+	<version>1.0.0</version>
+	<name>applicativo-ejb</name>
+
+	<dependencies>
+		<dependency>
+	      <groupId>it.lispa.progetto.servizio</groupId> 
+	      <artifactId>applicativo-junit</artifactId>
+   	   <version>1.0.0</version>
+			
+		</dependency>
+				<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-ejb-plugin</artifactId>
+			<version>2.0</version>
+		
+		</dependency>
+			</dependencies>
+	<build>
+	
+	</build>
+<licenses>
+    <license>
+      <name>Lispa License, Version 1.0</name>
+      <url>http://cm-maven.adlispa.local/licenza/license.txt</url>
+      <distribution>repo</distribution>
+      <comments>Licenza di prodotti erogati da Lispa S.p.A per Regione Lombardia</comments>
+    </license>
+  </licenses>
+</project>

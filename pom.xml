@@ -1,0 +1,44 @@
+<xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<parent>
+	<groupId>it.lispa</groupId>
+	<artifactId>cm</artifactId>
+	<version>1.4.3</version>
+</parent>
+<groupId>it.lispa.progetto.servizio</groupId> 
+<artifactId>servizio</artifactId>
+<version>1.0.0-SNAPSHOT</version>
+<name>applicativo</name>
+<packaging>pom</packaging>
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+     <maven.compiler.source>1.8</maven.compiler.source>
+     <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
+
+    <scm>
+    <connection>scm:svn:http://cm-lispa-scm.adlispa.local/repo/sw/SQGATE/PRODOTTODEMO/trunk</connection>
+    <developerConnection>scm:svn:http://cm-lispa-scm.adlispa.local/repo/sw/SQGATE/PRODOTTODEMO/trunk</developerConnection>
+    <tag>HEAD</tag>
+    <url>http://cm-lispa-scm.adlispa.local/repo/sw</url>
+  </scm>
+  
+
+			<modules>
+				<module>prodotto-jar</module>
+				<module>prodotto-war</module>
+				<module>prodotto-database</module>
+				<module>prodotto-release</module>
+			</modules>
+	<profiles>
+		<profile>
+			<id>selenium</id>
+			<modules>
+				<!--module>selenium-testng</module-->
+				<module>selenium-with-junit</module>
+			</modules>
+		</profile>
+		</profiles>
+	
+</project>

@@ -1,0 +1,68 @@
+<xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+<groupId>it.lispa.progetto.servizio</groupId> 
+	  <artifactId>servizio</artifactId>
+	  <version>1.0.0</version>
+	</parent>
+
+	<artifactId>applicativo-c</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0</version>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<id>generateSources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<tasks>
+								<exec executable="/bin/bash">
+									<arg value="myFirst.sh" />
+									<arg value="inputOne" />
+								</exec>
+								<exec executable="/bin/bash">
+									<arg value="src/mySecond.sh" />
+									<arg value="inputTwo" />
+								</exec>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>compileCode</id>
+						<phase>compile</phase>
+						<configuration>
+							<target name="generate executable (compile)">
+								<mkdir dir="target/bin" />
+								<ant antfile="src/compile.xml" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>testCode</id>
+						<phase>test</phase>
+						<configuration>
+							<target name="run executable (test)">
+								<ant antfile="src/run.xml" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>    

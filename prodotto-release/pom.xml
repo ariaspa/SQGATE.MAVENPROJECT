@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>it.lispa.progetto.servizio</groupId> 
+		<artifactId>servizio</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>applicativo-release</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<dependencies>
+	
+	
+	
+				<dependency>
+	    		<groupId>it.lispa.progetto.servizio</groupId> 
+	      <artifactId>applicativo-springboot</artifactId>
+	      <version>1.0.0</version>
+		</dependency>
+		
+
+
+	</dependencies>
+</project>
