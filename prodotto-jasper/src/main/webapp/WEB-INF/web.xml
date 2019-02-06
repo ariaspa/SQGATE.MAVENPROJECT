@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+ -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <distributable/>
+  <display-name>Gestione Elenchi</display-name>
+  <context-param>
+    <param-name>log4jConfigLocation</param-name>
+    <param-value>/WEB-INF/classes/META-INF/properties/log4j.xml</param-value>
+  </context-param>
+  <context-param>
+    <param-name>log4jExposeWebAppRoot</param-name>
+    <param-value>false</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+  </listener>
+  
+  <welcome-file-list>
+    <welcome-file>Elenchi.html</welcome-file>
+  </welcome-file-list>
+  
+  
+  <servlet>
+    <servlet-name>elenchiRemoteServlet</servlet-name>
+    <servlet-class>it.lispa.sisco.elepag.server.services.ElenchiRemoteServiceImpl</servlet-class>
+  </servlet>
+   <!-- AC - Aggiunta servizio elenchi amnuali -->
+  <servlet>
+    <servlet-name>pagamentiManRemoteServlet</servlet-name>
+    <servlet-class>it.lispa.sisco.elepag.server.services.PagamentiManRemoteServiceImpl</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>flussiManRemoteServlet</servlet-name>
+    <servlet-class>it.lispa.sisco.elepag.server.services.FlussiManRemoteServiceImpl</servlet-class>
+  </servlet>
+   <servlet>
+    <servlet-name>elenchiManRemoteServlet</servlet-name>
+    <servlet-class>it.lispa.sisco.elepag.server.services.ElenchiManRemoteServiceImpl</servlet-class>
+  </servlet>
+   <!-- AC - Aggiunta servizio elenchi amnuali -->
+
+  <error-page>
+    <error-code>400</error-code>
+    <location>/errorPage/Error400.html</location>
+  </error-page>
+  <error-page>
+    <error-code>401</error-code>
+    <location>/errorPage/Error401.html</location>
+  </error-page>
+  <error-page>
+    <error-code>403</error-code>
+    <location>/errorPage/Error403.html</location>
+  </error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/errorPage/Error404.html</location>
+  </error-page>
+  <error-page>
+    <error-code>407</error-code>
+    <location>/errorPage/Error407.html</location>
+  </error-page>
+  <error-page>
+    <error-code>408</error-code>
+    <location>/errorPage/Error408.html</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/errorPage/Error500.html</location>
+  </error-page>
+  <error-page>
+    <error-code>501</error-code>
+    <location>/errorPage/Error501.html</location>
+  </error-page>
+  <error-page>
+    <error-code>502</error-code>
+    <location>/errorPage/Error502.html</location>
+  </error-page>
+  <error-page>
+    <error-code>503</error-code>
+    <location>/errorPage/Error503.html</location>
+  </error-page>
+  <error-page>
+    <error-code>504</error-code>
+    <location>/errorPage/Error504.html</location>
+  </error-page>
+<!--   <session-config> -->
+<!--     <cookie-config> -->
+<!--       <http-only>true</http-only> -->
+<!--       <secure>true</secure> -->
+<!--     </cookie-config> -->
+<!--     <tracking-mode>COOKIE</tracking-mode> -->
+<!--   </session-config> -->
+  <servlet>
+    <servlet-name>elepag</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>elepag</servlet-name>
+    <url-pattern>/clientserver/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+		<servlet-name>elepag</servlet-name>
+		<url-pattern>/elenchi/clientserver/*</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>elenchiRemoteServlet</servlet-name>
+    <url-pattern>/elenchi/elenchi-remote-service</url-pattern>
+  </servlet-mapping>
+  <!-- AC - Aggiunta servizio elenchi amnuali -->
+  <servlet-mapping>
+    <servlet-name>pagamentiManRemoteServlet</servlet-name>
+    <url-pattern>/elenchi/pagamenti-man-remote-service</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>flussiManRemoteServlet</servlet-name>
+    <url-pattern>/elenchi/flussi-man-remote-service</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>elenchiManRemoteServlet</servlet-name>
+    <url-pattern>/elenchi/elenchi-man-remote-service</url-pattern>
+  </servlet-mapping>
+  <!-- AC - Aggiunta servizio elenchi amnuali -->
+<!--   <servlet> -->
+<!--     <servlet-name>CSVRemoteServlet</servlet-name> -->
+<!--     <servlet-class>it.lispa.sisco.asset.shared.csv.services.ClientToSessionServiceImpl</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>CSVRemoteServlet</servlet-name> -->
+<!--     <url-pattern>/elenchi/csv-remote-service</url-pattern> -->
+<!--   </servlet-mapping> -->
+<!--   <servlet> -->
+<!--     <servlet-name>csv</servlet-name> -->
+<!--     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> -->
+<!--     <load-on-startup>1</load-on-startup> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--     <servlet-name>csv</servlet-name> -->
+<!--     <url-pattern>/csvclientserver/*</url-pattern> -->
+<!--   </servlet-mapping> -->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+  		<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+                    /WEB-INF/spring-module.xml
+                     <!-- SISCOAGRI-1577 spring security cache -->
+<!--                     /WEB-INF/spring-security.xml -->
+             </param-value>
+	</context-param>
+</web-app>

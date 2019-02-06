@@ -1,5 +1,7 @@
-<xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-<modelVersion>4.0.0</modelVersion>
+﻿<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 <parent>
 	<groupId>it.lispa</groupId>
 	<artifactId>cm</artifactId>
@@ -7,7 +9,7 @@
 </parent>
 <groupId>it.lispa.progetto.servizio</groupId> 
 <artifactId>servizio</artifactId>
-<version>1.0.0-SNAPSHOT</version>
+<version>1.0.0</version>
 <name>applicativo</name>
 <packaging>pom</packaging>
 <properties>
@@ -17,28 +19,71 @@
      <maven.compiler.target>1.8</maven.compiler.target>
 </properties>
 
-    <scm>
-    <connection>scm:svn:http://cm-lispa-scm.adlispa.local/repo/sw/SQGATE/PRODOTTODEMO/trunk</connection>
-    <developerConnection>scm:svn:http://cm-lispa-scm.adlispa.local/repo/sw/SQGATE/PRODOTTODEMO/trunk</developerConnection>
-    <tag>HEAD</tag>
-    <url>http://cm-lispa-scm.adlispa.local/repo/sw</url>
-  </scm>
   
 
 			<modules>
+			<!--
+				<module>prodotto-kar</module>
+				<module>prodotto-librerie-esterne</module>
+				<module>prodotto-php</module>
+				<module>prodotto-properties</module>
+				<module>prodotto-pacchetto-distribuzione</module>			
+				<module>prodotto-jar</module><module>prodotto-jasper</module>
 				<module>prodotto-jar</module>
-				<module>prodotto-war</module>
 				<module>prodotto-database</module>
+				<module>prodotto-configurazione</module>
+				<module>prodotto-junit</module>
+				<module>prodotto-testng</module>
+				<module>prodotto-flex</module>
+				<module>prodotto-manager-font</module>
+			<module>prodotto-python</module>
+
+			-->
+				<module>prodotto-flex</module>
+			
+
+
+			
+<!--
+
+			<module>prodotto-springboot</module>
+
+				<module>prodotto-war</module>
+
 				<module>prodotto-release</module>
+				
+			<module>prodotto-c-plus</module>
+
+			<module>prodotto-dll</module>
+			<module>prodotto-ear</module>
+			<module>prodotto-ejb</module>
+			<module>prodotto-exe</module>
+			<module>prodotto-gwt</module>
+			<module>prodotto-jarsnapshot</module>
+
+
+			<module>prodotto-mle-esb</module>
+			<module>prodotto-python</module>
+			<module>prodotto-ruby</module>
+
+			<module>prodotto-swc</module>
+			<module>prodotto-swf</module>
+
+			<module>prodotto-vb-net</module>
+			<module>prodotto-war-includi-snapshot</module>
+
+			
+
+-->
 			</modules>
-	<profiles>
+<profiles>
 		<profile>
 			<id>selenium</id>
 			<modules>
-				<!--module>selenium-testng</module-->
+				<module>selenium-testng</module>
 				<module>selenium-with-junit</module>
+				
 			</modules>
 		</profile>
-		</profiles>
-	
-</project>
+	</profiles>
+	</project>
