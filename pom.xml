@@ -37,16 +37,19 @@
 				<module>prodotto-flex</module>
 				<module>prodotto-manager-font</module>
 			<module>prodotto-python</module>
+			<module>prodotto-flex</module>			
+			<module>prodotto-flex-swc</module>
+			<module>prodotto-flex-swf</module>			
+
 
 			-->
-				<module>prodotto-flex</module>
-			
+			<module>prodotto-springboot</module>
 
 
 			
 <!--
 
-			<module>prodotto-springboot</module>
+
 
 				<module>prodotto-war</module>
 
@@ -60,14 +63,13 @@
 			<module>prodotto-exe</module>
 			<module>prodotto-gwt</module>
 			<module>prodotto-jarsnapshot</module>
-
+		<module>prodotto-gwt</module>
 
 			<module>prodotto-mle-esb</module>
 			<module>prodotto-python</module>
 			<module>prodotto-ruby</module>
 
-			<module>prodotto-swc</module>
-			<module>prodotto-swf</module>
+
 
 			<module>prodotto-vb-net</module>
 			<module>prodotto-war-includi-snapshot</module>

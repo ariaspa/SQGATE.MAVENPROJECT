@@ -11,12 +11,12 @@
 	<artifactId>common_flex</artifactId>
 	<version>1.0.50</version>
 	<packaging>swc</packaging>
-	<name>servizio-flex</name>
+	<name>applicativo-flex</name>
 
 
 	<build>
 		<sourceDirectory>src/main/flex</sourceDirectory>
-		<finalName>common_flex</finalName>
+		<finalName>applicativo-flex</finalName>
 		<extensions>
 			<extension>
 				<groupId>org.apache.maven.wagon</groupId>
