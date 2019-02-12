@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd"> 
+<log4j:configuration debug="true" xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+<!-- ****************************************************************************************** -->
+
+	<appender name="MonOPEFSEAsyncLog" class="org.apache.log4j.AsyncAppender">
+		<param name="Threshold" value="${level_log}"/>
+		<appender-ref ref="MonOPEFSEDailyRollingFile"/>
+	</appender>
+
+	<appender name="MonOPEFSEDailyRollingFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="${ope_log}/ope_fse-logMon.txt"/>
+		<param name="Append" value="true"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n"/>
+		</layout>
+	</appender>
+
+<!-- ****************************************************************************************** -->
+
+	<appender name="AppOPEFSEAsyncLog" class="org.apache.log4j.AsyncAppender">
+		<param name="Threshold" value="${level_log}"/>
+		<appender-ref ref="AppOPEFSEDailyRollingFile"/>
+	</appender>
+
+	<appender name="AppOPEFSEDailyRollingFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="${ope_log}/ope_fse-logApp.txt"/>
+		<param name="Append" value="true"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n"/>
+		</layout>
+	</appender>
+
+<!-- ****************************************************************************************** -->
+	<appender name="MiscAsyncLog" class="org.apache.log4j.AsyncAppender">
+		<param name="Threshold" value="${level_log}"/>
+		<appender-ref ref="MiscDailyRollingFile"/>
+	</appender>
+
+	<appender name="MiscDailyRollingFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="${ope_log}/ope_fse-logMisc.txt"/>
+		<param name="Append" value="true"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{dd-MMM-yy HH:mm:ss,SSS}:%X{ClientInfo}:%-5p: %m%n"/>
+		</layout>
+	</appender>
+
+<!-- ****************************************************************************************** -->
+
+<!-- ****************************************************************************************** -->
+	<appender name="fseAsyncLog" class="org.apache.log4j.AsyncAppender">
+		<param name="Threshold" value="${level_log}"/>
+		<appender-ref ref="fseDailyRollingFile"/>
+	</appender>
+
+	<appender name="fseDailyRollingFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="${ope_log}/ope_fse-log.txt"/>
+		<param name="Append" value="true"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{dd-MMM-yy HH:mm:ss,SSS}:%X{ClientInfo}:%-5p: %m%n"/>
+		</layout>
+	</appender>
+
+<!-- ****************************************************************************************** -->
+
+<!-- ****************************************************************************************** -->
+
+	<appender name="JdbcAsyncLog" class="org.apache.log4j.AsyncAppender">
+		<param name="Threshold" value="${level_log}"/>
+		<appender-ref ref="JdbcDailyRollingFile"/>
+	</appender>
+
+	<appender name="JdbcDailyRollingFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="${ope_log}/ope_fse-logJdbc.txt"/>
+		<param name="Append" value="true"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n"/>
+		</layout>
+	</appender>
+
+<!-- ****************************************************************************************** -->
+
+<!-- ****************************************************************************************** -->
+
+	<appender name="UndergroundAsyncLog" class="org.apache.log4j.AsyncAppender">
+		<param name="Threshold" value="${level_log}"/>
+		<appender-ref ref="UndergroundDailyRollingFile"/>
+	</appender>
+
+	<appender name="UndergroundDailyRollingFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="${ope_log}/ope_fse-logUnderground.txt"/>
+		<param name="Append" value="true"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{dd-MMM-yy HH:mm:ss,SSS}:%X{ClientInfo}:%-5p: %m%n"/>
+		</layout>
+	</appender>
+
+<!-- ****************************************************************************************** -->
+
+<!-- ****************************************************************************************** -->
+	<appender name="fseSiss2AsyncLog" class="org.apache.log4j.AsyncAppender">
+		<param name="Threshold" value="${level_log}"/>
+		<appender-ref ref="fseSiss2DailyRollingFile"/>
+	</appender>
+
+	<appender name="fseSiss2DailyRollingFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="${ope_log}/ope_fse-logSiss2.txt"/>
+		<param name="Append" value="true"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n"/>
+		</layout>
+	</appender>
+
+<!-- ****************************************************************************************** -->
+
+<!-- ****************************************************************************************** -->
+
+	<appender name="FopAsyncLog" class="org.apache.log4j.AsyncAppender">
+        <param name="Threshold" value="INFO"/>
+        <appender-ref ref="FopDailyRollingFile"/>
+    </appender>
+	
+	<appender name="FopDailyRollingFile" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="${ope_log}/ope_fse-logFop.txt"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd-MMM-yy HH:mm:ss,SSS}:%X{ClientInfo}:%-5p: %m%n"/>
+        </layout>
+    </appender>
+
+<!-- ****************************************************************************************** -->
+
+<!-- ****************************************************************************************** -->
+	<appender name="Siss2JdbcAsyncLog" class="org.apache.log4j.AsyncAppender">
+		<param name="Threshold" value="${level_log}"/>
+		<appender-ref ref="Siss2JdbcDailyRollingFile"/>
+	</appender>
+
+	<appender name="Siss2JdbcDailyRollingFile" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="${ope_log}/ope_fse-logJdbcSiss2.txt"/>
+		<param name="Append" value="true"/>
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n"/>
+		</layout>
+	</appender>
+
+<!-- ****************************************************************************************** -->
+
+	<category name="it.lispa.siss.library" additivity="true">
+		<priority value="${level_log}"/>
+		<appender-ref ref="MiscAsyncLog"/>
+	</category>
+	<category name="com.li.dc.sebc.sviluppoOpeFse" additivity="true">
+		<priority value="${level_log}"/>
+		<appender-ref ref="fseAsyncLog"/>
+	</category>
+	<category name="it.lispa.siss.sebc" additivity="true">
+		<priority value="${level_log}"/>
+		<appender-ref ref="fseAsyncLog"/>
+	</category>
+	<category name="it.lispa.siss.library.log.interceptors.Logger" additivity="true">
+		<priority value="${level_log}"/>
+		<appender-ref ref="fseAsyncLog"/>
+	</category>
+	<category name="it.lispa.siss.library.log.interceptors.JdbcServiceLogger" additivity="true">
+		<priority value="${level_log}"/>
+		<appender-ref ref="JdbcAsyncLog"/>
+	</category>
+	<category name="org.underground" additivity="true">
+		<priority value="${level_log}"/>
+		<appender-ref ref="UndergroundAsyncLog"/>
+	</category>
+	<category name="it.lispa.siss.library.log.handlers.Siss2LogInputHandler" additivity="true">
+		<priority value="${level_log}"/>
+		<appender-ref ref="fseSiss2AsyncLog"/>
+	</category>
+	<category name="it.lispa.siss.library.log.handlers.Siss2LogOutputHandler" additivity="true">
+		<priority value="${level_log}"/>
+		<appender-ref ref="fseSiss2AsyncLog"/>
+	</category>
+	<category name="it.lispa.siss.library.log.interceptors.Siss2JdbcServiceLogger" additivity="true">
+		<priority value="${level_log}"/>
+		<appender-ref ref="Siss2JdbcAsyncLog"/>
+	</category>
+	<category name="org.apache.fop" additivity="true">
+	    <priority value="INFO"/>
+	    <appender-ref ref="FopAsyncLog"/>
+	</category> 
+	<category name="APP" additivity="true">
+		<priority value="${level_log}"/>
+		<appender-ref ref="AppOPEFSEAsyncLog"/>
+	</category>
+	<category name="MON" additivity="true">
+		<priority value="${level_log}"/>
+		<appender-ref ref="MonOPEFSEAsyncLog"/>
+	</category>
+</log4j:configuration>

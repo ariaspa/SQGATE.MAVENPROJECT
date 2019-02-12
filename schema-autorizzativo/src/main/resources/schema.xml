@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<schemaAutorizzativo>    
+    <nome>OBBLIGATORIO</nome>
+    <cognome>OBBLIGATORIO</cognome>
+    <codiceFiscale>OBBLIGATORIO</codiceFiscale>
+    <dataNascita>OPZIONALE</dataNascita>
+    <sesso>OPZIONALE</sesso>
+    <luogoNascita>OPZIONALE</luogoNascita>
+    <statoNascita>OPZIONALE</statoNascita>
+    <mobile>OPZIONALE</mobile> 
+    <password>ABC</password>
+    <creazioneUtenze>NO</creazioneUtenze>
+    <validazioneUtenze>NO</validazioneUtenze>
+    <friendlyName>SON-ADMIN</friendlyName>
+    <passwordWSregUni>12</passwordWSregUni> 
+    <livelliImpostabili>10|20|30|40</livelliImpostabili>
+    <tipiAut>CNS</tipiAut>
+    <singleLogout>SI</singleLogout>    
+</schemaAutorizzativo>

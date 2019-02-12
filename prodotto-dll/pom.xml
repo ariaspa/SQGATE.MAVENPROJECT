@@ -12,7 +12,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
-        <version>1.7</version>
+        <version>1.8</version>
         <executions>
           <execution>
             <id>cancellazione files temporanei</id>
@@ -35,10 +35,10 @@
             <configuration>
               <target>
                  <exec executable="${env.VS_PATH_2015}/VC/vcvarsall.bat" failonerror="true">
-                  <arg line="${env.PROCESSOR_ARCHITECTURE}" />
+                  <arg line="${env.PROCESSOR_ARCHITECTURE}"/>
                 </exec>
                 <exec executable="${env.VS_PATH_2015}/Common7/IDE/devenv.com" failonerror="true">
-                  <arg line="${basedir}/src/main/native/NewSignMultidoc.sln /rebuild Release|Win32" />
+                  <arg line="${basedir}/src/main/native/NewSignMultidoc.sln /rebuild Release|Win32"/>
                 </exec>
               </target>
             </configuration>
@@ -58,8 +58,8 @@
             <id>execution1</id>
             <phase>package</phase>
             <configuration>
-              <inputDir>${basedir}/src/main/native/Release</inputDir>
-              <fileName>NewSignMultidoc.dll</fileName>
+              <inputDir>${basedir}/src/main/native</inputDir>
+              <fileName>libreriaExample.dll</fileName>
             </configuration>
             <goals>
               <goal>manageExtensions</goal>

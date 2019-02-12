@@ -1,0 +1,57 @@
+<services>
+	
+	<!-- Factory di servizi esposti dal Fascicolo Sanitario Elettronico (FSE)  -->
+	<service alias="implementazioneFactoryFSE"
+		classname="it.lispa.siss.sebc.middleground.sinapse.factory.FactoryFSEImpl">
+		<set method="ottieniIndiceFascicolo" ref="ottieniIndiceRMI"/>
+		<set method="consultaFascicolo" ref="consultaFascicoloRMI"/>
+		<set method="consultaEventiDaFlussi" ref="consultaEventiDaFlussiRMI"/>
+		
+		<set method="consultaDocumentiFascicolo" ref="consultaDocumentiFascicoloAxis"/>
+		 
+		<!-- questi sono i nuovi servizi che puntano su tomcat  -->
+		<set method="ottieniProgrammazioneClinica" ref="ottieniProgrammazioneClinicaRMI"/>
+		<set method="consultaEventiFascicolo" ref="consultaEventiFascicoloRMI"/>
+		
+	</service>
+	
+	<!-- Implementazione   del servizio consultaDocumentiFascicolo -->
+	<service alias="consultaDocumentiFascicoloAxis"
+		classname="it.lispa.siss.sebc.middleground.ws.fse.ConsultaDocumentiFascicoloImpl2010">
+		<set method="webServiceClient" ref="tomcatAxis2Client"/>
+	</service>
+	
+	<!-- Implementazione tramite chiamata RMI del servizio FSE.ottieniIndiceFascicolo -->
+	<service alias="ottieniIndiceRMI"
+		classname="it.lispa.siss.sebc.middleground.ws.fse.OttieniIndiceFascicoloImpl">
+		<set method="webServiceClient" ref="tomcatAxis2Client"/>
+	</service>
+	
+	
+	<!-- Implementazione tramite chiamata RMI del servizio FSE.consultaFascicolo2009 -->
+	<service alias="consultaFascicoloRMI"
+		classname="it.lispa.siss.sebc.middleground.ws.fse.ConsultaFascicoloImpl2009">
+		<set method="webServiceClient" ref="tomcatAxis2Client"/>
+	</service>
+	
+	<!-- Implementazione tramite chiamata RMI del servizio FSE.consultaEventiDaFlussi -->
+	<service alias="consultaEventiDaFlussiRMI"
+		classname="it.lispa.siss.sebc.middleground.ws.fse.ConsultaEventiDaFlussiImpl">
+		<set method="webServiceClient" ref="tomcatAxis2Client"/>
+	</service>
+	
+	 
+	<!-- Nuovi aggiunti  18-4-2012 --> 
+	<!-- Implementazione tramite chiamata RMI del servizio ottieniProgrammazioneClinica --> 
+	<service alias="ottieniProgrammazioneClinicaRMI"
+		classname="it.lispa.siss.sebc.middleground.ws.fse.OttieniProgrammazioneClinicaImpl2012">
+		<set method="webServiceClient" ref="tomcatAxis2Client" />
+	</service>
+	
+	<!-- Implementazione tramite chiamata RMI del servizio consultaEventiFascicolo -->
+	<service alias="consultaEventiFascicoloRMI"
+		classname="it.lispa.siss.sebc.middleground.ws.fse.ConsultaEventiFascicoloImpl2012">
+		<set method="webServiceClient" ref="tomcatAxis2Client"/>
+	</service>	
+	
+</services>

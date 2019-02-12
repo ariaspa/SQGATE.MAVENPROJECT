@@ -1,0 +1,20 @@
+<services>
+	 	
+  	<service alias="factoryINTANAGImpl" classname="it.lispa.siss.sebc.middleground.sinapse.factory.FactoryINTANAGImpl">
+		<set method="identificaCittadinoEstesoIntanag" ref="serviceIdentificaCittadinoEstesoIntanagRMI"/>
+		<!--<set method="identificaCittadinoEsteso" ref="serviceIdentificaCittadinoEstesoRMI"/>-->
+	</service>
+	
+	<!-- Implementazione tramite chiamata RMI del servizio ICCE.serviceIdentificaCittadinoEsteso 2009 
+	<service alias="serviceIdentificaCittadinoEstesoIntanagRMI" classname="it.lispa.siss.sebc.middleground.ws.intanag.IdentificaCittadinoEstesoImpl">
+  		<set method="webServiceClient" ref="intanagAxis2Client"/>
+  	</service>		
+		-->
+  	
+  	
+  	<!-- Implementazione  tramite chiamata RMI del servizio INTANAG.serviceIdentificaCittadinoEsteso 2008  -->
+	<service alias="serviceIdentificaCittadinoEstesoIntanagRMI" classname="it.lispa.siss.sebc.middleground.ws.intanag.IdentificaCittadinoEstesoIntanagImpl">
+  		<set method="webServiceClient" ref="intanagAxis2Client"/>
+  	</service>			
+  	 	  	
+</services>

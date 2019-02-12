@@ -1,0 +1,11 @@
+<config>
+	<providers>
+		<provider alias="siss2SecurityProvider" classname="org.underground.library.siss2.security.Siss2Provider" />
+		<provider alias="samwebSecurityProvider" classname="org.underground.library.samweb.security.SamWebProvider" />
+	</providers>
+	<credentials>
+		<type alias="WS_SISS2" transformer="org.underground.module.security.base.provider.BaseTokenTransformer" provider="siss2SecurityProvider" />
+		<type alias="SAM_WEB_BLAZEDS_FACTORY" transformer="org.underground.module.security.base.provider.BaseTokenTransformer" provider="samwebSecurityProvider" />
+		<type alias="SAM_WEB_FLEX" transformer="org.underground.module.security.base.provider.BaseTokenTransformer" provider="samwebSecurityProvider" />
+	</credentials>
+</config>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+	<groupId>it.lispa.progetto.servizio</groupId> 
+	<artifactId>servizio</artifactId>
+	<version>1.0.0</version>
+  </parent>
+  
+	<artifactId>service-schema-autorizzativo</artifactId>
+	<version>1.0.0</version>
+	<packaging>zip</packaging>
+	
+		<properties>
+     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+</properties>
+<build>
+<plugins>
+<plugin>
+	<groupId>it.lispa.siss.maven-plugins</groupId>
+	<artifactId>custom-package-plugin</artifactId>
+	<version>2.0.0</version>
+	<extensions>true</extensions>
+	<configuration>
+		<sourceDirectory>src/main/resources</sourceDirectory>
+	</configuration>
+</plugin>
+<plugin>
+	 <groupId>it.lispa.maven-plugins</groupId>
+  <artifactId>SchemaValidator-plugin</artifactId>
+  <version>1.1.0</version>
+	<extensions>true</extensions>
+	<configuration>
+					<idpcSchema>${basedir}/src/main/resources/schema.xml</idpcSchema>
+			</configuration>
+	<executions>
+	   <execution>
+	   <phase>package</phase>
+	    <goals>
+	       <goal>validate</goal>
+	   </goals>
+	   </execution>
+	</executions>
+</plugin>
+</plugins>
+</build>
+
+<licenses>
+    <license>
+      <name>Lispa License, Version 1.0</name>
+      <url>http://cm-maven.adlispa.local/licenza/license.txt</url>
+      <distribution>repo</distribution>
+      <comments>Licenza di prodotti erogati da Lispa S.p.A per Regione Lombardia</comments>
+    </license>
+  </licenses>
+</project>

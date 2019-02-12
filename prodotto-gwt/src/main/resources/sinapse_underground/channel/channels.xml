@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<channel alias="FLEX" transformer="org.underground.library.flex.FlexTransformer">
+	<phase flow="IN" >
+		  	<handler alias="monitoraggioIn" classname="org.underground.library.siss2.log.monitoraggio.LogMonitoraggioHandlerIn" />
+		  	<handler alias="authHandler">
+				<classname>it.lispa.siss.library.context.handlers.SissMVCSAuthHandler</classname>
+			</handler>
+			<handler alias="swapHandler">
+				<classname>it.lispa.siss.library.swap.SwapContextInputHandler</classname>
+			</handler>
+	 </phase>
+	 <phase flow="OUT" >
+		    <handler alias="monitoraggioOut" classname="org.underground.library.siss2.log.monitoraggio.LogMonitoraggioHandlerOut" />
+	  </phase>
+	 <phase flow="ERROR" >
+		    <handler alias="monitoraggioError" classname="org.underground.library.siss2.log.monitoraggio.LogMonitoraggioHandlerError" />
+	</phase>
+	</channel>
+</config>

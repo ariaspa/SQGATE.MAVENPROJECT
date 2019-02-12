@@ -1,0 +1,19 @@
+<!-- edited with XMLSPY v5 U (http://www.xmlspy.com) by Domenico (Lombardia) -->
+<services>
+	<!-- SERVIZI DI UTILITY -->
+	<service alias="native" classname="org.underground.library.jdbc.nativejdbc.Tomcat55NativeJdbcExtractor"/>
+	<service alias="jdbcservice" classname="org.underground.library.jdbc.util.JdbcServiceInitializer">
+		<set method="jndiDataSource" value="java:comp/env/jdbcDbSebc"/>
+		<set method="nativeJdbcExtractor" ref="native"/>
+	</service>
+	<service alias="documentService" classname="it.lispa.siss.sebc.middleground.service.archive.DocumentServiceImpl">
+		<set method="documentDAO" ref="documentDAO"/>
+	</service>
+	<service alias="documentDAO" classname="it.lispa.siss.sebc.middleground.service.archive.DocumentDAOImpl">
+		<set method="jdbcService" ref="jdbcservice"/>
+	</service>
+	<!--service alias="documentSS" classname="it.lispa.siss.sebc.middleground.service.archive.DocumentSSDAOImpl">
+		<set method="jdbcService" ref="jdbcservice"/>
+	</service-->
+
+</services>

@@ -1,0 +1,68 @@
+<services>
+	
+	<!-- Classe dei servizi utilizzata da FSEOperatore  -->
+	<service alias="FSEOperatore" classname="com.li.dc.sebc.sviluppoOpeFse.FSEOperatore" >
+		<set method="sinapse" ref="sinapse"/>
+		<set method="urlGuiOperatoreFseps" ext="gui.fseps.operatore.url"/>
+	<!--	<set method="datoCodificato" ref="datoCodificatoImpl"/>
+		  
+			<aspect interceptor="undergroundTransactionalInterceptor" >
+				<set method="transactionAttributes" ref="innerAttributes" />
+				<set method="transactionManager" ref="transactionManager" />
+			</aspect>  
+		-->
+		<aspect interceptor="authContextInterceptor" >
+			<set method="authContextAttributes" ref="authContextAttributes" />
+		</aspect>
+		<aspect interceptor="citizenTokenInterceptor" > 
+			<!--set method="ldapService" ref="ldapServiceTokenCittadino"/--> 
+			<set method="citizenTokenResource" ref="citizenTokenResource"/>
+		</aspect>
+		<aspect interceptor="logger" />
+		<aspect interceptor="throws" />
+		<aspect interceptor="monitoraggio"></aspect>
+	</service> 
+	
+	<!-- Dispensatore dei servizi del Fascicolo Sanitario Regionale. -->
+	<service alias="sinapse" classname="it.lispa.siss.sebc.middleground.sinapse.Sinapse">
+		<set method="factoryFSE" ref="implementazioneFactoryFSE"/>
+		<set method="factorySA" ref="factorySAImpl"/>
+		<!--<set method="factoryINTANAG" ref="factoryINTANAGImpl"/>-->
+	</service>
+  	
+  	<!-- Servizio per eseguire il crypt/decrypt  -->
+	<service alias="cryptoService"
+         classname="org.underground.library.crypto.support.CryptoFactoryImpl">
+         <set method="algorithm" value="pkcs7" />
+         <set method="checkCertificateExpirationDate" value="false" />
+	</service> 
+		
+
+	<service alias="innerAttributes" classname="org.underground.library.transaction.interceptor.DefaultUDGTransactionAttribute" >
+		<set method="propagationBehavior" value="REQUIRED" />
+		<set method="isolationLevel" value="DEFAULT" />
+	</service>
+  	<service alias="siss2LoggingConfiguration" classname="it.lispa.siss.library.log.utils.Siss2LoggingConfiguration">
+		<set method="levels">
+			<list>
+				<value>UNDERGROUND</value>
+			</list>
+		</set>
+	</service> 
+	<service alias="authContextAttributes" classname="it.lispa.siss.library.context.interceptors.AuthContextInterceptorAttributes" >
+		<set method="ruoliAutorizzati" >
+			<list>
+				<value>any</value>
+			</list>
+		</set>
+	</service>
+	
+	<service alias="citizenTokenResource" classname="it.lispa.siss.library.context.resource.impl.CitizenTokenResourceXMEMImpl">
+	  <set method="xMemClientService" ref="xMemClientService" />
+	</service>
+	 
+	<service alias="xMemClientService" classname="org.underground.library.siss2.citizentoken.xmemcache.XMemClientService">
+	  <set method="servers" ext="xmem.token.cittadino.servers" />
+	</service>
+	
+</services>

@@ -1,0 +1,17 @@
+<services>
+	 	
+  	<service alias="factorySAImpl" classname="it.lispa.siss.sebc.middleground.sinapse.factory.FactorySAImpl">
+		<set method="ottieniDestinazione" ref="serviceOttieniDestinazione"/>
+  		<aspect interceptor="throws" />
+	</service>
+  	
+  	<!-- Implementazione AXIS2 del servizio SA.ottieniDestinazione -->
+	<service alias="serviceOttieniDestinazione" classname="it.lispa.siss.sebc.middleground.ws.sa.OttieniDestinazioneImpl">
+  		<set method="webServiceClient" ref="saAxis2Client"/>
+  		<aspect interceptor="monitoraggio" pointcut="execute">
+		   <set method="direction" value="OUT" />
+        </aspect>
+  		<aspect interceptor="throws" />
+  	</service>
+  	 	  	
+</services>

@@ -1,0 +1,27 @@
+<services>
+  	<service alias="repositoryImpl" classname="it.lispa.siss.sebc.middleground.sinapse.repository.RepositoryImpl">
+	  	<set method="jdbcConnection" ref="jdbcService"/>
+  	</service>
+	
+	<service alias="jdbcService" classname="org.underground.library.jdbc.core.JdbcService" >
+		<set method="jndiDataSource" value="java:comp/env/jdbcDbSebc" />
+		<set method="virtualJndiDataSource" value="java:comp/env/jdbcDbSebcVirtuale" />
+		<set method="dataSourceChooser" ref="dataSourceChooser" />
+		<set method="nativeJdbcExtractor" ref="nativeJdbcExtractor" />
+		<set method="exceptionTranslator" ref="exceptionTranslator" />
+		<aspect interceptor="jdbcLogger" />
+		<aspect interceptor="siss2JdbcLogger" />
+		<aspect interceptor="logger" />
+		<aspect interceptor="throws" />
+	</service>
+	<service alias="dataSourceChooser" classname="it.lispa.siss.library.context.ContextDataSourceChooser" >
+	</service>
+	<service alias="nativeJdbcExtractor" classname="org.underground.library.jdbc.nativejdbc.Tomcat55NativeJdbcExtractor" >
+	</service>
+	<service alias="oracleStructUtils" classname="it.lispa.siss.library.data.OracleStructUtils" >
+		<set method="jdbcService" ref="jdbcService" />
+	</service>
+	<service alias="exceptionTranslator" classname="it.lispa.siss.library.data.SissSQLExceptionTranslator" >
+		<set method="translation" />
+	</service>
+</services>

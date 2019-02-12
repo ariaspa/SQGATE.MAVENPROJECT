@@ -1,0 +1,14 @@
+<aop>
+	<aspect alias="logger" classname="it.lispa.siss.library.log.interceptors.Logger" type="AOP_ALLIANCE" />
+	<aspect alias="jdbcLogger" classname="it.lispa.siss.library.log.interceptors.JdbcServiceLogger" type="AOP_ALLIANCE" />
+	<aspect alias="siss2JdbcLogger" classname="it.lispa.siss.library.log.interceptors.Siss2JdbcServiceLogger" type="AOP_ALLIANCE" />
+	<aspect alias="undergroundTransactionalInterceptor" classname="org.underground.library.transaction.interceptor.TransactionInterceptor" type="AOP_ALLIANCE" />
+	<aspect alias="throws" classname="it.lispa.siss.library.context.interceptors.Throws" type="THROWS">
+		 <exception>java.lang.Throwable</exception> 
+	</aspect>
+	<aspect alias="authContextInterceptor" classname="it.lispa.siss.library.context.interceptors.AuthContextInterceptor" type="BEFORE" />
+	<aspect alias="citizenTokenInterceptor" classname="it.lispa.siss.library.context.interceptors.CitizenTokenInterceptor" type="BEFORE" />
+	<!-- aspect alias="monitoraggio" classname="org.underground.library.siss2.log.monitoraggio.LogMonitoraggioInterceptor" type="AOP_ALLIANCE" /-->
+	<aspect alias="monitoraggio" classname="it.lispa.siss.sebc.middleground.log.LogMonitoraggioInterceptorBlazeds" type="AOP_ALLIANCE" />
+	
+</aop>

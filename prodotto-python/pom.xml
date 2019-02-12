@@ -27,6 +27,11 @@
             <version>1.6.0</version>
             <executions>
                 <execution>
+                   <id>python_build</id>
+                    <phase>generate-resources</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
                     <configuration>
                         <executable>python</executable>
                         <workingDirectory>src/main/resources/</workingDirectory>
@@ -34,11 +39,7 @@
                             <argument>my.py</argument>
                         </arguments>
                     </configuration>
-                    <id>python_build</id>
-                    <phase>generate-resources</phase>
-                    <goals>
-                        <goal>exec</goal>
-                    </goals>
+
                 </execution>
             </executions>
         </plugin>

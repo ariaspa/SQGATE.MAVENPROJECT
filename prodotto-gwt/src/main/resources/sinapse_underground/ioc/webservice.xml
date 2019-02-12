@@ -1,0 +1,32 @@
+<services>
+
+
+	<!-- Implementazione Axis2 per chiamate ai SEB -->
+	<service alias="siss2Axis2Client"
+		classname="it.lispa.siss.sebc.middleground.ws.AxisToClient" instance="create">
+		<set method="nameConfigurationFile" value="PARAMETRI_VARIABILI.properties" />
+		<set method="targetURL" ext="siss2.soap.url" />
+		<set method="timeoutRequest" ext="axis2.request.timeout" />
+		<set method="transactionIdPropagation" value="true" />
+		<aspect interceptor="monitoraggio" pointcut="call.*">
+			<set method="direction" value="IN" />
+		</aspect>
+
+	</service>
+
+	<!-- Implementazione Axis2 per chiamate a FSE SERVER TOMCAT 7 -->
+	<service alias="tomcatAxis2Client"	classname="it.lispa.siss.sebc.middleground.ws.AxisToClient" instance="create">
+		<set method="nameConfigurationFile" value="PARAMETRI_VARIABILI.properties" />
+		<set method="targetURL" ext="tomcat.fse.url" />
+		<set method="timeoutRequest" ext="axis2.request.timeout" />
+		<set method="transactionIdPropagation" value="true" />
+		<aspect interceptor="monitoraggio" pointcut="call.*">
+			<set method="direction" value="IN" />
+		</aspect>
+	</service>
+	
+	<service alias="saAxis2Client" classname="it.lispa.siss.sebc.middleground.ws.AxisToClient" instance="create">
+		<set method="targetURL" ext="sa.soap.url" />
+		<set method="timeoutRequest" ext="axis2.request.timeout" />
+	</service>
+</services>
