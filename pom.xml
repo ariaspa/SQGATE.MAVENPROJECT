@@ -48,12 +48,14 @@
 			<module>prodotto-dll</module>
 				<module>prodotto-release</module>
 			<module>prodotto-ejb</module>	
-							<module>schema-autorizzativo</module>
+   <module>schema-autorizzativo</module>
 			<module>prodotto-ear</module>
+			<module>prodotto-gwt</module>			
 			-->
 
 			
-			<module>prodotto-gwt</module>
+
+				<module>prodotto-font</module>
 
 
 
@@ -65,10 +67,7 @@
 			<module>prodotto-c-plus</module>
 			<module>prodotto-exe</module>
 			<module>prodotto-jarsnapshot</module>
-		<module>prodotto-gwt</module>
 			<module>prodotto-mle-esb</module>
-
-
 			<module>prodotto-vb-net</module>
 			<module>prodotto-war-includi-snapshot</module>
 

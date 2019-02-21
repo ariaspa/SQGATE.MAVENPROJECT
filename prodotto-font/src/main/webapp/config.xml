@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- Destinazione delle chiamate in remoto (BLAZE) -->
+	<destination>FSEOperatore</destination>
+	<!-- a true indica che deve essere visualizzato il bottone delle autorizzazioni dei dce -->
+	<autorizza>true</autorizza>
+	<!-- a true indica che i bottoni di apertura e di chiusura pdt sono abilitati -->
+	<apriChiudiPdt>false</apriChiudiPdt>
+	<!-- dataInizioFlussi, dataFineFlussi. Se non valorizzati prende gli ultimi tre mesi data espressa in questa forma YYYYMMDD -->
+	<dataInizioFlussi></dataInizioFlussi>
+	<!-- data espressa in questa forma YYYYMMDD  -->
+	<dataFineFlussi></dataFineFlussi>
+	
+	  
+	<!-- lista dei codici PDT disponibili -->
+	<listaCodiciPDT>
+		<datoCodificato>
+			<codice>A.428</codice>
+			<descrizione>SCOMPENSO CARDIACO</descrizione>
+		</datoCodificato>
+	</listaCodiciPDT>
+	
+	
+	<!-- 
+		lista dei codici DCE disponibili per il copy dei PDT 
+	-->
+	<listCopyDCEInPdt>
+		<datoCodificato>
+			<codice>05</codice>
+		</datoCodificato>
+	</listCopyDCEInPdt>
+	
+	
+	<!-- Configurazione dei moduli per la visualizzazione dei documenti dentro alla popup -->
+	<popup>
+		<urlModuloComunicator>Comunicator.swf</urlModuloComunicator>
+		<urlModuloVisualizer>Visualizer.swf</urlModuloVisualizer>
+		<urlModuloCollector>Collettore.swf</urlModuloCollector>
+		<urlHtmlContainer>http://127.0.0.1:8000/classes/flex/container.html</urlHtmlContainer>
+	</popup>
+	
+		
+	<!-- temporale indica quando valorizzato il link all'aplicazione esterna, con la presenza del link 
+		 nel tab 'Fascicolo Sanitario' si aggiunge una voce nell'albero delle viste 
+		 ../FseHealthPath/FseHealthpath.jsp -->
+	<temporale>https://was.cgi.crs.lombardia.it/SebsGate/FseHealthPath/FseHealthPath.jsp</temporale>
+	
+	<!-- i valori di configurazione del debug  -->
+	<debug>
+		<openDebug>true</openDebug>
+		<!-- livello di debug 
+		valori ammessi: 
+		DEBUG   = 0
+		INFO    = 1
+		WARNING = 2
+		ERROR   = 3
+		FATAL   = 4
+		-->	 
+		<livello>0</livello>
+		<!-- la url di una console da aprire in automatico -->
+		<urlConsole></urlConsole>
+		<nomeConsole>panelDebug</nomeConsole>
+		<nomeDebug>consoleDebug</nomeDebug>
+	</debug>
+</root>

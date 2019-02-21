@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+	<parent>
+	  <groupId>it.lispa.progetto.servizio</groupId> 
+	  <artifactId>servizio</artifactId>
+	  <version>1.0.0</version>
+	</parent>
+	
+	<artifactId>applicativo-font</artifactId>
+	  <version>1.0.0</version>
+	<packaging>war</packaging>
+
+	<build>
+
+		<plugins>
+<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.9</version>
+        <executions>
+	<execution>
+	<id>lispa-fonts</id>
+	<phase>process-resources</phase>
+	<goals>
+	   <goal>unpack</goal>
+	</goals>
+	<configuration>
+	 <artifactItems>
+	<artifactItem>
+  <groupId>it.lispa.fonts</groupId>
+  <artifactId>font-awesome</artifactId>
+  <version>4.4.0</version>
+	   <type>zip</type>
+	   <overWrite>true</overWrite>
+	   <outputDirectory>${basedir}/src/main/webapp/resources/fonts</outputDirectory>
+	 </artifactItem>
+	
+
+	</artifactItems>
+    </configuration>
+   </execution>
+</executions>
+  </plugin>
+ <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.0.2</version>
+				<executions>
+					<execution>
+						<id>exploded</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>war</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>war</id>
+						<phase>package</phase>
+						<goals>
+							<goal>war</goal>
+						</goals>
+					</execution>
+				</executions>
+
+			</plugin>
+</plugins>
+
+</build>
+	<dependencies>
+<dependency>
+  <groupId>it.lispa.fonts</groupId>
+  <artifactId>font-awesome</artifactId>
+  <version>4.4.0</version>
+  <type>zip</type>
+</dependency>
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>servlet-api</artifactId>
+    <version>2.5</version>
+</dependency>
+	</dependencies>
+
+<licenses>
+    <license>
+      <name>Lispa License, Version 1.0</name>
+      <url>http://cm-maven.adlispa.local/licenza/license.txt</url>
+      <distribution>repo</distribution>
+      <comments>Licenza di prodotti erogati da Lispa S.p.A per Regione Lombardia</comments>
+    </license>
+  </licenses>
+</project>
