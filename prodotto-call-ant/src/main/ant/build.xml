@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<project>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="target/ant/classes"/>
+        <javac srcdir="src" destdir="target/ant/classes"/>
+    </target>
+
+    <target name="jar">
+        <mkdir dir="target/ant/jar"/>
+        <jar destfile="target/ant/jar/HelloWorld.jar" basedir="target/ant/classes">
+            <manifest>
+                <attribute name="Main-Class" value="it.lispa.HelloWorld"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run">
+        <java jar="target/ant/jar/HelloWorld.jar" fork="true"/>
+    </target>
+
+</project>
