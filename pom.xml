@@ -51,17 +51,20 @@
    <module>schema-autorizzativo</module>
 			<module>prodotto-ear</module>
 			<module>prodotto-gwt</module>			
+				<module>prodotto-call-ant</module>
+				<module>prodotto-flex-swf</module>
+				
+			
 			-->
 
-			
-
-				<module>prodotto-call-ant</module>
+				<module>prodotto-war-swfincluse</module>
 
 
 
 			
 <!--
 
+				<module>prodotto-copy-swf-inwar</module>
 
 
 			<module>prodotto-c-plus</module>
