@@ -14,89 +14,39 @@
 	<name>applicativo-flex</name>
 
 
-	<build>
-		<sourceDirectory>src/main/flex</sourceDirectory>
-		<finalName>applicativo-flex</finalName>
-		<extensions>
-			<extension>
-				<groupId>org.apache.maven.wagon</groupId>
-				<artifactId>wagon-ssh</artifactId>
-				<version>2.0</version>
-			</extension>
-		</extensions>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-install-plugin</artifactId>
-				<version>2.3.1</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.5</version>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.5</version>
-			</plugin>
-			<plugin>
-				<groupId>org.sonatype.flexmojos</groupId>
-				<artifactId>flexmojos-maven-plugin</artifactId>
-				<version>3.8</version>
-				<extensions>true</extensions>
-				<dependencies>
-					<dependency>
-				      <groupId>com.adobe.flex</groupId>
-				      <artifactId>compiler</artifactId>
-				      <version>${sdk.version}</version>
-				      <type>pom</type>
-				    </dependency>
-				</dependencies>
-			</plugin>
-		</plugins>
-	</build>
-	<properties>
-		<sdk.version>3.6.0.16321</sdk.version>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>flex-framework</artifactId>
-			<version>${sdk.version}</version>
-			<type>pom</type>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>common-flex</groupId>
-			<artifactId>SEBP_COMMONFLEX</artifactId>
-			<version>1.0</version>
-			<type>swc</type>
-		</dependency>
-		<dependency>
-			<groupId>common-flex</groupId>
-			<artifactId>SEBP_COMMONFLEX_CITTADINO</artifactId>
-			<version>1.0</version>
-			<type>swc</type>
-		</dependency>
-		<dependency> 
-			<groupId>com.adobe.flex.sdk</groupId> 
-			<artifactId>datavisualization</artifactId> 
-			<version>3.5.0.12683</version> 
-			<type>swc</type> 
-		</dependency> 
-		<dependency> 
-			<groupId>com.adobe.flex.sdk</groupId> 
-			<artifactId>datavisualization_rb</artifactId> 
-			<version>3.5.0.12683</version> 
-			<type>swc</type> 
-			<classifier>en_US</classifier> 
-		</dependency>	
-		<dependency>
-			<groupId>common-flex</groupId>
-			<artifactId>Cairngorm</artifactId>
-			<version>1.0</version>
-			<type>swc</type>
-		</dependency>
-	</dependencies>
+<properties>
+<skipTests>false</skipTests>
+</properties>
+    <build>
+        <sourceDirectory>src/main/flex</sourceDirectory>
+        <testSourceDirectory>src/test/flex</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.flexmojos</groupId>
+                <artifactId>flexmojos-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <extensions>true</extensions>				
+            </plugin>
+			
+        </plugins>
+    </build>f
+
+    <dependencies>
+        <dependency>
+            <groupId>com.adobe.flex.framework</groupId>
+            <artifactId>flex-framework</artifactId>
+            <version>3.2.0.3958</version>
+            <type>pom</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.adobe.flexunit</groupId>
+            <artifactId>flexunit</artifactId>
+            <version>0.85</version>
+            <type>swc</type>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    
 </project>

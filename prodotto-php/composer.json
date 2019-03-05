@@ -1,0 +1,13 @@
+{
+
+"autoload": {
+        "classmap": [
+            "src/main/php/"
+        ]
+    },
+"require": {
+
+	"phpmailer/phpmailer": "5.2.2",
+	"phpunit/phpunit": "^8"  
+	}
+}
