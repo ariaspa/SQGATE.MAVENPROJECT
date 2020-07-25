@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+<parent>
+	  <groupId>it.ariaspa.servizio</groupId> 
+	  <artifactId>servizio</artifactId>
+	  <version>1.0.0</version>
+</parent>
+
+	<artifactId>applicativo-demo-jmeter</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<build>
+		<sourceDirectory>./src/main/java</sourceDirectory>
+		<plugins>
+		
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.5.1</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+    <profiles>
+
+        <profile>
+            <id>performance</id>
+            <build>
+
+            <plugins>
+                <plugin>
+                    <groupId>com.lazerycode.jmeter</groupId>
+                    <artifactId>jmeter-maven-plugin</artifactId>
+                    <version>2.8.5</version>
+                    <executions>
+                        <execution>
+                            <id>jmeter-tests</id>
+                            <goals>
+                                <goal>jmeter</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>jmeter-check-results</id>
+                            <goals>
+                                <goal>results</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                        <configuration>
+                        <propertiesJMeter>
+                             <threads>7</threads>
+                             <duration>30</duration>
+                         </propertiesJMeter>
+                        </configuration>
+                </plugin>
+            </plugins>
+
+            </build>
+        </profile>
+    </profiles>
+
+		<dependencies>
+		<dependency>
+			<groupId>org.apache.axis2</groupId>
+			<artifactId>axis2-kernel</artifactId>
+			<version>1.4.1</version>
+		</dependency>		
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jmeter</groupId>
+            <artifactId>ApacheJMeter_core</artifactId>
+            <version>5.1</version>
+        </dependency>
+	</dependencies>
+<licenses>
+    <license>
+      <name>Ariaspa License, Version 1.0</name>
+      <url>http://cm-maven.adlispa.local/licenza/license.txt</url>
+      <distribution>repo</distribution>
+      <comments>Licenza di prodotti erogati da Ariaspa S.p.A per Regione Lombardia</comments>
+    </license>
+  </licenses>
+</project>

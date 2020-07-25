@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+<parent>
+	  <groupId>it.ariaspa.servizio</groupId> 
+	  <artifactId>servizio</artifactId>
+	  <version>1.0.0</version>
+</parent>
+    
+    <artifactId>ariaspa-jmeter-demo</artifactId>
+	  <version>1.0.0</version>
+	<packaging>jar</packaging>	  
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jmeter</groupId>
+            <artifactId>ApacheJMeter_core</artifactId>
+            <version>5.1</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                    <groupId>com.lazerycode.jmeter</groupId>
+                    <artifactId>jmeter-maven-plugin</artifactId>
+                    <version>2.9.0</version>
+                <configuration>
+                    <generateReports>true</generateReports>
+                    <errorRateThresholdInPercent>60</errorRateThresholdInPercent>
+                    <testResultsTimestamp>false</testResultsTimestamp>
+                    <propertiesJMeter>
+                        <threads>7</threads>
+                        <duration>30</duration>
+                    </propertiesJMeter>
+
+                    <testPlanLibraries>
+                        <artifact>com.ubikingenierie.ubikloadpack:jmeter-maven-plugin-demo:1.0.0</artifact>
+                    </testPlanLibraries>
+
+                    <jMeterProcessJVMSettings>
+                        <arguments>
+                            <argument>-XX:MaxMetaspaceSize=256m</argument>
+                            <argument>-Xmx1024m</argument>
+                            <argument>-Xms1024m</argument>
+                        </arguments>
+                    </jMeterProcessJVMSettings>
+                </configuration>
+                    <executions>
+                        <execution>
+                            <id>jmeter-tests</id>
+                            <goals>
+                                <goal>jmeter</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>jmeter-check-results</id>
+                            <goals>
+                                <goal>results</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
