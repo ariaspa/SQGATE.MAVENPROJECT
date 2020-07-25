@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+<parent>
+	  <groupId>it.ariaspa.servizio</groupId> 
+	  <artifactId>servizio</artifactId>
+	  <version>1.0.0</version>
+</parent>
+	
+	<artifactId>applicativo-python</artifactId>
+	<version>1.0.0</version>
+	<name>applicativo-python</name>
+	
+ <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.build.timestamp.format>MM.dd.HHmm</maven.build.timestamp.format>
+    <python_package>sample_pb</python_package>
+    <python_compile_phase>compile</python_compile_phase>
+  </properties>
+
+
+  <build>
+      <plugins>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.6.0</version>
+            <executions>
+                <execution>
+                   <id>python_build</id>
+                    <phase>generate-resources</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+                    <configuration>
+                        <executable>python</executable>
+                        <workingDirectory>src/main/resources/</workingDirectory>
+                        <arguments>
+                            <argument>my.py</argument>
+                        </arguments>
+                    </configuration>
+
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <!-- general system dependencies -->
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+      <version>2.5.0</version>
+    </dependency>
+  </dependencies>
+  <licenses>
+    <license>
+      <name>Lispa License, Version 1.0</name>
+      <url>http://cm-maven.adlispa.local/licenza/license.txt</url>
+      <distribution>repo</distribution>
+      <comments>Licenza di prodotti erogati da Lispa S.p.A per Regione Lombardia</comments>
+    </license>
+  </licenses>
+</project>
